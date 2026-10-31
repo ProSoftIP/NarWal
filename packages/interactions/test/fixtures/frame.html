@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en" data-doc="d1">
+<head>
+<meta charset="utf-8">
+<title>Frame</title>
+<script src="/bundle.js"></script>
+<style>body { margin: 0; padding: 20px; font: 16px sans-serif; }</style>
+</head>
+<body>
+<button id="inner" type="button">Inner button</button>
+<script>window.pageLog = []; document.addEventListener('click', (e) => window.pageLog.push('click:' + e.target.id));</script>
+</body>
+</html>

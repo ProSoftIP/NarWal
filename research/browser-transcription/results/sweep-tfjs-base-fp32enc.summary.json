@@ -1,0 +1,86 @@
+{
+ "name": "sweep-tfjs-base-fp32enc",
+ "engine": "tfjs",
+ "model": "onnx-community/whisper-base.en_timestamped",
+ "fixture": "narration-2m",
+ "sessionUrl": "https://www.browserbase.com/sessions/0acce9de-e49a-4f9a-8e3a-1364f33d4b59",
+ "env": {
+  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hc": 2,
+  "dm": 8,
+  "coi": true,
+  "webgpu": false
+ },
+ "status": "done",
+ "audioS": 120,
+ "wallS": 151.029,
+ "refWords": 279,
+ "wer": 0.039,
+ "sub": 6,
+ "del": 1,
+ "ins": 4,
+ "silentInsertions": 0,
+ "timing": {
+  "n": 272,
+  "startAbsMedianS": 0.143,
+  "startAbsP90S": 0.268,
+  "startBiasS": 0.163,
+  "endAbsMedianS": 0.146,
+  "endAbsP90S": 0.282,
+  "startWithin100ms": 0.243,
+  "startSignedP10S": 0.073,
+  "startSignedP90S": 0.268,
+  "startAbsP90DebiasedS": 0.125,
+  "startWithin250ms": 0.86,
+  "startWithin500ms": 0.996
+ },
+ "finalize": null,
+ "latency": {
+  "finalMedianS": 15.475,
+  "finalP90S": 24.9,
+  "finalMaxS": 30.285,
+  "visibleMedianS": 6.581,
+  "visibleP90S": 10.119,
+  "finalP90FirstFiveMinS": 24.9,
+  "finalP90LastFiveMinS": 24.9,
+  "maxBacklogS": 26.306,
+  "partialEvents": 23,
+  "finalEvents": 7
+ },
+ "compute": {
+  "dutyCycle": 0.815,
+  "coresMean": 1.178,
+  "coresP90": 1.856,
+  "coresMax": 1.865
+ },
+ "memory": {
+  "firstMB": null,
+  "maxMB": null,
+  "lastMB": null,
+  "slopeMBper10min": null,
+  "samples": 0,
+  "afterLoadMB": 0
+ },
+ "load": {
+  "modelFileMB": 138.856,
+  "networkMB": 144.768,
+  "netByHostMB": {
+   "cdn.jsdelivr.net": 7.875,
+   "huggingface.co": 0.65,
+   "us.aws.cdn.hf.co": 136.243
+  },
+  "coldLoadS": 9.849,
+  "firstInferS": 4.881,
+  "secondInferS": 3.576,
+  "cachedLoadS": 1.283,
+  "cachedFirstInferS": 4.577
+ },
+ "offline": {
+  "ok": true,
+  "loadS": 1.059,
+  "inferS": 3.666,
+  "error": null,
+  "words": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat muttoned pieces to be ladled out in thick."
+ },
+ "error": null
+}

@@ -1,0 +1,127 @@
+/* The Tiles B language (board #16783, design #16779 tiles-b): a graphite status
+   bar, small tiles on an eight-column grid, dense tables. Saved recordings,
+   Replay and the speech model page share it; the popup carries the same
+   tokens in packages/recorder-ui/src/styles.js. Light and dark follow the
+   system. */
+:root {
+  color-scheme: light dark;
+  --ground: #eceef1; --surface: #ffffff; --ink: #111318; --ink-2: #4a505b; --ink-3: #5c6370;
+  --line: #dde0e5; --line-2: #c3c8d0; --accent: #d4412f; --on-accent: #ffffff; --chip: #e9ecf0;
+  --field: #ffffff; --focus: #d4412f; --selection: #fbded9; --placeholder: #636a76; --ok: #2e7d32;
+  --warn-bg: #fff4e5; --warn-line: #f0b86e; --error: #b42318; --rating: #2f6f8f;
+  --hero: #1b1e24; --hero-ink: #ffffff; --hero-ink-2: #b4bac5; --coral: #ff6b5a; --on-coral: #14161a;
+  --radius: 8px; --radius-s: 6px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0c0e11; --surface: #15181c; --ink: #e8eaee; --ink-2: #a9b0bb; --ink-3: #939aa7;
+    --line: #252930; --line-2: #353a43; --accent: #ff7a68; --on-accent: #1a0f0c; --chip: #20242a;
+    --field: #0f1114; --focus: #ff7a68; --selection: #43221d; --placeholder: #8f96a3; --ok: #7fc987;
+    --warn-bg: #2b2114; --warn-line: #7a5520; --error: #ff8a7a; --rating: #7cc4e4;
+    --hero: #1f232a; --hero-ink: #ffffff; --hero-ink-2: #b0b7c3;
+  }
+}
+* { box-sizing: border-box; }
+html { background: var(--ground); }
+body { margin: 0; font: 13px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--ground); font-variant-numeric: tabular-nums; }
+::selection { background: var(--selection); }
+[hidden] { display: none !important; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.ic { flex: none; display: block; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Page frame and top line: the narwhal, the page name, the last result, links. */
+.page { max-width: 1600px; margin: 0 auto; padding: 16px 40px 32px; }
+.top { display: flex; align-items: center; gap: 10px; min-height: 32px; margin-bottom: 10px; }
+.top .mark { flex: none; display: block; }
+.top h1 { font-size: 15px; font-weight: 600; white-space: nowrap; }
+.top .spacer { flex: 1; }
+.top .links { display: flex; gap: 14px; align-items: center; }
+.top .links a, .top .links .link { color: var(--ink-2); text-decoration: none; display: inline-flex; gap: 5px; align-items: center; font-size: 12.5px; cursor: pointer; }
+.top .links a:hover, .top .links .link:hover { color: var(--ink); text-decoration: underline; }
+.top .links button.link { background: none; border: 0; padding: 0; font: inherit; font-size: 12.5px; }
+.toast { font-size: 12px; color: var(--ink-2); display: inline-flex; gap: 5px; align-items: center; padding: 2px 8px; border-radius: var(--radius-s); background: var(--chip); min-width: 0; max-width: 60ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.toast:empty { padding: 0; background: none; }
+
+/* The grid of tiles. */
+.grid { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); grid-auto-flow: row dense; gap: 8px; align-items: stretch; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; min-width: 0; display: flex; flex-direction: column; }
+.tile > h2, .tile-h { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); font-weight: 600; margin: 0 0 8px; display: flex; align-items: center; gap: 6px; min-height: 18px; }
+.tile > h2 .sub, .tile-h .sub { text-transform: none; letter-spacing: 0; font-weight: 400; margin-left: auto; font-size: 12px; text-align: right; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tile > h2 label { cursor: pointer; }
+.span-2 { grid-column: span 2; } .span-3 { grid-column: span 3; } .span-4 { grid-column: span 4; }
+.span-5 { grid-column: span 5; } .span-6 { grid-column: span 6; } .span-all { grid-column: 1 / -1; }
+.note { color: var(--ink-2); font-size: 12.5px; }
+.note:empty { display: none; }
+.error { color: var(--error); font-weight: 600; }
+
+/* The graphite status bar: title, state, stat tiles, actions. */
+.bar { grid-column: 1 / -1; min-height: 56px; background: var(--hero); border-color: var(--hero); color: var(--hero-ink); flex-direction: row; align-items: center; gap: 12px; padding: 8px 8px 8px 16px; flex-wrap: wrap; }
+.bar .who { flex: 1 1 260px; min-width: 0; display: flex; align-items: baseline; gap: 12px; }
+.bar .who > h2, .bar .who > h1 { font-size: 15px; font-weight: 600; margin: 0; white-space: nowrap; display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; text-transform: none; letter-spacing: 0; color: var(--hero-ink); }
+.bar .who > h2::before, .bar .who > h1::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+.bar .tt { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.bar .meta { margin: 0; color: var(--hero-ink-2); font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.bar .meta b { color: var(--hero-ink); font-weight: 500; }
+.stats { display: flex; gap: 6px; margin: 0; flex-wrap: wrap; }
+.stats > div { height: 40px; min-width: 76px; padding: 3px 10px; border-radius: var(--radius-s); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); display: flex; flex-direction: column; justify-content: center; }
+.stats dt { font-size: 11px; color: var(--hero-ink-2); line-height: 1.2; }
+.stats dd { margin: 0; font-size: 14px; font-weight: 600; line-height: 1.25; color: var(--hero-ink); white-space: nowrap; }
+.stats dd.word { font-size: 12.5px; }
+.bar .acts { display: flex; gap: 6px; padding-left: 8px; border-left: 1px solid rgba(255,255,255,.14); }
+.bar .acts:empty { display: none; }
+.hbtn { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 11px; border: 1px solid rgba(255,255,255,.24); border-radius: var(--radius-s); background: rgba(255,255,255,.08); color: var(--hero-ink); font: inherit; font-weight: 500; text-decoration: none; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+.hbtn:hover { background: rgba(255,255,255,.16); }
+.hbtn.primary { background: var(--coral); border-color: var(--coral); color: var(--on-coral); font-weight: 600; }
+.hbtn.primary:hover { background: #ff8576; }
+.hbtn:disabled { opacity: .55; cursor: default; }
+.bar :focus-visible { outline-color: var(--coral); }
+
+/* Buttons and fields inside tiles. */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 5px; height: 28px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: var(--radius-s); background: var(--surface); color: var(--ink); font: inherit; font-weight: 500; text-decoration: none; font-size: 12.5px; cursor: pointer; white-space: nowrap; }
+.btn:hover { border-color: var(--ink-3); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); font-weight: 600; }
+.btn:disabled, .btn[aria-disabled='true'] { opacity: .5; cursor: default; }
+.ib { width: 26px; height: 26px; padding: 0; display: inline-grid; place-items: center; border: 1px solid var(--line-2); border-radius: var(--radius-s); background: var(--surface); color: var(--ink-2); cursor: pointer; text-decoration: none; }
+.ib:hover { color: var(--ink); border-color: var(--ink-3); }
+.ib:disabled { opacity: .45; cursor: default; }
+textarea, input[type='text'], input[type='search'], select { font: inherit; font-size: 12.5px; color: var(--ink); background: var(--field); border: 1px solid var(--line-2); border-radius: var(--radius-s); }
+textarea { width: 100%; padding: 6px 8px; min-height: 46px; resize: vertical; }
+input[type='text'], input[type='search'] { height: 28px; padding: 0 8px; }
+select { height: 26px; padding: 0 6px; }
+::placeholder { color: var(--placeholder); }
+.foot { display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+.count { margin-left: auto; color: var(--ink-3); font-size: 12px; }
+.chip { display: inline-block; padding: 0 7px; border-radius: 4px; font-size: 11.5px; background: var(--chip); color: var(--ink-2); line-height: 18px; white-space: nowrap; }
+.chip.none { background: transparent; border: 1px dashed var(--line-2); }
+.chip.busy { background: var(--selection); color: var(--ink); }
+.banner { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: var(--radius-s); padding: 6px 10px; }
+
+/* Dense tables. */
+table.dense { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.dense th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); font-weight: 600; text-align: left; padding: 0 8px; height: 28px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.dense td { padding: 0 8px; height: 32px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.dense tbody tr:last-child td { border-bottom: 0; }
+.dense .r { text-align: right; }
+.dense .m { color: var(--ink-2); white-space: nowrap; }
+.dense .wrap-cell { white-space: normal; padding-top: 6px; padding-bottom: 6px; }
+.dense tr[aria-current='true'] td { background: color-mix(in srgb, var(--accent) 9%, var(--surface)); }
+.dense tr[aria-current='true'] td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+.dense .acts { white-space: nowrap; text-align: right; width: 1%; }
+.dense .acts .ib + .ib { margin-left: 4px; }
+
+@media (max-width: 1180px) {
+  .page { padding: 12px 20px 24px; }
+  /* The title takes the bar's first line; the stats and actions share the second. */
+  .bar .who { flex-basis: 100%; }
+  .bar .acts { margin-left: auto; padding-left: 0; border-left: 0; }
+}
+@media (forced-colors: active) {
+  .bar, .tile { border: 1px solid CanvasText; }
+  .hbtn, .btn, .ib { border: 1px solid ButtonText; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

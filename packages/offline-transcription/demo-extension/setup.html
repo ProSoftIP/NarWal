@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Offline transcription setup (proof)</title>
+    <style>
+      body { font: 14px/1.45 system-ui, sans-serif; margin: 24px; max-width: 720px; color: #1b1f24; }
+      h1 { font-size: 18px; margin: 0 0 4px; }
+      p.note { color: #57606a; margin: 0 0 16px; }
+      .model { border: 1px solid #d0d7de; border-radius: 8px; padding: 12px 14px; margin-bottom: 12px; }
+      .model h2 { font-size: 14px; margin: 0; }
+      .meta { color: #57606a; font-size: 12px; }
+      .state { font-weight: 600; }
+      .state[data-state='ready'] { color: #1a7f37; }
+      .state[data-state='corrupt'], .state[data-state='failed'] { color: #cf222e; }
+      progress { width: 100%; height: 8px; margin: 8px 0; }
+      button { font: inherit; padding: 4px 10px; margin-right: 6px; }
+      #summary { margin-top: 16px; padding: 10px 14px; background: #f6f8fa; border-radius: 8px; white-space: pre-wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>Offline transcription</h1>
+    <p class="note">Speech is transcribed on this computer. The models download once, when you ask; after that no audio or text leaves the browser.</p>
+    <div id="models"></div>
+    <div id="summary" role="status" aria-live="polite"></div>
+    <script type="module" src="setup.js"></script>
+  </body>
+</html>

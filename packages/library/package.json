@@ -1,0 +1,23 @@
+{
+  "name": "@narwal/library",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Board #16548: local recording library, portable .narwal bundles, validated import",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.5",
+    "fake-indexeddb": "6.2.5",
+    "typescript": "7.0.2"
+  }
+}

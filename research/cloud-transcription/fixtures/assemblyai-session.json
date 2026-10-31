@@ -1,0 +1,18 @@
+{
+  "_note": "Synthetic values in the documented Universal Streaming v3 message shapes (streaming-websocket api-spec, read 2026-10-13), format_turns=true. Not captured from a live socket.",
+  "messages": [
+    { "type": "Begin", "id": "sess-1", "expires_at": 1792000000, "configuration": { "speech_model": "universal-streaming-english" } },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": false, "end_of_turn": false, "transcript": "this should", "end_of_turn_confidence": 0.1,
+      "words": [ { "text": "this", "start": 420, "end": 610, "confidence": 0.98, "word_is_final": true },
+                 { "text": "should", "start": 610, "end": 950, "confidence": 0.97, "word_is_final": false } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": false, "end_of_turn": true, "transcript": "this should collapse", "end_of_turn_confidence": 0.8,
+      "words": [ { "text": "this", "start": 420, "end": 610, "confidence": 0.98, "word_is_final": true },
+                 { "text": "should", "start": 610, "end": 950, "confidence": 0.97, "word_is_final": true },
+                 { "text": "collapse", "start": 950, "end": 1600, "confidence": 0.95, "word_is_final": true } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": true, "end_of_turn": true, "transcript": "This should collapse.", "end_of_turn_confidence": 0.8,
+      "words": [ { "text": "This", "start": 420, "end": 610, "confidence": 0.98, "word_is_final": true },
+                 { "text": "should", "start": 610, "end": 950, "confidence": 0.97, "word_is_final": true },
+                 { "text": "collapse.", "start": 950, "end": 1600, "confidence": 0.95, "word_is_final": true } ] },
+    { "type": "Termination", "audio_duration_seconds": 2, "session_duration_seconds": 3 }
+  ]
+}

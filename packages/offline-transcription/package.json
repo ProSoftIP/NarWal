@@ -1,0 +1,27 @@
+{
+  "name": "@narwal/offline-transcription",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.0",
+  "description": "Board #16544: browser-local offline live transcription for the NarWal extension (Vosk live; Parakeet, Whisper or Moonshine final)",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "node build.mjs",
+    "e2e": "node build.mjs && node e2e/run.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1",
+    "vosk-browser": "0.0.8"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "playwright": "1.63.0",
+    "typescript": "5.9.3",
+    "@types/node": "22.18.0"
+  }
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8">
+<!-- Replay never loads anything from the network (packages/replay/src/sandbox.ts REPLAY_CSP). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; frame-src 'none'; connect-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NarWal recordings</title><link rel="stylesheet" href="tiles.css"><link rel="stylesheet" href="recordings.css"><link rel="stylesheet" href="dist/rrweb.css"></head>
+<body>
+<div class="page">
+  <header class="top">
+    <img class="mark" src="logo/narwal.svg" alt="" width="22" height="22">
+    <h1>Saved recordings</h1>
+    <p id="export-status" class="toast" role="status"></p>
+    <span class="spacer"></span>
+    <nav class="links" aria-label="More">
+      <button id="open-shared" type="button" class="link" data-icon="folder" data-icon-size="14" title="Replay a .narwal.zip someone sent you">Open a shared recording</button><input id="shared-file" type="file" accept=".zip,application/zip" hidden>
+      <a href="https://prosoftip.com/" target="_blank" rel="noopener" id="website">ProSoft IP</a>
+    </nav>
+  </header>
+  <main class="grid">
+    <div id="detail" class="detail" hidden>
+      <section class="tile bar" aria-labelledby="detail-title">
+        <div class="who"><h2 id="detail-title" tabindex="-1"></h2><p id="detail-status" class="meta"></p></div>
+        <dl id="stats" class="stats" aria-label="This recording"></dl>
+        <div id="detail-acts" class="acts"></div>
+      </section>
+      <section id="replay-tile" class="tile replay-tile" aria-labelledby="h-replay">
+        <h2 id="h-replay" data-icon="replay" data-icon-size="12">Replay<span id="replay-sub" class="sub"></span></h2>
+        <div id="stage" class="stage"><div id="replay"></div><div id="mark-box" class="mark-box" hidden></div></div>
+        <div id="transport" class="transport">
+          <button id="play" class="play" type="button" aria-label="Play"></button>
+          <span id="clock" class="time" aria-hidden="true"></span>
+          <div class="track"><input id="seek" type="range" min="0" step="100" value="0" aria-label="Position in the recording"><div id="ticks" class="ticks" aria-hidden="true"></div></div>
+        </div>
+      </section>
+      <section id="transcript-tile" class="tile transcript-tile" aria-labelledby="h-transcript">
+        <h2 id="h-transcript" data-icon="text" data-icon-size="12">Transcript<span id="transcript-sub" class="sub"></span></h2>
+        <p id="transcript-status" class="note" role="status"></p>
+        <p class="get"><button id="transcript-get" class="btn" type="button" hidden></button></p>
+        <ol id="transcript" class="lines" role="listbox" aria-labelledby="h-transcript"></ol>
+      </section>
+      <section id="pages-tile" class="tile pages-tile" aria-labelledby="h-pages">
+        <h2 id="h-pages" data-icon="page" data-icon-size="12">Pages<span id="pages-sub" class="sub"></span></h2>
+        <table id="docs" class="dense"><thead><tr><th scope="col">Page</th><th scope="col">Frame</th><th scope="col" class="r">Events</th><th scope="col">Attached</th><th scope="col"><span class="sr-only">Replay</span></th></tr></thead><tbody></tbody></table>
+      </section>
+      <section class="tile purpose-tile">
+        <h2><label for="purpose">What is this recording for?</label></h2>
+        <textarea id="purpose" rows="2" maxlength="1000" placeholder="Review of yesterday&#39;s dashboard changes; each thing I point at is a change request" aria-describedby="purpose-count"></textarea>
+        <div class="foot"><button id="save-purpose" class="btn" type="button">Save</button><span id="purpose-status" class="note" role="status"></span><span id="purpose-count" class="count"></span></div>
+      </section>
+      <section id="mic-tile" class="tile mic-tile" aria-labelledby="h-mic" hidden>
+        <h2 id="h-mic" data-icon="mic" data-icon-size="12">Microphone<span id="mic-sub" class="sub"></span></h2>
+        <div id="audio"></div>
+      </section>
+      <section id="gaps-tile" class="tile gaps-tile" aria-labelledby="h-gaps" hidden>
+        <h2 id="h-gaps" data-icon="gap" data-icon-size="12">Gaps<span id="gaps-sub" class="sub"></span></h2>
+        <table id="gaps" class="dense"><thead><tr><th scope="col">From</th><th scope="col">To</th><th scope="col">What is missing</th><th scope="col">Why</th></tr></thead><tbody></tbody></table>
+      </section>
+    </div>
+    <section class="tile library" aria-labelledby="h-lib">
+      <h2 id="h-lib" data-icon="folder" data-icon-size="12">All recordings<span id="lib-sub" class="sub"></span></h2>
+      <div class="filters" role="search">
+        <label class="search" data-icon="search"><span class="sr-only">Search recordings</span><input id="search" type="search" placeholder="Search by page title or words said" autocomplete="off"></label>
+        <span id="shown" class="shown" role="status"></span>
+        <span id="picked-bar" class="picked" hidden><span id="picked-count" role="status"></span><button id="delete-picked" class="btn danger" type="button" data-icon="trash">Delete selected</button><button id="unpick" class="btn" type="button">Clear</button></span>
+      </div>
+      <table id="list" class="dense"><thead><tr><th scope="col" class="pick"><input id="pick-all" type="checkbox" aria-label="Select every recording shown"></th><th scope="col">Started</th><th scope="col">Recording</th><th scope="col">Site</th><th scope="col" class="r">Length</th><th scope="col">Status</th><th scope="col">Transcript</th><th scope="col"><span class="sr-only">Open, export or delete</span></th></tr></thead></table>
+      <p id="list-empty" class="note empty" hidden>No recordings yet. Start one from the NarWal button in the toolbar.</p>
+    </section>
+  </main>
+  <!-- Delete asks once, naming each recording and its length (board #17003). -->
+  <dialog id="confirm-delete" class="confirm" aria-labelledby="confirm-title" aria-describedby="confirm-what">
+    <h2 id="confirm-title"></h2>
+    <ul id="confirm-list"></ul>
+    <p id="confirm-what" class="note">Deleted for good from this computer: the page, the audio, the transcript and the saved bundle. It cannot be opened again. A bundle file you exported is not touched.</p>
+    <div class="foot"><button id="confirm-cancel" class="btn" type="button">Cancel</button><button id="confirm-go" class="btn danger" type="button" data-icon="trash"></button></div>
+  </dialog>
+</div>
+<!-- Asked at Export when the recording has no purpose (board #17002). -->
+<dialog id="purpose-ask" class="ask" aria-labelledby="purpose-ask-title" aria-describedby="purpose-ask-why">
+  <h2 id="purpose-ask-title">What is this recording for, and what should happen with each thing you pointed at?</h2>
+  <p id="purpose-ask-why" class="note">The bundle carries your answer, so the AI you give it to knows what to do with it. The bundle downloads after you save it.</p>
+  <textarea id="purpose-ask-text" rows="4" maxlength="1000" autofocus aria-labelledby="purpose-ask-title" aria-describedby="purpose-ask-why purpose-ask-error purpose-ask-count" placeholder="For example: Review of yesterday&#39;s dashboard changes; each thing I point at is a change request"></textarea>
+  <p id="purpose-ask-error" class="error" role="alert"></p>
+  <div class="foot"><button id="purpose-ask-ok" class="btn primary" type="button" disabled>Save and export</button><button id="purpose-ask-cancel" class="btn" type="button">Cancel</button><span id="purpose-ask-count" class="count"></span></div>
+</dialog>
+<script src="dist/recordings.js"></script>
+</body>
+</html>

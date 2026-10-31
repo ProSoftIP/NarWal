@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Frames</title><script src="/origins.js"></script><script src="/fixture.js"></script></head>
+<body>
+<h1>Frames</h1>
+<p>Parent document.</p>
+<iframe id="same" src="/child.html" width="300" height="80"></iframe>
+<iframe id="cross" width="300" height="80"></iframe>
+<iframe id="srcdoc" srcdoc="<p>srcdoc-content</p>" width="300" height="80"></iframe>
+<script>document.getElementById("cross").src = NARWAL_ORIGINS.B + "/child.html";</script>
+</body>
+</html>

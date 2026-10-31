@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "NarWal capture probe",
+  "version": "0.0.1",
+  "description": "Research probe for board #16538. Not the NarWal product.",
+  "minimum_chrome_version": "116",
+  "background": { "service_worker": "sw.js", "type": "module" },
+  "permissions": ["offscreen", "scripting", "webNavigation", "tabs", "storage", "unlimitedStorage"],
+  "host_permissions": ["<all_urls>"],
+  "action": { "default_title": "NarWal probe: start/stop recording this tab" }
+}

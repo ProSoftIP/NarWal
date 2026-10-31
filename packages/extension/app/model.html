@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>NarWal: speech model</title><link rel="stylesheet" href="tiles.css"><link rel="stylesheet" href="model.css"></head>
+<body>
+<main class="page">
+  <header class="top">
+    <img class="mark" src="logo/narwal.svg" width="22" height="22" alt="">
+    <h1>Speech model</h1>
+  </header>
+  <div class="grid">
+    <section class="tile models-tile" aria-labelledby="h-models">
+      <h2 id="h-models">Pick a model</h2>
+      <p id="machine" class="note"></p>
+      <fieldset id="models" class="models">
+        <legend class="sr">Speech model</legend>
+        <p class="note">Checking what is already downloaded…</p>
+      </fieldset>
+      <p id="state" class="note" role="status" aria-live="polite"></p>
+      <progress id="progress" max="1" value="0" aria-label="Speech model download" hidden></progress>
+      <div id="problem" class="error" role="alert" hidden></div>
+      <div class="row"><button id="again" class="btn" hidden>Try the download again</button></div>
+    </section>
+    <section class="tile about-tile" aria-labelledby="h-about">
+      <h2 id="h-about">How the numbers were measured</h2>
+      <p class="note">The speech model turns your voice into text on this computer, so the audio does not leave it. Pick one, then download it once; it is saved in this browser. After that, the transcript works with no internet.</p>
+      <p class="note" id="measured-where">Every accuracy and speed number here was measured in this extension. All but Whisper large-v3-turbo ran on the same 113-second reading passage. Turbo's come from a different take: Matt's separate 120-second recording of that passage, on his Mac with WebGPU, on an earlier build; its speed counts from Stop and includes loading the model.</p>
+      <p class="note">The bars are measured, not guessed: accuracy is how many words a model got right (WER: the share of words wrong); speed is the time it takes as a multiple of the audio length (0.25× audio: 15 s per minute). Point at a bar, or open "Measured", for the details. You can start recording whichever model you pick: Start needs only the live model.</p>
+      <p class="note">Keep this tab open until a download ends. Then press Use this model to go back.</p>
+    </section>
+    <footer class="choose">
+      <p id="chosen" class="chosen" aria-live="polite"></p>
+      <p id="wait" class="note" hidden>Keep this tab open until the download ends.</p>
+      <button id="back" type="button" class="btn" aria-describedby="wait">Back</button>
+      <button id="use" type="button" class="btn primary" aria-describedby="wait">Use this model</button>
+    </footer>
+  </div>
+</main>
+<script src="dist/model.js"></script>
+</body>
+</html>

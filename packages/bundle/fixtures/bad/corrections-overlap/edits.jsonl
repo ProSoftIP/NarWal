@@ -1,0 +1,7 @@
+{"id":"c1","type":"correction","revisionId":"r1","segmentId":"s2","wordStart":2,"wordEnd":3,"text":"total","createdAt":"2026-10-13T20:02:00.000Z"}
+{"id":"n1","type":"note","atMs":70300,"text":"Same on mobil","createdAt":"2026-10-13T20:02:30.000Z"}
+{"id":"n2","type":"note","atMs":70300,"text":"Same on mobile","createdAt":"2026-10-13T20:02:40.000Z","supersedes":"n1"}
+{"id":"n3","type":"note","atMs":30000,"text":"ignore this","createdAt":"2026-10-13T20:03:00.000Z"}
+{"id":"x1","type":"retract","target":"n3","createdAt":"2026-10-13T20:03:10.000Z"}
+{"id":"c2","type":"correction","revisionId":"r2","segmentId":"s2","wordStart":2,"wordEnd":3,"text":"total","createdAt":"2026-10-13T20:05:00.000Z","carriedFrom":"c1"}
+{"id":"c3","type":"correction","revisionId":"r2","segmentId":"s2","wordStart":1,"wordEnd":3,"text":"that total","createdAt":"2026-10-13T20:06:00.000Z"}

@@ -1,0 +1,19 @@
+{
+  "_note": "Synthetic values in the documented whisper-1 verbose_json shape with timestamp_granularities word and segment (transcriptions reference, read 2026-10-13).",
+  "task": "transcribe",
+  "language": "english",
+  "duration": 4.1,
+  "text": "This should collapse. Revenue heading.",
+  "segments": [
+    { "id": 0, "seek": 0, "start": 0.4, "end": 1.6, "text": " This should collapse.", "tokens": [1], "temperature": 0, "avg_logprob": -0.2, "compression_ratio": 1.1, "no_speech_prob": 0.01 },
+    { "id": 1, "seek": 0, "start": 2.9, "end": 4.0, "text": " Revenue heading.", "tokens": [2], "temperature": 0, "avg_logprob": -0.3, "compression_ratio": 1.1, "no_speech_prob": 0.02 }
+  ],
+  "words": [
+    { "word": "This", "start": 0.42, "end": 0.61 },
+    { "word": "should", "start": 0.61, "end": 0.95 },
+    { "word": "collapse", "start": 0.95, "end": 1.6 },
+    { "word": "Revenue", "start": 3.1, "end": 3.6 },
+    { "word": "heading", "start": 3.6, "end": 4.0 }
+  ],
+  "usage": { "type": "duration", "seconds": 5 }
+}

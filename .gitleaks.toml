@@ -1,0 +1,19 @@
+# gitleaks rules for this repository (board #27493): the default rules, less
+# the false positives measured by the full-history scan of 2026-10-31. Each
+# entry is an exact pattern, so a new or changed secret still fails the scan.
+# The store zip has its own list: packages/extension/release-gitleaks.toml.
+title = "NarWal repository"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "measured false positives in the source"
+regexes = [
+  # generic-api-key: the name of a chrome.storage entry, not a key
+  # (PREFS_KEY, packages/recorder-ui/src/prefs.js).
+  '''^narwal\.prefs\.v1$''',
+  # generic-api-key: invented Deepgram keys in tests
+  # (packages/transcription/test/helpers.ts, packages/recorder-ui/test/e2e/run.mjs).
+  '''^dg-test-key-[A-Za-z0-9-]+$''',
+]

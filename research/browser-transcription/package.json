@@ -1,0 +1,12 @@
+{
+  "name": "narwal-research-browser-transcription",
+  "private": true,
+  "description": "Board #16539: browser-local English live transcription measurements",
+  "type": "module",
+  "dependencies": {
+    "@huggingface/transformers": "4.3.1",
+    "@transcribe/shout": "1.0.7",
+    "@transcribe/transcriber": "3.0.1",
+    "vosk-browser": "0.0.8"
+  }
+}

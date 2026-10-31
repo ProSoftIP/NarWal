@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "NarWal offline transcription proof (#16544)",
+  "version": "0.0.1",
+  "description": "Proves browser-local live transcription inside an MV3 extension. Not the product extension.",
+  "permissions": ["unlimitedStorage", "offscreen"],
+  "host_permissions": ["https://huggingface.co/*", "https://*.hf.co/*", "https://ccoreilly.github.io/*"],
+  "background": { "service_worker": "sw.js" },
+  "action": { "default_title": "NarWal offline transcription proof" },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'; connect-src 'self' https://huggingface.co https://*.hf.co https://ccoreilly.github.io"
+  },
+  "cross_origin_embedder_policy": { "value": "require-corp" },
+  "cross_origin_opener_policy": { "value": "same-origin" }
+}

@@ -1,0 +1,9 @@
+done onnx-community/parakeet-ctc-0.6b-ONNX onnx/model_quantized.onnx 1307464
+done onnx-community/parakeet-ctc-0.6b-ONNX onnx/model_quantized.onnx_data 610974468
+done onnx-community/whisper-large-v3-turbo_timestamped onnx/encoder_model_q4f16.onnx 370035242
+done onnx-community/whisper-large-v3-turbo_timestamped onnx/decoder_model_merged_q4f16.onnx 193566135
+done onnx-community/cohere-transcribe-03-2026-ONNX onnx/encoder_model_q4f16.onnx 1410988
+done onnx-community/cohere-transcribe-03-2026-ONNX onnx/encoder_model_q4f16.onnx_data 1435501056
+done onnx-community/cohere-transcribe-03-2026-ONNX onnx/decoder_model_merged_q4f16.onnx 194936
+done onnx-community/cohere-transcribe-03-2026-ONNX onnx/decoder_model_merged_q4f16.onnx_data 97951744
+PREFETCH-DONE

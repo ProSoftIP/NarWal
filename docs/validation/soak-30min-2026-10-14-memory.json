@@ -1,0 +1,3986 @@
+{
+  "ticket": 16552,
+  "ranAt": "2026-10-14T04:34:41.366Z",
+  "node": "v26.7.0",
+  "headless": true,
+  "chromium": "1243",
+  "scenarios": {
+    "soak": {
+      "ms": 1813728,
+      "checks": [
+        {
+          "label": "the extension ID comes from the manifest key",
+          "pass": true,
+          "got": {
+            "got": "gpfcnaalnaknfbeonbgaafhomonmmcdj",
+            "expectedId": "gpfcnaalnaknfbeonbgaafhomonmmcdj"
+          }
+        },
+        {
+          "label": "setup: the live model downloads",
+          "pass": true,
+          "got": {
+            "ok": true,
+            "state": "ready"
+          }
+        },
+        {
+          "label": "negative control: no network for the whole recording",
+          "pass": true,
+          "got": "failed: Failed to fetch"
+        },
+        {
+          "label": "still recording at the end, after the service worker stop",
+          "pass": true,
+          "got": {
+            "workerStoppedAtMs": 607029.5
+          }
+        },
+        {
+          "label": "stop succeeds",
+          "pass": true,
+          "got": {
+            "ok": true,
+            "id": "aec4d10d-0564-4f41-adb8-a96b0e03d4f3",
+            "stopReason": "user",
+            "storageError": null,
+            "audio": {
+              "state": "stopped",
+              "error": null,
+              "segment": 0,
+              "chunks": 1765,
+              "bytes": 26117604,
+              "settings": {
+                "autoGainControl": true,
+                "channelCount": 1,
+                "deviceId": "default",
+                "echoCancellation": true,
+                "groupId": "6921b4e61d41ed547e055ade3b9b648cf53cfdcb8361104eef58097b310b0114",
+                "latency": 0.01,
+                "noiseSuppression": true,
+                "sampleRate": 48000,
+                "sampleSize": 16,
+                "voiceIsolation": false
+              }
+            }
+          }
+        },
+        {
+          "label": "recorder memory levels off: after a garbage collection at minutes 12, 21, 30 it rises at most 5 MB",
+          "pass": true,
+          "got": {
+            "readings": 3,
+            "collectedEveryHeap": 3,
+            "atMin": [
+              12.1,
+              21,
+              29.8
+            ],
+            "liveMB": [
+              307.3,
+              308.3,
+              309
+            ],
+            "riseMB": 1.7,
+            "freedMB": [
+              20.7,
+              25.7,
+              26.2
+            ],
+            "mostFreedMB": 26.2
+          }
+        },
+        {
+          "label": "recorder garbage does not pile up: no collection frees more than 45 MB",
+          "pass": true,
+          "got": {
+            "readings": 3,
+            "collectedEveryHeap": 3,
+            "atMin": [
+              12.1,
+              21,
+              29.8
+            ],
+            "liveMB": [
+              307.3,
+              308.3,
+              309
+            ],
+            "riseMB": 1.7,
+            "freedMB": [
+              20.7,
+              25.7,
+              26.2
+            ],
+            "mostFreedMB": 26.2
+          }
+        },
+        {
+          "label": "the recording is 30 minutes long and stopped",
+          "pass": true,
+          "got": {
+            "meta": {
+              "status": "stopped",
+              "stopReason": "user",
+              "restarts": 0,
+              "storageError": null,
+              "interruption": null
+            },
+            "spanMin": 30.000016666666667
+          }
+        },
+        {
+          "label": "no automatic cutoff: stopped by the user",
+          "pass": true,
+          "got": "user"
+        },
+        {
+          "label": "all 136 markers captured",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "none of 319 masked or hidden strings is in the recording",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "the recording strip is not in the recording",
+          "pass": true,
+          "got": {
+            "marker:soak-0": true,
+            "marker:soak-1": true,
+            "marker:soak-2": true,
+            "marker:soak-3": true,
+            "marker:soak-4": true,
+            "marker:soak-5": true,
+            "marker:soak-6": true,
+            "marker:soak-7": true,
+            "marker:soak-8": true,
+            "marker:soak-9": true,
+            "marker:soak-10": true,
+            "marker:soak-11": true,
+            "marker:soak-12": true,
+            "marker:soak-13": true,
+            "marker:soak-14": true,
+            "marker:soak-15": true,
+            "marker:soak-16": true,
+            "marker:soak-17": true,
+            "marker:soak-18": true,
+            "marker:soak-19": true,
+            "marker:soak-20": true,
+            "marker:soak-21": true,
+            "marker:soak-22": true,
+            "marker:soak-23": true,
+            "marker:soak-24": true,
+            "marker:soak-25": true,
+            "marker:soak-26": true,
+            "marker:soak-27": true,
+            "marker:soak-28": true,
+            "marker:soak-29": true,
+            "marker:soak-30": true,
+            "marker:soak-31": true,
+            "marker:soak-32": true,
+            "marker:soak-33": true,
+            "marker:soak-34": true,
+            "marker:soak-35": true,
+            "marker:soak-36": true,
+            "marker:soak-37": true,
+            "marker:soak-38": true,
+            "marker:soak-39": true,
+            "marker:soak-40": true,
+            "marker:soak-41": true,
+            "marker:soak-42": true,
+            "marker:soak-43": true,
+            "marker:soak-44": true,
+            "marker:soak-45": true,
+            "marker:soak-46": true,
+            "marker:soak-47": true,
+            "marker:soak-48": true,
+            "marker:soak-49": true,
+            "marker:soak-50": true,
+            "marker:soak-51": true,
+            "marker:soak-52": true,
+            "marker:soak-53": true,
+            "marker:soak-54": true,
+            "marker:soak-55": true,
+            "marker:soak-56": true,
+            "marker:soak-57": true,
+            "marker:soak-58": true,
+            "marker:soak-59": true,
+            "marker:soak-60": true,
+            "marker:soak-61": true,
+            "marker:soak-62": true,
+            "marker:soak-63": true,
+            "marker:soak-64": true,
+            "marker:soak-65": true,
+            "marker:soak-66": true,
+            "marker:soak-67": true,
+            "marker:soak-68": true,
+            "marker:soak-69": true,
+            "marker:soak-70": true,
+            "marker:soak-71": true,
+            "marker:soak-72": true,
+            "marker:soak-73": true,
+            "marker:soak-74": true,
+            "marker:soak-75": true,
+            "marker:soak-76": true,
+            "marker:soak-77": true,
+            "marker:soak-78": true,
+            "marker:soak-79": true,
+            "marker:soak-80": true,
+            "marker:soak-81": true,
+            "marker:soak-82": true,
+            "marker:soak-83": true,
+            "marker:soak-84": true,
+            "marker:soak-85": true,
+            "marker:soak-86": true,
+            "marker:soak-87": true,
+            "marker:soak-88": true,
+            "marker:soak-89": true,
+            "marker:soak-90": true,
+            "marker:soak-91": true,
+            "marker:soak-92": true,
+            "marker:soak-93": true,
+            "marker:soak-94": true,
+            "marker:soak-95": true,
+            "marker:soak-96": true,
+            "marker:soak-97": true,
+            "marker:soak-98": true,
+            "marker:soak-99": true,
+            "marker:soak-100": true,
+            "marker:soak-101": true,
+            "marker:soak-102": true,
+            "marker:soak-103": true,
+            "marker:soak-104": true,
+            "marker:soak-105": true,
+            "marker:soak-106": true,
+            "marker:soak-107": true,
+            "marker:soak-108": true,
+            "marker:soak-109": true,
+            "marker:soak-110": true,
+            "marker:soak-111": true,
+            "marker:soak-112": true,
+            "marker:soak-113": true,
+            "marker:soak-114": true,
+            "marker:soak-115": true,
+            "marker:soak-116": true,
+            "marker:soak-117": true,
+            "marker:soak-118": true,
+            "marker:soak-119": true,
+            "marker:soak-120": true,
+            "marker:soak-121": true,
+            "marker:soak-122": true,
+            "marker:soak-123": true,
+            "marker:soak-124": true,
+            "marker:soak-125": true,
+            "marker:soak-126": true,
+            "marker:soak-127": true,
+            "marker:soak-128": true,
+            "marker:soak-129": true,
+            "marker:soak-130": true,
+            "marker:soak-131": true,
+            "marker:soak-132": true,
+            "marker:soak-133": true,
+            "marker:soak-134": true,
+            "marker:soak-135": true,
+            "typed-before-start": false,
+            "typed-while-recording": false,
+            "prefilled-secret-value": false,
+            "editable-secret-text": false,
+            "pw-secret": false,
+            "form-typed-value": false,
+            "narwal-ui-must-not-be-captured": false,
+            "soak-secret-0": false,
+            "soak-hidden-0": false,
+            "soak-typed-0": false,
+            "soak-secret-1": false,
+            "soak-hidden-1": false,
+            "soak-secret-2": false,
+            "soak-hidden-2": false,
+            "soak-secret-3": false,
+            "soak-hidden-3": false,
+            "soak-secret-4": false,
+            "soak-hidden-4": false,
+            "soak-form-5": false,
+            "soak-secret-5": false,
+            "soak-hidden-5": false,
+            "soak-secret-6": false,
+            "soak-hidden-6": false,
+            "soak-secret-7": false,
+            "soak-hidden-7": false,
+            "soak-typed-7": false,
+            "soak-secret-8": false,
+            "soak-hidden-8": false,
+            "soak-secret-9": false,
+            "soak-hidden-9": false,
+            "soak-secret-10": false,
+            "soak-hidden-10": false,
+            "soak-secret-11": false,
+            "soak-hidden-11": false,
+            "soak-form-12": false,
+            "soak-secret-12": false,
+            "soak-hidden-12": false,
+            "soak-secret-13": false,
+            "soak-hidden-13": false,
+            "soak-secret-14": false,
+            "soak-hidden-14": false,
+            "soak-typed-14": false,
+            "soak-secret-15": false,
+            "soak-hidden-15": false,
+            "soak-secret-16": false,
+            "soak-hidden-16": false,
+            "soak-secret-17": false,
+            "soak-hidden-17": false,
+            "soak-secret-18": false,
+            "soak-hidden-18": false,
+            "soak-form-19": false,
+            "soak-secret-19": false,
+            "soak-hidden-19": false,
+            "soak-secret-20": false,
+            "soak-hidden-20": false,
+            "soak-secret-21": false,
+            "soak-hidden-21": false,
+            "soak-typed-21": false,
+            "soak-secret-22": false,
+            "soak-hidden-22": false,
+            "soak-secret-23": false,
+            "soak-hidden-23": false,
+            "soak-secret-24": false,
+            "soak-hidden-24": false,
+            "soak-secret-25": false,
+            "soak-hidden-25": false,
+            "soak-form-26": false,
+            "soak-secret-26": false,
+            "soak-hidden-26": false,
+            "soak-secret-27": false,
+            "soak-hidden-27": false,
+            "soak-secret-28": false,
+            "soak-hidden-28": false,
+            "soak-typed-28": false,
+            "soak-secret-29": false,
+            "soak-hidden-29": false,
+            "soak-secret-30": false,
+            "soak-hidden-30": false,
+            "soak-secret-31": false,
+            "soak-hidden-31": false,
+            "soak-secret-32": false,
+            "soak-hidden-32": false,
+            "soak-form-33": false,
+            "soak-secret-33": false,
+            "soak-hidden-33": false,
+            "soak-secret-34": false,
+            "soak-hidden-34": false,
+            "soak-secret-35": false,
+            "soak-hidden-35": false,
+            "soak-typed-35": false,
+            "soak-secret-36": false,
+            "soak-hidden-36": false,
+            "soak-secret-37": false,
+            "soak-hidden-37": false,
+            "soak-secret-38": false,
+            "soak-hidden-38": false,
+            "soak-secret-39": false,
+            "soak-hidden-39": false,
+            "soak-form-40": false,
+            "soak-secret-40": false,
+            "soak-hidden-40": false,
+            "soak-secret-41": false,
+            "soak-hidden-41": false,
+            "soak-secret-42": false,
+            "soak-hidden-42": false,
+            "soak-typed-42": false,
+            "soak-secret-43": false,
+            "soak-hidden-43": false,
+            "soak-secret-44": false,
+            "soak-hidden-44": false,
+            "soak-secret-45": false,
+            "soak-hidden-45": false,
+            "soak-secret-46": false,
+            "soak-hidden-46": false,
+            "soak-form-47": false,
+            "soak-secret-47": false,
+            "soak-hidden-47": false,
+            "soak-secret-48": false,
+            "soak-hidden-48": false,
+            "soak-secret-49": false,
+            "soak-hidden-49": false,
+            "soak-typed-49": false,
+            "soak-secret-50": false,
+            "soak-hidden-50": false,
+            "soak-secret-51": false,
+            "soak-hidden-51": false,
+            "soak-secret-52": false,
+            "soak-hidden-52": false,
+            "soak-secret-53": false,
+            "soak-hidden-53": false,
+            "soak-form-54": false,
+            "soak-secret-54": false,
+            "soak-hidden-54": false,
+            "soak-secret-55": false,
+            "soak-hidden-55": false,
+            "soak-secret-56": false,
+            "soak-hidden-56": false,
+            "soak-typed-56": false,
+            "soak-secret-57": false,
+            "soak-hidden-57": false,
+            "soak-secret-58": false,
+            "soak-hidden-58": false,
+            "soak-secret-59": false,
+            "soak-hidden-59": false,
+            "soak-secret-60": false,
+            "soak-hidden-60": false,
+            "soak-form-61": false,
+            "soak-secret-61": false,
+            "soak-hidden-61": false,
+            "soak-secret-62": false,
+            "soak-hidden-62": false,
+            "soak-secret-63": false,
+            "soak-hidden-63": false,
+            "soak-typed-63": false,
+            "soak-secret-64": false,
+            "soak-hidden-64": false,
+            "soak-secret-65": false,
+            "soak-hidden-65": false,
+            "soak-secret-66": false,
+            "soak-hidden-66": false,
+            "soak-secret-67": false,
+            "soak-hidden-67": false,
+            "soak-form-68": false,
+            "soak-secret-68": false,
+            "soak-hidden-68": false,
+            "soak-secret-69": false,
+            "soak-hidden-69": false,
+            "soak-secret-70": false,
+            "soak-hidden-70": false,
+            "soak-typed-70": false,
+            "soak-secret-71": false,
+            "soak-hidden-71": false,
+            "soak-secret-72": false,
+            "soak-hidden-72": false,
+            "soak-secret-73": false,
+            "soak-hidden-73": false,
+            "soak-secret-74": false,
+            "soak-hidden-74": false,
+            "soak-form-75": false,
+            "soak-secret-75": false,
+            "soak-hidden-75": false,
+            "soak-secret-76": false,
+            "soak-hidden-76": false,
+            "soak-secret-77": false,
+            "soak-hidden-77": false,
+            "soak-typed-77": false,
+            "soak-secret-78": false,
+            "soak-hidden-78": false,
+            "soak-secret-79": false,
+            "soak-hidden-79": false,
+            "soak-secret-80": false,
+            "soak-hidden-80": false,
+            "soak-secret-81": false,
+            "soak-hidden-81": false,
+            "soak-form-82": false,
+            "soak-secret-82": false,
+            "soak-hidden-82": false,
+            "soak-secret-83": false,
+            "soak-hidden-83": false,
+            "soak-secret-84": false,
+            "soak-hidden-84": false,
+            "soak-typed-84": false,
+            "soak-secret-85": false,
+            "soak-hidden-85": false,
+            "soak-secret-86": false,
+            "soak-hidden-86": false,
+            "soak-secret-87": false,
+            "soak-hidden-87": false,
+            "soak-secret-88": false,
+            "soak-hidden-88": false,
+            "soak-form-89": false,
+            "soak-secret-89": false,
+            "soak-hidden-89": false,
+            "soak-secret-90": false,
+            "soak-hidden-90": false,
+            "soak-secret-91": false,
+            "soak-hidden-91": false,
+            "soak-typed-91": false,
+            "soak-secret-92": false,
+            "soak-hidden-92": false,
+            "soak-secret-93": false,
+            "soak-hidden-93": false,
+            "soak-secret-94": false,
+            "soak-hidden-94": false,
+            "soak-secret-95": false,
+            "soak-hidden-95": false,
+            "soak-form-96": false,
+            "soak-secret-96": false,
+            "soak-hidden-96": false,
+            "soak-secret-97": false,
+            "soak-hidden-97": false,
+            "soak-secret-98": false,
+            "soak-hidden-98": false,
+            "soak-typed-98": false,
+            "soak-secret-99": false,
+            "soak-hidden-99": false,
+            "soak-secret-100": false,
+            "soak-hidden-100": false,
+            "soak-secret-101": false,
+            "soak-hidden-101": false,
+            "soak-secret-102": false,
+            "soak-hidden-102": false,
+            "soak-form-103": false,
+            "soak-secret-103": false,
+            "soak-hidden-103": false,
+            "soak-secret-104": false,
+            "soak-hidden-104": false,
+            "soak-secret-105": false,
+            "soak-hidden-105": false,
+            "soak-typed-105": false,
+            "soak-secret-106": false,
+            "soak-hidden-106": false,
+            "soak-secret-107": false,
+            "soak-hidden-107": false,
+            "soak-secret-108": false,
+            "soak-hidden-108": false,
+            "soak-secret-109": false,
+            "soak-hidden-109": false,
+            "soak-form-110": false,
+            "soak-secret-110": false,
+            "soak-hidden-110": false,
+            "soak-secret-111": false,
+            "soak-hidden-111": false,
+            "soak-secret-112": false,
+            "soak-hidden-112": false,
+            "soak-typed-112": false,
+            "soak-secret-113": false,
+            "soak-hidden-113": false,
+            "soak-secret-114": false,
+            "soak-hidden-114": false,
+            "soak-secret-115": false,
+            "soak-hidden-115": false,
+            "soak-secret-116": false,
+            "soak-hidden-116": false,
+            "soak-form-117": false,
+            "soak-secret-117": false,
+            "soak-hidden-117": false,
+            "soak-secret-118": false,
+            "soak-hidden-118": false,
+            "soak-secret-119": false,
+            "soak-hidden-119": false,
+            "soak-typed-119": false,
+            "soak-secret-120": false,
+            "soak-hidden-120": false,
+            "soak-secret-121": false,
+            "soak-hidden-121": false,
+            "soak-secret-122": false,
+            "soak-hidden-122": false,
+            "soak-secret-123": false,
+            "soak-hidden-123": false,
+            "soak-form-124": false,
+            "soak-secret-124": false,
+            "soak-hidden-124": false,
+            "soak-secret-125": false,
+            "soak-hidden-125": false,
+            "soak-secret-126": false,
+            "soak-hidden-126": false,
+            "soak-typed-126": false,
+            "soak-secret-127": false,
+            "soak-hidden-127": false,
+            "soak-secret-128": false,
+            "soak-hidden-128": false,
+            "soak-secret-129": false,
+            "soak-hidden-129": false,
+            "soak-secret-130": false,
+            "soak-hidden-130": false,
+            "soak-form-131": false,
+            "soak-secret-131": false,
+            "soak-hidden-131": false,
+            "soak-secret-132": false,
+            "soak-hidden-132": false,
+            "soak-secret-133": false,
+            "soak-hidden-133": false,
+            "soak-typed-133": false,
+            "soak-secret-134": false,
+            "soak-hidden-134": false,
+            "soak-secret-135": false,
+            "soak-hidden-135": false,
+            "narwal recording controls": false,
+            "Transcript so far": false
+          }
+        },
+        {
+          "label": "every committed top document has a full snapshot",
+          "pass": true,
+          "got": {
+            "committed": 135,
+            "tops": 136
+          }
+        },
+        {
+          "label": "back/forward restored documents from the cache",
+          "pass": true
+        },
+        {
+          "label": "SPA routes recorded",
+          "pass": true,
+          "got": {
+            "routes": 76,
+            "historyUpdates": 76
+          }
+        },
+        {
+          "label": "no gaps and no restarts",
+          "pass": true,
+          "got": {
+            "gaps": [],
+            "lostContext": []
+          }
+        },
+        {
+          "label": "one audio part that decodes to its full length (within 1.5 s)",
+          "pass": true,
+          "got": [
+            {
+              "segment": 0,
+              "chunks": 1765,
+              "bytes": 26117604,
+              "spanMs": 1800001,
+              "decodedMs": 1800000
+            }
+          ]
+        },
+        {
+          "label": "live transcript ran the whole time with no network",
+          "pass": true,
+          "got": {
+            "finals": 285,
+            "states": [
+              "connecting",
+              "live"
+            ]
+          }
+        },
+        {
+          "label": "Stop saved one live revision, active, with no gaps",
+          "pass": true,
+          "got": {
+            "active": "r1",
+            "revisions": 1,
+            "gaps": []
+          }
+        },
+        {
+          "label": "the transcript is the speech (80% of words known)",
+          "pass": true,
+          "got": {
+            "states": [
+              "connecting",
+              "live"
+            ],
+            "finals": 285,
+            "revisionWords": 4003,
+            "knownWords": 3707,
+            "gaps": []
+          }
+        },
+        {
+          "label": "every marker was saved within 15 s",
+          "pass": true,
+          "got": 0
+        },
+        {
+          "label": "replay of the first page shows the recorded page",
+          "pass": true,
+          "got": {
+            "events": 2,
+            "iframe": true,
+            "bodyText": "\nFixture index\nPage 2 | SPA | Form\nSecret \nPrefilled \nPassword \n********************\n\n\n\n\n"
+          }
+        },
+        {
+          "label": "Export bundle on the recordings page downloads a .narwal.zip",
+          "pass": false,
+          "got": {
+            "rows": 0,
+            "fileName": "fixture-index-rec_aec4d10d-0564-4f41-adb8-a96b0e03d4f3.narwal.zip",
+            "ms": 996
+          }
+        },
+        {
+          "label": "@narwal/bundle: the export is valid",
+          "pass": true,
+          "got": {
+            "errors": [],
+            "warnings": 0
+          }
+        },
+        {
+          "label": "the bundle is the whole recording: complete, 30 minutes, narration, active transcript",
+          "pass": true,
+          "got": {
+            "state": "complete",
+            "durationMs": 1800162,
+            "audio": {
+              "file": "audio/narration.webm",
+              "mediaType": "audio/webm;codecs=opus",
+              "clock": "audio/clock.jsonl",
+              "startMs": 89.7,
+              "decodedMs": 1800000.9
+            },
+            "audioBytes": 26117604,
+            "recorded": 26117604,
+            "transcript": {
+              "activeRevision": "r1"
+            }
+          }
+        },
+        {
+          "label": "all 136 right-click marks and 136 Alt+Shift+M marks are in the bundle",
+          "pass": true,
+          "got": {
+            "clickMissing": [],
+            "keyMissing": []
+          }
+        },
+        {
+          "label": "the agent view has the narration, the routes and the marks",
+          "pass": true,
+          "got": {
+            "transcript": {
+              "revisionId": "r1",
+              "provider": "browser-local",
+              "model": "vosk-small-en-us",
+              "source": "live",
+              "correctionsApplied": 0,
+              "correctionsOnOtherRevisions": 0,
+              "timing": {
+                "quality": "aligned",
+                "method": "vosk-alignment",
+                "correctionMs": 0
+              }
+            },
+            "entries": {
+              "observation": 388,
+              "utterance": 286
+            },
+            "kinds": {
+              "route": 252,
+              "viewport": 136,
+              "input": 39,
+              "marker-element": 272,
+              "pointer-dwell": 41,
+              "click": 96
+            }
+          }
+        },
+        {
+          "label": "no masked or hidden string is in the bundle",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "replay: a correction and a note are saved on the exported recording",
+          "pass": true,
+          "got": {
+            "u0": {
+              "segmentId": "s1",
+              "revisionId": "r1",
+              "startMs": 575.39990234375,
+              "endMs": 10175.39990234375,
+              "text": "corrected in the soak replay",
+              "corrected": true,
+              "heard": "he hoped they would be stew for dinner turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out and thick peppered flower fat and sauce",
+              "approximate": false
+            },
+            "replayErrors": []
+          }
+        },
+        {
+          "label": "the second export is valid and carries the correction and the note",
+          "pass": true,
+          "got": {
+            "errors": [],
+            "edits": [
+              {
+                "id": "c1",
+                "type": "correction",
+                "revisionId": "r1",
+                "segmentId": "s1",
+                "wordStart": 0,
+                "wordEnd": 29,
+                "text": "corrected in the soak replay",
+                "createdAt": "2026-10-14T05:04:49.701Z"
+              },
+              {
+                "id": "n1",
+                "type": "note",
+                "atMs": 60000,
+                "text": "note written in the soak replay",
+                "createdAt": "2026-10-14T05:04:50.190Z"
+              }
+            ],
+            "note": {
+              "id": "e23",
+              "kind": "note",
+              "startMs": 60000,
+              "note": {
+                "ref": "n1",
+                "text": "note written in the soak replay"
+              }
+            },
+            "said": {
+              "text": "corrected in the soak replay",
+              "revisionId": "r1",
+              "segmentId": "s1",
+              "corrected": true,
+              "heard": "he hoped they would be stew for dinner turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out and thick peppered flower fat and sauce",
+              "editIds": [
+                "c1"
+              ]
+            }
+          }
+        },
+        {
+          "label": "edits change no captured file (observations, rrweb, audio, transcript)",
+          "pass": false,
+          "got": [
+            "AGENTS.md",
+            "README.md"
+          ]
+        },
+        {
+          "label": "update: same extension ID from a different folder",
+          "pass": true,
+          "got": "gpfcnaalnaknfbeonbgaafhomonmmcdj"
+        },
+        {
+          "label": "update: the new version is running",
+          "pass": true,
+          "got": "0.1.1"
+        },
+        {
+          "label": "update: the recording and its transcript are unchanged",
+          "pass": true,
+          "got": {
+            "before": {
+              "eventChunks": 1801,
+              "audioChunks": 1765,
+              "audio": [
+                26117604
+              ],
+              "revisions": 1
+            },
+            "after": {
+              "eventChunks": 1801,
+              "audioChunks": 1765,
+              "audio": [
+                26117604
+              ],
+              "revisions": 1
+            }
+          }
+        },
+        {
+          "label": "negative control: with no key the ID changes and no recording is visible",
+          "pass": true,
+          "got": {
+            "id": "jcbdjoomofmfjpcmegllincembhbmobm",
+            "listed": 0
+          }
+        }
+      ],
+      "summary": {
+        "minutes": 30,
+        "samples": [
+          {
+            "atMin": 0,
+            "tree": {
+              "processes": 12,
+              "pssMB": 746,
+              "cpuS": 2,
+              "byType": {
+                "browser": 104,
+                "zygote": 29,
+                "gpu-process": 30,
+                "utility": 74,
+                "renderer": 140,
+                "renderer:extension": 370
+              },
+              "recorder": {
+                "sandboxMB": 206.3,
+                "partitionAllocMB": 122.9,
+                "v8MB": 6.7,
+                "fileMB": 36.4,
+                "otherMB": 1.4,
+                "largestSandboxMB": 48.6
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.2,
+                "buffersMB": 40.2
+              },
+              "vosk-worker": {
+                "usedMB": 1.6,
+                "buffersMB": 206.7
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 89.3,
+              "indexedDbMB": 50,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 0.7,
+            "tree": {
+              "processes": 12,
+              "pssMB": 682,
+              "cpuS": 14,
+              "byType": {
+                "browser": 107,
+                "zygote": 29,
+                "gpu-process": 29,
+                "utility": 74,
+                "renderer": 139,
+                "renderer:extension": 306
+              },
+              "recorder": {
+                "sandboxMB": 186.7,
+                "partitionAllocMB": 73.2,
+                "v8MB": 8.9,
+                "fileMB": 35.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 148.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.2,
+                "buffersMB": 1.3
+              },
+              "vosk-worker": {
+                "usedMB": 1.6,
+                "buffersMB": 80.5
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 90,
+              "indexedDbMB": 50.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 1.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 737,
+              "cpuS": 20,
+              "byType": {
+                "browser": 107,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 196,
+                "renderer:extension": 306
+              },
+              "recorder": {
+                "sandboxMB": 190.7,
+                "partitionAllocMB": 75,
+                "v8MB": 9.5,
+                "fileMB": 29.5,
+                "otherMB": 1.4,
+                "largestSandboxMB": 150.5
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3,
+                "buffersMB": 2.2
+              },
+              "vosk-worker": {
+                "usedMB": 1.9,
+                "buffersMB": 82.1
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 90.4,
+              "indexedDbMB": 51.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 1.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 750,
+              "cpuS": 26,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 202,
+                "renderer:extension": 312
+              },
+              "recorder": {
+                "sandboxMB": 193.2,
+                "partitionAllocMB": 77.8,
+                "v8MB": 10.2,
+                "fileMB": 29.2,
+                "otherMB": 1.4,
+                "largestSandboxMB": 152.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.2,
+                "buffersMB": 2.8
+              },
+              "vosk-worker": {
+                "usedMB": 2.2,
+                "buffersMB": 83.7
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 90.9,
+              "indexedDbMB": 51.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 2.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 761,
+              "cpuS": 34,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 209,
+                "renderer:extension": 317
+              },
+              "recorder": {
+                "sandboxMB": 196.3,
+                "partitionAllocMB": 79.4,
+                "v8MB": 11.1,
+                "fileMB": 28.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 155.1
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.7,
+                "buffersMB": 1.9
+              },
+              "vosk-worker": {
+                "usedMB": 2,
+                "buffersMB": 86.1
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 91.5,
+              "indexedDbMB": 52.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 2.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 766,
+              "cpuS": 38,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 208,
+                "renderer:extension": 325
+              },
+              "recorder": {
+                "sandboxMB": 200.5,
+                "partitionAllocMB": 82.1,
+                "v8MB": 11.5,
+                "fileMB": 29.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 157.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.8,
+                "buffersMB": 1.9
+              },
+              "vosk-worker": {
+                "usedMB": 2.2,
+                "buffersMB": 87.7
+              },
+              "worklet": {
+                "usedMB": 1.1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 92,
+              "indexedDbMB": 52.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 3.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 778,
+              "cpuS": 44,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 210,
+                "renderer:extension": 330
+              },
+              "recorder": {
+                "sandboxMB": 202.2,
+                "partitionAllocMB": 85.5,
+                "v8MB": 11.8,
+                "fileMB": 28.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 160.1
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.5,
+                "buffersMB": 2.8
+              },
+              "vosk-worker": {
+                "usedMB": 2.4,
+                "buffersMB": 89.3
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 92.4,
+              "indexedDbMB": 53.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 3.5,
+            "tree": {
+              "processes": 14,
+              "pssMB": 775,
+              "cpuS": 50,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 205,
+                "renderer:extension": 335
+              },
+              "recorder": {
+                "sandboxMB": 204.2,
+                "partitionAllocMB": 88.3,
+                "v8MB": 12.1,
+                "fileMB": 28.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 162.2
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4,
+                "buffersMB": 3.5
+              },
+              "vosk-worker": {
+                "usedMB": 2.9,
+                "buffersMB": 91
+              },
+              "worklet": {
+                "usedMB": 0.5,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 92.9,
+              "indexedDbMB": 53.6,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 4.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 771,
+              "cpuS": 55,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 30,
+                "utility": 71,
+                "renderer": 208,
+                "renderer:extension": 325
+              },
+              "recorder": {
+                "sandboxMB": 207.4,
+                "partitionAllocMB": 75.2,
+                "v8MB": 11.4,
+                "fileMB": 29,
+                "otherMB": 1.4,
+                "largestSandboxMB": 164.8
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.1,
+                "buffersMB": 1.9
+              },
+              "vosk-worker": {
+                "usedMB": 2.2,
+                "buffersMB": 81.6
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 93.6,
+              "indexedDbMB": 54.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 4.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 778,
+              "cpuS": 60,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 211,
+                "renderer:extension": 329
+              },
+              "recorder": {
+                "sandboxMB": 209.4,
+                "partitionAllocMB": 77.5,
+                "v8MB": 11.7,
+                "fileMB": 28.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 166.5
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.3,
+                "buffersMB": 2.5
+              },
+              "vosk-worker": {
+                "usedMB": 1.7,
+                "buffersMB": 83.2
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 94,
+              "indexedDbMB": 54.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 5.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 776,
+              "cpuS": 66,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 206,
+                "renderer:extension": 334
+              },
+              "recorder": {
+                "sandboxMB": 211,
+                "partitionAllocMB": 81.1,
+                "v8MB": 12.1,
+                "fileMB": 28.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 168.2
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.4,
+                "buffersMB": 3.6
+              },
+              "vosk-worker": {
+                "usedMB": 2.1,
+                "buffersMB": 84.9
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 94.5,
+              "indexedDbMB": 55.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 5.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 787,
+              "cpuS": 71,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 213,
+                "renderer:extension": 338
+              },
+              "recorder": {
+                "sandboxMB": 213.5,
+                "partitionAllocMB": 82.1,
+                "v8MB": 12.3,
+                "fileMB": 28.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 170.8
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.3,
+                "buffersMB": 2.4
+              },
+              "vosk-worker": {
+                "usedMB": 2.4,
+                "buffersMB": 87.2
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 95.2,
+              "indexedDbMB": 55.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 6.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 798,
+              "cpuS": 77,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 215,
+                "renderer:extension": 344
+              },
+              "recorder": {
+                "sandboxMB": 216.2,
+                "partitionAllocMB": 85.1,
+                "v8MB": 12.8,
+                "fileMB": 28.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 172.4
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.9,
+                "buffersMB": 3.2
+              },
+              "vosk-worker": {
+                "usedMB": 2.8,
+                "buffersMB": 88.9
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 95.6,
+              "indexedDbMB": 56.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 6.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 797,
+              "cpuS": 82,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 208,
+                "renderer:extension": 349
+              },
+              "recorder": {
+                "sandboxMB": 217.8,
+                "partitionAllocMB": 88.2,
+                "v8MB": 13,
+                "fileMB": 28.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 174.1
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.3,
+                "buffersMB": 3.5
+              },
+              "vosk-worker": {
+                "usedMB": 2.4,
+                "buffersMB": 90.5
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 96.1,
+              "indexedDbMB": 56.8,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 7.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 792,
+              "cpuS": 85,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 204,
+                "renderer:extension": 351
+              },
+              "recorder": {
+                "sandboxMB": 219.9,
+                "partitionAllocMB": 87.9,
+                "v8MB": 13.1,
+                "fileMB": 28.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 175.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.5,
+                "buffersMB": 2.4
+              },
+              "vosk-worker": {
+                "usedMB": 2.7,
+                "buffersMB": 92.1
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 96.6,
+              "indexedDbMB": 57.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 7.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 815,
+              "cpuS": 93,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 220,
+                "renderer:extension": 358
+              },
+              "recorder": {
+                "sandboxMB": 222.5,
+                "partitionAllocMB": 92.3,
+                "v8MB": 13.5,
+                "fileMB": 28.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 178.1
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.4,
+                "buffersMB": 2.7
+              },
+              "vosk-worker": {
+                "usedMB": 3.1,
+                "buffersMB": 94.5
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 97.3,
+              "indexedDbMB": 57.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 8.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 813,
+              "cpuS": 101,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 210,
+                "renderer:extension": 365
+              },
+              "recorder": {
+                "sandboxMB": 225,
+                "partitionAllocMB": 95.8,
+                "v8MB": 13.7,
+                "fileMB": 28.5,
+                "otherMB": 1.4,
+                "largestSandboxMB": 179.8
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.9,
+                "buffersMB": 3.4
+              },
+              "vosk-worker": {
+                "usedMB": 2.7,
+                "buffersMB": 96.2
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 97.7,
+              "indexedDbMB": 58.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 8.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 808,
+              "cpuS": 104,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 205,
+                "renderer:extension": 366
+              },
+              "recorder": {
+                "sandboxMB": 226.2,
+                "partitionAllocMB": 95.7,
+                "v8MB": 13.5,
+                "fileMB": 28.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 181.5
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.6,
+                "buffersMB": 1.4
+              },
+              "vosk-worker": {
+                "usedMB": 3.1,
+                "buffersMB": 97.8
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 98.2,
+              "indexedDbMB": 58.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 9,
+            "tree": {
+              "processes": 14,
+              "pssMB": 822,
+              "cpuS": 110,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 214,
+                "renderer:extension": 371
+              },
+              "recorder": {
+                "sandboxMB": 228.6,
+                "partitionAllocMB": 98.7,
+                "v8MB": 13.7,
+                "fileMB": 28.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 183.4
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.4,
+                "buffersMB": 2.4
+              },
+              "vosk-worker": {
+                "usedMB": 3.2,
+                "buffersMB": 99.4
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 98.6,
+              "indexedDbMB": 59.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 9.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 826,
+              "cpuS": 118,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 209,
+                "renderer:extension": 379
+              },
+              "recorder": {
+                "sandboxMB": 231.5,
+                "partitionAllocMB": 103.2,
+                "v8MB": 14.1,
+                "fileMB": 28.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 185.5
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.2,
+                "buffersMB": 3.5
+              },
+              "vosk-worker": {
+                "usedMB": 3.1,
+                "buffersMB": 101.8
+              },
+              "worklet": {
+                "usedMB": 1.1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 99.3,
+              "indexedDbMB": 60,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 10.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 824,
+              "cpuS": 121,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 208,
+                "renderer:extension": 381
+              },
+              "recorder": {
+                "sandboxMB": 233.6,
+                "partitionAllocMB": 102.6,
+                "v8MB": 14.1,
+                "fileMB": 29.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.1
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3,
+                "buffersMB": 2.3
+              },
+              "vosk-worker": {
+                "usedMB": 3.7,
+                "buffersMB": 103.5
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 99.8,
+              "indexedDbMB": 60.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 10.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 806,
+              "cpuS": 126,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 218,
+                "renderer:extension": 351
+              },
+              "recorder": {
+                "sandboxMB": 230.1,
+                "partitionAllocMB": 77.2,
+                "v8MB": 12.9,
+                "fileMB": 29,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.2
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.9,
+                "buffersMB": 3.2
+              },
+              "vosk-worker": {
+                "usedMB": 1.8,
+                "buffersMB": 80.7
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 100.2,
+              "indexedDbMB": 60.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 11,
+            "tree": {
+              "processes": 14,
+              "pssMB": 810,
+              "cpuS": 132,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 218,
+                "renderer:extension": 353
+              },
+              "recorder": {
+                "sandboxMB": 229.6,
+                "partitionAllocMB": 79.8,
+                "v8MB": 13,
+                "fileMB": 28.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.2
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.8,
+                "buffersMB": 3
+              },
+              "vosk-worker": {
+                "usedMB": 2,
+                "buffersMB": 82.3
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 100.7,
+              "indexedDbMB": 61.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 11.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 801,
+              "cpuS": 140,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 210,
+                "renderer:extension": 353
+              },
+              "recorder": {
+                "sandboxMB": 228.8,
+                "partitionAllocMB": 80.6,
+                "v8MB": 13.2,
+                "fileMB": 29.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.1,
+                "buffersMB": 2.5
+              },
+              "vosk-worker": {
+                "usedMB": 1.8,
+                "buffersMB": 84.8
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 101.4,
+              "indexedDbMB": 62.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 12.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 815,
+              "cpuS": 147,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 220,
+                "renderer:extension": 356
+              },
+              "recorder": {
+                "sandboxMB": 230,
+                "partitionAllocMB": 83.3,
+                "v8MB": 13.3,
+                "fileMB": 28.3,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.3,
+                "buffersMB": 2.2
+              },
+              "vosk-worker": {
+                "usedMB": 2,
+                "buffersMB": 86.4
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 101.8,
+              "indexedDbMB": 62.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 12.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 790,
+              "cpuS": 155,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 210,
+                "renderer:extension": 342
+              },
+              "recorder": {
+                "sandboxMB": 225.9,
+                "partitionAllocMB": 76.9,
+                "v8MB": 9.4,
+                "fileMB": 28.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.8,
+                "buffersMB": 1.9
+              },
+              "vosk-worker": {
+                "usedMB": 1.7,
+                "buffersMB": 81.7
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 102.3,
+              "indexedDbMB": 63,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 13.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 798,
+              "cpuS": 163,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 215,
+                "renderer:extension": 346
+              },
+              "recorder": {
+                "sandboxMB": 226.6,
+                "partitionAllocMB": 79.4,
+                "v8MB": 10.1,
+                "fileMB": 28.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.6,
+                "buffersMB": 3.3
+              },
+              "vosk-worker": {
+                "usedMB": 2.1,
+                "buffersMB": 83.3
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 102.8,
+              "indexedDbMB": 63.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 13.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 809,
+              "cpuS": 171,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 220,
+                "renderer:extension": 350
+              },
+              "recorder": {
+                "sandboxMB": 228.2,
+                "partitionAllocMB": 80.8,
+                "v8MB": 11.1,
+                "fileMB": 28.3,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.6,
+                "buffersMB": 1.1
+              },
+              "vosk-worker": {
+                "usedMB": 2.5,
+                "buffersMB": 85.7
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 103.5,
+              "indexedDbMB": 64.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 14.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 811,
+              "cpuS": 178,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 218,
+                "renderer:extension": 353
+              },
+              "recorder": {
+                "sandboxMB": 228.3,
+                "partitionAllocMB": 83.6,
+                "v8MB": 11.4,
+                "fileMB": 28.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.1,
+                "buffersMB": 2
+              },
+              "vosk-worker": {
+                "usedMB": 2.7,
+                "buffersMB": 87.3
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 103.9,
+              "indexedDbMB": 64.6,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 14.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 805,
+              "cpuS": 186,
+              "byType": {
+                "browser": 106,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 215,
+                "renderer:extension": 357
+              },
+              "recorder": {
+                "sandboxMB": 229.9,
+                "partitionAllocMB": 85.7,
+                "v8MB": 11.8,
+                "fileMB": 28.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.8,
+                "buffersMB": 3.4
+              },
+              "vosk-worker": {
+                "usedMB": 2.4,
+                "buffersMB": 89
+              },
+              "worklet": {
+                "usedMB": 0.5,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 102.2,
+              "indexedDbMB": 62.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 15,
+            "tree": {
+              "processes": 14,
+              "pssMB": 824,
+              "cpuS": 190,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 228,
+                "renderer:extension": 361
+              },
+              "recorder": {
+                "sandboxMB": 230.2,
+                "partitionAllocMB": 89.3,
+                "v8MB": 12,
+                "fileMB": 28.3,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.4,
+                "buffersMB": 3.7
+              },
+              "vosk-worker": {
+                "usedMB": 2.6,
+                "buffersMB": 90.6
+              },
+              "worklet": {
+                "usedMB": 0.5,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 102.6,
+              "indexedDbMB": 63.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 15.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 816,
+              "cpuS": 201,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 220,
+                "renderer:extension": 362
+              },
+              "recorder": {
+                "sandboxMB": 230.1,
+                "partitionAllocMB": 90.1,
+                "v8MB": 12.2,
+                "fileMB": 28.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.5,
+                "buffersMB": 2.6
+              },
+              "vosk-worker": {
+                "usedMB": 3.1,
+                "buffersMB": 93
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 103.3,
+              "indexedDbMB": 64,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 16.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 818,
+              "cpuS": 208,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 217,
+                "renderer:extension": 366
+              },
+              "recorder": {
+                "sandboxMB": 230.2,
+                "partitionAllocMB": 93.5,
+                "v8MB": 12.5,
+                "fileMB": 28.1,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.7,
+                "buffersMB": 2.7
+              },
+              "vosk-worker": {
+                "usedMB": 2.7,
+                "buffersMB": 94.7
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 103.8,
+              "indexedDbMB": 64.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 16.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 835,
+              "cpuS": 211,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 30,
+                "utility": 71,
+                "renderer": 229,
+                "renderer:extension": 370
+              },
+              "recorder": {
+                "sandboxMB": 231.3,
+                "partitionAllocMB": 96,
+                "v8MB": 12.8,
+                "fileMB": 28.3,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.3,
+                "buffersMB": 3.5
+              },
+              "vosk-worker": {
+                "usedMB": 2.9,
+                "buffersMB": 96.3
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 104.2,
+              "indexedDbMB": 64.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 17,
+            "tree": {
+              "processes": 14,
+              "pssMB": 835,
+              "cpuS": 220,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 229,
+                "renderer:extension": 370
+              },
+              "recorder": {
+                "sandboxMB": 231.7,
+                "partitionAllocMB": 96.1,
+                "v8MB": 13,
+                "fileMB": 27.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.5,
+                "buffersMB": 2.3
+              },
+              "vosk-worker": {
+                "usedMB": 3.4,
+                "buffersMB": 97.9
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 104.7,
+              "indexedDbMB": 65.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 17.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 830,
+              "cpuS": 230,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 218,
+                "renderer:extension": 376
+              },
+              "recorder": {
+                "sandboxMB": 233,
+                "partitionAllocMB": 100.4,
+                "v8MB": 13.4,
+                "fileMB": 27.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.3,
+                "buffersMB": 3.7
+              },
+              "vosk-worker": {
+                "usedMB": 3.1,
+                "buffersMB": 100.4
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 105.4,
+              "indexedDbMB": 66.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 18.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 845,
+              "cpuS": 233,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 232,
+                "renderer:extension": 379
+              },
+              "recorder": {
+                "sandboxMB": 232.3,
+                "partitionAllocMB": 103.9,
+                "v8MB": 13.6,
+                "fileMB": 27.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.3
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.9,
+                "buffersMB": 4.2
+              },
+              "vosk-worker": {
+                "usedMB": 3.3,
+                "buffersMB": 102
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 105.8,
+              "indexedDbMB": 66.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 18.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 848,
+              "cpuS": 241,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 233,
+                "renderer:extension": 379
+              },
+              "recorder": {
+                "sandboxMB": 232.8,
+                "partitionAllocMB": 103.7,
+                "v8MB": 13.7,
+                "fileMB": 27.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.4
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.4,
+                "buffersMB": 2
+              },
+              "vosk-worker": {
+                "usedMB": 3.7,
+                "buffersMB": 103.6
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 106.3,
+              "indexedDbMB": 67,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 19,
+            "tree": {
+              "processes": 14,
+              "pssMB": 805,
+              "cpuS": 249,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 217,
+                "renderer:extension": 354
+              },
+              "recorder": {
+                "sandboxMB": 232.7,
+                "partitionAllocMB": 78.1,
+                "v8MB": 13.9,
+                "fileMB": 27.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.4
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.7,
+                "buffersMB": 2.3
+              },
+              "vosk-worker": {
+                "usedMB": 1.8,
+                "buffersMB": 80.7
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 106.8,
+              "indexedDbMB": 67.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 19.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 825,
+              "cpuS": 254,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 236,
+                "renderer:extension": 355
+              },
+              "recorder": {
+                "sandboxMB": 232.6,
+                "partitionAllocMB": 79,
+                "v8MB": 14,
+                "fileMB": 27.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.4
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3,
+                "buffersMB": 1.4
+              },
+              "vosk-worker": {
+                "usedMB": 2.1,
+                "buffersMB": 83.1
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 107.4,
+              "indexedDbMB": 68.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 20.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 830,
+              "cpuS": 262,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 235,
+                "renderer:extension": 359
+              },
+              "recorder": {
+                "sandboxMB": 233.3,
+                "partitionAllocMB": 81.9,
+                "v8MB": 14.1,
+                "fileMB": 27.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.4
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.3,
+                "buffersMB": 1.8
+              },
+              "vosk-worker": {
+                "usedMB": 1.8,
+                "buffersMB": 84.8
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 107.9,
+              "indexedDbMB": 68.6,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 20.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 814,
+              "cpuS": 269,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 218,
+                "renderer:extension": 360
+              },
+              "recorder": {
+                "sandboxMB": 232.7,
+                "partitionAllocMB": 84,
+                "v8MB": 14.3,
+                "fileMB": 27.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.6
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.1,
+                "buffersMB": 2.7
+              },
+              "vosk-worker": {
+                "usedMB": 2.2,
+                "buffersMB": 86.4
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 108.4,
+              "indexedDbMB": 69.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 21,
+            "tree": {
+              "processes": 14,
+              "pssMB": 816,
+              "cpuS": 273,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 219,
+                "renderer:extension": 362
+              },
+              "recorder": {
+                "sandboxMB": 233.2,
+                "partitionAllocMB": 85,
+                "v8MB": 14.4,
+                "fileMB": 27.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.6
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.8,
+                "buffersMB": 1.1
+              },
+              "vosk-worker": {
+                "usedMB": 2.3,
+                "buffersMB": 88
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 108.8,
+              "indexedDbMB": 69.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 21.5,
+            "tree": {
+              "processes": 14,
+              "pssMB": 805,
+              "cpuS": 279,
+              "byType": {
+                "browser": 109,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 226,
+                "renderer:extension": 344
+              },
+              "recorder": {
+                "sandboxMB": 227.1,
+                "partitionAllocMB": 77.8,
+                "v8MB": 9.6,
+                "fileMB": 27.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.6
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.1,
+                "buffersMB": 2
+              },
+              "vosk-worker": {
+                "usedMB": 1.7,
+                "buffersMB": 81.7
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 109.3,
+              "indexedDbMB": 70,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 22.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 805,
+              "cpuS": 290,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 219,
+                "renderer:extension": 349
+              },
+              "recorder": {
+                "sandboxMB": 228.3,
+                "partitionAllocMB": 81.4,
+                "v8MB": 10.5,
+                "fileMB": 27.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.6
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4,
+                "buffersMB": 3.1
+              },
+              "vosk-worker": {
+                "usedMB": 2.2,
+                "buffersMB": 84.1
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 110,
+              "indexedDbMB": 70.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 22.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 809,
+              "cpuS": 294,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 219,
+                "renderer:extension": 352
+              },
+              "recorder": {
+                "sandboxMB": 229.9,
+                "partitionAllocMB": 81.4,
+                "v8MB": 11.1,
+                "fileMB": 27.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.6
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3,
+                "buffersMB": 2
+              },
+              "vosk-worker": {
+                "usedMB": 2.3,
+                "buffersMB": 85.7
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 110.5,
+              "indexedDbMB": 71.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 23.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 826,
+              "cpuS": 301,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 235,
+                "renderer:extension": 354
+              },
+              "recorder": {
+                "sandboxMB": 229.5,
+                "partitionAllocMB": 84,
+                "v8MB": 11.2,
+                "fileMB": 27.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.1,
+                "buffersMB": 1.9
+              },
+              "vosk-worker": {
+                "usedMB": 2.5,
+                "buffersMB": 87.3
+              },
+              "worklet": {
+                "usedMB": 0.4,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 110.9,
+              "indexedDbMB": 71.6,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 23.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 820,
+              "cpuS": 312,
+              "byType": {
+                "browser": 113,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 221,
+                "renderer:extension": 359
+              },
+              "recorder": {
+                "sandboxMB": 229.9,
+                "partitionAllocMB": 88.4,
+                "v8MB": 11.7,
+                "fileMB": 27.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.9,
+                "buffersMB": 3.1
+              },
+              "vosk-worker": {
+                "usedMB": 2.2,
+                "buffersMB": 89.8
+              },
+              "worklet": {
+                "usedMB": 0.5,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 111.6,
+              "indexedDbMB": 72.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 24.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 821,
+              "cpuS": 317,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 222,
+                "renderer:extension": 360
+              },
+              "recorder": {
+                "sandboxMB": 230.4,
+                "partitionAllocMB": 88.3,
+                "v8MB": 12,
+                "fileMB": 27.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.6,
+                "buffersMB": 1.1
+              },
+              "vosk-worker": {
+                "usedMB": 2.3,
+                "buffersMB": 91.3
+              },
+              "worklet": {
+                "usedMB": 0.5,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 112.1,
+              "indexedDbMB": 72.8,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 24.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 839,
+              "cpuS": 324,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 72,
+                "renderer": 236,
+                "renderer:extension": 365
+              },
+              "recorder": {
+                "sandboxMB": 231.6,
+                "partitionAllocMB": 91.6,
+                "v8MB": 12.2,
+                "fileMB": 27.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.3,
+                "buffersMB": 1.9
+              },
+              "vosk-worker": {
+                "usedMB": 2.5,
+                "buffersMB": 92.9
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 112.5,
+              "indexedDbMB": 73.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 25,
+            "tree": {
+              "processes": 14,
+              "pssMB": 836,
+              "cpuS": 332,
+              "byType": {
+                "browser": 113,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 229,
+                "renderer:extension": 368
+              },
+              "recorder": {
+                "sandboxMB": 231.5,
+                "partitionAllocMB": 94.6,
+                "v8MB": 12.6,
+                "fileMB": 27.6,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.9,
+                "buffersMB": 2.7
+              },
+              "vosk-worker": {
+                "usedMB": 2.7,
+                "buffersMB": 94.5
+              },
+              "worklet": {
+                "usedMB": 0.6,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 113,
+              "indexedDbMB": 73.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 25.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 831,
+              "cpuS": 339,
+              "byType": {
+                "browser": 112,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 224,
+                "renderer:extension": 370
+              },
+              "recorder": {
+                "sandboxMB": 231.8,
+                "partitionAllocMB": 95.5,
+                "v8MB": 12.8,
+                "fileMB": 27.9,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.9,
+                "buffersMB": 1.3
+              },
+              "vosk-worker": {
+                "usedMB": 3.1,
+                "buffersMB": 97
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 113.7,
+              "indexedDbMB": 74.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 26.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 849,
+              "cpuS": 345,
+              "byType": {
+                "browser": 113,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 238,
+                "renderer:extension": 372
+              },
+              "recorder": {
+                "sandboxMB": 231.7,
+                "partitionAllocMB": 98,
+                "v8MB": 13,
+                "fileMB": 27.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.6,
+                "buffersMB": 2.3
+              },
+              "vosk-worker": {
+                "usedMB": 3.3,
+                "buffersMB": 98.6
+              },
+              "worklet": {
+                "usedMB": 0.7,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 114.1,
+              "indexedDbMB": 74.8,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 26.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 843,
+              "cpuS": 352,
+              "byType": {
+                "browser": 114,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 228,
+                "renderer:extension": 375
+              },
+              "recorder": {
+                "sandboxMB": 231.8,
+                "partitionAllocMB": 100.6,
+                "v8MB": 13.3,
+                "fileMB": 27.5,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.6,
+                "buffersMB": 2.6
+              },
+              "vosk-worker": {
+                "usedMB": 3.5,
+                "buffersMB": 100.2
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 114.6,
+              "indexedDbMB": 75.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 27.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 838,
+              "cpuS": 360,
+              "byType": {
+                "browser": 111,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 223,
+                "renderer:extension": 378
+              },
+              "recorder": {
+                "sandboxMB": 232.4,
+                "partitionAllocMB": 102.6,
+                "v8MB": 13.6,
+                "fileMB": 27.8,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.6,
+                "buffersMB": 0.9
+              },
+              "vosk-worker": {
+                "usedMB": 3.3,
+                "buffersMB": 102.6
+              },
+              "worklet": {
+                "usedMB": 0.8,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 115.3,
+              "indexedDbMB": 76,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 27.7,
+            "tree": {
+              "processes": 14,
+              "pssMB": 862,
+              "cpuS": 367,
+              "byType": {
+                "browser": 113,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 239,
+                "renderer:extension": 383
+              },
+              "recorder": {
+                "sandboxMB": 234.5,
+                "partitionAllocMB": 105.5,
+                "v8MB": 13.9,
+                "fileMB": 27.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.2,
+                "buffersMB": 1.7
+              },
+              "vosk-worker": {
+                "usedMB": 3.5,
+                "buffersMB": 104.2
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 115.7,
+              "indexedDbMB": 76.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 28.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 825,
+              "cpuS": 374,
+              "byType": {
+                "browser": 114,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 229,
+                "renderer:extension": 355
+              },
+              "recorder": {
+                "sandboxMB": 232.4,
+                "partitionAllocMB": 79.5,
+                "v8MB": 13.9,
+                "fileMB": 27.5,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.8,
+                "buffersMB": 2.7
+              },
+              "vosk-worker": {
+                "usedMB": 1.7,
+                "buffersMB": 81.3
+              },
+              "worklet": {
+                "usedMB": 0.9,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 116.2,
+              "indexedDbMB": 76.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 28.5,
+            "tree": {
+              "processes": 14,
+              "pssMB": 825,
+              "cpuS": 381,
+              "byType": {
+                "browser": 115,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 226,
+                "renderer:extension": 358
+              },
+              "recorder": {
+                "sandboxMB": 232.4,
+                "partitionAllocMB": 82.5,
+                "v8MB": 14,
+                "fileMB": 27.5,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 4.6,
+                "buffersMB": 3.9
+              },
+              "vosk-worker": {
+                "usedMB": 2.1,
+                "buffersMB": 82.9
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 116.6,
+              "indexedDbMB": 77.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 29.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 836,
+              "cpuS": 390,
+              "byType": {
+                "browser": 108,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 241,
+                "renderer:extension": 360
+              },
+              "recorder": {
+                "sandboxMB": 233.4,
+                "partitionAllocMB": 83.1,
+                "v8MB": 14,
+                "fileMB": 27.7,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.6,
+                "buffersMB": 2.2
+              },
+              "vosk-worker": {
+                "usedMB": 2.3,
+                "buffersMB": 85.3
+              },
+              "worklet": {
+                "usedMB": 1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 115,
+              "indexedDbMB": 75.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 29.6,
+            "tree": {
+              "processes": 14,
+              "pssMB": 828,
+              "cpuS": 397,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 72,
+                "renderer": 229,
+                "renderer:extension": 362
+              },
+              "recorder": {
+                "sandboxMB": 233.2,
+                "partitionAllocMB": 85.6,
+                "v8MB": 14.1,
+                "fileMB": 27.5,
+                "otherMB": 1.4,
+                "largestSandboxMB": 187.7
+              }
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 3.7,
+                "buffersMB": 2.5
+              },
+              "vosk-worker": {
+                "usedMB": 2.5,
+                "buffersMB": 86.9
+              },
+              "worklet": {
+                "usedMB": 1.1,
+                "buffersMB": 0
+              }
+            },
+            "storage": {
+              "usageMB": 114.8,
+              "indexedDbMB": 75.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": "after-stop",
+            "tree": {
+              "processes": 14,
+              "pssMB": 511,
+              "cpuS": 403,
+              "byType": {
+                "browser": 106,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 67,
+                "renderer": 218,
+                "renderer:extension": 64
+              },
+              "recorder": {
+                "sandboxMB": 8.9,
+                "partitionAllocMB": 22.7,
+                "v8MB": 3,
+                "fileMB": 28,
+                "otherMB": 1.4,
+                "largestSandboxMB": 5.6
+              }
+            },
+            "heaps": {},
+            "storage": {
+              "usageMB": 115.3,
+              "indexedDbMB": 76,
+              "cachesMB": 39.3
+            }
+          }
+        ],
+        "live": [
+          {
+            "atMin": 12.1,
+            "collected": [
+              "offscreen",
+              "service-worker",
+              "vosk-worker",
+              "worklet"
+            ],
+            "beforeMB": 328,
+            "liveMB": 307.3,
+            "recorder": {
+              "sandboxMB": 223.9,
+              "partitionAllocMB": 73.1,
+              "v8MB": 8.9,
+              "fileMB": 28.2,
+              "otherMB": 1.4,
+              "largestSandboxMB": 187.3
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.3,
+                "buffersMB": 1.6
+              },
+              "vosk-worker": {
+                "usedMB": 1.6,
+                "buffersMB": 80.1
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            }
+          },
+          {
+            "atMin": 21,
+            "collected": [
+              "offscreen",
+              "service-worker",
+              "vosk-worker",
+              "worklet"
+            ],
+            "beforeMB": 334,
+            "liveMB": 308.3,
+            "recorder": {
+              "sandboxMB": 224.2,
+              "partitionAllocMB": 73.7,
+              "v8MB": 9,
+              "fileMB": 27.9,
+              "otherMB": 1.4,
+              "largestSandboxMB": 187.6
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.5,
+                "buffersMB": 1.7
+              },
+              "vosk-worker": {
+                "usedMB": 1.6,
+                "buffersMB": 80.1
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            }
+          },
+          {
+            "atMin": 29.8,
+            "collected": [
+              "offscreen",
+              "service-worker",
+              "vosk-worker",
+              "worklet"
+            ],
+            "beforeMB": 335.2,
+            "liveMB": 309,
+            "recorder": {
+              "sandboxMB": 224.6,
+              "partitionAllocMB": 74.1,
+              "v8MB": 8.9,
+              "fileMB": 27.5,
+              "otherMB": 1.4,
+              "largestSandboxMB": 187.7
+            },
+            "heaps": {
+              "offscreen": {
+                "usedMB": 2.6,
+                "buffersMB": 1.6
+              },
+              "vosk-worker": {
+                "usedMB": 1.5,
+                "buffersMB": 80.1
+              },
+              "worklet": {
+                "usedMB": 0.3,
+                "buffersMB": 0
+              }
+            }
+          }
+        ],
+        "saveLatencyMs": {
+          "n": 136,
+          "p50": 512,
+          "p95": 637,
+          "max": 1039
+        },
+        "transcriptLatencyMs": {
+          "n": 285,
+          "p50": 1447,
+          "p95": 1955,
+          "max": 2175
+        },
+        "stopMs": 81,
+        "memory": {
+          "live": {
+            "readings": 3,
+            "collectedEveryHeap": 3,
+            "atMin": [
+              12.1,
+              21,
+              29.8
+            ],
+            "liveMB": [
+              307.3,
+              308.3,
+              309
+            ],
+            "riseMB": 1.7,
+            "freedMB": [
+              20.7,
+              25.7,
+              26.2
+            ],
+            "mostFreedMB": 26.2
+          },
+          "own": {
+            "points": 58,
+            "fromMin": 1,
+            "firstMB": 276.6,
+            "lastMB": 334.3,
+            "minMB": 276.6,
+            "maxMB": 355.3,
+            "rangeMB": 78.7,
+            "mbPerMin": 1.37
+          },
+          "voskMemory": {
+            "points": 40,
+            "fromMin": 10,
+            "firstMB": 187.1,
+            "lastMB": 187.7,
+            "minMB": 187.1,
+            "maxMB": 187.7,
+            "rangeMB": 0.6,
+            "mbPerMin": 0.03
+          },
+          "voskMemoryFill": {
+            "points": 18,
+            "fromMin": 1,
+            "toMin": 10,
+            "firstMB": 150.5,
+            "lastMB": 185.5,
+            "minMB": 150.5,
+            "maxMB": 185.5,
+            "rangeMB": 35,
+            "mbPerMin": 4.06
+          },
+          "partitionAlloc": {
+            "points": 58,
+            "fromMin": 1,
+            "firstMB": 75,
+            "lastMB": 85.6,
+            "minMB": 75,
+            "maxMB": 105.5,
+            "rangeMB": 30.5,
+            "mbPerMin": 0.28
+          },
+          "voskBuffers": {
+            "points": 58,
+            "fromMin": 1,
+            "firstMB": 82.1,
+            "lastMB": 86.9,
+            "minMB": 80.7,
+            "maxMB": 104.2,
+            "rangeMB": 23.5,
+            "mbPerMin": 0.14
+          }
+        },
+        "reopenMs": 2998,
+        "audio": {
+          "segment": 0,
+          "chunks": 1765,
+          "bytes": 26117604,
+          "spanMs": 1800001,
+          "decodedMs": 1800000,
+          "driftPpm": -1
+        },
+        "transcript": {
+          "states": [
+            "connecting",
+            "live"
+          ],
+          "finals": 285,
+          "revisionWords": 4003,
+          "knownWords": 3707,
+          "gaps": []
+        },
+        "clock": {
+          "bytes": {
+            "events": 2322935,
+            "audio": 26117604
+          },
+          "minutes": [
+            {
+              "minute": 0,
+              "events": 58,
+              "p50": 0.2,
+              "p95": 22.7,
+              "max": 34.9
+            },
+            {
+              "minute": 1,
+              "events": 92,
+              "p50": 0.1,
+              "p95": 2.8,
+              "max": 5
+            },
+            {
+              "minute": 2,
+              "events": 72,
+              "p50": 0.1,
+              "p95": 2.5,
+              "max": 4.2
+            },
+            {
+              "minute": 3,
+              "events": 60,
+              "p50": 0.1,
+              "p95": 0.5,
+              "max": 0.6
+            },
+            {
+              "minute": 4,
+              "events": 81,
+              "p50": 0.2,
+              "p95": 2.8,
+              "max": 3.6
+            },
+            {
+              "minute": 5,
+              "events": 81,
+              "p50": 0.1,
+              "p95": 2.1,
+              "max": 3.6
+            },
+            {
+              "minute": 6,
+              "events": 50,
+              "p50": 0.2,
+              "p95": 0.8,
+              "max": 1
+            },
+            {
+              "minute": 7,
+              "events": 89,
+              "p50": 0.2,
+              "p95": 3.2,
+              "max": 4
+            },
+            {
+              "minute": 8,
+              "events": 51,
+              "p50": 0.1,
+              "p95": 0.8,
+              "max": 1.6
+            },
+            {
+              "minute": 9,
+              "events": 82,
+              "p50": 0.1,
+              "p95": 3.2,
+              "max": 3.8
+            },
+            {
+              "minute": 10,
+              "events": 73,
+              "p50": 0.1,
+              "p95": 2.4,
+              "max": 4.3
+            },
+            {
+              "minute": 11,
+              "events": 65,
+              "p50": 0.2,
+              "p95": 0.9,
+              "max": 1.7
+            },
+            {
+              "minute": 12,
+              "events": 72,
+              "p50": 0.3,
+              "p95": 4.5,
+              "max": 12.8
+            },
+            {
+              "minute": 13,
+              "events": 85,
+              "p50": 0.2,
+              "p95": 2.9,
+              "max": 10.7
+            },
+            {
+              "minute": 14,
+              "events": 45,
+              "p50": 0.2,
+              "p95": 1.6,
+              "max": 2
+            },
+            {
+              "minute": 15,
+              "events": 92,
+              "p50": 0.2,
+              "p95": 4.2,
+              "max": 11.4
+            },
+            {
+              "minute": 16,
+              "events": 70,
+              "p50": 0.1,
+              "p95": 4.2,
+              "max": 7.7
+            },
+            {
+              "minute": 17,
+              "events": 58,
+              "p50": 0.2,
+              "p95": 3.2,
+              "max": 3.3
+            },
+            {
+              "minute": 18,
+              "events": 81,
+              "p50": 0.2,
+              "p95": 8.2,
+              "max": 15.9
+            },
+            {
+              "minute": 19,
+              "events": 81,
+              "p50": 0.1,
+              "p95": 3.3,
+              "max": 14.5
+            },
+            {
+              "minute": 20,
+              "events": 50,
+              "p50": 0.2,
+              "p95": 0.9,
+              "max": 1
+            },
+            {
+              "minute": 21,
+              "events": 91,
+              "p50": 0.2,
+              "p95": 2.3,
+              "max": 4
+            },
+            {
+              "minute": 22,
+              "events": 49,
+              "p50": 0.2,
+              "p95": 0.5,
+              "max": 0.8
+            },
+            {
+              "minute": 23,
+              "events": 82,
+              "p50": 0.2,
+              "p95": 5.8,
+              "max": 14
+            },
+            {
+              "minute": 24,
+              "events": 73,
+              "p50": 0.2,
+              "p95": 2.7,
+              "max": 10
+            },
+            {
+              "minute": 25,
+              "events": 65,
+              "p50": 0.1,
+              "p95": 4.6,
+              "max": 5.9
+            },
+            {
+              "minute": 26,
+              "events": 82,
+              "p50": 0.3,
+              "p95": 2.1,
+              "max": 4.7
+            },
+            {
+              "minute": 27,
+              "events": 73,
+              "p50": 0.2,
+              "p95": 3.7,
+              "max": 9.9
+            },
+            {
+              "minute": 28,
+              "events": 65,
+              "p50": 0.1,
+              "p95": 0.7,
+              "max": 1
+            },
+            {
+              "minute": 29,
+              "events": 72,
+              "p50": 0.2,
+              "p95": 2.3,
+              "max": 4.5
+            }
+          ]
+        },
+        "counts": {
+          "markers": 136,
+          "documents": 136,
+          "topCommits": 175,
+          "eventChunks": 1801,
+          "audioChunks": 1765,
+          "secrets": 312
+        },
+        "export": {
+          "ms": 996,
+          "bytes": 26413998,
+          "files": 147,
+          "fileName": "fixture-index-rec_aec4d10d-0564-4f41-adb8-a96b0e03d4f3.narwal.zip"
+        },
+        "bundle": {
+          "files": [
+            "manifest.json",
+            "AGENTS.md",
+            "README.md",
+            "agent/walkthrough.json",
+            "agent/walkthrough.md",
+            "audio/clock.jsonl",
+            "audio/narration.webm",
+            "documents.json",
+            "gaps.jsonl",
+            "observations.jsonl",
+            "transcript/r1.json",
+            "rrweb/ (136 files)"
+          ],
+          "observations": {
+            "route": 252,
+            "viewport": 136,
+            "input": 39,
+            "marker-element": 272,
+            "pointer-dwell": 41,
+            "click": 96
+          },
+          "agentEntries": {
+            "observation": 388,
+            "utterance": 286
+          },
+          "walkthroughMdBytes": 83576
+        },
+        "export2": {
+          "ms": 918,
+          "bytes": 26414492,
+          "files": 148
+        },
+        "bundleFile": "packages/extension/test/e2e/results/soak-2026-10-14T04-34-44-463Z.narwal.zip",
+        "machine": {
+          "cpu": "12th Gen Intel(R) Core(TM) i7-12700",
+          "cores": 20,
+          "memGB": 62
+        }
+      }
+    }
+  }
+}

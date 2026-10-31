@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Fixture hide</title><script src="/fixture.js"></script>
+<style>body { margin: 0; font: 16px sans-serif; } section { position: absolute; left: 40px; width: 440px; padding: 30px; border: 1px solid #999; } #account { top: 120px; height: 140px; } #other { top: 360px; height: 60px; } #site { position: absolute; left: 560px; top: 120px; width: 200px; height: 80px; border: 1px solid #999; } #banner { top: 480px; height: 40px; } #account p { margin: 0 0 8px; } #area-frame { display: block; width: 300px; height: 30px; margin-top: 8px; border: 0; }</style>
+</head>
+<body>
+<h1>Fixture hide</h1>
+<p id="context" style="position: absolute; left: 40px; top: 60px">VISIBLE-CONTEXT-TEXT payroll week 3</p>
+<section id="account"><p>Account HIDDEN-AREA-SECRET-5</p><button id="inside" type="button">Reveal HIDDEN-BTN-SECRET-6</button><iframe id="area-frame" title="Payment" src="/hide-frame.html"></iframe></section>
+<section id="other"><p>Other OTHER-AREA-SECRET-8</p></section>
+<aside id="site" data-narwal-exclude>Site SITE-MARKED-SECRET-10</aside>
+<iframe id="site-frame" title="Site payment" data-narwal-exclude src="/hide-frame.html?site=1" style="position: absolute; left: 560px; top: 240px; width: 300px; height: 30px; border: 0"></iframe>
+<script>
+  // ?shift=1: the page loads another section first, so the selectors of the
+  // areas picked on the plain page find other elements.
+  if (new URLSearchParams(location.search).has('shift')) {
+    const banner = document.createElement('section');
+    banner.id = 'banner';
+    banner.textContent = 'Banner SHIFTED-PAGE-TEXT';
+    document.body.insertBefore(banner, document.getElementById('account'));
+  }
+  // What the page itself sees.
+  window.pageClicks = [];
+  document.addEventListener('click', (e) => window.pageClicks.push(e.target.id || e.target.tagName));
+</script>
+</body>
+</html>

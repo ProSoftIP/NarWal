@@ -1,0 +1,85 @@
+{
+  "format": "narwal.bundle",
+  "schemaVersion": "1.0",
+  "recordingId": "rec_fixture_dashboard",
+  "title": "Dashboard review",
+  "createdAt": "2026-10-13T20:00:00.000Z",
+  "producer": {
+    "name": "narwal-fixture-builder",
+    "version": "1.0.0"
+  },
+  "environment": {
+    "browser": "Chrome",
+    "browserVersion": "155.0.7600.0",
+    "platform": "linux"
+  },
+  "clock": {
+    "originEpochMs": 1791921600000.25
+  },
+  "durationMs": 80000,
+  "state": "complete",
+  "privacy": {
+    "inputValues": "masked",
+    "excludedRegions": 1,
+    "urlPolicy": "redact-query-values",
+    "audio": "not-redacted"
+  },
+  "derivation": {
+    "pointerDwellMinMs": 300
+  },
+  "audio": null,
+  "transcript": {
+    "activeRevision": "r2"
+  },
+  "purpose": "Review of yesterday's dashboard changes; each thing I point at is a change request",
+  "files": [
+    {
+      "path": "documents.json",
+      "bytes": 1529,
+      "sha256": "b0842f5ada3c6c15cde3a83ee4f325d3c0d47e6b10dec58f3d3159fb93d29bd2",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "edits.jsonl",
+      "bytes": 732,
+      "sha256": "4caf4d9a3e2dadb3bfc20b71d0a3550d1016147563a28a288b7954835ba372a3",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "gaps.jsonl",
+      "bytes": 540,
+      "sha256": "e23545d753d5b58a339e0528d0354d27b4d880058bc6b974cd7ff8b8c2d1891a",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "observations.jsonl",
+      "bytes": 4574,
+      "sha256": "1cfb542efbff522fc0ca6d11027d167cbff6a9b4290338c9daf1cdf1f890ab95",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "rrweb/d1.jsonl",
+      "bytes": 694,
+      "sha256": "c6e5211a7ef111d35ab110e02deb63ce72f47fc8acb433fea4e2b646a70ec056",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "rrweb/d2.jsonl",
+      "bytes": 562,
+      "sha256": "a2cf2834ce72027ee55116305e2b1b313981c93b9834f41a1259a284faef9d11",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "transcript/r1.json",
+      "bytes": 4304,
+      "sha256": "bd49a6d6e84a9aab48223f58c92c646b1e05fc5414cf302d54d645cf890514bd",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "transcript/r2.json",
+      "bytes": 4415,
+      "sha256": "f08b3ef9fbfece58dc167a5332d1756d8eb965548d7d579732d41164ece04864",
+      "mediaType": "application/json"
+    }
+  ]
+}

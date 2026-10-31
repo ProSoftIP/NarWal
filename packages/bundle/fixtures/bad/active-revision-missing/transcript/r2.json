@@ -1,0 +1,214 @@
+{
+  "revisionId": "r2",
+  "source": "after-recording",
+  "provider": "openai",
+  "model": "whisper-1",
+  "language": "en",
+  "createdAt": "2026-10-13T20:04:00.000Z",
+  "timing": {
+    "quality": "approximate",
+    "method": "whisper-dtw",
+    "correctionMs": -150
+  },
+  "supersedes": "r1",
+  "segments": [
+    {
+      "id": "s1",
+      "startMs": 42100,
+      "endMs": 44800,
+      "text": "This should collapse",
+      "words": [
+        {
+          "text": "This",
+          "startMs": 42100,
+          "endMs": 43000,
+          "confidence": 0.9
+        },
+        {
+          "text": "should",
+          "startMs": 43000,
+          "endMs": 43900,
+          "confidence": 0.9
+        },
+        {
+          "text": "collapse",
+          "startMs": 43900,
+          "endMs": 44800,
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "s2",
+      "startMs": 45000,
+      "endMs": 47900,
+      "text": "and this toll is wrong",
+      "words": [
+        {
+          "text": "and",
+          "startMs": 45000,
+          "endMs": 45580,
+          "confidence": 0.9
+        },
+        {
+          "text": "this",
+          "startMs": 45580,
+          "endMs": 46160,
+          "confidence": 0.9
+        },
+        {
+          "text": "toll",
+          "startMs": 46160,
+          "endMs": 46740,
+          "confidence": 0.9
+        },
+        {
+          "text": "is",
+          "startMs": 46740,
+          "endMs": 47320,
+          "confidence": 0.9
+        },
+        {
+          "text": "wrong",
+          "startMs": 47320,
+          "endMs": 47900,
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "s3",
+      "startMs": 50000,
+      "endMs": 56000,
+      "text": "These four numbers should line up",
+      "words": [
+        {
+          "text": "These",
+          "startMs": 50000,
+          "endMs": 51000,
+          "confidence": 0.9
+        },
+        {
+          "text": "four",
+          "startMs": 51000,
+          "endMs": 52000,
+          "confidence": 0.9
+        },
+        {
+          "text": "numbers",
+          "startMs": 52000,
+          "endMs": 53000,
+          "confidence": 0.9
+        },
+        {
+          "text": "should",
+          "startMs": 53000,
+          "endMs": 54000,
+          "confidence": 0.9
+        },
+        {
+          "text": "line",
+          "startMs": 54000,
+          "endMs": 55000,
+          "confidence": 0.9
+        },
+        {
+          "text": "up",
+          "startMs": 55000,
+          "endMs": 56000,
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "s4",
+      "startMs": 61000,
+      "endMs": 64500,
+      "text": "The export button does nothing",
+      "words": [
+        {
+          "text": "The",
+          "startMs": 61000,
+          "endMs": 61700,
+          "confidence": 0.9
+        },
+        {
+          "text": "export",
+          "startMs": 61700,
+          "endMs": 62400,
+          "confidence": 0.9
+        },
+        {
+          "text": "button",
+          "startMs": 62400,
+          "endMs": 63100,
+          "confidence": 0.9
+        },
+        {
+          "text": "does",
+          "startMs": 63100,
+          "endMs": 63800,
+          "confidence": 0.9
+        },
+        {
+          "text": "nothing",
+          "startMs": 63800,
+          "endMs": 64500,
+          "confidence": 0.9
+        }
+      ]
+    },
+    {
+      "id": "s5",
+      "startMs": 66000,
+      "endMs": 69000,
+      "text": "This table needs a total row",
+      "words": [
+        {
+          "text": "This",
+          "startMs": 66000,
+          "endMs": 66500,
+          "confidence": 0.9
+        },
+        {
+          "text": "table",
+          "startMs": 66500,
+          "endMs": 67000,
+          "confidence": 0.9
+        },
+        {
+          "text": "needs",
+          "startMs": 67000,
+          "endMs": 67500,
+          "confidence": 0.9
+        },
+        {
+          "text": "a",
+          "startMs": 67500,
+          "endMs": 68000,
+          "confidence": 0.9
+        },
+        {
+          "text": "total",
+          "startMs": 68000,
+          "endMs": 68500,
+          "confidence": 0.9
+        },
+        {
+          "text": "row",
+          "startMs": 68500,
+          "endMs": 69000,
+          "confidence": 0.9
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "startMs": 72000,
+      "endMs": 75400,
+      "reason": "not-transcribed",
+      "detail": "no audio"
+    }
+  ]
+}

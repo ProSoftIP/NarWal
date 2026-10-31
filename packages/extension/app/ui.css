@@ -1,0 +1,14 @@
+body { font: 14px/1.4 system-ui, sans-serif; margin: 0; color: #1b1b1b; }
+main { padding: 12px 14px; }
+h1 { font-size: 15px; margin: 0 0 8px; }
+h1.brand { display: flex; align-items: center; gap: 8px; }
+h1.brand img { flex: none; }
+button { font: inherit; padding: 6px 12px; border-radius: 6px; border: 1px solid #888; background: #fff; cursor: pointer; }
+button.primary { background: #c62828; border-color: #c62828; color: #fff; }
+button:disabled { opacity: 0.5; cursor: default; }
+.note { margin: 8px 0; color: #444; }
+.error { margin: 8px 0; color: #b71c1c; font-weight: 600; }
+.row { display: flex; gap: 8px; align-items: center; margin: 8px 0; }
+table { border-collapse: collapse; margin: 8px 0; }
+th, td { text-align: left; padding: 3px 8px; border-bottom: 1px solid #ddd; vertical-align: top; }
+code { font-size: 12px; }

@@ -1,0 +1,25 @@
+{
+  "documents": [
+    {
+      "key": "d1",
+      "browserDocumentId": "FIXTURE-DOC-D1",
+      "frameId": 0,
+      "parentKey": null,
+      "frameNode": null,
+      "url": "https://app.example.test/",
+      "title": "Home",
+      "navigationType": "navigate",
+      "transition": "typed",
+      "attachedMs": 0,
+      "detachedMs": null,
+      "attachments": [
+        {
+          "atMs": 0,
+          "reason": "boot"
+        }
+      ],
+      "capture": "full",
+      "rrweb": "rrweb/d1.jsonl"
+    }
+  ]
+}

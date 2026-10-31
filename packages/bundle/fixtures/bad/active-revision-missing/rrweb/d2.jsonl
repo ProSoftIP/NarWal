@@ -1,0 +1,3 @@
+{"seq":0,"sentMs":60400,"receivedMs":60400.6,"event":{"type":4,"data":{"href":"https://app.example.test/reports?range=_","width":1280,"height":800},"timestamp":1791921660400}}
+{"seq":1,"sentMs":60402,"receivedMs":60402.6,"event":{"type":2,"data":{"node":{"type":0,"id":1,"childNodes":[{"type":2,"id":2,"tagName":"html","attributes":{},"childNodes":[]}]},"initialOffset":{"left":0,"top":0}},"timestamp":1791921660402}}
+{"seq":3,"sentMs":65300,"receivedMs":65300.6,"event":{"type":3,"data":{"source":2,"type":2,"id":15,"x":1088,"y":98},"timestamp":1791921665300}}

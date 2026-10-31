@@ -1,0 +1,86 @@
+{
+ "name": "sweep-tfjs-base-q8",
+ "engine": "tfjs",
+ "model": "onnx-community/whisper-base.en_timestamped",
+ "fixture": "narration-2m",
+ "sessionUrl": "https://www.browserbase.com/sessions/c5e4ec4b-0983-4184-8c46-5af28ae23dbd",
+ "env": {
+  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hc": 2,
+  "dm": 8,
+  "coi": true,
+  "webgpu": false
+ },
+ "status": "done",
+ "audioS": 120,
+ "wallS": 127.283,
+ "refWords": 279,
+ "wer": 0.032,
+ "sub": 6,
+ "del": 1,
+ "ins": 2,
+ "silentInsertions": 0,
+ "timing": {
+  "n": 272,
+  "startAbsMedianS": 0.143,
+  "startAbsP90S": 0.26,
+  "startBiasS": 0.16,
+  "endAbsMedianS": 0.143,
+  "endAbsP90S": 0.288,
+  "startWithin100ms": 0.254,
+  "startSignedP10S": 0.072,
+  "startSignedP90S": 0.26,
+  "startAbsP90DebiasedS": 0.117,
+  "startWithin250ms": 0.868,
+  "startWithin500ms": 1
+ },
+ "finalize": null,
+ "latency": {
+  "finalMedianS": 12.167,
+  "finalP90S": 22.586,
+  "finalMaxS": 26.731,
+  "visibleMedianS": 4.809,
+  "visibleP90S": 8.19,
+  "finalP90FirstFiveMinS": 22.586,
+  "finalP90LastFiveMinS": 22.586,
+  "maxBacklogS": 22.442,
+  "partialEvents": 27,
+  "finalEvents": 11
+ },
+ "compute": {
+  "dutyCycle": 0.921,
+  "coresMean": 1.264,
+  "coresP90": 1.827,
+  "coresMax": 1.843
+ },
+ "memory": {
+  "firstMB": 572.24,
+  "maxMB": 572.24,
+  "lastMB": 572.24,
+  "slopeMBper10min": null,
+  "samples": 1,
+  "afterLoadMB": 0
+ },
+ "load": {
+  "modelFileMB": 79.564,
+  "networkMB": 85.442,
+  "netByHostMB": {
+   "cdn.jsdelivr.net": 7.875,
+   "huggingface.co": 0.65,
+   "us.aws.cdn.hf.co": 76.917
+  },
+  "coldLoadS": 7.76,
+  "firstInferS": 3.988,
+  "secondInferS": 3.084,
+  "cachedLoadS": 0.885,
+  "cachedFirstInferS": 4.401
+ },
+ "offline": {
+  "ok": true,
+  "loadS": 0.846,
+  "inferS": 2.795,
+  "error": null,
+  "words": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat muttoned pieces to be ladled out in thick"
+ },
+ "error": null
+}

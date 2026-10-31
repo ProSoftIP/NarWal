@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Replay never loads anything from the network (packages/replay/src/sandbox.ts REPLAY_CSP). -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; frame-src 'none'; connect-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>NarWal replay</title>
+<link rel="stylesheet" href="tiles.css"><link rel="stylesheet" href="dist/rrweb.css"><link rel="stylesheet" href="replay.css">
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <img class="mark" src="logo/narwal.svg" width="22" height="22" alt="">
+    <h1>Replay</h1>
+    <span class="spacer"></span>
+    <nav class="links" aria-label="NarWal pages">
+      <label class="link" data-icon="folder">Open a shared recording<input id="file" type="file" accept=".zip,application/zip" hidden></label>
+      <a href="recordings.html" data-icon="replay">Saved recordings</a>
+    </nav>
+  </header>
+  <div id="error" class="banner error" role="alert" hidden></div>
+  <section id="open-shared" class="tile open-shared" aria-labelledby="h-open-shared">
+    <h2 id="h-open-shared" data-icon="folder" data-icon-size="12">Open a shared recording</h2>
+    <p class="note">Someone sent you a <b>.narwal.zip</b>? Choose it, or drop it on this page, to replay it here. It is kept on this computer only when you press <b>Save to Saved recordings</b>.</p>
+    <p><button id="pick-shared" type="button" class="pick">Choose a .narwal.zip file</button></p>
+  </section>
+  <section id="library" class="tile library" aria-labelledby="h-library">
+    <h2 id="h-library">Recordings in the library</h2>
+    <p id="library-empty" class="note" hidden>No recordings in the library yet.</p>
+    <table id="list" class="dense"><thead><tr><th>Recorded</th><th>Title</th><th class="r">Length</th><th><span class="sr-only">Replay</span></th></tr></thead><tbody></tbody></table>
+  </section>
+  <section id="player" class="grid player" aria-labelledby="title" hidden>
+    <div class="tile bar">
+      <div class="who"><h2 id="title"></h2><p id="facts" class="meta"></p></div>
+    </div>
+    <div id="keep" class="keep banner" role="status" hidden></div>
+    <div id="notices" class="notices"></div>
+    <section class="tile stage-tile" aria-labelledby="h-stage">
+      <h2 id="h-stage" data-icon="replay">Replay</h2>
+      <p id="window" class="window" role="status" hidden></p>
+      <div id="stage" class="stage"></div>
+      <div class="controls">
+        <button id="play" type="button" class="btn primary">Play</button>
+        <span id="clock" class="clock">0:00.0</span>
+        <input id="seek" type="range" min="0" step="1" value="0" aria-label="Replay position">
+      </div>
+      <div id="timeline" class="timeline" aria-hidden="true"></div>
+      <div id="windows" class="windows" aria-hidden="true" hidden></div>
+    </section>
+    <section class="tile lines-tile" aria-labelledby="h-transcript">
+      <h2 data-icon="text"><span id="h-transcript">Transcript</span><span id="transcript-source" class="sub"></span></h2>
+      <div id="waiting" class="waiting banner" role="status" hidden></div>
+      <ol id="transcript" class="transcript"></ol>
+    </section>
+    <section class="tile purpose-tile" aria-labelledby="h-purpose">
+      <h2 id="h-purpose">What is this recording for?</h2>
+      <p id="purpose-text" class="purpose-text"></p>
+      <div id="purpose-form" class="note-form" hidden>
+        <label class="sr-only" for="purpose-input">What is this recording for?</label>
+        <textarea id="purpose-input" rows="2" maxlength="1000" placeholder="Review of yesterday&#39;s dashboard changes; each thing I point at is a change request"></textarea>
+        <div class="foot">
+          <button id="save-purpose" type="button" class="btn">Save purpose</button>
+          <span id="purpose-count" class="count"></span>
+        </div>
+      </div>
+    </section>
+    <section id="notes-tile" class="tile notes-tile" aria-labelledby="h-notes">
+      <h2 id="h-notes" data-icon="marker">Notes</h2>
+      <ul id="notes" class="notes"></ul>
+      <div id="note-form" class="note-form" hidden>
+        <textarea id="note-text" rows="2" maxlength="10000" aria-label="Note text" placeholder="Write a note about this moment"></textarea>
+        <div class="foot"><button id="add-note" type="button" class="btn">Add note</button></div>
+      </div>
+    </section>
+    <section id="gaps-tile" class="tile gaps-tile" aria-labelledby="h-gaps" hidden>
+      <h2 id="h-gaps" data-icon="gap">Missing evidence</h2>
+      <table id="gaps" class="dense"><thead><tr><th>From</th><th>To</th><th>What is missing</th></tr></thead><tbody></tbody></table>
+    </section>
+    <audio id="audio" preload="auto"></audio>
+  </section>
+</main>
+<script src="dist/replay.js"></script>
+</body>
+</html>

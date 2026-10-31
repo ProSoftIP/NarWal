@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-doc="d0">
+<head>
+<meta charset="utf-8">
+<title>Fixture home</title>
+<script src="/bundle.js"></script>
+<style>
+  body { margin: 0; font: 16px/1.4 sans-serif; }
+  #top { display: flex; gap: 12px; padding: 12px; }
+  button { font: inherit; padding: 6px 10px; }
+  #spacer { height: 0; }
+  #list { height: 120px; overflow: auto; border: 1px solid #999; width: 300px; }
+  #list li { height: 30px; }
+  #secret { padding: 10px; background: #fee; width: 400px; }
+  #promo { padding: 10px; background: #eef; width: 400px; }
+  #tall { height: 2200px; }
+  iframe { width: 420px; height: 160px; border: 1px solid #333; }
+</style>
+</head>
+<body>
+<div id="spacer"></div>
+<div id="top">
+  <button id="buy" type="button">Buy now</button>
+  <button id="help" type="button" aria-label="Open help">?</button>
+  <a id="docs" href="#docs-section">Read the docs</a>
+</div>
+<p id="intro">Visible intro text about the product.</p>
+<form id="form" onsubmit="return false">
+  <label for="email">Email</label> <input id="email" type="email" value="preset-SECRET@example.com">
+  <label>Password <input id="password" type="password"></label>
+  <textarea id="notes" aria-label="Notes">PRESET-NOTES-SECRET text</textarea>
+  <label><input id="agree" type="checkbox"> I agree</label>
+  <select id="plan" aria-label="Plan"><option>Basic</option><option>Pro plan</option></select>
+  <div id="editor" contenteditable="true" aria-label="Editor">EDITOR-PRESET-SECRET</div>
+</form>
+<div id="secret">Account 4242 balance <span id="balance">$9,999</span> <button id="secret-btn" type="button">Transfer SECRET-ACTION</button></div>
+<div id="promo"><h2 id="promo-title">PROMO-TEXT hidden by picker</h2><button id="promo-btn" type="button">Promo button</button></div>
+<ul id="list"></ul>
+<p id="after">Text after the list for selections.</p>
+<iframe id="frame" src="/fixtures/frame.html"></iframe>
+<div id="tall"></div>
+<button id="far" type="button">Far button</button>
+<div data-narwal-ui="strip" id="strip"><span>RECORDER-UI-TEXT</span><button id="strip-stop" type="button">Stop RECORDER-UI-BUTTON</button></div>
+<script>
+  window.pageLog = [];
+  for (let i = 1; i <= 20; i++) { const li = document.createElement('li'); li.textContent = 'Item ' + i; document.getElementById('list').appendChild(li); }
+  for (const type of ['pointerdown', 'pointerup', 'mousedown', 'mouseup', 'click', 'auxclick', 'contextmenu', 'dblclick']) {
+    document.addEventListener(type, (e) => window.pageLog.push(type + ':' + (e.target.id || e.target.tagName) + (e.defaultPrevented ? ':prevented' : '')));
+  }
+  // The recorder strip is a closed shadow root like #16551's.
+  const strip = document.getElementById('strip');
+  const shadow = strip.attachShadow({ mode: 'closed' });
+  shadow.innerHTML = '<button id="strip-shadow">Stop CLOSED-UI-TEXT</button><slot></slot>';
+</script>
+</body>
+</html>

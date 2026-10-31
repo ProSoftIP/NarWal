@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Quarterly dashboard</title><script src="/fixture.js"></script>
+<style>
+body { margin: 0; font: 15px/1.4 system-ui, sans-serif; color: #1d2433; background: #f4f6fa; }
+header { display: flex; gap: 24px; align-items: center; padding: 14px 28px; background: #1f3a68; color: #fff; }
+header h1 { font-size: 18px; margin: 0 24px 0 0; }
+header a { color: #cfe0ff; text-decoration: none; }
+header a[aria-current] { color: #fff; font-weight: 600; }
+main { padding: 24px 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card { background: #fff; border: 1px solid #dfe4ee; border-radius: 10px; padding: 16px 18px; }
+.card h2 { font-size: 13px; margin: 0 0 6px; color: #5a6478; text-transform: uppercase; letter-spacing: .05em; }
+.card p { font-size: 28px; margin: 0; font-weight: 600; }
+.wide { grid-column: span 3; }
+table { width: 100%; border-collapse: collapse; }
+td, th { text-align: left; padding: 8px; border-bottom: 1px solid #eef1f6; }
+</style></head>
+<body>
+<!-- A demo page for the screenshots in docs/images (test/e2e/shots.mjs, board #16783). -->
+<header><h1>Acme analytics</h1><a id="to-overview" href="#/overview" aria-current="page">Overview</a><a id="to-orders" href="#/orders">Orders</a><a id="to-customers" href="#/customers">Customers</a></header>
+<main id="view">
+  <section class="card" id="revenue"><h2>Revenue</h2><p>$48,210</p></section>
+  <section class="card" id="orders"><h2>Orders</h2><p>1,284</p></section>
+  <section class="card" id="customers"><h2>New customers</h2><p>312</p></section>
+  <section class="card wide"><h2 id="recent">Recent orders</h2>
+    <table><thead><tr><th>Order</th><th>Customer</th><th>Total</th></tr></thead>
+    <tbody><tr><td>#1042</td><td>Northwind</td><td>$1,250</td></tr><tr><td>#1041</td><td>Contoso</td><td>$980</td></tr><tr><td>#1040</td><td>Fabrikam</td><td>$2,140</td></tr></tbody></table>
+  </section>
+</main>
+<script>
+addEventListener('hashchange', () => {
+  for (const a of document.querySelectorAll('header a')) a.toggleAttribute('aria-current', a.getAttribute('href') === location.hash);
+  document.title = `${location.hash.slice(2, 3).toUpperCase()}${location.hash.slice(3)} · Quarterly dashboard`;
+});
+</script>
+</body>
+</html>

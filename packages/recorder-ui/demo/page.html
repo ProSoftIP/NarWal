@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dashboard · Acme Payroll</title>
+    <style>
+      body { margin: 0; font: 15px/1.5 Georgia, 'Times New Roman', serif; color: #1f2937; background: #f8fafc; }
+      header { padding: 14px 28px; background: #1e3a8a; color: #fff; font-family: system-ui, sans-serif; }
+      main { max-width: 860px; margin: 0 auto; padding: 24px 28px 80px; }
+      .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; }
+      .card h2 { margin: 0 0 6px; font-size: 15px; font-family: system-ui, sans-serif; }
+      .big { font-size: 26px; font-weight: 700; }
+      table { width: 100%; border-collapse: collapse; margin-top: 24px; background: #fff; }
+      th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e2e8f0; }
+      /* A hostile page rule: the strip must survive it. */
+      div { letter-spacing: normal; }
+      html > div { display: none !important; color: red !important; }
+    </style>
+  </head>
+  <body>
+    <header>Acme Payroll</header>
+    <main>
+      <h1 id="page-title">Dashboard</h1>
+      <div class="cards">
+        <div class="card"><h2>Revenue</h2><div class="big">$48,210</div></div>
+        <div class="card"><h2>Employees</h2><div class="big">37</div></div>
+        <div class="card"><h2>Next run</h2><div class="big">Oct 15</div></div>
+      </div>
+      <p><label>Search <input id="search" type="text" /></label> <button id="page-button" type="button">Run payroll</button></p>
+      <table>
+        <thead><tr><th>Name</th><th>Role</th><th>Hours</th><th>Total</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </main>
+    <script type="module" src="./page.js"></script>
+  </body>
+</html>

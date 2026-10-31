@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Fixture companies</title><script src="/fixture.js"></script></head>
+<body>
+<h1>Fixture companies</h1>
+<!-- Board #16754: a page that opens other windows, as an OAuth sign-in or a report link does.
+     The popup query value is built in the handler so the page source does not hold it. -->
+<button id="open-popup" type="button" onclick="window.open('/popup.html?state=' + ['POPUP', 'SECRET5'].join(''), 'narwal-popup', 'popup,width=520,height=420')">Connect account</button>
+<a id="open-tab" href="/page2.html?from=companies" target="_blank">Report in a new tab</a>
+<a id="open-background" href="/page2.html?background=1" target="_blank">Never switched to</a>
+<ul><li>Acme Ltd</li><li>Globex Corp</li></ul>
+</body>
+</html>

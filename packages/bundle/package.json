@@ -1,0 +1,15 @@
+{
+  "name": "@narwal/bundle",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Board #16541: NarWal recording bundle schema 1.0 validator, fixtures and agent exports",
+  "engines": { "node": ">=22.18" },
+  "exports": { ".": "./src/index.ts", "./node": "./src/node-dir.ts" },
+  "bin": { "narwal-bundle": "./bin/narwal-bundle.ts" },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "fixtures": "node scripts/build-fixtures.ts",
+    "fixtures:check": "node scripts/build-fixtures.ts --check"
+  }
+}

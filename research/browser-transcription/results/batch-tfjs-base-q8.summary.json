@@ -1,0 +1,78 @@
+{
+ "name": "batch-tfjs-base-q8",
+ "engine": "tfjs",
+ "model": "onnx-community/whisper-base.en_timestamped",
+ "fixture": "narration-30m",
+ "sessionUrl": "https://www.browserbase.com/sessions/5d78f521-9221-4f6c-9aeb-e78a0cbdb545",
+ "env": {
+  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hc": 2,
+  "dm": 8,
+  "coi": true,
+  "webgpu": false
+ },
+ "status": "done",
+ "audioS": 1795.62,
+ "wallS": 597.585,
+ "refWords": 3893,
+ "wer": 0.037,
+ "sub": 113,
+ "del": 15,
+ "ins": 15,
+ "silentInsertions": 0,
+ "timing": {
+  "n": 3765,
+  "startAbsMedianS": 0.134,
+  "startAbsP90S": 0.267,
+  "startBiasS": 0.152,
+  "endAbsMedianS": 0.137,
+  "endAbsP90S": 0.292,
+  "startWithin100ms": 0.326,
+  "startSignedP10S": 0.061,
+  "startSignedP90S": 0.267,
+  "startAbsP90DebiasedS": 0.134,
+  "startWithin250ms": 0.872,
+  "startWithin500ms": 0.999
+ },
+ "finalize": {
+  "wallS": 597.585,
+  "realTimeFactor": 0.333
+ },
+ "latency": {},
+ "compute": {
+  "dutyCycle": 1,
+  "coresMean": 1.703,
+  "coresP90": 1.859,
+  "coresMax": 1.868
+ },
+ "memory": {
+  "firstMB": 561.777,
+  "maxMB": 561.777,
+  "lastMB": 561.777,
+  "slopeMBper10min": null,
+  "samples": 1,
+  "afterLoadMB": 0
+ },
+ "load": {
+  "modelFileMB": 79.564,
+  "networkMB": 85.442,
+  "netByHostMB": {
+   "cdn.jsdelivr.net": 7.877,
+   "huggingface.co": 0.649,
+   "us.aws.cdn.hf.co": 76.916
+  },
+  "coldLoadS": 6.756,
+  "firstInferS": 3.834,
+  "secondInferS": 3.041,
+  "cachedLoadS": 0.95,
+  "cachedFirstInferS": 4.101
+ },
+ "offline": {
+  "ok": true,
+  "loadS": 0.789,
+  "inferS": 2.625,
+  "error": null,
+  "words": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat muttoned pieces to be ladled out in thick"
+ },
+ "error": null
+}

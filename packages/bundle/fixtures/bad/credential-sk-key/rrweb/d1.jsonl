@@ -1,0 +1,4 @@
+{"seq":0,"sentMs":5,"receivedMs":5.6,"event":{"type":4,"data":{"href":"https://app.example.test/dashboard","width":1280,"height":800},"timestamp":1791921600005}}
+{"seq":1,"sentMs":7,"receivedMs":7.6,"event":{"type":2,"data":{"node":{"type":0,"id":1,"childNodes":[{"type":2,"id":2,"tagName":"html","attributes":{},"childNodes":[]}]},"initialOffset":{"left":0,"top":0}},"timestamp":1791921600007}}
+{"seq":2,"sentMs":42300,"receivedMs":42300.6,"event":{"type":3,"data":{"source":1,"positions":[{"x":300,"y":320,"id":42,"timeOffset":0}]},"timestamp":1791921642300}}
+{"seq":3,"sentMs":57600,"receivedMs":57600.6,"event":{"type":3,"data":{"source":3,"id":1,"x":0,"y":640},"timestamp":1791921657600}}

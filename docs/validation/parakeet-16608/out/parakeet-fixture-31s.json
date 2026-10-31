@@ -1,0 +1,481 @@
+{
+  "model": "parakeet-tdt-0.6b-v2-int8",
+  "audio": "fixtures/speech-en-31s.flac",
+  "hardwareConcurrency": 20,
+  "engine": {
+    "model": "parakeet-tdt-0.6b-v2-int8",
+    "device": "wasm",
+    "threads": 1,
+    "loadMs": 2213,
+    "heapBytes": 857931776
+  },
+  "audioMs": 31500,
+  "wallMs": 9474,
+  "realTimeFactor": 0.301,
+  "deadlineMs": 607875,
+  "meetsDeadline": true,
+  "longestAudioWithinDeadlineMin": 196,
+  "stats": {
+    "spans": 5,
+    "resumedSpans": 0,
+    "engineCalls": 5,
+    "failedSpans": 0,
+    "audioMs": 24980
+  },
+  "timing": {
+    "quality": "approximate",
+    "method": "tdt-token-times",
+    "correctionMs": -30
+  },
+  "gaps": [],
+  "rssBeforeBytes": 3167502336,
+  "peakRssBytes": 4479516672,
+  "peakLargestProcessRssBytes": 2786033664,
+  "consoleErrors": [],
+  "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes, and fat mutton pieces to be ladled out in thick, peppered, flour fattened sauce, Stuff it into you, his belly counselled him. After early nightfall the yellow lamps would light up, here and there, the squalid quarter of the brothels. Hello, Bertie. Any good in your mind? Number ten Fresh Nelly is waiting on you.",
+  "fixtureScore": {
+    "referenceWords": 69,
+    "hypothesisWords": 69,
+    "wer": 0,
+    "substitutions": 0,
+    "deletions": 0,
+    "insertions": 0,
+    "matchedWords": 69,
+    "startBiasMs": 3,
+    "startAbsMedianMs": 28,
+    "startAbsP90Ms": 83,
+    "startsWithin250Ms": 1,
+    "wordsMonotonic": true,
+    "wordsInsideSegments": true
+  },
+  "revision": {
+    "revisionId": "r1",
+    "provider": "browser-local",
+    "model": "parakeet-tdt-0.6b-v2-int8",
+    "createdAtMs": 1791972819757,
+    "source": "after-recording",
+    "segments": [
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "r1",
+        "segmentKey": "r1:0",
+        "kind": "final",
+        "startMs": 490,
+        "endMs": 10250,
+        "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes, and fat mutton pieces to be ladled out in thick, peppered, flour fattened sauce,",
+        "words": [
+          {
+            "text": "He",
+            "startMs": 490,
+            "endMs": 650
+          },
+          {
+            "text": "hoped",
+            "startMs": 650,
+            "endMs": 970
+          },
+          {
+            "text": "there",
+            "startMs": 970,
+            "endMs": 1130
+          },
+          {
+            "text": "would",
+            "startMs": 1130,
+            "endMs": 1290
+          },
+          {
+            "text": "be",
+            "startMs": 1290,
+            "endMs": 1450
+          },
+          {
+            "text": "stew",
+            "startMs": 1450,
+            "endMs": 1850
+          },
+          {
+            "text": "for",
+            "startMs": 1850,
+            "endMs": 2010
+          },
+          {
+            "text": "dinner,",
+            "startMs": 2010,
+            "endMs": 2490
+          },
+          {
+            "text": "turnips",
+            "startMs": 2570,
+            "endMs": 3050
+          },
+          {
+            "text": "and",
+            "startMs": 3050,
+            "endMs": 3210
+          },
+          {
+            "text": "carrots",
+            "startMs": 3210,
+            "endMs": 3690
+          },
+          {
+            "text": "and",
+            "startMs": 3770,
+            "endMs": 3930
+          },
+          {
+            "text": "bruised",
+            "startMs": 3930,
+            "endMs": 4410
+          },
+          {
+            "text": "potatoes,",
+            "startMs": 4410,
+            "endMs": 5050
+          },
+          {
+            "text": "and",
+            "startMs": 5050,
+            "endMs": 5210
+          },
+          {
+            "text": "fat",
+            "startMs": 5210,
+            "endMs": 5610
+          },
+          {
+            "text": "mutton",
+            "startMs": 5610,
+            "endMs": 6090
+          },
+          {
+            "text": "pieces",
+            "startMs": 6090,
+            "endMs": 6490
+          },
+          {
+            "text": "to",
+            "startMs": 6490,
+            "endMs": 6650
+          },
+          {
+            "text": "be",
+            "startMs": 6650,
+            "endMs": 6810
+          },
+          {
+            "text": "ladled",
+            "startMs": 6810,
+            "endMs": 7370
+          },
+          {
+            "text": "out",
+            "startMs": 7370,
+            "endMs": 7530
+          },
+          {
+            "text": "in",
+            "startMs": 7530,
+            "endMs": 7770
+          },
+          {
+            "text": "thick,",
+            "startMs": 7770,
+            "endMs": 8170
+          },
+          {
+            "text": "peppered,",
+            "startMs": 8170,
+            "endMs": 8730
+          },
+          {
+            "text": "flour",
+            "startMs": 8730,
+            "endMs": 9130
+          },
+          {
+            "text": "fattened",
+            "startMs": 9130,
+            "endMs": 9690
+          },
+          {
+            "text": "sauce,",
+            "startMs": 9690,
+            "endMs": 10250
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "r1",
+        "segmentKey": "r1:1",
+        "kind": "final",
+        "startMs": 12030,
+        "endMs": 14670,
+        "text": "Stuff it into you, his belly counselled him.",
+        "words": [
+          {
+            "text": "Stuff",
+            "startMs": 12030,
+            "endMs": 12430
+          },
+          {
+            "text": "it",
+            "startMs": 12430,
+            "endMs": 12590
+          },
+          {
+            "text": "into",
+            "startMs": 12590,
+            "endMs": 12830
+          },
+          {
+            "text": "you,",
+            "startMs": 12830,
+            "endMs": 13070
+          },
+          {
+            "text": "his",
+            "startMs": 13230,
+            "endMs": 13390
+          },
+          {
+            "text": "belly",
+            "startMs": 13390,
+            "endMs": 13790
+          },
+          {
+            "text": "counselled",
+            "startMs": 13790,
+            "endMs": 14270
+          },
+          {
+            "text": "him.",
+            "startMs": 14270,
+            "endMs": 14670
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "r1",
+        "segmentKey": "r1:2",
+        "kind": "final",
+        "startMs": 16510,
+        "endMs": 22350,
+        "text": "After early nightfall the yellow lamps would light up, here and there, the squalid quarter of the brothels.",
+        "words": [
+          {
+            "text": "After",
+            "startMs": 16510,
+            "endMs": 16830
+          },
+          {
+            "text": "early",
+            "startMs": 16830,
+            "endMs": 17150
+          },
+          {
+            "text": "nightfall",
+            "startMs": 17150,
+            "endMs": 17790
+          },
+          {
+            "text": "the",
+            "startMs": 17790,
+            "endMs": 17950
+          },
+          {
+            "text": "yellow",
+            "startMs": 17950,
+            "endMs": 18270
+          },
+          {
+            "text": "lamps",
+            "startMs": 18270,
+            "endMs": 18670
+          },
+          {
+            "text": "would",
+            "startMs": 18670,
+            "endMs": 18830
+          },
+          {
+            "text": "light",
+            "startMs": 18830,
+            "endMs": 19150
+          },
+          {
+            "text": "up,",
+            "startMs": 19150,
+            "endMs": 19470
+          },
+          {
+            "text": "here",
+            "startMs": 19470,
+            "endMs": 19630
+          },
+          {
+            "text": "and",
+            "startMs": 19630,
+            "endMs": 19790
+          },
+          {
+            "text": "there,",
+            "startMs": 19790,
+            "endMs": 20190
+          },
+          {
+            "text": "the",
+            "startMs": 20190,
+            "endMs": 20350
+          },
+          {
+            "text": "squalid",
+            "startMs": 20350,
+            "endMs": 20910
+          },
+          {
+            "text": "quarter",
+            "startMs": 20910,
+            "endMs": 21390
+          },
+          {
+            "text": "of",
+            "startMs": 21390,
+            "endMs": 21470
+          },
+          {
+            "text": "the",
+            "startMs": 21470,
+            "endMs": 21550
+          },
+          {
+            "text": "brothels.",
+            "startMs": 21550,
+            "endMs": 22350
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "r1",
+        "segmentKey": "r1:3",
+        "kind": "final",
+        "startMs": 24050,
+        "endMs": 26210,
+        "text": "Hello, Bertie. Any good in your mind?",
+        "words": [
+          {
+            "text": "Hello,",
+            "startMs": 24050,
+            "endMs": 24370
+          },
+          {
+            "text": "Bertie.",
+            "startMs": 24370,
+            "endMs": 24930
+          },
+          {
+            "text": "Any",
+            "startMs": 24930,
+            "endMs": 25170
+          },
+          {
+            "text": "good",
+            "startMs": 25170,
+            "endMs": 25410
+          },
+          {
+            "text": "in",
+            "startMs": 25410,
+            "endMs": 25570
+          },
+          {
+            "text": "your",
+            "startMs": 25570,
+            "endMs": 25730
+          },
+          {
+            "text": "mind?",
+            "startMs": 25730,
+            "endMs": 26210
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "r1",
+        "segmentKey": "r1:4",
+        "kind": "final",
+        "startMs": 27850,
+        "endMs": 31130,
+        "text": "Number ten Fresh Nelly is waiting on you.",
+        "words": [
+          {
+            "text": "Number",
+            "startMs": 27850,
+            "endMs": 28090
+          },
+          {
+            "text": "ten",
+            "startMs": 28330,
+            "endMs": 28730
+          },
+          {
+            "text": "Fresh",
+            "startMs": 29130,
+            "endMs": 29370
+          },
+          {
+            "text": "Nelly",
+            "startMs": 29530,
+            "endMs": 30010
+          },
+          {
+            "text": "is",
+            "startMs": 30010,
+            "endMs": 30090
+          },
+          {
+            "text": "waiting",
+            "startMs": 30250,
+            "endMs": 30570
+          },
+          {
+            "text": "on",
+            "startMs": 30570,
+            "endMs": 30730
+          },
+          {
+            "text": "you.",
+            "startMs": 30730,
+            "endMs": 31130
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      }
+    ],
+    "gaps": [],
+    "timing": {
+      "quality": "approximate",
+      "method": "tdt-token-times",
+      "correctionMs": -30
+    }
+  }
+}

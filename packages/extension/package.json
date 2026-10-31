@@ -1,0 +1,27 @@
+{
+  "name": "@narwal/extension",
+  "private": true,
+  "license": "MIT",
+  "version": "1.0.8",
+  "description": "NarWal browser extension: records one tab's page evidence and the microphone into durable local chunks",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node build.mjs",
+    "package": "node package.mjs",
+    "release": "node release.mjs",
+    "bump": "node version.mjs bump",
+    "check-version": "node version.mjs check",
+    "github-release": "node github-release.mjs",
+    "build:test": "node build.mjs --test",
+    "test": "node --test test/unit/*.test.mjs",
+    "e2e": "node build.mjs --test && node test/e2e/run.mjs",
+    "e2e:replay": "node build.mjs --test && node test/e2e/replay.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "fake-indexeddb": "6.2.5",
+    "playwright": "1.63.0",
+    "rrweb": "2.1.7"
+  }
+}

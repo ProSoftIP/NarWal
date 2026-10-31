@@ -1,0 +1,25 @@
+{
+  "name": "@narwal/interactions",
+  "private": true,
+  "license": "MIT",
+  "version": "0.0.0",
+  "description": "Board #16543: masked interaction evidence and explicit right-button highlights for the NarWal content script",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "esbuild": "0.25.10",
+    "playwright": "1.63.0",
+    "rrweb": "2.1.7",
+    "typescript": "5.9.3"
+  }
+}

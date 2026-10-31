@@ -1,0 +1,3091 @@
+{
+  "probe": "narwal capture probe (board #16538)",
+  "ranAt": "2026-10-13T17:51:05.331Z",
+  "node": "v26.7.0",
+  "platform": "linux-x64",
+  "headless": true,
+  "scenarios": {
+    "navigation": {
+      "ms": 3467,
+      "summary": {
+        "transientBlankFrames": 12,
+        "sessionSeconds": 3.315,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot",
+              "bfcache-restore"
+            ],
+            "rrEvents": 7,
+            "rrBytes": 8695,
+            "queuedDelivered": 6,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 18,
+            "probes": [
+              "rrweb-started",
+              "pagehide(persisted=true)",
+              "visibility(hidden)",
+              "freeze",
+              "resume",
+              "visibility(visible)",
+              "pageshow(persisted=true)",
+              "resnapshot"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot",
+              "bfcache-restore"
+            ],
+            "rrEvents": 8,
+            "rrBytes": 3955,
+            "queuedDelivered": 6,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 17,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)",
+              "pagehide(persisted=true)",
+              "visibility(hidden)",
+              "freeze",
+              "resume",
+              "visibility(visible)",
+              "pageshow(persisted=true)",
+              "resnapshot",
+              "pagehide(persisted=false)",
+              "visibility(hidden)"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "reload",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 6,
+            "rrBytes": 2300,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 26,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          },
+          {
+            "url": "http://localhost:45085/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 1963,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 18,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/form.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 10,
+            "rrBytes": 2391,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 41,
+            "probes": [
+              "pageshow(persisted=false)",
+              "rrweb-started"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/result.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 1944,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 17,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          }
+        ],
+        "topFrameGaps": [
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 28,
+            "commitToSnapshotMs": 15
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "bfcache-restore",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 312,
+            "commitToSnapshotMs": 3
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "bfcache-restore",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 9,
+            "commitToSnapshotMs": 2
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "reload",
+            "transitionType": "reload",
+            "blindMs": 38,
+            "commitToSnapshotMs": 26
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://localhost:45085/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 48,
+            "commitToSnapshotMs": 21
+          },
+          {
+            "from": "http://localhost:45085/page2.html",
+            "to": "http://127.0.0.1:35517/form.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 72,
+            "commitToSnapshotMs": 52
+          },
+          {
+            "from": "http://127.0.0.1:35517/form.html",
+            "to": "http://127.0.0.1:35517/result.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "form_submit",
+            "blindMs": 48,
+            "commitToSnapshotMs": 17
+          }
+        ],
+        "lostMessages": [],
+        "navigation": [
+          "committed link http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed link http://127.0.0.1:35517/page2.html",
+          "committed reload http://127.0.0.1:35517/page2.html",
+          "committed link http://localhost:45085/page2.html",
+          "committed typed http://127.0.0.1:35517/form.html",
+          "committed form_submit http://127.0.0.1:35517/result.html"
+        ],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "index-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913866009.5999,
+            "latencyMs": 3,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "index-last",
+            "note": "inserted in the same task as the navigation",
+            "captured": true,
+            "recv": 1791913866012.4,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "page2-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913866043.3,
+            "latencyMs": 0,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "after-back",
+            "note": null,
+            "captured": true,
+            "recv": 1791913866855,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "after-forward",
+            "note": null,
+            "captured": true,
+            "recv": 1791913867398.9,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "after-reload",
+            "note": null,
+            "captured": true,
+            "recv": 1791913867461.0999,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "before-cross-origin",
+            "note": "inserted in the same task as the navigation",
+            "captured": true,
+            "recv": 1791913867463,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "cross-origin-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913867516.9,
+            "latencyMs": 1,
+            "url": "http://localhost:45085/page2.html"
+          },
+          {
+            "label": "after-post-redirect",
+            "note": null,
+            "captured": true,
+            "recv": 1791913867732.9,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/result.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 95,
+            "min": -0.1,
+            "p50": 0.1,
+            "p95": 2.7,
+            "max": 5.3
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 41,
+            "min": 0,
+            "p50": 0.5,
+            "p95": 0.9,
+            "max": 1.1
+          },
+          "dateNowMinusPerfClock": {
+            "driftPpm": 189.5,
+            "residualMs": {
+              "n": 3,
+              "min": 0.079,
+              "p50": 0.263,
+              "p95": 0.263,
+              "max": 0.341
+            },
+            "spanMs": 2197
+          },
+          "audioRenderClock": {
+            "points": 3,
+            "ppm": -19.2,
+            "residualMs": {
+              "n": 3,
+              "min": 2.821,
+              "p50": 2.878,
+              "p95": 2.878,
+              "max": 5.699
+            },
+            "spanMs": 2000
+          },
+          "audioChunks": {
+            "count": 4,
+            "intervalMs": {
+              "n": 3,
+              "min": 190.6,
+              "p50": 1019.6,
+              "p95": 1019.6,
+              "max": 1020.2
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 3.24,
+            "wallSeconds": 3.201,
+            "lossSeconds": -0.039,
+            "bytes": 44757,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      },
+      "checks": {
+        "typedValueInRecording": false,
+        "bfcacheNotUsed": []
+      }
+    },
+    "navigationNaiveBfcache": {
+      "ms": 3240,
+      "summary": {
+        "transientBlankFrames": 12,
+        "sessionSeconds": 3.13,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot",
+              "bfcache-restore"
+            ],
+            "rrEvents": 7,
+            "rrBytes": 8695,
+            "queuedDelivered": 1,
+            "seqMissing": 3,
+            "injectToSnapshotMs": 19,
+            "probes": [
+              "rrweb-started",
+              "pagehide(persisted=true)",
+              "visibility(hidden)",
+              "pageshow(persisted=true)",
+              "resnapshot"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot",
+              "bfcache-restore"
+            ],
+            "rrEvents": 8,
+            "rrBytes": 3955,
+            "queuedDelivered": 1,
+            "seqMissing": 5,
+            "injectToSnapshotMs": 19,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)",
+              "pageshow(persisted=true)",
+              "resnapshot",
+              "pagehide(persisted=false)",
+              "visibility(hidden)"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "reload",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 6,
+            "rrBytes": 2300,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 23,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          },
+          {
+            "url": "http://localhost:45085/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 1963,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 20,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/form.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 10,
+            "rrBytes": 2391,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 18,
+            "probes": [
+              "pageshow(persisted=false)",
+              "rrweb-started",
+              "pagehide(persisted=true)",
+              "visibility(hidden)"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/result.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 1944,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 18,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          }
+        ],
+        "topFrameGaps": [
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 23,
+            "commitToSnapshotMs": 18
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "bfcache-restore",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 311,
+            "commitToSnapshotMs": 2
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "bfcache-restore",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 10,
+            "commitToSnapshotMs": 2
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "reload",
+            "transitionType": "reload",
+            "blindMs": 27,
+            "commitToSnapshotMs": 21
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://localhost:45085/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 43,
+            "commitToSnapshotMs": 24
+          },
+          {
+            "from": "http://localhost:45085/page2.html",
+            "to": "http://127.0.0.1:35517/form.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 37,
+            "commitToSnapshotMs": 24
+          },
+          {
+            "from": "http://127.0.0.1:35517/form.html",
+            "to": "http://127.0.0.1:35517/result.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "form_submit",
+            "blindMs": 22,
+            "commitToSnapshotMs": 14
+          }
+        ],
+        "lostMessages": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "seq": 8,
+            "what": "probe:freeze"
+          },
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "seq": 9,
+            "what": "probe:resume"
+          },
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "seq": 10,
+            "what": "probe:visibility"
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "seq": 8,
+            "what": "probe:pagehide"
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "seq": 9,
+            "what": "probe:visibility"
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "seq": 10,
+            "what": "probe:freeze"
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "seq": 11,
+            "what": "probe:resume"
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "seq": 12,
+            "what": "probe:visibility"
+          }
+        ],
+        "navigation": [
+          "committed link http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed link http://127.0.0.1:35517/page2.html",
+          "committed reload http://127.0.0.1:35517/page2.html",
+          "committed link http://localhost:45085/page2.html",
+          "committed typed http://127.0.0.1:35517/form.html",
+          "committed form_submit http://127.0.0.1:35517/result.html"
+        ],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "index-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913869385.7,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "index-last",
+            "note": "inserted in the same task as the navigation",
+            "captured": true,
+            "recv": 1791913869386.7998,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "page2-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913869422.2998,
+            "latencyMs": 0,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "after-back",
+            "note": null,
+            "captured": true,
+            "recv": 1791913870234,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "after-forward",
+            "note": null,
+            "captured": true,
+            "recv": 1791913870746.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "after-reload",
+            "note": null,
+            "captured": true,
+            "recv": 1791913870784.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "before-cross-origin",
+            "note": "inserted in the same task as the navigation",
+            "captured": true,
+            "recv": 1791913870785.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "cross-origin-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913870833.7,
+            "latencyMs": 1,
+            "url": "http://localhost:45085/page2.html"
+          },
+          {
+            "label": "after-post-redirect",
+            "note": null,
+            "captured": true,
+            "recv": 1791913870974.4,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/result.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 99,
+            "min": -0.1,
+            "p50": 0.2,
+            "p95": 1.1,
+            "max": 1.6
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 41,
+            "min": 0,
+            "p50": 0.6,
+            "p95": 1,
+            "max": 1
+          },
+          "dateNowMinusPerfClock": {
+            "driftPpm": -390.1,
+            "residualMs": {
+              "n": 3,
+              "min": 0.097,
+              "p50": 0.3,
+              "p95": 0.3,
+              "max": 0.396
+            },
+            "spanMs": 2059
+          },
+          "audioRenderClock": {
+            "points": 3,
+            "ppm": -19.2,
+            "residualMs": {
+              "n": 3,
+              "min": 2.821,
+              "p50": 2.878,
+              "p95": 2.878,
+              "max": 5.699
+            },
+            "spanMs": 2000
+          },
+          "audioChunks": {
+            "count": 4,
+            "intervalMs": {
+              "n": 3,
+              "min": 55.8,
+              "p50": 1019.9,
+              "p95": 1019.9,
+              "max": 1020
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 3.06,
+            "wallSeconds": 3.066,
+            "lossSeconds": 0.006,
+            "bytes": 41843,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      },
+      "checks": {
+        "typedValueInRecording": false,
+        "bfcacheNotUsed": []
+      }
+    },
+    "bfcacheControl": {
+      "ms": 373,
+      "summary": {
+        "navTypeAfterBack": "navigate",
+        "bfcacheNotUsed": []
+      }
+    },
+    "spa": {
+      "ms": 1842,
+      "summary": {
+        "transientBlankFrames": 2,
+        "sessionSeconds": 1.762,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/spa.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 28,
+            "rrBytes": 6172,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 16,
+            "probes": [
+              "rrweb-started",
+              "popstate",
+              "popstate",
+              "hashchange",
+              "hashchange",
+              "census"
+            ]
+          }
+        ],
+        "topFrameGaps": [],
+        "lostMessages": [],
+        "navigation": [
+          "historyStateUpdated link http://127.0.0.1:35517/spa/route-1",
+          "historyStateUpdated link http://127.0.0.1:35517/spa/route-2",
+          "referenceFragmentUpdated link http://127.0.0.1:35517/spa/route-2#section",
+          "referenceFragmentUpdated link http://127.0.0.1:35517/spa/route-2"
+        ],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "route-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913873050.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "route-2",
+            "note": null,
+            "captured": true,
+            "recv": 1791913873081.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "hash",
+            "note": null,
+            "captured": true,
+            "recv": 1791913873119.4,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "popstate",
+            "note": null,
+            "captured": true,
+            "recv": 1791913873426.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 45,
+            "min": 0,
+            "p50": 0.4,
+            "p95": 3.4,
+            "max": 4.3
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 28,
+            "min": -0.1,
+            "p50": 0.5,
+            "p95": 0.8,
+            "max": 0.9
+          },
+          "dateNowMinusPerfClock": null,
+          "audioRenderClock": null,
+          "audioChunks": {
+            "count": 2,
+            "intervalMs": {
+              "n": 1,
+              "min": 728,
+              "p50": 728,
+              "p95": 728,
+              "max": 728
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 1.74,
+            "wallSeconds": 1.698,
+            "lossSeconds": -0.042,
+            "bytes": 20575,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      },
+      "checks": {
+        "topDocuments": 1,
+        "navigationApiRoutes": [
+          "http://127.0.0.1:35517/spa/route-1",
+          "http://127.0.0.1:35517/spa/route-2",
+          "http://127.0.0.1:35517/spa/route-2#section",
+          "http://127.0.0.1:35517/spa/route-2"
+        ],
+        "rrwebMetaHrefs": [
+          "http://127.0.0.1:35517/spa.html"
+        ]
+      }
+    },
+    "slowLoad": {
+      "ms": 6909,
+      "summary": {
+        "load": {
+          "transientBlankFrames": 4,
+          "sessionSeconds": 3.394,
+          "documents": [
+            {
+              "url": "http://127.0.0.1:35517/index.html",
+              "isTop": true,
+              "frameId": 0,
+              "navType": "navigate",
+              "readyStateAtInject": "complete",
+              "attachments": [
+                "boot"
+              ],
+              "rrEvents": 2,
+              "rrBytes": 3726,
+              "queuedDelivered": 0,
+              "seqMissing": 0,
+              "injectToSnapshotMs": 17,
+              "probes": [
+                "rrweb-started"
+              ]
+            },
+            {
+              "url": "http://127.0.0.1:35517/slow.html",
+              "isTop": true,
+              "frameId": 0,
+              "navType": "navigate",
+              "readyStateAtInject": "loading",
+              "attachments": [
+                "boot"
+              ],
+              "rrEvents": 5,
+              "rrBytes": 2050,
+              "queuedDelivered": 0,
+              "seqMissing": 0,
+              "injectToSnapshotMs": 2523,
+              "probes": [
+                "rrweb-started",
+                "census",
+                "pageshow(persisted=false)"
+              ]
+            }
+          ],
+          "topFrameGaps": [
+            {
+              "from": "http://127.0.0.1:35517/index.html",
+              "to": "http://127.0.0.1:35517/slow.html",
+              "attach": "boot",
+              "navType": "navigate",
+              "transitionType": "typed",
+              "blindMs": 2819,
+              "commitToSnapshotMs": 2521
+            }
+          ],
+          "lostMessages": [],
+          "navigation": [
+            "committed typed http://127.0.0.1:35517/slow.html"
+          ],
+          "tabEvents": [
+            {
+              "type": "start-inject",
+              "injected": {
+                "ok": true,
+                "frames": 1
+              }
+            }
+          ],
+          "refusedPorts": 0,
+          "markers": [
+            {
+              "label": "before-load-load",
+              "note": "inserted after DOMContentLoaded, before load",
+              "captured": true,
+              "recv": 1791913877157.5,
+              "latencyMs": 2513,
+              "url": "http://127.0.0.1:35517/slow.html"
+            },
+            {
+              "label": "after-load-load",
+              "note": null,
+              "captured": true,
+              "recv": 1791913877159.9,
+              "latencyMs": 1,
+              "url": "http://127.0.0.1:35517/slow.html"
+            }
+          ],
+          "clock": {
+            "contentToOffscreenLatencyMs": {
+              "n": 26,
+              "min": 0.1,
+              "p50": 0.4,
+              "p95": 0.6,
+              "max": 1
+            },
+            "rrwebTimestampToSendMs": {
+              "n": 7,
+              "min": 0.1,
+              "p50": 0.6,
+              "p95": 0.7,
+              "max": 0.9
+            },
+            "dateNowMinusPerfClock": {
+              "driftPpm": -50,
+              "residualMs": {
+                "n": 3,
+                "min": 0.017,
+                "p50": 0.017,
+                "p95": 0.017,
+                "max": 0.033
+              },
+              "spanMs": 2000
+            },
+            "audioRenderClock": {
+              "points": 3,
+              "ppm": -19.8,
+              "residualMs": {
+                "n": 3,
+                "min": 2.854,
+                "p50": 2.912,
+                "p95": 2.912,
+                "max": 5.766
+              },
+              "spanMs": 2000
+            },
+            "audioChunks": {
+              "count": 4,
+              "intervalMs": {
+                "n": 3,
+                "min": 299.6,
+                "p50": 1019.9,
+                "p95": 1019.9,
+                "max": 1020
+              }
+            },
+            "audioRecorded": {
+              "decodedSeconds": 3.3,
+              "wallSeconds": 3.331,
+              "lossSeconds": 0.031,
+              "bytes": 45723,
+              "error": null,
+              "trackEvents": []
+            }
+          }
+        },
+        "DOMContentLoaded": {
+          "transientBlankFrames": 4,
+          "sessionSeconds": 3.381,
+          "documents": [
+            {
+              "url": "http://127.0.0.1:35517/index.html",
+              "isTop": true,
+              "frameId": 0,
+              "navType": "navigate",
+              "readyStateAtInject": "complete",
+              "attachments": [
+                "boot"
+              ],
+              "rrEvents": 2,
+              "rrBytes": 3726,
+              "queuedDelivered": 0,
+              "seqMissing": 0,
+              "injectToSnapshotMs": 16,
+              "probes": [
+                "rrweb-started"
+              ]
+            },
+            {
+              "url": "http://127.0.0.1:35517/slow.html",
+              "isTop": true,
+              "frameId": 0,
+              "navType": "navigate",
+              "readyStateAtInject": "loading",
+              "attachments": [
+                "boot"
+              ],
+              "rrEvents": 6,
+              "rrBytes": 2278,
+              "queuedDelivered": 0,
+              "seqMissing": 0,
+              "injectToSnapshotMs": 21,
+              "probes": [
+                "rrweb-started",
+                "census",
+                "pageshow(persisted=false)"
+              ]
+            }
+          ],
+          "topFrameGaps": [
+            {
+              "from": "http://127.0.0.1:35517/index.html",
+              "to": "http://127.0.0.1:35517/slow.html",
+              "attach": "boot",
+              "navType": "navigate",
+              "transitionType": "typed",
+              "blindMs": 319,
+              "commitToSnapshotMs": 22
+            }
+          ],
+          "lostMessages": [],
+          "navigation": [
+            "committed typed http://127.0.0.1:35517/slow.html"
+          ],
+          "tabEvents": [
+            {
+              "type": "start-inject",
+              "injected": {
+                "ok": true,
+                "frames": 1
+              }
+            }
+          ],
+          "refusedPorts": 0,
+          "markers": [
+            {
+              "label": "before-load-DOMContentLoaded",
+              "note": "inserted after DOMContentLoaded, before load",
+              "captured": true,
+              "recv": 1791913878125.1,
+              "latencyMs": 2,
+              "url": "http://127.0.0.1:35517/slow.html"
+            },
+            {
+              "label": "after-load-DOMContentLoaded",
+              "note": null,
+              "captured": true,
+              "recv": 1791913880619.1,
+              "latencyMs": 0,
+              "url": "http://127.0.0.1:35517/slow.html"
+            }
+          ],
+          "clock": {
+            "contentToOffscreenLatencyMs": {
+              "n": 27,
+              "min": -0.1,
+              "p50": 0.2,
+              "p95": 0.6,
+              "max": 7
+            },
+            "rrwebTimestampToSendMs": {
+              "n": 8,
+              "min": 0,
+              "p50": 0.3,
+              "p95": 0.6,
+              "max": 0.9
+            },
+            "dateNowMinusPerfClock": {
+              "driftPpm": 100.1,
+              "residualMs": {
+                "n": 3,
+                "min": 0,
+                "p50": 0,
+                "p95": 0,
+                "max": 0
+              },
+              "spanMs": 2000
+            },
+            "audioRenderClock": {
+              "points": 3,
+              "ppm": 185.1,
+              "residualMs": {
+                "n": 3,
+                "min": 2.593,
+                "p50": 2.641,
+                "p95": 2.641,
+                "max": 5.234
+              },
+              "spanMs": 1999
+            },
+            "audioChunks": {
+              "count": 4,
+              "intervalMs": {
+                "n": 3,
+                "min": 292.7,
+                "p50": 1018.6,
+                "p95": 1018.6,
+                "max": 1020.7
+              }
+            },
+            "audioRecorded": {
+              "decodedSeconds": 3.3,
+              "wallSeconds": 3.315,
+              "lossSeconds": 0.015,
+              "bytes": 45409,
+              "error": null,
+              "trackEvents": []
+            }
+          }
+        }
+      }
+    },
+    "tabSwitch": {
+      "ms": 11289,
+      "summary": {
+        "transientBlankFrames": 2,
+        "sessionSeconds": 11.216,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 62,
+            "rrBytes": 15697,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 17,
+            "probes": [
+              "rrweb-started",
+              "census"
+            ]
+          }
+        ],
+        "topFrameGaps": [],
+        "lostMessages": [],
+        "navigation": [],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          },
+          {
+            "type": "tabActivated",
+            "recordedTabActive": false
+          },
+          {
+            "type": "tabActivated",
+            "recordedTabActive": true
+          },
+          {
+            "type": "tabActivated",
+            "recordedTabActive": false
+          }
+        ],
+        "refusedPorts": 2,
+        "markers": [
+          {
+            "label": "other-tab",
+            "note": "must NOT be captured",
+            "captured": false
+          },
+          {
+            "label": "popup-tab",
+            "note": "opened by the recorded tab; must NOT be captured",
+            "captured": false
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 81,
+            "min": 0.2,
+            "p50": 0.4,
+            "p95": 1,
+            "max": 1.2
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 62,
+            "min": 0,
+            "p50": 0.8,
+            "p95": 0.9,
+            "max": 1
+          },
+          "dateNowMinusPerfClock": {
+            "driftPpm": 10.9,
+            "residualMs": {
+              "n": 11,
+              "min": 0.004,
+              "p50": 0.053,
+              "p95": 0.082,
+              "max": 0.085
+            },
+            "spanMs": 10000
+          },
+          "audioRenderClock": {
+            "points": 11,
+            "ppm": 286.1,
+            "residualMs": {
+              "n": 11,
+              "min": 0.055,
+              "p50": 1.352,
+              "p95": 2.427,
+              "max": 6.823
+            },
+            "spanMs": 10000
+          },
+          "audioChunks": {
+            "count": 11,
+            "intervalMs": {
+              "n": 10,
+              "min": 985.9,
+              "p50": 1019.9,
+              "p95": 1020.1,
+              "max": 1020.2
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 11.15997732426304,
+            "wallSeconds": 11.154,
+            "lossSeconds": -0.006,
+            "bytes": 172381,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      },
+      "checks": {
+        "hiddenMs": 6005,
+        "recordedTabVisibilityWhileHidden": "visible",
+        "ticksCaptured": 56,
+        "ticksMax": 55,
+        "tickPeriodMs": 200
+      }
+    },
+    "restricted": {
+      "ms": 4561,
+      "summary": {
+        "transientBlankFrames": 4,
+        "sessionSeconds": 4.494,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 2,
+            "rrBytes": 3726,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 17,
+            "probes": [
+              "rrweb-started"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 1965,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 17,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          }
+        ],
+        "topFrameGaps": [
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 3938,
+            "commitToSnapshotMs": 20
+          }
+        ],
+        "lostMessages": [],
+        "navigation": [
+          "committed typed chrome://version/",
+          "committed typed about:blank",
+          "committed typed data:text/html,<p>marker:data-url</p>",
+          "committed typed http://127.0.0.1:35517/page2.html",
+          "errorOccurred  http://127.0.0.1:9/unreachable",
+          "committed typed http://127.0.0.1:35517/page2.html"
+        ],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "data-url",
+            "note": "data: URL in the recorded tab",
+            "captured": false
+          },
+          {
+            "label": "back-to-fixture",
+            "note": null,
+            "captured": true,
+            "recv": 1791913896482.7002,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 22,
+            "min": 0,
+            "p50": 0.1,
+            "p95": 0.3,
+            "max": 1.1
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 7,
+            "min": 0.2,
+            "p50": 0.4,
+            "p95": 0.6,
+            "max": 0.8
+          },
+          "dateNowMinusPerfClock": null,
+          "audioRenderClock": {
+            "points": 4,
+            "ppm": 1228.6,
+            "residualMs": {
+              "n": 4,
+              "min": 1.218,
+              "p50": 1.25,
+              "p95": 3.656,
+              "max": 6.124
+            },
+            "spanMs": 3000
+          },
+          "audioChunks": {
+            "count": 5,
+            "intervalMs": {
+              "n": 4,
+              "min": 396.7,
+              "p50": 1019.9,
+              "p95": 1020,
+              "max": 1022.2
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 4.4399773242630385,
+            "wallSeconds": 4.431,
+            "lossSeconds": -0.009,
+            "bytes": 63778,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      },
+      "checks": {
+        "visits": [
+          {
+            "url": "chrome://version/",
+            "gotoError": null
+          },
+          {
+            "url": "about:blank",
+            "gotoError": null
+          },
+          {
+            "url": "data:text/html,<p>marker:data-url</p>",
+            "gotoError": null
+          },
+          {
+            "url": "view-source:http://127.0.0.1:35517/page2.html",
+            "gotoError": null
+          },
+          {
+            "url": "http://127.0.0.1:9/unreachable",
+            "gotoError": "page.goto: net::ERR_UNSAFE_PORT at http://127.0.0.1:9/unreachable"
+          }
+        ]
+      }
+    },
+    "frames": {
+      "ms": 7086,
+      "summary": {
+        "recordCrossOriginIframes=false": {
+          "frameStreams": [
+            {
+              "url": "http://127.0.0.1:35517/index.html",
+              "frameId": 0,
+              "rrEvents": 2
+            },
+            {
+              "url": "http://127.0.0.1:35517/frames.html",
+              "frameId": 0,
+              "rrEvents": 6
+            },
+            {
+              "url": "about:blank",
+              "frameId": 66,
+              "rrEvents": 2
+            },
+            {
+              "url": "about:srcdoc",
+              "frameId": 67,
+              "rrEvents": 2
+            },
+            {
+              "url": "http://127.0.0.1:35517/child.html",
+              "frameId": 65,
+              "rrEvents": 4
+            },
+            {
+              "url": "http://localhost:45085/child.html",
+              "frameId": 66,
+              "rrEvents": 3
+            }
+          ],
+          "sameOriginChildText": [
+            "frame:http://127.0.0.1:35517/child.html",
+            "top"
+          ],
+          "crossOriginChildText": [
+            "frame:http://localhost:45085/child.html"
+          ],
+          "crossOriginMutation": [
+            "frame:http://localhost:45085/child.html"
+          ],
+          "srcdocText": [
+            "frame:about:srcdoc",
+            "top"
+          ],
+          "relayMessagesSeenByPage": 0,
+          "census": {
+            "type": "census",
+            "recv": 1791913898617.1,
+            "shadow": {
+              "open": 0,
+              "closed": 0
+            },
+            "frames": [
+              {
+                "rrId": 19,
+                "src": "/child.html",
+                "srcdoc": false,
+                "sameOrigin": true,
+                "frameIndex": 0,
+                "getFrameId": "absent"
+              },
+              {
+                "rrId": 21,
+                "src": "http://localhost:45085/child.html",
+                "srcdoc": false,
+                "sameOrigin": false,
+                "frameIndex": 1,
+                "getFrameId": "absent"
+              },
+              {
+                "rrId": 23,
+                "src": null,
+                "srcdoc": true,
+                "sameOrigin": true,
+                "frameIndex": 2,
+                "getFrameId": "absent"
+              }
+            ],
+            "canvases": [],
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          "stitching": [
+            {
+              "childUrl": "about:srcdoc",
+              "frameIndex": 2,
+              "parentIframeRrId": 23,
+              "srcMatches": true
+            },
+            {
+              "childUrl": "http://127.0.0.1:35517/child.html",
+              "frameIndex": 0,
+              "parentIframeRrId": 19,
+              "srcMatches": true
+            },
+            {
+              "childUrl": "http://localhost:45085/child.html",
+              "frameIndex": 1,
+              "parentIframeRrId": 21,
+              "srcMatches": true
+            }
+          ]
+        },
+        "recordCrossOriginIframes=true": {
+          "frameStreams": [
+            {
+              "url": "http://127.0.0.1:35517/index.html",
+              "frameId": 0,
+              "rrEvents": 2
+            },
+            {
+              "url": "http://127.0.0.1:35517/frames.html",
+              "frameId": 0,
+              "rrEvents": 8
+            },
+            {
+              "url": "http://127.0.0.1:35517/child.html",
+              "frameId": 82,
+              "rrEvents": 0
+            },
+            {
+              "url": "about:srcdoc",
+              "frameId": 84,
+              "rrEvents": 0
+            },
+            {
+              "url": "http://localhost:45085/child.html",
+              "frameId": 83,
+              "rrEvents": 0
+            }
+          ],
+          "sameOriginChildText": [
+            "top"
+          ],
+          "crossOriginChildText": [
+            "top"
+          ],
+          "crossOriginMutation": [
+            "top"
+          ],
+          "srcdocText": [
+            "top"
+          ],
+          "relayMessagesSeenByPage": 5,
+          "census": {
+            "type": "census",
+            "recv": 1791913902187.5999,
+            "shadow": {
+              "open": 0,
+              "closed": 0
+            },
+            "frames": [
+              {
+                "rrId": 19,
+                "src": "/child.html",
+                "srcdoc": false,
+                "sameOrigin": true,
+                "frameIndex": 0,
+                "getFrameId": "absent"
+              },
+              {
+                "rrId": 21,
+                "src": "http://localhost:45085/child.html",
+                "srcdoc": false,
+                "sameOrigin": false,
+                "frameIndex": 1,
+                "getFrameId": "absent"
+              },
+              {
+                "rrId": 23,
+                "src": null,
+                "srcdoc": true,
+                "sameOrigin": true,
+                "frameIndex": 2,
+                "getFrameId": "absent"
+              }
+            ],
+            "canvases": [],
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          "stitching": [
+            {
+              "childUrl": "http://127.0.0.1:35517/child.html",
+              "frameIndex": 0,
+              "parentIframeRrId": 19,
+              "srcMatches": true
+            },
+            {
+              "childUrl": "about:srcdoc",
+              "frameIndex": 2,
+              "parentIframeRrId": 23,
+              "srcMatches": true
+            },
+            {
+              "childUrl": "http://localhost:45085/child.html",
+              "frameIndex": 1,
+              "parentIframeRrId": 21,
+              "srcMatches": true
+            }
+          ]
+        }
+      }
+    },
+    "canvas": {
+      "ms": 10250,
+      "summary": {
+        "recordCanvas=false": {
+          "seconds": 5,
+          "rrEvents": 2,
+          "rrBytes": 1596,
+          "canvasMutationEvents": 0
+        },
+        "recordCanvas=true": {
+          "seconds": 5,
+          "rrEvents": 42,
+          "rrBytes": 102508,
+          "canvasMutationEvents": 40
+        }
+      }
+    },
+    "shadow": {
+      "ms": 2616,
+      "summary": {
+        "openShadowTextCaptured": true,
+        "closedShadowTextCaptured": false,
+        "census": {
+          "type": "census",
+          "recv": 1791913915955.2002,
+          "shadow": {
+            "open": 1,
+            "closed": 1
+          },
+          "frames": [],
+          "canvases": [],
+          "url": "http://127.0.0.1:35517/shadow.html"
+        }
+      }
+    },
+    "workerRestart": {
+      "ms": 3005,
+      "summary": {
+        "transientBlankFrames": 4,
+        "sessionSeconds": 2.934,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 4743,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 16,
+            "probes": [
+              "rrweb-started",
+              "census"
+            ]
+          },
+          {
+            "url": "http://127.0.0.1:35517/page2.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "loading",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 5,
+            "rrBytes": 1979,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 18,
+            "probes": [
+              "rrweb-started",
+              "pageshow(persisted=false)"
+            ]
+          }
+        ],
+        "topFrameGaps": [
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "link",
+            "blindMs": 42,
+            "commitToSnapshotMs": 19
+          }
+        ],
+        "lostMessages": [],
+        "navigation": [
+          "committed link http://127.0.0.1:35517/page2.html"
+        ],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          },
+          {
+            "type": "tabActivated",
+            "recordedTabActive": false
+          },
+          {
+            "type": "tabActivated",
+            "recordedTabActive": true
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "before-sw-stop",
+            "note": null,
+            "captured": true,
+            "recv": 1791913917547.5,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "while-sw-stopped",
+            "note": null,
+            "captured": true,
+            "recv": 1791913919092.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "before-nav-after-sw-stop",
+            "note": "inserted in the same task as the navigation",
+            "captured": true,
+            "recv": 1791913919094.3,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "after-nav-sw-restarted",
+            "note": null,
+            "captured": true,
+            "recv": 1791913919138.7002,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 28,
+            "min": 0,
+            "p50": 0.2,
+            "p95": 1.5,
+            "max": 2.2
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 10,
+            "min": 0.1,
+            "p50": 0.7,
+            "p95": 1,
+            "max": 1.1
+          },
+          "dateNowMinusPerfClock": null,
+          "audioRenderClock": null,
+          "audioChunks": {
+            "count": 3,
+            "intervalMs": {
+              "n": 2,
+              "min": 880.5,
+              "p50": 880.5,
+              "p95": 880.5,
+              "max": 1020.9
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 2.8799773242630384,
+            "wallSeconds": 2.87,
+            "lossSeconds": -0.01,
+            "bytes": 38631,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      },
+      "checks": {
+        "stopResult": "stopAllWorkers sent",
+        "workersAfterStop": 1,
+        "distinctWorkerBootsInLog": 2
+      }
+    },
+    "soak": {
+      "ms": 423259,
+      "summary": {
+        "transientBlankFrames": 80,
+        "sessionSeconds": 422.967,
+        "documents": "42 documents",
+        "topFrameGaps": [
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 40,
+            "commitToSnapshotMs": 20
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/spa.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 42,
+            "commitToSnapshotMs": 15
+          },
+          {
+            "from": "http://127.0.0.1:35517/spa.html",
+            "to": "http://127.0.0.1:35517/frames.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 56,
+            "commitToSnapshotMs": 26
+          },
+          {
+            "from": "http://127.0.0.1:35517/frames.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 32,
+            "commitToSnapshotMs": 16
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 47,
+            "commitToSnapshotMs": 15
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/spa.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 28,
+            "commitToSnapshotMs": 14
+          },
+          {
+            "from": "http://127.0.0.1:35517/spa.html",
+            "to": "http://127.0.0.1:35517/frames.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 41,
+            "commitToSnapshotMs": 28
+          },
+          {
+            "from": "http://127.0.0.1:35517/frames.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 41,
+            "commitToSnapshotMs": 16
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 55,
+            "commitToSnapshotMs": 17
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/spa.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": null,
+            "blindMs": 37,
+            "commitToSnapshotMs": null
+          },
+          {
+            "from": "http://127.0.0.1:35517/spa.html",
+            "to": "http://127.0.0.1:35517/frames.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 66,
+            "commitToSnapshotMs": 41
+          },
+          {
+            "from": "http://127.0.0.1:35517/frames.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 39,
+            "commitToSnapshotMs": 20
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 31,
+            "commitToSnapshotMs": 16
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/spa.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": null,
+            "blindMs": 54,
+            "commitToSnapshotMs": null
+          },
+          {
+            "from": "http://127.0.0.1:35517/spa.html",
+            "to": "http://127.0.0.1:35517/frames.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": null,
+            "blindMs": 66,
+            "commitToSnapshotMs": null
+          },
+          {
+            "from": "http://127.0.0.1:35517/frames.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 36,
+            "commitToSnapshotMs": 18
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 36,
+            "commitToSnapshotMs": 19
+          },
+          {
+            "from": "http://127.0.0.1:35517/page2.html",
+            "to": "http://127.0.0.1:35517/spa.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": null,
+            "blindMs": 37,
+            "commitToSnapshotMs": null
+          },
+          {
+            "from": "http://127.0.0.1:35517/spa.html",
+            "to": "http://127.0.0.1:35517/frames.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": null,
+            "blindMs": 59,
+            "commitToSnapshotMs": null
+          },
+          {
+            "from": "http://127.0.0.1:35517/frames.html",
+            "to": "http://127.0.0.1:35517/index.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 31,
+            "commitToSnapshotMs": 17
+          },
+          {
+            "from": "http://127.0.0.1:35517/index.html",
+            "to": "http://127.0.0.1:35517/page2.html",
+            "attach": "boot",
+            "navType": "navigate",
+            "transitionType": "typed",
+            "blindMs": 31,
+            "commitToSnapshotMs": 15
+          }
+        ],
+        "lostMessages": [],
+        "navigation": [
+          "committed typed http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/spa.html",
+          "committed typed http://127.0.0.1:35517/frames.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed typed http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/spa.html",
+          "committed typed http://127.0.0.1:35517/frames.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed typed http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/spa.html",
+          "committed typed http://127.0.0.1:35517/frames.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed typed http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/spa.html",
+          "committed typed http://127.0.0.1:35517/frames.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed typed http://127.0.0.1:35517/page2.html",
+          "committed typed http://127.0.0.1:35517/spa.html",
+          "committed typed http://127.0.0.1:35517/frames.html",
+          "committed typed http://127.0.0.1:35517/index.html",
+          "committed typed http://127.0.0.1:35517/page2.html"
+        ],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "soak-1",
+            "note": null,
+            "captured": true,
+            "recv": 1791913920056.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-2",
+            "note": null,
+            "captured": true,
+            "recv": 1791913925056.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-3",
+            "note": null,
+            "captured": true,
+            "recv": 1791913930069.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-4",
+            "note": null,
+            "captured": true,
+            "recv": 1791913935079.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-5",
+            "note": null,
+            "captured": true,
+            "recv": 1791913940126.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-6",
+            "note": null,
+            "captured": true,
+            "recv": 1791913945136.9001,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-7",
+            "note": null,
+            "captured": true,
+            "recv": 1791913950150.6,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-8",
+            "note": null,
+            "captured": true,
+            "recv": 1791913955155.5,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-9",
+            "note": null,
+            "captured": true,
+            "recv": 1791913960203.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-10",
+            "note": null,
+            "captured": true,
+            "recv": 1791913965224.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-11",
+            "note": null,
+            "captured": true,
+            "recv": 1791913970236.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-12",
+            "note": null,
+            "captured": true,
+            "recv": 1791913975251.3,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-13",
+            "note": null,
+            "captured": true,
+            "recv": 1791913980359.9001,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-14",
+            "note": null,
+            "captured": true,
+            "recv": 1791913985366.3,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-15",
+            "note": null,
+            "captured": true,
+            "recv": 1791913990377.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-16",
+            "note": null,
+            "captured": true,
+            "recv": 1791913995388.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-17",
+            "note": null,
+            "captured": true,
+            "recv": 1791914000427,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-18",
+            "note": null,
+            "captured": true,
+            "recv": 1791914005443.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-19",
+            "note": null,
+            "captured": true,
+            "recv": 1791914010450.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-20",
+            "note": null,
+            "captured": true,
+            "recv": 1791914015456.6,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-21",
+            "note": null,
+            "captured": true,
+            "recv": 1791914020509.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-22",
+            "note": null,
+            "captured": true,
+            "recv": 1791914025523.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-23",
+            "note": null,
+            "captured": true,
+            "recv": 1791914030535.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-24",
+            "note": null,
+            "captured": true,
+            "recv": 1791914035541.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-25",
+            "note": null,
+            "captured": true,
+            "recv": 1791914040588,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-26",
+            "note": null,
+            "captured": true,
+            "recv": 1791914045591.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-27",
+            "note": null,
+            "captured": true,
+            "recv": 1791914050598.6,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-28",
+            "note": null,
+            "captured": true,
+            "recv": 1791914055609.3,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-29",
+            "note": null,
+            "captured": true,
+            "recv": 1791914060707.6,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-30",
+            "note": null,
+            "captured": true,
+            "recv": 1791914065729.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-31",
+            "note": null,
+            "captured": true,
+            "recv": 1791914070740.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-32",
+            "note": null,
+            "captured": true,
+            "recv": 1791914075748.2,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-33",
+            "note": null,
+            "captured": true,
+            "recv": 1791914080799.9001,
+            "latencyMs": 3,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-34",
+            "note": null,
+            "captured": true,
+            "recv": 1791914085818.3,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-35",
+            "note": null,
+            "captured": true,
+            "recv": 1791914090830.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-36",
+            "note": null,
+            "captured": true,
+            "recv": 1791914095841,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-37",
+            "note": null,
+            "captured": true,
+            "recv": 1791914100903.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-38",
+            "note": null,
+            "captured": true,
+            "recv": 1791914105909,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-39",
+            "note": null,
+            "captured": true,
+            "recv": 1791914110919.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-40",
+            "note": null,
+            "captured": true,
+            "recv": 1791914115929.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-41",
+            "note": null,
+            "captured": true,
+            "recv": 1791914120972.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-42",
+            "note": null,
+            "captured": true,
+            "recv": 1791914125993.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-43",
+            "note": null,
+            "captured": true,
+            "recv": 1791914131005,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-44",
+            "note": null,
+            "captured": true,
+            "recv": 1791914136013.6,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-45",
+            "note": null,
+            "captured": true,
+            "recv": 1791914141111.9001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-46",
+            "note": null,
+            "captured": true,
+            "recv": 1791914146134,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-47",
+            "note": null,
+            "captured": true,
+            "recv": 1791914151144.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-48",
+            "note": null,
+            "captured": true,
+            "recv": 1791914156155.5,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-49",
+            "note": null,
+            "captured": true,
+            "recv": 1791914161202.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-50",
+            "note": null,
+            "captured": true,
+            "recv": 1791914166210.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-51",
+            "note": null,
+            "captured": true,
+            "recv": 1791914171220.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-52",
+            "note": null,
+            "captured": true,
+            "recv": 1791914176230.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-53",
+            "note": null,
+            "captured": true,
+            "recv": 1791914181266,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-54",
+            "note": null,
+            "captured": true,
+            "recv": 1791914186287.6,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-55",
+            "note": null,
+            "captured": true,
+            "recv": 1791914191293.5,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-56",
+            "note": null,
+            "captured": true,
+            "recv": 1791914196300.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-57",
+            "note": null,
+            "captured": true,
+            "recv": 1791914201363.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-58",
+            "note": null,
+            "captured": true,
+            "recv": 1791914206384.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-59",
+            "note": null,
+            "captured": true,
+            "recv": 1791914211395.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-60",
+            "note": null,
+            "captured": true,
+            "recv": 1791914216407.3,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-61",
+            "note": null,
+            "captured": true,
+            "recv": 1791914221513.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-62",
+            "note": null,
+            "captured": true,
+            "recv": 1791914226522.5,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-63",
+            "note": null,
+            "captured": true,
+            "recv": 1791914231534.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-64",
+            "note": null,
+            "captured": true,
+            "recv": 1791914236544.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-65",
+            "note": null,
+            "captured": true,
+            "recv": 1791914241587.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-66",
+            "note": null,
+            "captured": true,
+            "recv": 1791914246608,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-67",
+            "note": null,
+            "captured": true,
+            "recv": 1791914251617.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-68",
+            "note": null,
+            "captured": true,
+            "recv": 1791914256626,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-69",
+            "note": null,
+            "captured": true,
+            "recv": 1791914261667.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-70",
+            "note": null,
+            "captured": true,
+            "recv": 1791914266689.4001,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-71",
+            "note": null,
+            "captured": true,
+            "recv": 1791914271701.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-72",
+            "note": null,
+            "captured": true,
+            "recv": 1791914276712.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/page2.html"
+          },
+          {
+            "label": "soak-73",
+            "note": null,
+            "captured": true,
+            "recv": 1791914281755.3,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-74",
+            "note": null,
+            "captured": true,
+            "recv": 1791914286765.5,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-75",
+            "note": null,
+            "captured": true,
+            "recv": 1791914291776.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-76",
+            "note": null,
+            "captured": true,
+            "recv": 1791914296786,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/spa.html"
+          },
+          {
+            "label": "soak-77",
+            "note": null,
+            "captured": true,
+            "recv": 1791914301892.1,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-78",
+            "note": null,
+            "captured": true,
+            "recv": 1791914306913.7,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-79",
+            "note": null,
+            "captured": true,
+            "recv": 1791914311923.8,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-80",
+            "note": null,
+            "captured": true,
+            "recv": 1791914316933,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/frames.html"
+          },
+          {
+            "label": "soak-81",
+            "note": null,
+            "captured": true,
+            "recv": 1791914321977.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-82",
+            "note": null,
+            "captured": true,
+            "recv": 1791914326998,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-83",
+            "note": null,
+            "captured": true,
+            "recv": 1791914332008.2,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          },
+          {
+            "label": "soak-84",
+            "note": null,
+            "captured": true,
+            "recv": 1791914337020.5,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:35517/index.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 1314,
+            "min": 0,
+            "p50": 0.5,
+            "p95": 2.2,
+            "max": 4.6
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 239,
+            "min": -0.1,
+            "p50": 0.5,
+            "p95": 0.9,
+            "max": 1.1
+          },
+          "dateNowMinusPerfClock": {
+            "driftPpm": 0.1,
+            "residualMs": {
+              "n": 720,
+              "min": 0.018,
+              "p50": 0.256,
+              "p95": 0.464,
+              "max": 0.638
+            },
+            "spanMs": 420982
+          },
+          "audioRenderClock": {
+            "points": 422,
+            "ppm": -270.2,
+            "residualMs": {
+              "n": 422,
+              "min": 0.017,
+              "p50": 23.089,
+              "p95": 45.435,
+              "max": 52.455
+            },
+            "spanMs": 421091
+          },
+          "audioChunks": {
+            "count": 414,
+            "intervalMs": {
+              "n": 413,
+              "min": 800.8,
+              "p50": 1020,
+              "p95": 1021.2,
+              "max": 1022.7
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 421.98,
+            "wallSeconds": 422.904,
+            "lossSeconds": 0.924,
+            "bytes": 6793066,
+            "error": null,
+            "trackEvents": []
+          }
+        }
+      }
+    },
+    "micDenied": {
+      "ms": 1502,
+      "summary": {
+        "startReplyAudio": {
+          "error": {
+            "name": "NotAllowedError",
+            "message": "Permission dismissed"
+          },
+          "settings": null,
+          "chunks": 0,
+          "bytes": 0,
+          "recorderStartedAt": null,
+          "sampleRate": null,
+          "baseLatency": null,
+          "clockPoints": 0,
+          "decodedSeconds": null,
+          "trackEvents": []
+        },
+        "transientBlankFrames": 2,
+        "sessionSeconds": 1.059,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:35517/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 3,
+            "rrBytes": 4059,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 17,
+            "probes": [
+              "rrweb-started"
+            ]
+          }
+        ],
+        "topFrameGaps": [],
+        "lostMessages": [],
+        "navigation": [],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "dom-without-mic",
+            "note": null,
+            "captured": true,
+            "recv": 1791914344098.8,
+            "latencyMs": 2,
+            "url": "http://127.0.0.1:35517/index.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 10,
+            "min": 0.2,
+            "p50": 0.5,
+            "p95": 0.7,
+            "max": 0.7
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 3,
+            "min": 0.3,
+            "p50": 0.5,
+            "p95": 0.5,
+            "max": 0.9
+          },
+          "dateNowMinusPerfClock": null,
+          "audioRenderClock": null,
+          "audioChunks": {
+            "count": 0,
+            "intervalMs": null
+          },
+          "audioRecorded": {
+            "decodedSeconds": null,
+            "wallSeconds": null,
+            "lossSeconds": null,
+            "bytes": 0,
+            "error": {
+              "name": "NotAllowedError",
+              "message": "Permission dismissed"
+            },
+            "trackEvents": []
+          }
+        }
+      },
+      "version": "153.0.8010.12"
+    },
+    "micRevoked": {
+      "ms": 7723,
+      "summary": {
+        "grant": "chrome://settings site details: Allow, then Block",
+        "revokedAfterMs": 3000,
+        "observedForMs": 4049,
+        "startReplyAudio": {
+          "error": null,
+          "settings": {
+            "autoGainControl": true,
+            "channelCount": 1,
+            "deviceId": "default",
+            "echoCancellation": true,
+            "groupId": "ab67419f89ef6823c773f18df0eb40831d45b568b01ca14c29238624fc58e231",
+            "latency": 0.01,
+            "noiseSuppression": true,
+            "sampleRate": 48000,
+            "sampleSize": 16,
+            "voiceIsolation": false
+          },
+          "chunks": 0,
+          "bytes": 0,
+          "recorderStartedAt": null,
+          "sampleRate": 44100,
+          "baseLatency": 0.01,
+          "clockPoints": 0,
+          "decodedSeconds": null,
+          "trackEvents": []
+        },
+        "transientBlankFrames": 2,
+        "sessionSeconds": 7.102,
+        "documents": [
+          {
+            "url": "http://127.0.0.1:38765/index.html",
+            "isTop": true,
+            "frameId": 0,
+            "navType": "navigate",
+            "readyStateAtInject": "complete",
+            "attachments": [
+              "boot"
+            ],
+            "rrEvents": 3,
+            "rrBytes": 4053,
+            "queuedDelivered": 0,
+            "seqMissing": 0,
+            "injectToSnapshotMs": 18,
+            "probes": [
+              "rrweb-started",
+              "census"
+            ]
+          }
+        ],
+        "topFrameGaps": [],
+        "lostMessages": [],
+        "navigation": [],
+        "tabEvents": [
+          {
+            "type": "start-inject",
+            "injected": {
+              "ok": true,
+              "frames": 1
+            }
+          }
+        ],
+        "refusedPorts": 0,
+        "markers": [
+          {
+            "label": "after-revoke",
+            "note": null,
+            "captured": true,
+            "recv": 1791914573162,
+            "latencyMs": 1,
+            "url": "http://127.0.0.1:38765/index.html"
+          }
+        ],
+        "clock": {
+          "contentToOffscreenLatencyMs": {
+            "n": 18,
+            "min": 0.1,
+            "p50": 0.3,
+            "p95": 0.9,
+            "max": 1.3
+          },
+          "rrwebTimestampToSendMs": {
+            "n": 3,
+            "min": 0.1,
+            "p50": 0.7,
+            "p95": 0.7,
+            "max": 0.7
+          },
+          "dateNowMinusPerfClock": {
+            "driftPpm": 14.3,
+            "residualMs": {
+              "n": 7,
+              "min": 0,
+              "p50": 0.029,
+              "p95": 0.057,
+              "max": 0.086
+            },
+            "spanMs": 6000
+          },
+          "audioRenderClock": {
+            "points": 7,
+            "ppm": 636.1,
+            "residualMs": {
+              "n": 7,
+              "min": 0.138,
+              "p50": 1.592,
+              "p95": 2.845,
+              "max": 6.237
+            },
+            "spanMs": 6000
+          },
+          "audioChunks": {
+            "count": 3,
+            "intervalMs": {
+              "n": 2,
+              "min": 1019.8,
+              "p50": 1019.8,
+              "p95": 1019.8,
+              "max": 5002.5
+            }
+          },
+          "audioRecorded": {
+            "decodedSeconds": 3,
+            "wallSeconds": 6.999,
+            "lossSeconds": 3.999,
+            "bytes": 40563,
+            "error": null,
+            "trackEvents": [
+              {
+                "type": "ended",
+                "at": 1791914569152.5999,
+                "readyState": "ended"
+              }
+            ]
+          }
+        }
+      },
+      "ranAt": "2026-10-13T18:02:45.572Z",
+      "note": "Re-run separately after the harness switched revocation to the chrome://settings control; same browser build."
+    }
+  },
+  "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36"
+}

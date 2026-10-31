@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Fixture markers</title><script src="/fixture.js"></script>
+<style>body { margin: 0; font: 16px sans-serif; } #target { position: absolute; left: 40px; top: 40px; width: 200px; height: 60px; } #area { position: absolute; left: 40px; top: 160px; width: 400px; height: 200px; } #area button { margin: 20px; } #inner { position: absolute; left: 500px; top: 40px; width: 300px; height: 200px; border: 0; }</style>
+</head>
+<body>
+<button id="target" type="button">Mark target</button>
+<div id="area"><button id="a1" type="button">Alpha</button><button id="a2" type="button">Beta</button></div>
+<label style="position: absolute; left: 40px; top: 400px">Secret <input id="secret" type="text" value=""></label>
+<button id="focus-me" type="button" style="position: absolute; left: 40px; top: 450px">Focus me</button>
+<iframe id="inner" src="/frame.html?f=FRAMESECRET9" title="Inner frame"></iframe>
+<a id="next" href="/frame.html?key=LINKSECRET7" style="position: absolute; left: 40px; top: 650px">Next</a>
+<script>
+  // What the page itself sees: a page menu opens on contextmenu.
+  window.pageMenus = [];
+  document.addEventListener('contextmenu', (e) => window.pageMenus.push({ shift: e.shiftKey, prevented: e.defaultPrevented }));
+  window.pagePresses = 0;
+  document.addEventListener('mousedown', (e) => { if (e.button === 2) window.pagePresses += 1; });
+</script>
+</body>
+</html>

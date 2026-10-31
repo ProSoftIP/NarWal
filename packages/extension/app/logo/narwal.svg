@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-labelledby="title desc">
+  <title id="title">NarWal</title>
+  <desc id="desc">An ascending red folded narwhal with a white circular eye. Navigation Walkthrough.</desc>
+  <g id="narwal">
+    <path id="far-flipper" fill="#C90723" d="M 668,540 C 600,567 531,607 464,663 L 594,692 Z"/>
+    <path id="near-flipper" fill="#D30F29" d="M 974,672 L 1036,760 L 1037,831 Q 1027,888 1006,930 Q 937,844 899,778 Z"/>
+    <path id="body" fill="#C90723" d="M 401,908 L 524,806 L 679,513 L 834,367 L 952,339 L 1049,412 C 1095,455 1081,510 1054,553 C 1016,624 963,705 899,778 C 815,878 713,940 617,949 C 529,960 451,944 401,908 Z"/>
+    <path id="back-fold" fill="#FC4722" d="M 401,908 L 524,806 L 679,513 L 834,367 L 952,339 L 1049,412 L 909,492 L 810,689 L 593,860 Z"/>
+    <path id="tusk-shadow" fill="#C90723" d="M 952,339 L 1161,134 L 1049,412 Z"/>
+    <path id="tusk-light" fill="#FC4722" d="M 952,339 L 1161,134 L 1003,364 Z"/>
+    <path id="tail-upper" fill="#D10F29" d="M 401,908 L 283,788 Q 180,793 96,817 L 188,927 L 275,952 Z"/>
+    <path id="tail-lower" fill="#C80722" d="M 401,908 Q 381,996 350,1055 Q 273,1122 189,1149 L 210,1022 L 275,952 Z"/>
+    <circle id="eye" cx="973" cy="494" r="21.5" fill="#FFFFFF"/>
+  </g>
+</svg>
+

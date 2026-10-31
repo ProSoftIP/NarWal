@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.e2e-profile/
+.e2e-bench/
+.e2e-measure/
+results/*.raw.json

@@ -1,0 +1,15 @@
+{
+  "_note": "Synthetic values in the documented Universal Streaming v3 message shapes (read 2026-10-13), speech_model=universal-3-6-pro, no format_turns: the end-of-turn message is final. Ends with Termination. Not captured from a live socket.",
+  "messages": [
+    { "type": "Begin", "id": "sess-u3-1", "expires_at": 1792000000, "configuration": { "model": "universal-3-6-pro" } },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": false, "end_of_turn": false, "transcript": "", "utterance": "", "end_of_turn_confidence": 0.02,
+      "words": [ { "text": "open", "start": 150, "end": 410, "confidence": 0.7, "word_is_final": false } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": true, "end_of_turn": true, "transcript": "Open settings.", "utterance": "Open settings.", "end_of_turn_confidence": 0.9,
+      "words": [ { "text": "Open", "start": 150, "end": 410, "confidence": 0.97, "word_is_final": true },
+                 { "text": "settings.", "start": 410, "end": 900, "confidence": 0.96, "word_is_final": true } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": true, "end_of_turn": true, "transcript": "Open settings!", "utterance": "Open settings!", "end_of_turn_confidence": 0.9,
+      "words": [ { "text": "Open", "start": 150, "end": 410, "confidence": 0.97, "word_is_final": true },
+                 { "text": "settings!", "start": 410, "end": 900, "confidence": 0.96, "word_is_final": true } ] },
+    { "type": "Termination", "audio_duration_seconds": 1, "session_duration_seconds": 2 }
+  ]
+}

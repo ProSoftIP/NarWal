@@ -1,0 +1,67 @@
+{
+  "documents": [
+    {
+      "key": "d1",
+      "browserDocumentId": "FIXTURE-DOC-D1",
+      "frameId": 0,
+      "parentKey": null,
+      "frameNode": null,
+      "url": "https://app.example.test/dashboard",
+      "title": "Dashboard",
+      "navigationType": "navigate",
+      "transition": "typed",
+      "attachedMs": 0,
+      "detachedMs": 60000,
+      "attachments": [
+        {
+          "atMs": 0,
+          "reason": "boot"
+        }
+      ],
+      "capture": "full",
+      "rrweb": "rrweb/d1.jsonl"
+    },
+    {
+      "key": "d2",
+      "browserDocumentId": "FIXTURE-DOC-D2",
+      "frameId": 0,
+      "parentKey": null,
+      "frameNode": null,
+      "url": "https://app.example.test/reports?range=_",
+      "title": "Reports",
+      "navigationType": "navigate",
+      "transition": "link",
+      "attachedMs": 60400,
+      "detachedMs": null,
+      "attachments": [
+        {
+          "atMs": 60400,
+          "reason": "boot"
+        }
+      ],
+      "capture": "partial",
+      "rrweb": "rrweb/d2.jsonl"
+    },
+    {
+      "key": "d3",
+      "browserDocumentId": "FIXTURE-DOC-D3",
+      "frameId": 4,
+      "parentKey": "d2",
+      "frameNode": null,
+      "url": "https://charts.example.test/embed?id=_",
+      "title": "",
+      "navigationType": "navigate",
+      "transition": "auto_subframe",
+      "attachedMs": 60600,
+      "detachedMs": null,
+      "attachments": [
+        {
+          "atMs": 60600,
+          "reason": "boot"
+        }
+      ],
+      "capture": "none",
+      "rrweb": null
+    }
+  ]
+}

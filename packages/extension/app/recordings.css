@@ -1,0 +1,115 @@
+/* Saved recordings as Tiles B (board #16783): the open recording's status bar
+   and tiles, then the library. Shared pieces are in tiles.css. */
+.detail { display: contents; }
+.replay-tile { grid-column: span 5; grid-row: span 3; }
+.transcript-tile { grid-column: span 3; grid-row: span 2; }
+.pages-tile { grid-column: span 3; }
+.purpose-tile, .mic-tile, .gaps-tile { grid-column: span 4; }
+.library { grid-column: 1 / -1; padding-bottom: 4px; }
+/* An Export's note ends with how to share the file (board #27484): it wraps, not cut. */
+#export-status { white-space: normal; }
+
+/* The replay: the recorded page scaled into the tile, a mark drawn over it. */
+.stage { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--chip); aspect-ratio: 16 / 10; }
+.stage #replay { position: absolute; inset: 0; }
+.stage .replayer-wrapper { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+.stage .replayer-wrapper iframe { border: 0; background: #fff; display: block; }
+.stage .replayer-mouse { display: none; }
+.stage .say { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; color: var(--ink-2); text-align: center; }
+.mark-box { position: absolute; border: 2px solid var(--accent); border-radius: 3px; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); pointer-events: none; }
+/* The mark hovered or picked in the transcript (board #16844). */
+.mark-box.focus { border-width: 3px; box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent), 0 0 0 9999px rgb(0 0 0 / .18); }
+.transport { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 10px; align-items: center; margin-top: 8px; }
+.play { width: 30px; height: 30px; border-radius: 50%; border: 0; padding: 0; background: var(--accent); color: var(--on-accent); display: grid; place-items: center; cursor: pointer; }
+.play:disabled { opacity: .45; cursor: default; }
+.time { font-size: 12px; color: var(--ink-2); white-space: nowrap; min-width: 9ch; }
+.track { position: relative; height: 20px; display: flex; align-items: center; }
+.track input { width: 100%; margin: 0; position: relative; z-index: 1; accent-color: var(--ink-2); background: transparent; cursor: pointer; }
+.ticks { position: absolute; left: 7px; right: 7px; top: 50%; height: 0; }
+.ticks i { position: absolute; top: -7px; width: 2px; height: 14px; margin-left: -1px; background: var(--ink-3); border-radius: 1px; }
+.ticks i.mark { background: var(--accent); width: 3px; height: 16px; top: -8px; margin-left: -1.5px; }
+
+/* The transcript with route changes and marks in the flow. */
+.transcript-tile .get:has(> [hidden]) { display: none; }
+.transcript-tile .get { margin: 0 0 6px; }
+.transcript-tile .note { margin-bottom: 6px; }
+.lines { list-style: none; margin: 0 -6px; padding: 0; max-height: 560px; overflow: auto; }
+.lines li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 8px; padding: 5px 6px; border-top: 1px solid var(--line); line-height: 1.4; cursor: pointer; }
+.lines li:first-child { border-top: 0; }
+.lines li:hover { background: color-mix(in srgb, var(--ink) 4%, transparent); }
+.lines li[aria-selected='true'] { background: color-mix(in srgb, var(--accent) 9%, var(--surface)); box-shadow: inset 3px 0 0 var(--accent); }
+.lines li:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; border-radius: 3px; }
+.lines li .at { color: var(--accent); font-weight: 600; font-size: 12px; font-variant-numeric: tabular-nums; }
+.lines li.route { color: var(--ink-3); font-size: 12px; padding: 3px 6px; }
+.lines li.route .what { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.lines li.route code { font: 11.5px var(--mono); color: var(--ink-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lines li.mark .what { color: var(--accent); font-weight: 600; display: flex; align-items: flex-start; gap: 6px; }
+.lines li.mark .what .ic { margin-top: 2px; }
+.lines li.now .at { text-decoration: underline; }
+.lines .what { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+/* Pages, microphone, gaps. */
+.pages-tile td.u { max-width: 0; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mic-tile .part { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; }
+.mic-tile .part + .part { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+.mic-tile audio { width: 100%; height: 32px; }
+.mic-tile .part p { font-size: 12px; color: var(--ink-2); }
+.gaps-tile td { white-space: normal; }
+
+/* The library: search, day groups, rows. */
+.filters { display: flex; align-items: center; gap: 14px; padding: 0 0 8px; border-bottom: 1px solid var(--line); }
+.filters .search { position: relative; display: flex; align-items: center; color: var(--ink-3); flex: 0 1 360px; }
+.filters .search .ic { position: absolute; left: 8px; pointer-events: none; }
+.filters .search input { width: 100%; padding-left: 28px; }
+.filters .shown { margin-left: auto; color: var(--ink-3); font-size: 12px; }
+#list td.t { max-width: 0; width: 46%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+#list td.site { max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+#list tr.day th { height: 30px; padding-top: 8px; font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-2); font-weight: 600; text-align: left; border-bottom: 1px solid var(--line); }
+#list tr.day th .sub { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--ink-3); margin-left: 8px; }
+#list tbody:first-of-type tr.day th { padding-top: 0; }
+/* A click anywhere on a row selects it (board #16839). */
+#list tbody tr:not(.day) { cursor: pointer; }
+#list tbody tr:not(.day):not([aria-current='true']):hover td { background: color-mix(in srgb, var(--ink) 4%, var(--surface)); }
+#list tbody tr:not(.day):focus { outline: none; }
+#list tbody tr:not(.day):focus-visible td { box-shadow: inset 0 2px 0 var(--focus), inset 0 -2px 0 var(--focus); }
+#list tbody tr:not(.day):focus-visible td:first-child { box-shadow: inset 2px 0 0 var(--focus), inset 0 2px 0 var(--focus), inset 0 -2px 0 var(--focus); }
+#list tbody tr:not(.day):focus-visible td:last-child { box-shadow: inset -2px 0 0 var(--focus), inset 0 2px 0 var(--focus), inset 0 -2px 0 var(--focus); }
+.empty { padding: 10px 0 6px; }
+
+/* Delete (board #17003): a checkbox per row, the bar for the rows selected, the confirm. */
+#list .pick { width: 1%; padding-right: 0; }
+#list .pick input { display: block; margin: 0; accent-color: var(--accent); cursor: pointer; }
+#list .pick input:disabled { cursor: default; }
+.filters .picked { display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink-2); }
+.filters .shown:empty + .picked { margin-left: auto; }
+.btn.danger { background: var(--error); border-color: var(--error); color: var(--surface); font-weight: 600; }
+.btn.danger:hover { border-color: var(--ink); }
+.ib.danger:hover { color: var(--error); border-color: var(--error); }
+dialog.confirm { width: min(520px, calc(100vw - 32px)); padding: 16px 18px; border: 1px solid var(--line-2); border-radius: var(--radius); background: var(--surface); color: var(--ink); box-shadow: 0 16px 48px rgb(0 0 0 / .28); }
+dialog.confirm::backdrop { background: rgb(0 0 0 / .4); }
+.confirm h2 { font-size: 15px; font-weight: 600; margin: 0 0 10px; }
+.confirm ul { list-style: none; margin: 0 0 10px; padding: 0; max-height: 240px; overflow: auto; border: 1px solid var(--line); border-radius: var(--radius-s); }
+.confirm li { display: flex; gap: 12px; justify-content: space-between; padding: 6px 10px; border-top: 1px solid var(--line); font-size: 12.5px; }
+.confirm li:first-child { border-top: 0; }
+.confirm li .t { font-weight: 500; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.confirm li .m { color: var(--ink-2); white-space: nowrap; }
+.confirm .foot { justify-content: flex-end; margin-top: 14px; }
+
+@media (max-width: 1180px) {
+  #list th:nth-child(4), #list td.site { display: none; }
+}
+/* The purpose asked at Export (board #17002): a tile-styled modal. */
+.ask { width: min(560px, calc(100vw - 32px)); padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); box-shadow: 0 12px 40px rgba(0,0,0,.25); }
+.ask::backdrop { background: rgba(12,14,17,.5); }
+.ask h2 { font-size: 15px; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
+.ask .note { margin: 0 0 10px; }
+.ask textarea { min-height: 96px; }
+.ask .error { margin-top: 6px; font-size: 12.5px; }
+.ask .error:empty { display: none; }
+.ask .foot { margin-top: 10px; }
+@media (forced-colors: active) { .ask { border: 1px solid CanvasText; } }
+
+@media (max-width: 860px) {
+  .replay-tile, .transcript-tile { grid-column: span 8; grid-row: auto; }
+  .pages-tile, .purpose-tile, .mic-tile, .gaps-tile { grid-column: span 8; }
+}

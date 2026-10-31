@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Canvas</title><script src="/origins.js"></script><script src="/fixture.js"></script></head>
+<body>
+<h1>Canvas</h1>
+<canvas id="c2d" width="200" height="100"></canvas> <canvas id="cgl" width="200" height="100"></canvas>
+<script>
+const c = document.getElementById("c2d").getContext("2d"); let f = 0;
+const gl = document.getElementById("cgl").getContext("webgl", { preserveDrawingBuffer: true });
+(function draw(){ f++; c.fillStyle = "#fff"; c.fillRect(0,0,200,100); c.fillStyle = "#06c"; c.fillText("canvas-frame-" + f, 10, 50);
+  if (gl) { gl.clearColor((f % 60)/60, 0.3, 0.6, 1); gl.clear(gl.COLOR_BUFFER_BIT); }
+  requestAnimationFrame(draw); })();
+</script>
+</body>
+</html>

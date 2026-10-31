@@ -1,0 +1,40 @@
+# gitleaks rules for the store zip scan (release.mjs, board #16955): the
+# default rules, less the false positives measured on the 1.0.0 build. Each
+# entry is an exact string, so a new or changed secret still fails the scan.
+title = "NarWal store zip"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "measured false positives in the built extension"
+regexes = [
+  # generic-api-key: the name of a chrome.storage entry, not a key
+  # (PREFS_KEY, packages/recorder-ui/src/prefs.js, bundled into dist/model.js,
+  # options.js, popup.js and sw.js).
+  '''^narwal\.prefs\.v1$''',
+  # aws-access-token: 21 runs of capitals inside the base64 WebAssembly that
+  # vosk-browser 0.0.8 embeds in dist/runtime/vosk-worker.js (pinned in
+  # packages/offline-transcription). They are machine code, not credentials.
+  '''^ABIA6EIQJCACEBIAJQBE$''',
+  '''^ABIAAAATAAAAFAAAABUA$''',
+  '''^ABIAI3A5CXASABIAM3A4$''',
+  '''^ABIAJGDQADQCACKAIAEF$''',
+  '''^ABIAJGDQECQCACKAIAIA$''',
+  '''^ABIAJHDQALDAMLEGQAC0$''',
+  '''^ABIANGBEAMBQUCQCAHLQ$''',
+  '''^ABIANPDQMDQCABKAIAIA$''',
+  '''^ABIARBA3RPDQBBACEDIA$''',
+  '''^ABIARBBBCKASAJQQFIDQ$''',
+  '''^ABIARHDQALDAILDBMLIA$''',
+  '''^ABIARHDQALDAILIAFB67$''',
+  '''^ABIARHDQALDAMLIAFB67$''',
+  '''^ABIAVBCBCKASAAKAIEKA$''',
+  '''^ABIAY6AABBACEADAQLIA$''',
+  '''^ABIAZIDQACQCADQQFIDQ$''',
+  '''^ABIAZPDQIDQCABKAIAIA$''',
+  '''^ACCABIAJBARCKAQJAIAA$''',
+  '''^AKIAREEACAAKAIEIANBG$''',
+  '''^AKIASALKAKEARC5BEEAD$''',
+  '''^AKIAUUEQCAAQZDFGBDTA$''',
+]

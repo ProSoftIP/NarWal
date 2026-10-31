@@ -1,0 +1,10 @@
+{
+  "name": "@narwal/research-cloud-transcription",
+  "private": true,
+  "type": "module",
+  "description": "Board #16540: direct cloud transcription adapter research, fixtures and contract tests",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\""
+  }
+}

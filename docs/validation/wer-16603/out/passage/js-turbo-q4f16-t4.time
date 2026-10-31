@@ -1,0 +1,23 @@
+	Command being timed: "node /tmp/l16603/wer/js/run.mjs turbo-q4f16-t4 onnx-community/whisper-large-v3-turbo_timestamped b3f77bf9a8c4d5ea3415827033d1ffea7955fd9a "q4f16" word /tmp/l16603/wer/wav/passage.wav /tmp/l16603/wer/out/passage/js-turbo-q4f16-t4.json"
+	User time (seconds): 533.29
+	System time (seconds): 2.43
+	Percent of CPU this job got: 427%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:05.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3183176
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 1321354
+	Voluntary context switches: 45941
+	Involuntary context switches: 6830
+	Swaps: 0
+	File system inputs: 1135192
+	File system outputs: 96
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

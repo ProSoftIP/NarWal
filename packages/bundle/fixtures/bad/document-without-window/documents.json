@@ -1,0 +1,63 @@
+{
+  "documents": [
+    {
+      "key": "d1",
+      "browserDocumentId": "FIXTURE-DOC-D1",
+      "frameId": 0,
+      "parentKey": null,
+      "frameNode": null,
+      "url": "https://app.example.test/companies",
+      "title": "Companies",
+      "navigationType": "navigate",
+      "transition": "typed",
+      "attachedMs": 0,
+      "detachedMs": null,
+      "attachments": [
+        {
+          "atMs": 0,
+          "reason": "boot"
+        }
+      ],
+      "capture": "full",
+      "rrweb": "rrweb/d1.jsonl",
+      "window": "w1"
+    },
+    {
+      "key": "d2",
+      "browserDocumentId": "FIXTURE-DOC-D2",
+      "frameId": 0,
+      "parentKey": null,
+      "frameNode": null,
+      "url": "https://login.vendor.example.test/authorize?client_id=_&state=_",
+      "title": "Sign in to Vendor",
+      "navigationType": "navigate",
+      "transition": "link",
+      "attachedMs": 8000.5,
+      "detachedMs": 20000,
+      "attachments": [
+        {
+          "atMs": 8000.5,
+          "reason": "boot"
+        }
+      ],
+      "capture": "full",
+      "rrweb": "rrweb/d2.jsonl"
+    }
+  ],
+  "windows": [
+    {
+      "key": "w1",
+      "opener": null,
+      "type": "tab",
+      "openedMs": 0,
+      "closedMs": null
+    },
+    {
+      "key": "w2",
+      "opener": "w1",
+      "type": "popup",
+      "openedMs": 8000,
+      "closedMs": 20000
+    }
+  ]
+}

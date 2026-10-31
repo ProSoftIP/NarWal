@@ -1,0 +1,30 @@
+{
+  "_note": "Synthetic values in the documented Universal Streaming v3 message shapes (streaming-websocket api-spec, read 2026-10-13), speech_model=universal-streaming-english, format_turns=true. Turn 0 revises an interim word before it is final. Turn 1 ends without its formatted copy (the socket closed first). Not captured from a live socket.",
+  "messages": [
+    { "type": "Begin", "id": "sess-fmt-1", "expires_at": 1792000000, "configuration": { "model": "universal-streaming-english", "api_version": "v3" } },
+    { "type": "SpeechStarted", "timestamp": 400, "confidence": 0.9 },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": false, "end_of_turn": false, "transcript": "click", "utterance": "", "end_of_turn_confidence": 0.05,
+      "words": [ { "text": "click", "start": 400, "end": 640, "confidence": 0.98, "word_is_final": true },
+                 { "text": "the", "start": 640, "end": 720, "confidence": 0.61, "word_is_final": false },
+                 { "text": "safe", "start": 720, "end": 1010, "confidence": 0.42, "word_is_final": false } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": false, "end_of_turn": false, "transcript": "click the save", "utterance": "", "end_of_turn_confidence": 0.2,
+      "words": [ { "text": "click", "start": 400, "end": 640, "confidence": 0.98, "word_is_final": true },
+                 { "text": "the", "start": 640, "end": 720, "confidence": 0.97, "word_is_final": true },
+                 { "text": "save", "start": 720, "end": 1010, "confidence": 0.95, "word_is_final": true },
+                 { "text": "button", "start": 1010, "end": 1380, "confidence": 0.55, "word_is_final": false } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": false, "end_of_turn": true, "transcript": "click the save button", "utterance": "click the save button", "end_of_turn_confidence": 0.81,
+      "words": [ { "text": "click", "start": 400, "end": 640, "confidence": 0.98, "word_is_final": true },
+                 { "text": "the", "start": 640, "end": 720, "confidence": 0.97, "word_is_final": true },
+                 { "text": "save", "start": 720, "end": 1010, "confidence": 0.95, "word_is_final": true },
+                 { "text": "button", "start": 1010, "end": 1380, "confidence": 0.93, "word_is_final": true } ] },
+    { "type": "Turn", "turn_order": 0, "turn_is_formatted": true, "end_of_turn": true, "transcript": "Click the Save button.", "utterance": "Click the Save button.", "end_of_turn_confidence": 0.81,
+      "words": [ { "text": "Click", "start": 400, "end": 640, "confidence": 0.98, "word_is_final": true },
+                 { "text": "the", "start": 640, "end": 720, "confidence": 0.97, "word_is_final": true },
+                 { "text": "Save", "start": 720, "end": 1010, "confidence": 0.95, "word_is_final": true },
+                 { "text": "button.", "start": 1010, "end": 1380, "confidence": 0.93, "word_is_final": true } ] },
+    { "type": "Heartbeat", "total_audio_received_ms": 2000, "total_duration_ms": 2100, "realtime_factor": 0.95, "max_speech_probability": 0.9 },
+    { "type": "Turn", "turn_order": 1, "turn_is_formatted": false, "end_of_turn": true, "transcript": "then wait", "utterance": "then wait", "end_of_turn_confidence": 0.7,
+      "words": [ { "text": "then", "start": 2200, "end": 2400, "confidence": 0.96, "word_is_final": true },
+                 { "text": "wait", "start": 2400, "end": 2750, "confidence": 0.94, "word_is_final": true } ] }
+  ]
+}

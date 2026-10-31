@@ -1,0 +1,28 @@
+{
+  "_note": "Close codes and reasons from https://www.assemblyai.com/docs/streaming/common-session-errors-and-closures (read 2026-10-13). Error frames are {type:'Error', error_code, error}. 'Token expired' wording is INFERENCE: AssemblyAI does not document the reason text for an expired temporary token. Rows with _source LIVE were observed against the real endpoints with deliberately invalid credentials.",
+  "closes": [
+    { "code": 3008, "reason": "Session Expired: Maximum session duration exceeded", "kind": "timeout", "retryable": true },
+    { "code": 3007, "reason": "Input duration violation: 20 ms. Expected between 50 and 1000 ms", "kind": "input", "retryable": false },
+    { "code": 3007, "reason": "Audio Transmission Rate Exceeded: Received 30 sec. audio in 10 sec", "kind": "input", "retryable": false },
+    { "code": 3006, "reason": "Invalid Message Type: Foo", "kind": "input", "retryable": false },
+    { "code": 3006, "reason": "Session terminated due to inactivity: No messages received for 30 seconds", "kind": "timeout", "retryable": true },
+    { "code": 3005, "reason": "Session Cancelled: An error occurred", "kind": "provider", "retryable": true },
+    { "code": 3009, "reason": "Unauthorized Connection: Too many concurrent sessions", "kind": "rate-limit", "retryable": true },
+    { "code": 1008, "reason": "Unauthorized Connection: Missing Authorization header", "kind": "auth", "retryable": true },
+    { "code": 1008, "reason": "Unauthorized Connection: Invalid API key", "kind": "auth", "retryable": true, "_source": "LIVE 2026-10-13: Error frame {error_code:1008} then close 1008 'See Error message for details', socket opened with an invalid ?token=" },
+    { "code": 1008, "reason": "Unauthorized Connection: Insufficient balance", "kind": "quota", "retryable": false },
+    { "code": 1008, "reason": "Unauthorized Connection: Account temporarily disabled", "kind": "quota", "retryable": false },
+    { "code": 1008, "reason": "Unauthorized Connection: Token expired", "kind": "auth", "retryable": true },
+    { "code": 1011, "reason": "Internal error", "kind": "provider", "retryable": true },
+    { "code": 1006, "reason": "", "kind": "network", "retryable": true }
+  ],
+  "tokenHttp": [
+    { "status": 401, "body": { "error": "Invalid API key" }, "kind": "auth", "retryable": false },
+    { "status": 404, "body": { "detail": "Invalid API key" }, "kind": "auth", "retryable": false, "_source": "LIVE 2026-10-13: GET /v3/token?expires_in_seconds=60 with an invalid key" },
+    { "status": 422, "body": { "detail": [ { "type": "missing", "loc": ["query", "expires_in_seconds"], "msg": "Field required", "input": null } ] }, "kind": "input", "retryable": false, "_source": "LIVE 2026-10-13: GET /v3/token with no expires_in_seconds" },
+    { "status": 400, "body": { "error": "expires_in_seconds must be between 1 and 600" }, "kind": "input", "retryable": false },
+    { "status": 429, "body": { "error": "Rate limit exceeded" }, "retryAfter": "7", "kind": "rate-limit", "retryable": true, "retryAfterMs": 7000 },
+    { "status": 500, "body": { "error": "Internal server error" }, "kind": "provider", "retryable": true },
+    { "status": 402, "body": { "error": "Insufficient balance" }, "kind": "quota", "retryable": false }
+  ]
+}

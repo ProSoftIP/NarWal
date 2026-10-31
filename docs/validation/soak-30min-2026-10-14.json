@@ -1,0 +1,1800 @@
+{
+  "ticket": 16552,
+  "ranAt": "2026-10-14T00:47:34.753Z",
+  "node": "v26.7.0",
+  "headless": true,
+  "chromium": "1243",
+  "scenarios": {
+    "soak": {
+      "ms": 1815911,
+      "checks": [
+        {
+          "label": "the extension ID comes from the manifest key",
+          "pass": true,
+          "got": {
+            "got": "gpfcnaalnaknfbeonbgaafhomonmmcdj",
+            "expectedId": "gpfcnaalnaknfbeonbgaafhomonmmcdj"
+          }
+        },
+        {
+          "label": "setup: the live model downloads",
+          "pass": true,
+          "got": {
+            "ok": true,
+            "state": "ready"
+          }
+        },
+        {
+          "label": "negative control: no network for the whole recording",
+          "pass": true,
+          "got": "failed: Failed to fetch"
+        },
+        {
+          "label": "still recording at the end, after the service worker stop",
+          "pass": true,
+          "got": {
+            "workerStoppedAtMs": 607108.8999023438
+          }
+        },
+        {
+          "label": "stop succeeds",
+          "pass": true,
+          "got": {
+            "ok": true,
+            "id": "a9b02295-f7cd-44bf-bb92-375884567e6f",
+            "stopReason": "user",
+            "storageError": null,
+            "audio": {
+              "state": "stopped",
+              "error": null,
+              "segment": 0,
+              "chunks": 1766,
+              "bytes": 26131145,
+              "settings": {
+                "autoGainControl": true,
+                "channelCount": 1,
+                "deviceId": "default",
+                "echoCancellation": true,
+                "groupId": "706f107afd3b8f7f0e9fda565772dea1fb6bc99619fd4e482a7f9c892bd1b971",
+                "latency": 0.01,
+                "noiseSuppression": true,
+                "sampleRate": 48000,
+                "sampleSize": 16,
+                "voiceIsolation": false
+              }
+            }
+          }
+        },
+        {
+          "label": "the recording is 30 minutes long and stopped",
+          "pass": true,
+          "got": {
+            "meta": {
+              "status": "stopped",
+              "stopReason": "user",
+              "restarts": 0,
+              "storageError": null,
+              "interruption": null
+            },
+            "spanMin": 30.014633333333332
+          }
+        },
+        {
+          "label": "no automatic cutoff: stopped by the user",
+          "pass": true,
+          "got": "user"
+        },
+        {
+          "label": "all 137 markers captured",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "none of 321 masked or hidden strings is in the recording",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "the recording strip is not in the recording",
+          "pass": true,
+          "got": {
+            "marker:soak-0": true,
+            "marker:soak-1": true,
+            "marker:soak-2": true,
+            "marker:soak-3": true,
+            "marker:soak-4": true,
+            "marker:soak-5": true,
+            "marker:soak-6": true,
+            "marker:soak-7": true,
+            "marker:soak-8": true,
+            "marker:soak-9": true,
+            "marker:soak-10": true,
+            "marker:soak-11": true,
+            "marker:soak-12": true,
+            "marker:soak-13": true,
+            "marker:soak-14": true,
+            "marker:soak-15": true,
+            "marker:soak-16": true,
+            "marker:soak-17": true,
+            "marker:soak-18": true,
+            "marker:soak-19": true,
+            "marker:soak-20": true,
+            "marker:soak-21": true,
+            "marker:soak-22": true,
+            "marker:soak-23": true,
+            "marker:soak-24": true,
+            "marker:soak-25": true,
+            "marker:soak-26": true,
+            "marker:soak-27": true,
+            "marker:soak-28": true,
+            "marker:soak-29": true,
+            "marker:soak-30": true,
+            "marker:soak-31": true,
+            "marker:soak-32": true,
+            "marker:soak-33": true,
+            "marker:soak-34": true,
+            "marker:soak-35": true,
+            "marker:soak-36": true,
+            "marker:soak-37": true,
+            "marker:soak-38": true,
+            "marker:soak-39": true,
+            "marker:soak-40": true,
+            "marker:soak-41": true,
+            "marker:soak-42": true,
+            "marker:soak-43": true,
+            "marker:soak-44": true,
+            "marker:soak-45": true,
+            "marker:soak-46": true,
+            "marker:soak-47": true,
+            "marker:soak-48": true,
+            "marker:soak-49": true,
+            "marker:soak-50": true,
+            "marker:soak-51": true,
+            "marker:soak-52": true,
+            "marker:soak-53": true,
+            "marker:soak-54": true,
+            "marker:soak-55": true,
+            "marker:soak-56": true,
+            "marker:soak-57": true,
+            "marker:soak-58": true,
+            "marker:soak-59": true,
+            "marker:soak-60": true,
+            "marker:soak-61": true,
+            "marker:soak-62": true,
+            "marker:soak-63": true,
+            "marker:soak-64": true,
+            "marker:soak-65": true,
+            "marker:soak-66": true,
+            "marker:soak-67": true,
+            "marker:soak-68": true,
+            "marker:soak-69": true,
+            "marker:soak-70": true,
+            "marker:soak-71": true,
+            "marker:soak-72": true,
+            "marker:soak-73": true,
+            "marker:soak-74": true,
+            "marker:soak-75": true,
+            "marker:soak-76": true,
+            "marker:soak-77": true,
+            "marker:soak-78": true,
+            "marker:soak-79": true,
+            "marker:soak-80": true,
+            "marker:soak-81": true,
+            "marker:soak-82": true,
+            "marker:soak-83": true,
+            "marker:soak-84": true,
+            "marker:soak-85": true,
+            "marker:soak-86": true,
+            "marker:soak-87": true,
+            "marker:soak-88": true,
+            "marker:soak-89": true,
+            "marker:soak-90": true,
+            "marker:soak-91": true,
+            "marker:soak-92": true,
+            "marker:soak-93": true,
+            "marker:soak-94": true,
+            "marker:soak-95": true,
+            "marker:soak-96": true,
+            "marker:soak-97": true,
+            "marker:soak-98": true,
+            "marker:soak-99": true,
+            "marker:soak-100": true,
+            "marker:soak-101": true,
+            "marker:soak-102": true,
+            "marker:soak-103": true,
+            "marker:soak-104": true,
+            "marker:soak-105": true,
+            "marker:soak-106": true,
+            "marker:soak-107": true,
+            "marker:soak-108": true,
+            "marker:soak-109": true,
+            "marker:soak-110": true,
+            "marker:soak-111": true,
+            "marker:soak-112": true,
+            "marker:soak-113": true,
+            "marker:soak-114": true,
+            "marker:soak-115": true,
+            "marker:soak-116": true,
+            "marker:soak-117": true,
+            "marker:soak-118": true,
+            "marker:soak-119": true,
+            "marker:soak-120": true,
+            "marker:soak-121": true,
+            "marker:soak-122": true,
+            "marker:soak-123": true,
+            "marker:soak-124": true,
+            "marker:soak-125": true,
+            "marker:soak-126": true,
+            "marker:soak-127": true,
+            "marker:soak-128": true,
+            "marker:soak-129": true,
+            "marker:soak-130": true,
+            "marker:soak-131": true,
+            "marker:soak-132": true,
+            "marker:soak-133": true,
+            "marker:soak-134": true,
+            "marker:soak-135": true,
+            "marker:soak-136": true,
+            "typed-before-start": false,
+            "typed-while-recording": false,
+            "prefilled-secret-value": false,
+            "editable-secret-text": false,
+            "pw-secret": false,
+            "form-typed-value": false,
+            "narwal-ui-must-not-be-captured": false,
+            "soak-secret-0": false,
+            "soak-hidden-0": false,
+            "soak-typed-0": false,
+            "soak-secret-1": false,
+            "soak-hidden-1": false,
+            "soak-secret-2": false,
+            "soak-hidden-2": false,
+            "soak-secret-3": false,
+            "soak-hidden-3": false,
+            "soak-secret-4": false,
+            "soak-hidden-4": false,
+            "soak-form-5": false,
+            "soak-secret-5": false,
+            "soak-hidden-5": false,
+            "soak-secret-6": false,
+            "soak-hidden-6": false,
+            "soak-secret-7": false,
+            "soak-hidden-7": false,
+            "soak-typed-7": false,
+            "soak-secret-8": false,
+            "soak-hidden-8": false,
+            "soak-secret-9": false,
+            "soak-hidden-9": false,
+            "soak-secret-10": false,
+            "soak-hidden-10": false,
+            "soak-secret-11": false,
+            "soak-hidden-11": false,
+            "soak-form-12": false,
+            "soak-secret-12": false,
+            "soak-hidden-12": false,
+            "soak-secret-13": false,
+            "soak-hidden-13": false,
+            "soak-secret-14": false,
+            "soak-hidden-14": false,
+            "soak-typed-14": false,
+            "soak-secret-15": false,
+            "soak-hidden-15": false,
+            "soak-secret-16": false,
+            "soak-hidden-16": false,
+            "soak-secret-17": false,
+            "soak-hidden-17": false,
+            "soak-secret-18": false,
+            "soak-hidden-18": false,
+            "soak-form-19": false,
+            "soak-secret-19": false,
+            "soak-hidden-19": false,
+            "soak-secret-20": false,
+            "soak-hidden-20": false,
+            "soak-secret-21": false,
+            "soak-hidden-21": false,
+            "soak-typed-21": false,
+            "soak-secret-22": false,
+            "soak-hidden-22": false,
+            "soak-secret-23": false,
+            "soak-hidden-23": false,
+            "soak-secret-24": false,
+            "soak-hidden-24": false,
+            "soak-secret-25": false,
+            "soak-hidden-25": false,
+            "soak-form-26": false,
+            "soak-secret-26": false,
+            "soak-hidden-26": false,
+            "soak-secret-27": false,
+            "soak-hidden-27": false,
+            "soak-secret-28": false,
+            "soak-hidden-28": false,
+            "soak-typed-28": false,
+            "soak-secret-29": false,
+            "soak-hidden-29": false,
+            "soak-secret-30": false,
+            "soak-hidden-30": false,
+            "soak-secret-31": false,
+            "soak-hidden-31": false,
+            "soak-secret-32": false,
+            "soak-hidden-32": false,
+            "soak-form-33": false,
+            "soak-secret-33": false,
+            "soak-hidden-33": false,
+            "soak-secret-34": false,
+            "soak-hidden-34": false,
+            "soak-secret-35": false,
+            "soak-hidden-35": false,
+            "soak-typed-35": false,
+            "soak-secret-36": false,
+            "soak-hidden-36": false,
+            "soak-secret-37": false,
+            "soak-hidden-37": false,
+            "soak-secret-38": false,
+            "soak-hidden-38": false,
+            "soak-secret-39": false,
+            "soak-hidden-39": false,
+            "soak-form-40": false,
+            "soak-secret-40": false,
+            "soak-hidden-40": false,
+            "soak-secret-41": false,
+            "soak-hidden-41": false,
+            "soak-secret-42": false,
+            "soak-hidden-42": false,
+            "soak-typed-42": false,
+            "soak-secret-43": false,
+            "soak-hidden-43": false,
+            "soak-secret-44": false,
+            "soak-hidden-44": false,
+            "soak-secret-45": false,
+            "soak-hidden-45": false,
+            "soak-secret-46": false,
+            "soak-hidden-46": false,
+            "soak-form-47": false,
+            "soak-secret-47": false,
+            "soak-hidden-47": false,
+            "soak-secret-48": false,
+            "soak-hidden-48": false,
+            "soak-secret-49": false,
+            "soak-hidden-49": false,
+            "soak-typed-49": false,
+            "soak-secret-50": false,
+            "soak-hidden-50": false,
+            "soak-secret-51": false,
+            "soak-hidden-51": false,
+            "soak-secret-52": false,
+            "soak-hidden-52": false,
+            "soak-secret-53": false,
+            "soak-hidden-53": false,
+            "soak-form-54": false,
+            "soak-secret-54": false,
+            "soak-hidden-54": false,
+            "soak-secret-55": false,
+            "soak-hidden-55": false,
+            "soak-secret-56": false,
+            "soak-hidden-56": false,
+            "soak-typed-56": false,
+            "soak-secret-57": false,
+            "soak-hidden-57": false,
+            "soak-secret-58": false,
+            "soak-hidden-58": false,
+            "soak-secret-59": false,
+            "soak-hidden-59": false,
+            "soak-secret-60": false,
+            "soak-hidden-60": false,
+            "soak-form-61": false,
+            "soak-secret-61": false,
+            "soak-hidden-61": false,
+            "soak-secret-62": false,
+            "soak-hidden-62": false,
+            "soak-secret-63": false,
+            "soak-hidden-63": false,
+            "soak-typed-63": false,
+            "soak-secret-64": false,
+            "soak-hidden-64": false,
+            "soak-secret-65": false,
+            "soak-hidden-65": false,
+            "soak-secret-66": false,
+            "soak-hidden-66": false,
+            "soak-secret-67": false,
+            "soak-hidden-67": false,
+            "soak-form-68": false,
+            "soak-secret-68": false,
+            "soak-hidden-68": false,
+            "soak-secret-69": false,
+            "soak-hidden-69": false,
+            "soak-secret-70": false,
+            "soak-hidden-70": false,
+            "soak-typed-70": false,
+            "soak-secret-71": false,
+            "soak-hidden-71": false,
+            "soak-secret-72": false,
+            "soak-hidden-72": false,
+            "soak-secret-73": false,
+            "soak-hidden-73": false,
+            "soak-secret-74": false,
+            "soak-hidden-74": false,
+            "soak-form-75": false,
+            "soak-secret-75": false,
+            "soak-hidden-75": false,
+            "soak-secret-76": false,
+            "soak-hidden-76": false,
+            "soak-secret-77": false,
+            "soak-hidden-77": false,
+            "soak-typed-77": false,
+            "soak-secret-78": false,
+            "soak-hidden-78": false,
+            "soak-secret-79": false,
+            "soak-hidden-79": false,
+            "soak-secret-80": false,
+            "soak-hidden-80": false,
+            "soak-secret-81": false,
+            "soak-hidden-81": false,
+            "soak-form-82": false,
+            "soak-secret-82": false,
+            "soak-hidden-82": false,
+            "soak-secret-83": false,
+            "soak-hidden-83": false,
+            "soak-secret-84": false,
+            "soak-hidden-84": false,
+            "soak-typed-84": false,
+            "soak-secret-85": false,
+            "soak-hidden-85": false,
+            "soak-secret-86": false,
+            "soak-hidden-86": false,
+            "soak-secret-87": false,
+            "soak-hidden-87": false,
+            "soak-secret-88": false,
+            "soak-hidden-88": false,
+            "soak-form-89": false,
+            "soak-secret-89": false,
+            "soak-hidden-89": false,
+            "soak-secret-90": false,
+            "soak-hidden-90": false,
+            "soak-secret-91": false,
+            "soak-hidden-91": false,
+            "soak-typed-91": false,
+            "soak-secret-92": false,
+            "soak-hidden-92": false,
+            "soak-secret-93": false,
+            "soak-hidden-93": false,
+            "soak-secret-94": false,
+            "soak-hidden-94": false,
+            "soak-secret-95": false,
+            "soak-hidden-95": false,
+            "soak-form-96": false,
+            "soak-secret-96": false,
+            "soak-hidden-96": false,
+            "soak-secret-97": false,
+            "soak-hidden-97": false,
+            "soak-secret-98": false,
+            "soak-hidden-98": false,
+            "soak-typed-98": false,
+            "soak-secret-99": false,
+            "soak-hidden-99": false,
+            "soak-secret-100": false,
+            "soak-hidden-100": false,
+            "soak-secret-101": false,
+            "soak-hidden-101": false,
+            "soak-secret-102": false,
+            "soak-hidden-102": false,
+            "soak-form-103": false,
+            "soak-secret-103": false,
+            "soak-hidden-103": false,
+            "soak-secret-104": false,
+            "soak-hidden-104": false,
+            "soak-secret-105": false,
+            "soak-hidden-105": false,
+            "soak-typed-105": false,
+            "soak-secret-106": false,
+            "soak-hidden-106": false,
+            "soak-secret-107": false,
+            "soak-hidden-107": false,
+            "soak-secret-108": false,
+            "soak-hidden-108": false,
+            "soak-secret-109": false,
+            "soak-hidden-109": false,
+            "soak-form-110": false,
+            "soak-secret-110": false,
+            "soak-hidden-110": false,
+            "soak-secret-111": false,
+            "soak-hidden-111": false,
+            "soak-secret-112": false,
+            "soak-hidden-112": false,
+            "soak-typed-112": false,
+            "soak-secret-113": false,
+            "soak-hidden-113": false,
+            "soak-secret-114": false,
+            "soak-hidden-114": false,
+            "soak-secret-115": false,
+            "soak-hidden-115": false,
+            "soak-secret-116": false,
+            "soak-hidden-116": false,
+            "soak-form-117": false,
+            "soak-secret-117": false,
+            "soak-hidden-117": false,
+            "soak-secret-118": false,
+            "soak-hidden-118": false,
+            "soak-secret-119": false,
+            "soak-hidden-119": false,
+            "soak-typed-119": false,
+            "soak-secret-120": false,
+            "soak-hidden-120": false,
+            "soak-secret-121": false,
+            "soak-hidden-121": false,
+            "soak-secret-122": false,
+            "soak-hidden-122": false,
+            "soak-secret-123": false,
+            "soak-hidden-123": false,
+            "soak-form-124": false,
+            "soak-secret-124": false,
+            "soak-hidden-124": false,
+            "soak-secret-125": false,
+            "soak-hidden-125": false,
+            "soak-secret-126": false,
+            "soak-hidden-126": false,
+            "soak-typed-126": false,
+            "soak-secret-127": false,
+            "soak-hidden-127": false,
+            "soak-secret-128": false,
+            "soak-hidden-128": false,
+            "soak-secret-129": false,
+            "soak-hidden-129": false,
+            "soak-secret-130": false,
+            "soak-hidden-130": false,
+            "soak-form-131": false,
+            "soak-secret-131": false,
+            "soak-hidden-131": false,
+            "soak-secret-132": false,
+            "soak-hidden-132": false,
+            "soak-secret-133": false,
+            "soak-hidden-133": false,
+            "soak-typed-133": false,
+            "soak-secret-134": false,
+            "soak-hidden-134": false,
+            "soak-secret-135": false,
+            "soak-hidden-135": false,
+            "soak-secret-136": false,
+            "soak-hidden-136": false,
+            "narwal recording controls": false,
+            "Transcript so far": false
+          }
+        },
+        {
+          "label": "every committed top document has a full snapshot",
+          "pass": true,
+          "got": {
+            "committed": 136,
+            "tops": 137
+          }
+        },
+        {
+          "label": "back/forward restored documents from the cache",
+          "pass": true
+        },
+        {
+          "label": "SPA routes recorded",
+          "pass": true,
+          "got": {
+            "routes": 76,
+            "historyUpdates": 76
+          }
+        },
+        {
+          "label": "no gaps and no restarts",
+          "pass": true,
+          "got": {
+            "gaps": [],
+            "lostContext": []
+          }
+        },
+        {
+          "label": "one audio part that decodes to its full length (within 1.5 s)",
+          "pass": true,
+          "got": [
+            {
+              "segment": 0,
+              "chunks": 1766,
+              "bytes": 26131145,
+              "spanMs": 1800878,
+              "decodedMs": 1800840
+            }
+          ]
+        },
+        {
+          "label": "live transcript ran the whole time with no network",
+          "pass": true,
+          "got": {
+            "finals": 285,
+            "states": [
+              "connecting",
+              "live"
+            ]
+          }
+        },
+        {
+          "label": "Stop saved one live revision, active, with no gaps",
+          "pass": true,
+          "got": {
+            "active": "r1",
+            "revisions": 1,
+            "gaps": []
+          }
+        },
+        {
+          "label": "the transcript is the speech (80% of words known)",
+          "pass": true,
+          "got": {
+            "states": [
+              "connecting",
+              "live"
+            ],
+            "finals": 285,
+            "revisionWords": 4005,
+            "knownWords": 3714,
+            "gaps": []
+          }
+        },
+        {
+          "label": "every marker was saved within 15 s",
+          "pass": true,
+          "got": 0
+        },
+        {
+          "label": "replay of the first page shows the recorded page",
+          "pass": true,
+          "got": {
+            "events": 2,
+            "iframe": true,
+            "bodyText": "\nFixture index\nPage 2 | SPA | Form\nSecret \nPrefilled \nPassword \n********************\n\n\n\n\n"
+          }
+        },
+        {
+          "label": "Export bundle on the recordings page downloads a .narwal.zip",
+          "pass": true,
+          "got": {
+            "rows": 1,
+            "fileName": "fixture-index-rec_a9b02295-f7cd-44bf-bb92-375884567e6f.narwal.zip",
+            "ms": 1079
+          }
+        },
+        {
+          "label": "@narwal/bundle: the export is valid",
+          "pass": true,
+          "got": {
+            "errors": [],
+            "warnings": 0
+          }
+        },
+        {
+          "label": "the bundle is the whole recording: complete, 30 minutes, narration, active transcript",
+          "pass": true,
+          "got": {
+            "state": "complete",
+            "durationMs": 1801061,
+            "audio": {
+              "file": "audio/narration.webm",
+              "mediaType": "audio/webm;codecs=opus",
+              "clock": "audio/clock.jsonl",
+              "startMs": 83.4,
+              "decodedMs": 1800877.7
+            },
+            "audioBytes": 26131145,
+            "recorded": 26131145,
+            "transcript": {
+              "activeRevision": "r1"
+            }
+          }
+        },
+        {
+          "label": "all 137 right-click marks and 137 Alt+Shift+M marks are in the bundle",
+          "pass": true,
+          "got": {
+            "clickMissing": [],
+            "keyMissing": []
+          }
+        },
+        {
+          "label": "the agent view has the narration, the routes and the marks",
+          "pass": true,
+          "got": {
+            "transcript": {
+              "revisionId": "r1",
+              "provider": "browser-local",
+              "model": "vosk-small-en-us",
+              "source": "live",
+              "correctionsApplied": 0,
+              "correctionsOnOtherRevisions": 0,
+              "timing": {
+                "quality": "aligned",
+                "method": "vosk-alignment",
+                "correctionMs": 0
+              }
+            },
+            "entries": {
+              "observation": 390,
+              "utterance": 286
+            },
+            "kinds": {
+              "route": 253,
+              "viewport": 137,
+              "input": 39,
+              "marker-element": 274,
+              "pointer-dwell": 41,
+              "click": 96
+            }
+          }
+        },
+        {
+          "label": "no masked or hidden string is in the bundle",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "replay: a correction and a note are saved on the exported recording",
+          "pass": true,
+          "got": {
+            "u0": {
+              "segmentId": "s1",
+              "revisionId": "r1",
+              "startMs": 567.7001953125,
+              "endMs": 10167.7001953125,
+              "text": "corrected in the soak replay",
+              "corrected": true,
+              "heard": "he hoped they would be stew for dinner turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out and thick peppered flower fat and sauce",
+              "approximate": false
+            },
+            "replayErrors": []
+          }
+        },
+        {
+          "label": "the second export is valid and carries the correction and the note",
+          "pass": true,
+          "got": {
+            "errors": [],
+            "edits": [
+              {
+                "id": "c1",
+                "type": "correction",
+                "revisionId": "r1",
+                "segmentId": "s1",
+                "wordStart": 0,
+                "wordEnd": 29,
+                "text": "corrected in the soak replay",
+                "createdAt": "2026-10-14T01:17:44.219Z"
+              },
+              {
+                "id": "n1",
+                "type": "note",
+                "atMs": 60000,
+                "text": "note written in the soak replay",
+                "createdAt": "2026-10-14T01:17:44.703Z"
+              }
+            ],
+            "note": {
+              "id": "e23",
+              "kind": "note",
+              "startMs": 60000,
+              "note": {
+                "ref": "n1",
+                "text": "note written in the soak replay"
+              }
+            },
+            "said": {
+              "text": "corrected in the soak replay",
+              "revisionId": "r1",
+              "segmentId": "s1",
+              "corrected": true,
+              "heard": "he hoped they would be stew for dinner turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out and thick peppered flower fat and sauce",
+              "editIds": [
+                "c1"
+              ]
+            }
+          }
+        },
+        {
+          "label": "edits change no captured file (observations, rrweb, audio, transcript)",
+          "pass": true,
+          "got": []
+        },
+        {
+          "label": "update: same extension ID from a different folder",
+          "pass": true,
+          "got": "gpfcnaalnaknfbeonbgaafhomonmmcdj"
+        },
+        {
+          "label": "update: the new version is running",
+          "pass": true,
+          "got": "0.1.1"
+        },
+        {
+          "label": "update: the recording and its transcript are unchanged",
+          "pass": true,
+          "got": {
+            "before": {
+              "eventChunks": 1802,
+              "audioChunks": 1766,
+              "audio": [
+                26131145
+              ],
+              "revisions": 1
+            },
+            "after": {
+              "eventChunks": 1802,
+              "audioChunks": 1766,
+              "audio": [
+                26131145
+              ],
+              "revisions": 1
+            }
+          }
+        },
+        {
+          "label": "negative control: with no key the ID changes and no recording is visible",
+          "pass": true,
+          "got": {
+            "id": "mkfoogefepfiokcacfogjiobjffinoid",
+            "listed": 0
+          }
+        }
+      ],
+      "summary": {
+        "minutes": 30,
+        "samples": [
+          {
+            "atMin": 0,
+            "tree": {
+              "processes": 12,
+              "pssMB": 657,
+              "cpuS": 2,
+              "byType": {
+                "browser": 77,
+                "zygote": 21,
+                "gpu-process": 25,
+                "utility": 58,
+                "renderer": 111,
+                "renderer:extension": 363
+              }
+            },
+            "storage": {
+              "usageMB": 89.3,
+              "indexedDbMB": 50,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 1.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 729,
+              "cpuS": 21,
+              "byType": {
+                "browser": 104,
+                "zygote": 28,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 195,
+                "renderer:extension": 303
+              }
+            },
+            "storage": {
+              "usageMB": 90.4,
+              "indexedDbMB": 51.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 2.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 749,
+              "cpuS": 35,
+              "byType": {
+                "browser": 105,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 201,
+                "renderer:extension": 316
+              }
+            },
+            "storage": {
+              "usageMB": 91.5,
+              "indexedDbMB": 52.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 3.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 769,
+              "cpuS": 44,
+              "byType": {
+                "browser": 106,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 210,
+                "renderer:extension": 326
+              }
+            },
+            "storage": {
+              "usageMB": 92.4,
+              "indexedDbMB": 53.1,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 4.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 761,
+              "cpuS": 55,
+              "byType": {
+                "browser": 106,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 209,
+                "renderer:extension": 318
+              }
+            },
+            "storage": {
+              "usageMB": 93.6,
+              "indexedDbMB": 54.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 5.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 771,
+              "cpuS": 67,
+              "byType": {
+                "browser": 107,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 208,
+                "renderer:extension": 329
+              }
+            },
+            "storage": {
+              "usageMB": 94.5,
+              "indexedDbMB": 55.2,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 6.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 787,
+              "cpuS": 81,
+              "byType": {
+                "browser": 107,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 216,
+                "renderer:extension": 338
+              }
+            },
+            "storage": {
+              "usageMB": 95.7,
+              "indexedDbMB": 56.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 7.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 784,
+              "cpuS": 90,
+              "byType": {
+                "browser": 107,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 205,
+                "renderer:extension": 345
+              }
+            },
+            "storage": {
+              "usageMB": 96.6,
+              "indexedDbMB": 57.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 8.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 802,
+              "cpuS": 106,
+              "byType": {
+                "browser": 108,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 208,
+                "renderer:extension": 359
+              }
+            },
+            "storage": {
+              "usageMB": 97.7,
+              "indexedDbMB": 58.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 9,
+            "tree": {
+              "processes": 14,
+              "pssMB": 811,
+              "cpuS": 114,
+              "byType": {
+                "browser": 107,
+                "zygote": 27,
+                "gpu-process": 28,
+                "utility": 70,
+                "renderer": 215,
+                "renderer:extension": 365
+              }
+            },
+            "storage": {
+              "usageMB": 98.6,
+              "indexedDbMB": 59.3,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 10.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 815,
+              "cpuS": 127,
+              "byType": {
+                "browser": 106,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 208,
+                "renderer:extension": 375
+              }
+            },
+            "storage": {
+              "usageMB": 99.8,
+              "indexedDbMB": 60.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 11,
+            "tree": {
+              "processes": 14,
+              "pssMB": 803,
+              "cpuS": 138,
+              "byType": {
+                "browser": 108,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 217,
+                "renderer:extension": 351
+              }
+            },
+            "storage": {
+              "usageMB": 100.7,
+              "indexedDbMB": 61.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 12.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 807,
+              "cpuS": 152,
+              "byType": {
+                "browser": 109,
+                "zygote": 28,
+                "gpu-process": 28,
+                "utility": 70,
+                "renderer": 219,
+                "renderer:extension": 353
+              }
+            },
+            "storage": {
+              "usageMB": 101.8,
+              "indexedDbMB": 62.6,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 13.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 803,
+              "cpuS": 166,
+              "byType": {
+                "browser": 109,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 212,
+                "renderer:extension": 356
+              }
+            },
+            "storage": {
+              "usageMB": 103,
+              "indexedDbMB": 63.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 14.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 815,
+              "cpuS": 177,
+              "byType": {
+                "browser": 106,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 220,
+                "renderer:extension": 363
+              }
+            },
+            "storage": {
+              "usageMB": 101.7,
+              "indexedDbMB": 62.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 15.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 822,
+              "cpuS": 189,
+              "byType": {
+                "browser": 105,
+                "zygote": 28,
+                "gpu-process": 28,
+                "utility": 70,
+                "renderer": 224,
+                "renderer:extension": 367
+              }
+            },
+            "storage": {
+              "usageMB": 102.8,
+              "indexedDbMB": 63.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 16.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 816,
+              "cpuS": 200,
+              "byType": {
+                "browser": 103,
+                "zygote": 28,
+                "gpu-process": 28,
+                "utility": 71,
+                "renderer": 216,
+                "renderer:extension": 370
+              }
+            },
+            "storage": {
+              "usageMB": 103.7,
+              "indexedDbMB": 64.4,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 17.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 833,
+              "cpuS": 212,
+              "byType": {
+                "browser": 105,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 222,
+                "renderer:extension": 378
+              }
+            },
+            "storage": {
+              "usageMB": 104.8,
+              "indexedDbMB": 65.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 18,
+            "tree": {
+              "processes": 14,
+              "pssMB": 814,
+              "cpuS": 220,
+              "byType": {
+                "browser": 105,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 231,
+                "renderer:extension": 351
+              }
+            },
+            "storage": {
+              "usageMB": 105.8,
+              "indexedDbMB": 66.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 19.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 808,
+              "cpuS": 238,
+              "byType": {
+                "browser": 106,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 220,
+                "renderer:extension": 355
+              }
+            },
+            "storage": {
+              "usageMB": 106.9,
+              "indexedDbMB": 67.6,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 20,
+            "tree": {
+              "processes": 14,
+              "pssMB": 829,
+              "cpuS": 250,
+              "byType": {
+                "browser": 107,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 235,
+                "renderer:extension": 361
+              }
+            },
+            "storage": {
+              "usageMB": 107.8,
+              "indexedDbMB": 68.5,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 21.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 837,
+              "cpuS": 264,
+              "byType": {
+                "browser": 108,
+                "zygote": 28,
+                "gpu-process": 30,
+                "utility": 70,
+                "renderer": 234,
+                "renderer:extension": 367
+              }
+            },
+            "storage": {
+              "usageMB": 109,
+              "indexedDbMB": 69.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 22.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 823,
+              "cpuS": 281,
+              "byType": {
+                "browser": 108,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 216,
+                "renderer:extension": 372
+              }
+            },
+            "storage": {
+              "usageMB": 110.1,
+              "indexedDbMB": 70.8,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 23.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 846,
+              "cpuS": 294,
+              "byType": {
+                "browser": 107,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 235,
+                "renderer:extension": 378
+              }
+            },
+            "storage": {
+              "usageMB": 111,
+              "indexedDbMB": 71.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 24.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 829,
+              "cpuS": 311,
+              "byType": {
+                "browser": 108,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 240,
+                "renderer:extension": 355
+              }
+            },
+            "storage": {
+              "usageMB": 112.2,
+              "indexedDbMB": 72.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 25.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 805,
+              "cpuS": 328,
+              "byType": {
+                "browser": 109,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 209,
+                "renderer:extension": 361
+              }
+            },
+            "storage": {
+              "usageMB": 113.1,
+              "indexedDbMB": 73.8,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 26.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 844,
+              "cpuS": 345,
+              "byType": {
+                "browser": 109,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 243,
+                "renderer:extension": 365
+              }
+            },
+            "storage": {
+              "usageMB": 114.3,
+              "indexedDbMB": 75,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 27.1,
+            "tree": {
+              "processes": 14,
+              "pssMB": 826,
+              "cpuS": 356,
+              "byType": {
+                "browser": 109,
+                "zygote": 28,
+                "gpu-process": 29,
+                "utility": 71,
+                "renderer": 222,
+                "renderer:extension": 368
+              }
+            },
+            "storage": {
+              "usageMB": 115.2,
+              "indexedDbMB": 75.9,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 28.2,
+            "tree": {
+              "processes": 14,
+              "pssMB": 833,
+              "cpuS": 375,
+              "byType": {
+                "browser": 110,
+                "zygote": 27,
+                "gpu-process": 29,
+                "utility": 70,
+                "renderer": 221,
+                "renderer:extension": 376
+              }
+            },
+            "storage": {
+              "usageMB": 116.3,
+              "indexedDbMB": 77,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": 29,
+            "tree": {
+              "processes": 14,
+              "pssMB": 851,
+              "cpuS": 387,
+              "byType": {
+                "browser": 106,
+                "zygote": 28,
+                "gpu-process": 28,
+                "utility": 70,
+                "renderer": 240,
+                "renderer:extension": 379
+              }
+            },
+            "storage": {
+              "usageMB": 115,
+              "indexedDbMB": 75.7,
+              "cachesMB": 39.3
+            }
+          },
+          {
+            "atMin": "after-stop",
+            "tree": {
+              "processes": 14,
+              "pssMB": 525,
+              "cpuS": 403,
+              "byType": {
+                "browser": 102,
+                "zygote": 28,
+                "gpu-process": 28,
+                "utility": 67,
+                "renderer": 222,
+                "renderer:extension": 78
+              }
+            },
+            "storage": {
+              "usageMB": 115.4,
+              "indexedDbMB": 76.1,
+              "cachesMB": 39.3
+            }
+          }
+        ],
+        "saveLatencyMs": {
+          "n": 137,
+          "p50": 512,
+          "p95": 624,
+          "max": 1024
+        },
+        "transcriptLatencyMs": {
+          "n": 285,
+          "p50": 1468,
+          "p95": 1990,
+          "max": 2212
+        },
+        "stopMs": 110,
+        "reopenMs": 3502,
+        "audio": {
+          "segment": 0,
+          "chunks": 1766,
+          "bytes": 26131145,
+          "spanMs": 1800878,
+          "decodedMs": 1800840,
+          "driftPpm": -21
+        },
+        "transcript": {
+          "states": [
+            "connecting",
+            "live"
+          ],
+          "finals": 285,
+          "revisionWords": 4005,
+          "knownWords": 3714,
+          "gaps": []
+        },
+        "clock": {
+          "bytes": {
+            "events": 2442249,
+            "audio": 26131145
+          },
+          "minutes": [
+            {
+              "minute": 0,
+              "events": 60,
+              "p50": 0.3,
+              "p95": 2.4,
+              "max": 22.8
+            },
+            {
+              "minute": 1,
+              "events": 92,
+              "p50": 0.2,
+              "p95": 2.1,
+              "max": 3.6
+            },
+            {
+              "minute": 2,
+              "events": 70,
+              "p50": 0.2,
+              "p95": 3.3,
+              "max": 5.4
+            },
+            {
+              "minute": 3,
+              "events": 58,
+              "p50": 0.3,
+              "p95": 1.7,
+              "max": 3.8
+            },
+            {
+              "minute": 4,
+              "events": 81,
+              "p50": 0.2,
+              "p95": 2.9,
+              "max": 5.9
+            },
+            {
+              "minute": 5,
+              "events": 81,
+              "p50": 0.2,
+              "p95": 3,
+              "max": 4.4
+            },
+            {
+              "minute": 6,
+              "events": 50,
+              "p50": 0.3,
+              "p95": 1,
+              "max": 1.2
+            },
+            {
+              "minute": 7,
+              "events": 89,
+              "p50": 0.2,
+              "p95": 2.5,
+              "max": 4.1
+            },
+            {
+              "minute": 8,
+              "events": 49,
+              "p50": 0.2,
+              "p95": 0.7,
+              "max": 2
+            },
+            {
+              "minute": 9,
+              "events": 82,
+              "p50": 0.3,
+              "p95": 2.3,
+              "max": 3.9
+            },
+            {
+              "minute": 10,
+              "events": 73,
+              "p50": 0.2,
+              "p95": 2,
+              "max": 5
+            },
+            {
+              "minute": 11,
+              "events": 65,
+              "p50": 0.2,
+              "p95": 0.6,
+              "max": 1
+            },
+            {
+              "minute": 12,
+              "events": 82,
+              "p50": 0.3,
+              "p95": 11.5,
+              "max": 14.2
+            },
+            {
+              "minute": 13,
+              "events": 73,
+              "p50": 0.2,
+              "p95": 3.4,
+              "max": 4.4
+            },
+            {
+              "minute": 14,
+              "events": 65,
+              "p50": 0.2,
+              "p95": 0.9,
+              "max": 1
+            },
+            {
+              "minute": 15,
+              "events": 72,
+              "p50": 0.3,
+              "p95": 2.5,
+              "max": 5.1
+            },
+            {
+              "minute": 16,
+              "events": 83,
+              "p50": 0.2,
+              "p95": 3,
+              "max": 5.2
+            },
+            {
+              "minute": 17,
+              "events": 45,
+              "p50": 0.1,
+              "p95": 0.7,
+              "max": 2.1
+            },
+            {
+              "minute": 18,
+              "events": 92,
+              "p50": 0.3,
+              "p95": 2.6,
+              "max": 5
+            },
+            {
+              "minute": 19,
+              "events": 72,
+              "p50": 0.2,
+              "p95": 4.5,
+              "max": 7.1
+            },
+            {
+              "minute": 20,
+              "events": 58,
+              "p50": 0.3,
+              "p95": 1.9,
+              "max": 2.2
+            },
+            {
+              "minute": 21,
+              "events": 94,
+              "p50": 0.2,
+              "p95": 2.8,
+              "max": 6.7
+            },
+            {
+              "minute": 22,
+              "events": 72,
+              "p50": 0.3,
+              "p95": 4.2,
+              "max": 5.9
+            },
+            {
+              "minute": 23,
+              "events": 58,
+              "p50": 0.3,
+              "p95": 1.1,
+              "max": 4.3
+            },
+            {
+              "minute": 24,
+              "events": 81,
+              "p50": 0.4,
+              "p95": 6,
+              "max": 8.5
+            },
+            {
+              "minute": 25,
+              "events": 81,
+              "p50": 0.3,
+              "p95": 3.1,
+              "max": 6.2
+            },
+            {
+              "minute": 26,
+              "events": 50,
+              "p50": 0.3,
+              "p95": 0.7,
+              "max": 1.5
+            },
+            {
+              "minute": 27,
+              "events": 89,
+              "p50": 0.4,
+              "p95": 3.4,
+              "max": 6.6
+            },
+            {
+              "minute": 28,
+              "events": 49,
+              "p50": 0.3,
+              "p95": 1.2,
+              "max": 2.4
+            },
+            {
+              "minute": 29,
+              "events": 82,
+              "p50": 0.4,
+              "p95": 3.7,
+              "max": 5.4
+            }
+          ]
+        },
+        "counts": {
+          "markers": 137,
+          "documents": 310,
+          "topCommits": 176,
+          "eventChunks": 1802,
+          "audioChunks": 1766,
+          "secrets": 314
+        },
+        "export": {
+          "ms": 1079,
+          "bytes": 26436315,
+          "files": 146,
+          "fileName": "fixture-index-rec_a9b02295-f7cd-44bf-bb92-375884567e6f.narwal.zip"
+        },
+        "bundle": {
+          "files": [
+            "manifest.json",
+            "agent/walkthrough.json",
+            "agent/walkthrough.md",
+            "audio/clock.jsonl",
+            "audio/narration.webm",
+            "documents.json",
+            "gaps.jsonl",
+            "observations.jsonl",
+            "transcript/r1.json",
+            "rrweb/ (137 files)"
+          ],
+          "observations": {
+            "route": 253,
+            "viewport": 137,
+            "input": 39,
+            "marker-element": 274,
+            "pointer-dwell": 41,
+            "click": 96
+          },
+          "agentEntries": {
+            "observation": 390,
+            "utterance": 286
+          },
+          "walkthroughMdBytes": 82262
+        },
+        "export2": {
+          "ms": 939,
+          "bytes": 26436799,
+          "files": 147
+        },
+        "bundleFile": "packages/extension/test/e2e/results/soak-2026-10-14T00-47-37-381Z.narwal.zip",
+        "machine": {
+          "cpu": "12th Gen Intel(R) Core(TM) i7-12700",
+          "cores": 20,
+          "memGB": 62
+        }
+      }
+    }
+  }
+}

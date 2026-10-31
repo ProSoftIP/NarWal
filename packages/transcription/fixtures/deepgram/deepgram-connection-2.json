@@ -1,0 +1,10 @@
+{
+  "_note": "Second connection after a reconnect. Deepgram restarts timestamps at 0 on every connection. Synthetic values, documented shape.",
+  "messages": [
+    { "type": "Results", "channel_index": [0, 1], "start": 0.0, "duration": 1.4, "is_final": true, "speech_final": true, "from_finalize": false,
+      "channel": { "alternatives": [ { "transcript": "Revenue heading.", "confidence": 0.93,
+        "words": [ { "word": "revenue", "punctuated_word": "Revenue", "start": 0.2, "end": 0.7, "confidence": 0.94 },
+                   { "word": "heading", "punctuated_word": "heading.", "start": 0.7, "end": 1.1, "confidence": 0.92 } ] } ] },
+      "metadata": { "request_id": "req-2", "model_info": { "name": "general-nova-3" } } }
+  ]
+}

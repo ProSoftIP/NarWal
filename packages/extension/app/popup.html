@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NarWal</title>
+<style>
+  html { color-scheme: light dark; }
+  body { margin: 0; width: 400px; background: #eceef1; }
+  @media (prefers-color-scheme: dark) { body { background: #0c0e11; } }
+  .library { margin: 0; padding: 0 14px 14px; font: 12.5px/1.4 system-ui, sans-serif; color: #4a505b; }
+  .library a { color: inherit; }
+  @media (prefers-color-scheme: dark) { .library { color: #a9b0bb; } }
+  .build { margin-top: -10px; font-size: 11.5px; font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<p class="library"><span id="storage-line" hidden>Recordings<span id="storage-used"></span> · </span><a href="replay.html" target="_blank" id="open-shared" title="Replay a .narwal.zip someone sent you">Open a shared recording</a> · <a href="options.html" target="_blank" id="options">Options</a> · <a href="https://prosoftip.com/" target="_blank" rel="noopener" id="website">ProSoft IP</a></p>
+<p class="library build" id="build"></p>
+<script src="dist/popup.js"></script>
+</body>
+</html>

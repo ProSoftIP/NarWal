@@ -1,0 +1,60 @@
+{
+  "format": "narwal.bundle",
+  "schemaVersion": "1.0",
+  "recordingId": "rec_fixture_minimal",
+  "title": "Sign-in link check",
+  "createdAt": "2026-10-13T20:00:00.000Z",
+  "producer": {
+    "name": "narwal-fixture-builder",
+    "version": "1.0.0"
+  },
+  "environment": {
+    "browser": "Chrome",
+    "browserVersion": "155.0.7600.0",
+    "platform": "linux"
+  },
+  "clock": {
+    "originEpochMs": 1791921600000.25
+  },
+  "durationMs": 5000,
+  "state": "complete",
+  "privacy": {
+    "inputValues": "masked",
+    "excludedRegions": 0,
+    "urlPolicy": "redact-query-values",
+    "audio": "not-redacted"
+  },
+  "derivation": {
+    "pointerDwellMinMs": 300
+  },
+  "audio": null,
+  "transcript": {
+    "activeRevision": null
+  },
+  "files": [
+    {
+      "path": "documents.json",
+      "bytes": 507,
+      "sha256": "028472051ba7f3a85f83a4e706c70032a9c589fde0af1dc00e18a2b2c0b7dafb",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "gaps.jsonl",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "observations.jsonl",
+      "bytes": 557,
+      "sha256": "db29a4cb97c604f075ed70346c025a3e9f4adf69567e25712e99f628d0d2a0e3",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "rrweb/d1.jsonl",
+      "bytes": 387,
+      "sha256": "b343f7e3f67702e1b746085869de0662c4b45b7f22fe2b3143896f57a1f7396c",
+      "mediaType": "application/x-ndjson"
+    }
+  ]
+}

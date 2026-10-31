@@ -1,0 +1,90 @@
+/* Replay as tiles (board #16783): the replayed page is the big tile, the
+   transcript beside it, then purpose, notes and missing evidence. Shared
+   pieces are in tiles.css; the replayed page itself is drawn by
+   packages/replay (the narwal-replay-* classes). */
+#error { margin-bottom: 8px; }
+.open-shared { margin-bottom: 8px; }
+.open-shared p { margin: 0 0 8px; }
+.open-shared p:last-child { margin: 0; }
+.keep button, .open-shared .pick { display: inline-flex; align-items: center; height: 28px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: var(--radius-s); background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; font-size: 12.5px; cursor: pointer; }
+.library { padding-bottom: 4px; }
+.library .note { padding: 4px 0; }
+#list td:nth-child(2) { font-weight: 500; width: 60%; }
+#list td:nth-child(3) { text-align: right; }
+#list td:last-child { text-align: right; width: 1%; }
+.player > .bar, .player > .keep, .player > .notices { grid-column: 1 / -1; }
+.keep { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.notices:empty { display: none; }
+.notices { display: flex; flex-direction: column; gap: 2px; padding: 0 4px; }
+.notices .note { margin: 0; }
+
+.stage-tile { grid-column: span 5; grid-row: span 3; }
+.lines-tile { grid-column: span 3; grid-row: span 2; }
+.purpose-tile { grid-column: span 3; }
+.notes-tile, .gaps-tile { grid-column: span 4; }
+.player:has(#gaps-tile[hidden]) .notes-tile, .player:has(#notes-tile[hidden]) .gaps-tile { grid-column: 1 / -1; }
+.purpose-tile:has(#purpose-form:not([hidden])) .purpose-text { display: none; }
+.purpose-text { font-size: 13px; }
+.note-form { display: flex; flex-direction: column; gap: 4px; }
+
+.stage { min-width: 0; }
+.controls { display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 10px; align-items: center; margin-top: 8px; }
+.controls #play { min-width: 64px; }
+.controls input[type='range'] { width: 100%; margin: 0; accent-color: var(--ink-2); }
+.clock { font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; min-width: 6ch; }
+.timeline { position: relative; height: 8px; background: var(--chip); border-radius: 3px; margin: 8px 0 0; }
+.timeline .band { position: absolute; top: 0; bottom: 0; }
+.timeline .band[data-effect='no-page'] { background: var(--ink-3); }
+.timeline .band[data-effect='partial-page'] { background: #f0b86e; top: 0; bottom: 4px; }
+.timeline .band[data-effect='no-audio'] { background: #e8877b; top: 4px; }
+.timeline .band[data-effect='no-transcript'] { background: #b98ad0; top: 6px; }
+.timeline .playhead { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--accent); }
+/* Followed windows (board #16754): one band per stretch a window was in
+   front; the line above the stage names the window in front now. */
+.windows { position: relative; height: 16px; margin: 4px 0 0; border-radius: 3px; overflow: hidden; cursor: pointer; }
+.windows[hidden] { display: none; }
+.windows .band { position: absolute; top: 0; bottom: 0; font-size: 11px; line-height: 16px; text-align: center; overflow: hidden; white-space: nowrap; color: var(--surface); border-right: 1px solid var(--surface); }
+.windows .band[data-window='1'] { background: var(--ink-2); }
+.windows .band:not([data-window='1']) { background: #2f6f8f; }
+.window { margin: 0 0 6px; font-weight: 600; }
+.window[hidden] { display: none; }
+.narwal-replay-viewport { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-s); background: var(--chip); }
+.narwal-replay-page { position: absolute; left: 0; top: 0; }
+.narwal-replay-page iframe { border: 0; background: #fff; }
+.narwal-replay-gap { position: absolute; inset: 0; background: var(--chip); color: var(--ink-2); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; white-space: pre-line; font-weight: 600; z-index: 3; }
+.narwal-replay-gap[hidden] { display: none; }
+.narwal-replay-banner { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: var(--radius-s); padding: 4px 8px; margin-bottom: 6px; white-space: pre-line; }
+.narwal-replay-banner[hidden] { display: none; }
+.narwal-replay-markers { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.narwal-marker { position: absolute; box-sizing: border-box; border: 3px solid #d4412f; border-radius: 3px; }
+.narwal-marker-dwell { border: 2px dashed #2f6f8f; }
+.narwal-marker-region { background: rgba(212, 65, 47, 0.12); }
+.narwal-marker-point { position: absolute; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; border: 3px solid #d4412f; box-sizing: border-box; }
+
+/* The transcript: a time and the words; the line playing now is lit. */
+.transcript, .notes { padding-left: 0; list-style: none; margin: 0; }
+.transcript { max-height: 560px; overflow: auto; }
+.transcript li, .notes li { display: flex; gap: 4px; align-items: flex-start; border-top: 1px solid var(--line); padding: 2px 0; }
+.transcript li:first-child, .notes li:first-child { border-top: 0; }
+.transcript button[data-index], .notes li > button:first-child { flex: 1; }
+.transcript button[data-index], .notes li > button:first-child { display: block; width: 100%; text-align: left; border: 0; border-radius: 4px; padding: 4px 6px; background: none; color: var(--ink); font: inherit; line-height: 1.4; cursor: pointer; }
+.transcript button[data-index]:hover, .notes li > button:first-child:hover { background: var(--chip); }
+.transcript button[aria-current='true'] { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); box-shadow: inset 3px 0 0 var(--accent); }
+.transcript .when { color: var(--accent); font-weight: 600; font-size: 12px; font-variant-numeric: tabular-nums; margin-right: 8px; }
+.transcript .approx { color: var(--ink-3); }
+.small { flex: none; height: 24px; padding: 0 8px; margin-top: 3px; border: 1px solid var(--line-2); border-radius: var(--radius-s); background: var(--surface); color: var(--ink-2); font: inherit; font-size: 12px; cursor: pointer; }
+.small:hover { color: var(--ink); border-color: var(--ink-3); }
+.edited { color: var(--ok); font-size: 12px; }
+.edit-row { flex: 1; display: flex; flex-wrap: wrap; gap: 4px; padding: 4px 0; }
+.edit-row input { flex: 1; min-width: 0; }
+.edit-row .note { flex-basis: 100%; }
+.notes-tile .note-form { margin-top: 8px; }
+.waiting { margin-bottom: 8px; display: flex; flex-direction: column; gap: 6px; }
+.waiting .conflict { display: flex; flex-direction: column; gap: 4px; margin: 4px 0; }
+.waiting button { align-self: flex-start; height: 28px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: var(--radius-s); background: var(--surface); color: var(--ink); font: inherit; font-weight: 600; font-size: 12.5px; cursor: pointer; }
+#gaps tr { cursor: pointer; }
+#gaps td { white-space: normal; }
+
+@media (max-width: 860px) {
+  .stage-tile, .lines-tile, .purpose-tile, .notes-tile, .gaps-tile { grid-column: 1 / -1; grid-row: auto; }
+}

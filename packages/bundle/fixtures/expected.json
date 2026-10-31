@@ -1,0 +1,299 @@
+{
+  "good/minimal": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "why": "No narration (microphone denied, explained by an audio gap), one page, one click."
+  },
+  "good/dashboard-walkthrough": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "why": "Narrated two-page walkthrough: two transcript revisions with a carried correction, notes with supersede and retract, markers, dwells, a masked input, a cross-origin frame, lost rrweb messages and an audio gap."
+  },
+  "good/newer-minor": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "W_NEWER_MINOR",
+      "W_UNKNOWN_FIELD",
+      "W_UNKNOWN_KIND",
+      "W_UNKNOWN_REASON"
+    ],
+    "why": "Schema 1.2 from a newer writer: unknown field, kind and gap reason are kept and reported as warnings."
+  },
+  "good/two-windows": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "why": "Schema 1.1: the recorded page opens a sign-in popup; marks in both windows, switches between them, the popup closes."
+  },
+  "good/stale-agent-export": {
+    "ok": true,
+    "errors": [],
+    "warnings": [
+      "W_AGENT_STALE"
+    ],
+    "why": "The derived Markdown export no longer matches the bundle; it is regenerable, so this is a warning."
+  },
+  "bad/hash-mismatch": {
+    "ok": false,
+    "errors": [
+      "E_HASH"
+    ],
+    "warnings": [],
+    "why": "A file changed after the manifest was written (same size)."
+  },
+  "bad/size-mismatch": {
+    "ok": false,
+    "errors": [
+      "E_SIZE"
+    ],
+    "warnings": [],
+    "why": "A file grew after the manifest was written."
+  },
+  "bad/unlisted-file": {
+    "ok": false,
+    "errors": [
+      "E_FILE_UNLISTED"
+    ],
+    "warnings": [],
+    "why": "A file is present but not listed in manifest.files."
+  },
+  "bad/listed-file-missing": {
+    "ok": false,
+    "errors": [
+      "E_FILE_MISSING"
+    ],
+    "warnings": [],
+    "why": "A listed file is absent."
+  },
+  "bad/no-manifest": {
+    "ok": false,
+    "errors": [
+      "E_MANIFEST_MISSING"
+    ],
+    "warnings": [],
+    "why": "No manifest.json."
+  },
+  "bad/major-version": {
+    "ok": false,
+    "errors": [
+      "E_VERSION"
+    ],
+    "warnings": [],
+    "why": "A different major version is refused."
+  },
+  "bad/unknown-kind-same-version": {
+    "ok": false,
+    "errors": [
+      "E_UNKNOWN_KIND"
+    ],
+    "warnings": [],
+    "why": "An observation kind 1.0 does not define, in a 1.0 bundle, is a writer bug."
+  },
+  "bad/window-missing": {
+    "ok": false,
+    "errors": [
+      "E_REF"
+    ],
+    "warnings": [],
+    "why": "A window observation must name a window documents.json lists."
+  },
+  "bad/document-without-window": {
+    "ok": false,
+    "errors": [
+      "E_FIELD"
+    ],
+    "warnings": [],
+    "why": "When documents.json lists windows, every document says which window it was in."
+  },
+  "bad/wrong-basis": {
+    "ok": false,
+    "errors": [
+      "E_FIELD"
+    ],
+    "warnings": [],
+    "why": "A marker must be user-marked; observed and user-marked evidence never mix."
+  },
+  "bad/credential-field": {
+    "ok": false,
+    "errors": [
+      "E_CREDENTIAL"
+    ],
+    "warnings": [
+      "W_UNKNOWN_FIELD"
+    ],
+    "why": "A credential-shaped field name anywhere outside rrweb."
+  },
+  "bad/credential-string": {
+    "ok": false,
+    "errors": [
+      "E_CREDENTIAL"
+    ],
+    "warnings": [],
+    "why": "A note that starts with \"Bearer \"."
+  },
+  "bad/credential-key-substring": {
+    "ok": false,
+    "errors": [
+      "E_CREDENTIAL"
+    ],
+    "warnings": [
+      "W_UNKNOWN_FIELD"
+    ],
+    "why": "A field whose name contains a credential word (\"refresh_token\")."
+  },
+  "bad/credential-sk-key": {
+    "ok": false,
+    "errors": [
+      "E_CREDENTIAL"
+    ],
+    "warnings": [],
+    "why": "A note holds an \"sk-\" API key shape at the start of a word."
+  },
+  "bad/credential-purpose": {
+    "ok": false,
+    "errors": [
+      "E_CREDENTIAL"
+    ],
+    "warnings": [],
+    "why": "manifest.purpose holds an \"sk-\" API key shape."
+  },
+  "bad/purpose-too-long": {
+    "ok": false,
+    "errors": [
+      "E_LIMIT"
+    ],
+    "warnings": [],
+    "why": "manifest.purpose is longer than 1000 characters."
+  },
+  "bad/credential-markdown": {
+    "ok": false,
+    "errors": [
+      "E_CREDENTIAL"
+    ],
+    "warnings": [],
+    "why": "agent/walkthrough.md holds an \"sk-\" API key shape; Markdown is scanned too."
+  },
+  "bad/file-type-refused": {
+    "ok": false,
+    "errors": [
+      "E_FILE_TYPE"
+    ],
+    "warnings": [],
+    "why": "A file type outside .json, .jsonl, .md and .webm, refused from the listing."
+  },
+  "bad/role-unsafe": {
+    "ok": false,
+    "errors": [
+      "E_FIELD"
+    ],
+    "warnings": [],
+    "why": "An element role from page markup that is not a role token (it would forge a Markdown line)."
+  },
+  "bad/revealed-input-while-masked": {
+    "ok": false,
+    "errors": [
+      "E_PRIVACY"
+    ],
+    "warnings": [],
+    "why": "A typed value is present while privacy.inputValues is masked."
+  },
+  "bad/excluded-element-named": {
+    "ok": false,
+    "errors": [
+      "E_PRIVACY"
+    ],
+    "warnings": [],
+    "why": "An element in a user-excluded region carries its name."
+  },
+  "bad/url-query-value": {
+    "ok": false,
+    "errors": [
+      "E_PRIVACY"
+    ],
+    "warnings": [],
+    "why": "A route URL keeps a query value under urlPolicy redact-query-values."
+  },
+  "bad/seq-gap-unexplained": {
+    "ok": false,
+    "errors": [
+      "E_SEQ_GAP"
+    ],
+    "warnings": [],
+    "why": "An rrweb seq jump with no lost-messages gap."
+  },
+  "bad/corrections-overlap": {
+    "ok": false,
+    "errors": [
+      "E_EDIT"
+    ],
+    "warnings": [],
+    "why": "Two active corrections cover the same word."
+  },
+  "bad/edit-dangling-segment": {
+    "ok": false,
+    "errors": [
+      "E_REF"
+    ],
+    "warnings": [],
+    "why": "A correction names a segment its revision does not have."
+  },
+  "bad/active-revision-missing": {
+    "ok": false,
+    "errors": [
+      "E_REF"
+    ],
+    "warnings": [],
+    "why": "manifest.transcript.activeRevision names no revision file."
+  },
+  "bad/time-outside-recording": {
+    "ok": false,
+    "errors": [
+      "E_TIME"
+    ],
+    "warnings": [],
+    "why": "An observation 4 s after the recording ended."
+  },
+  "bad/dwell-too-short": {
+    "ok": false,
+    "errors": [
+      "E_FIELD"
+    ],
+    "warnings": [],
+    "why": "A derived dwell shorter than derivation.pointerDwellMinMs."
+  },
+  "bad/audio-missing-unexplained": {
+    "ok": false,
+    "errors": [
+      "E_AUDIO_GAP"
+    ],
+    "warnings": [],
+    "why": "No narration audio and no audio gap saying why."
+  },
+  "bad/duplicate-id": {
+    "ok": false,
+    "errors": [
+      "E_DUP_ID"
+    ],
+    "warnings": [],
+    "why": "Two observations share an ID."
+  },
+  "bad/blank-line": {
+    "ok": false,
+    "errors": [
+      "E_JSONL"
+    ],
+    "warnings": [],
+    "why": "A blank line inside observations.jsonl."
+  },
+  "bad/invalid-utf8": {
+    "ok": false,
+    "errors": [
+      "E_ENCODING"
+    ],
+    "warnings": [],
+    "why": "observations.jsonl is not valid UTF-8."
+  }
+}

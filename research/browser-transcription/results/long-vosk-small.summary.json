@@ -1,0 +1,85 @@
+{
+ "name": "long-vosk-small",
+ "engine": "vosk",
+ "model": "https://ccoreilly.github.io/vosk-browser/models/vosk-model-small-en-us-0.15.tar.gz",
+ "fixture": "narration-30m",
+ "sessionUrl": "https://www.browserbase.com/sessions/3737e038-6fe8-4d06-9045-7565fec24cdd",
+ "env": {
+  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hc": 2,
+  "dm": 8,
+  "coi": true,
+  "webgpu": false
+ },
+ "status": "done",
+ "audioS": 1795.62,
+ "wallS": 1815.677,
+ "refWords": 3893,
+ "wer": 0.096,
+ "sub": 298,
+ "del": 21,
+ "ins": 53,
+ "silentInsertions": 0,
+ "timing": {
+  "n": 3574,
+  "startAbsMedianS": 0.017,
+  "startAbsP90S": 0.038,
+  "startBiasS": 0.015,
+  "endAbsMedianS": 0.017,
+  "endAbsP90S": 0.037,
+  "startWithin100ms": 0.996,
+  "startSignedP10S": -0.009,
+  "startSignedP90S": 0.038,
+  "startAbsP90DebiasedS": 0.031,
+  "startWithin250ms": 1,
+  "startWithin500ms": 1
+ },
+ "finalize": null,
+ "latency": {
+  "finalMedianS": 4.251,
+  "finalP90S": 10.839,
+  "finalMaxS": 19.667,
+  "visibleMedianS": 0.343,
+  "visibleP90S": 0.499,
+  "finalP90FirstFiveMinS": 10.637,
+  "finalP90LastFiveMinS": 11.218,
+  "maxBacklogS": 0,
+  "partialEvents": 14368,
+  "finalEvents": 262
+ },
+ "compute": {
+  "dutyCycle": null,
+  "coresMean": 0.181,
+  "coresP90": 0.193,
+  "coresMax": 0.803
+ },
+ "memory": {
+  "firstMB": 437.259,
+  "maxMB": 597.534,
+  "lastMB": 597.534,
+  "slopeMBper10min": 43.087,
+  "samples": 30,
+  "afterLoadMB": 371.003
+ },
+ "load": {
+  "modelFileMB": 0,
+  "networkMB": 43.531,
+  "netByHostMB": {
+   "cdn.jsdelivr.net": 2.323,
+   "ccoreilly.github.io": 41.208
+  },
+  "coldLoadS": 5.226,
+  "firstInferS": 3.434,
+  "secondInferS": 3.27,
+  "cachedLoadS": 1.078,
+  "cachedFirstInferS": 3.439
+ },
+ "offline": {
+  "ok": true,
+  "loadS": 1.131,
+  "inferS": 3.324,
+  "error": null,
+  "words": "he hoped there would be stew for dinner turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out and thing"
+ },
+ "error": null
+}

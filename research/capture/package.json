@@ -1,0 +1,18 @@
+{
+  "name": "@narwal/research-capture",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Board #16538: probe for selected-tab rrweb + microphone capture continuity in a Chromium MV3 extension",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node build.mjs",
+    "fixtures": "node fixtures/server.mjs",
+    "probe": "node build.mjs && node harness/run.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "playwright": "1.63.0",
+    "rrweb": "2.1.7"
+  }
+}

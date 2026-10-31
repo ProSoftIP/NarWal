@@ -1,0 +1,86 @@
+{
+ "name": "long-tfjs-tiny-q8",
+ "engine": "tfjs",
+ "model": "onnx-community/whisper-tiny.en_timestamped",
+ "fixture": "narration-30m",
+ "sessionUrl": "https://www.browserbase.com/sessions/355dd052-336f-49ec-81df-695fddf163b3",
+ "env": {
+  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+  "hc": 2,
+  "dm": 8,
+  "coi": true,
+  "webgpu": false
+ },
+ "status": "done",
+ "audioS": 1795.62,
+ "wallS": 1805.938,
+ "refWords": 3893,
+ "wer": 0.058,
+ "sub": 148,
+ "del": 53,
+ "ins": 26,
+ "silentInsertions": 2,
+ "timing": {
+  "n": 3692,
+  "startAbsMedianS": 0.357,
+  "startAbsP90S": 0.593,
+  "startBiasS": 0.388,
+  "endAbsMedianS": 0.375,
+  "endAbsP90S": 0.656,
+  "startWithin100ms": 0,
+  "startSignedP10S": 0.227,
+  "startSignedP90S": 0.593,
+  "startAbsP90DebiasedS": 0.237,
+  "startWithin250ms": 0.173,
+  "startWithin500ms": 0.785
+ },
+ "finalize": null,
+ "latency": {
+  "finalMedianS": 10.259,
+  "finalP90S": 20.565,
+  "finalMaxS": 25.917,
+  "visibleMedianS": 2.841,
+  "visibleP90S": 4.867,
+  "finalP90FirstFiveMinS": 19.652,
+  "finalP90LastFiveMinS": 20.985,
+  "maxBacklogS": 23.03,
+  "partialEvents": 652,
+  "finalEvents": 164
+ },
+ "compute": {
+  "dutyCycle": 0.828,
+  "coresMean": 1.386,
+  "coresP90": 1.698,
+  "coresMax": 1.739
+ },
+ "memory": {
+  "firstMB": 493.146,
+  "maxMB": 521.41,
+  "lastMB": 518.875,
+  "slopeMBper10min": 6.755,
+  "samples": 15,
+  "afterLoadMB": 0
+ },
+ "load": {
+  "modelFileMB": 43.52,
+  "networkMB": 49.376,
+  "netByHostMB": {
+   "cdn.jsdelivr.net": 7.875,
+   "huggingface.co": 0.649,
+   "us.aws.cdn.hf.co": 40.852
+  },
+  "coldLoadS": 6.174,
+  "firstInferS": 3.258,
+  "secondInferS": 2.158,
+  "cachedLoadS": 0.852,
+  "cachedFirstInferS": 3.155
+ },
+ "offline": {
+  "ok": true,
+  "loadS": 0.698,
+  "inferS": 1.984,
+  "error": null,
+  "words": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes, and fat mutton pieces to be ladled out and thick."
+ },
+ "error": null
+}

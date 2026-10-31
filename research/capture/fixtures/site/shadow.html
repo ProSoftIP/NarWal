@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Shadow</title><script src="/origins.js"></script><script src="/fixture.js"></script></head>
+<body>
+<h1>Shadow</h1>
+<open-widget></open-widget> <closed-widget></closed-widget>
+<script>
+customElements.define("open-widget", class extends HTMLElement { constructor(){ super(); this.attachShadow({mode:"open"}).innerHTML = "<p>open-shadow-text</p>"; } });
+customElements.define("closed-widget", class extends HTMLElement { constructor(){ super(); this.attachShadow({mode:"closed"}).innerHTML = "<p>closed-shadow-text</p>"; } });
+</script>
+</body>
+</html>

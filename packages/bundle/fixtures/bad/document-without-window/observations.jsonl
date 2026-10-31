@@ -1,0 +1,14 @@
+{"id":"o1","kind":"recording","basis":"observed","atMs":0,"state":"started"}
+{"id":"o2","kind":"route","basis":"observed","atMs":0,"doc":"d1","url":"https://app.example.test/companies","title":"Companies","transition":"typed"}
+{"id":"o3","kind":"click","basis":"observed","atMs":7500,"doc":"d1","target":{"node":31,"tag":"button","role":"button","name":"Connect bank","nameSource":"text","box":{"x":900,"y":120,"w":140,"h":36}},"button":"left","count":1,"point":{"x":970,"y":138},"scroll":{"x":0,"y":0}}
+{"id":"o4","kind":"window","basis":"observed","atMs":8000,"window":"w2","state":"opened","opener":"w1","url":"https://login.vendor.example.test/authorize?client_id=_&state=_","title":"Sign in to Vendor"}
+{"id":"o5","kind":"route","basis":"observed","atMs":8000.5,"doc":"d2","url":"https://login.vendor.example.test/authorize?client_id=_&state=_","title":"Sign in to Vendor","transition":"link"}
+{"id":"o6","kind":"input","basis":"observed","atMs":10000,"doc":"d2","target":{"node":12,"tag":"input","role":"textbox","name":"Email","nameSource":"label","box":{"x":40,"y":200,"w":400,"h":32}},"inputType":"email","value":{"state":"masked"},"count":12}
+{"id":"o7","kind":"marker-element","basis":"user-marked","atMs":12000,"doc":"d2","target":{"node":22,"tag":"button","role":"button","name":"Allow access","nameSource":"text","box":{"x":180,"y":420,"w":160,"h":40}},"via":"right-click","point":{"x":260,"y":440},"scroll":{"x":0,"y":0}}
+{"id":"o8","kind":"window","basis":"observed","atMs":15000,"window":"w1","state":"focused"}
+{"id":"o9","kind":"marker-element","basis":"user-marked","atMs":16000,"doc":"d1","target":{"node":31,"tag":"button","role":"button","name":"Connect bank","nameSource":"text","box":{"x":900,"y":120,"w":140,"h":36}},"via":"right-click","point":{"x":970,"y":138},"scroll":{"x":0,"y":0}}
+{"id":"o10","kind":"window","basis":"observed","atMs":18000,"window":"w2","state":"focused"}
+{"id":"o11","kind":"click","basis":"observed","atMs":19500,"doc":"d2","target":{"node":22,"tag":"button","role":"button","name":"Allow access","nameSource":"text","box":{"x":180,"y":420,"w":160,"h":40}},"button":"left","count":1,"point":{"x":260,"y":440},"scroll":{"x":0,"y":0}}
+{"id":"o12","kind":"window","basis":"observed","atMs":20000,"window":"w2","state":"closed"}
+{"id":"o13","kind":"window","basis":"observed","atMs":20100,"window":"w1","state":"focused"}
+{"id":"o14","kind":"recording","basis":"observed","atMs":30000,"state":"stopped"}

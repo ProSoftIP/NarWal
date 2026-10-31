@@ -1,0 +1,23 @@
+	Command being timed: "/tmp/l16603/wer/venv/bin/python -I /tmp/l16603/wer/sherpa.py /tmp/l16603/wer/wav/passage.wav 1 /tmp/l16603/wer/out/passage/py-parakeet-tdt-int8-t1.json"
+	User time (seconds): 22.94
+	System time (seconds): 1.15
+	Percent of CPU this job got: 103%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:23.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1861336
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 385
+	Minor (reclaiming a frame) page faults: 484887
+	Voluntary context switches: 4694
+	Involuntary context switches: 1354
+	Swaps: 0
+	File system inputs: 1354296
+	File system outputs: 72
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

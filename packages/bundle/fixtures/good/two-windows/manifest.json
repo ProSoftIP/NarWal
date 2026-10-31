@@ -1,0 +1,90 @@
+{
+  "format": "narwal.bundle",
+  "schemaVersion": "1.1",
+  "recordingId": "rec_fixture_two_windows",
+  "title": "Companies page bank connection",
+  "createdAt": "2026-10-13T20:00:00.000Z",
+  "producer": {
+    "name": "narwal-fixture-builder",
+    "version": "1.0.0"
+  },
+  "environment": {
+    "browser": "Chrome",
+    "browserVersion": "155.0.7600.0",
+    "platform": "linux"
+  },
+  "clock": {
+    "originEpochMs": 1791921600000.25
+  },
+  "durationMs": 30000,
+  "state": "complete",
+  "privacy": {
+    "inputValues": "masked",
+    "excludedRegions": 0,
+    "urlPolicy": "redact-query-values",
+    "audio": "not-redacted"
+  },
+  "derivation": {
+    "pointerDwellMinMs": 300
+  },
+  "audio": null,
+  "transcript": {
+    "activeRevision": null
+  },
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 3479,
+      "sha256": "3040405a9d9085a7ab7826b1d6122b77220190d711405b23e3ff0aaa85f546fa",
+      "mediaType": "text/markdown"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3479,
+      "sha256": "3040405a9d9085a7ab7826b1d6122b77220190d711405b23e3ff0aaa85f546fa",
+      "mediaType": "text/markdown"
+    },
+    {
+      "path": "agent/walkthrough.json",
+      "bytes": 9338,
+      "sha256": "7b2a947f412eebf5526275fc1ded5989c10fe7348a582f996bdffa85504330a3",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "agent/walkthrough.md",
+      "bytes": 3066,
+      "sha256": "60a2a5c4339f22dd7646e4f25b253d2b25798bbc97f165d37ef4dc68f84b36b6",
+      "mediaType": "text/markdown"
+    },
+    {
+      "path": "documents.json",
+      "bytes": 1372,
+      "sha256": "fcc2c1b5187ee4c489daf148d161ace089f8ffb36ad00f9fa73e40e383865ea5",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "gaps.jsonl",
+      "bytes": 116,
+      "sha256": "c559d4ace554be0f69e72e9beb87eb0c542e701d1d4c8f92d9f4563840c138db",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "observations.jsonl",
+      "bytes": 2452,
+      "sha256": "b76f540725a41c75e12c6229c376b84685175e2ebf9d664455b5644e71ee4668",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "rrweb/d1.jsonl",
+      "bytes": 396,
+      "sha256": "2b8071845957e3831b87b88d2396945694881589dd7975f25893703857a0d4f7",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "rrweb/d2.jsonl",
+      "bytes": 437,
+      "sha256": "15fc92709e744fb7248c41f574eebe31c7687482e0c04bc5d35c960c5c2eb7c2",
+      "mediaType": "application/x-ndjson"
+    }
+  ]
+}

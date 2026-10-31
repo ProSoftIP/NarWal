@@ -1,0 +1,4 @@
+{"id":"o1","kind":"recording","basis":"observed","atMs":0,"state":"started"}
+{"id":"o2","kind":"route","basis":"observed","atMs":0,"doc":"d1","url":"https://app.example.test/","title":"Home","transition":"typed"}
+{"id":"o3","kind":"click","basis":"observed","atMs":2000,"doc":"d1","target":{"node":14,"tag":"a","role":"link","name":"Sign in","nameSource":"text","box":{"x":1100,"y":16,"w":80,"h":32}},"button":"left","count":1,"point":{"x":1130,"y":30},"scroll":{"x":0,"y":0}}
+{"id":"o4","kind":"recording","basis":"observed","atMs":9000,"state":"stopped"}

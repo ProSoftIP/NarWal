@@ -1,0 +1,903 @@
+{
+  "live": "parakeet",
+  "audio": "fixtures/speech-en-31s.flac",
+  "hardwareConcurrency": 20,
+  "model": "parakeet-tdt-0.6b-v2-int8",
+  "timing": {
+    "quality": "approximate",
+    "method": "tdt-token-times",
+    "correctionMs": -30
+  },
+  "liveEngine": {
+    "model": "parakeet-tdt-0.6b-v2-int8",
+    "device": "wasm",
+    "threads": 1,
+    "loadMs": 2830,
+    "heapBytes": 857931776
+  },
+  "liveFallback": null,
+  "audioMs": 31500,
+  "startMs": 4740,
+  "finishMs": 1682,
+  "capture": {
+    "samples": 504000,
+    "expectedSamples": 504000,
+    "maxSendMs": 42.39,
+    "lateChunks": 0
+  },
+  "stats": {
+    "receivedSamples": 504000,
+    "processedSamples": 504000,
+    "lagMs": 0,
+    "maxLagMs": 2200,
+    "behind": false,
+    "skips": 0,
+    "restarts": 0,
+    "phase": "closed"
+  },
+  "counts": {
+    "interim": 0,
+    "final": 7,
+    "gaps": 0,
+    "errors": 0,
+    "backlog": 0
+  },
+  "finalDelayMs": {
+    "finals": 7,
+    "p50": 2052,
+    "p90": 2414,
+    "max": 2414
+  },
+  "wordDelayMs": {
+    "words": 66,
+    "p50": 3203,
+    "p90": 5091,
+    "max": 5971
+  },
+  "cpu": {
+    "meanCores": 0.49,
+    "p90Cores": 1.27,
+    "maxCores": 1.62
+  },
+  "rssBeforeBytes": 2505277440,
+  "peakRssBytes": 3818336256,
+  "peakLargestProcessRssBytes": 2277613568,
+  "errors": [],
+  "backlog": [],
+  "consoleErrors": [],
+  "text": "He hoped there would be stew for dinner, turnips and carrots and bruised chicken. Potatoes and fat mutton pieces to be ladled out in thick pets. Stuff it into you, his belly counselled him. After early nightfall the yellow lamps would light up here and there squalid quarter of the brothels. Hello, Bertie any good in your mind? Number ten Fresh Nelly is waiting on you.",
+  "fixtureScore": {
+    "referenceWords": 69,
+    "hypothesisWords": 66,
+    "wer": 0.087,
+    "substitutions": 1,
+    "deletions": 4,
+    "insertions": 1,
+    "matchedWords": 64,
+    "startBiasMs": 0,
+    "startAbsMedianMs": 34,
+    "startAbsP90Ms": 120,
+    "startsWithin250Ms": 0.984,
+    "wordsMonotonic": true,
+    "wordsInsideSegments": true
+  },
+  "visibleLatency": {
+    "words": 64,
+    "p50Ms": 3301,
+    "p90Ms": 5101,
+    "maxMs": 5921
+  },
+  "samples": [
+    {
+      "atS": 1,
+      "cores": 1.12,
+      "rssBytes": 3818336256,
+      "largestBytes": 2126213120
+    },
+    {
+      "atS": 2,
+      "cores": 0.2,
+      "rssBytes": 1844277248,
+      "largestBytes": 813461504
+    },
+    {
+      "atS": 3,
+      "cores": 1.29,
+      "rssBytes": 3176230912,
+      "largestBytes": 2144776192
+    },
+    {
+      "atS": 4,
+      "cores": 1.27,
+      "rssBytes": 3292565504,
+      "largestBytes": 2262945792
+    },
+    {
+      "atS": 5,
+      "cores": 1.62,
+      "rssBytes": 3304964096,
+      "largestBytes": 2277613568
+    },
+    {
+      "atS": 6,
+      "cores": 0.07,
+      "rssBytes": 3295584256,
+      "largestBytes": 2268233728
+    },
+    {
+      "atS": 7.1,
+      "cores": 0,
+      "rssBytes": 3295911936,
+      "largestBytes": 2268561408
+    },
+    {
+      "atS": 8.1,
+      "cores": 0,
+      "rssBytes": 3296075776,
+      "largestBytes": 2268725248
+    },
+    {
+      "atS": 9.1,
+      "cores": 0,
+      "rssBytes": 3296075776,
+      "largestBytes": 2268725248
+    },
+    {
+      "atS": 10.1,
+      "cores": 1.4,
+      "rssBytes": 2642477056,
+      "largestBytes": 1615310848
+    },
+    {
+      "atS": 11.1,
+      "cores": 1.04,
+      "rssBytes": 2642182144,
+      "largestBytes": 1615015936
+    },
+    {
+      "atS": 12.1,
+      "cores": 0.47,
+      "rssBytes": 2636406784,
+      "largestBytes": 1609093120
+    },
+    {
+      "atS": 13.1,
+      "cores": 0,
+      "rssBytes": 2636406784,
+      "largestBytes": 1609093120
+    },
+    {
+      "atS": 14.1,
+      "cores": 0.69,
+      "rssBytes": 2637144064,
+      "largestBytes": 1609830400
+    },
+    {
+      "atS": 15.1,
+      "cores": 0.96,
+      "rssBytes": 2638782464,
+      "largestBytes": 1611468800
+    },
+    {
+      "atS": 16.1,
+      "cores": 0.58,
+      "rssBytes": 2639278080,
+      "largestBytes": 1611964416
+    },
+    {
+      "atS": 17.1,
+      "cores": 0.65,
+      "rssBytes": 2639069184,
+      "largestBytes": 1611755520
+    },
+    {
+      "atS": 18.1,
+      "cores": 0,
+      "rssBytes": 2639069184,
+      "largestBytes": 1611755520
+    },
+    {
+      "atS": 19.1,
+      "cores": 0,
+      "rssBytes": 2639233024,
+      "largestBytes": 1611755520
+    },
+    {
+      "atS": 20.1,
+      "cores": 0,
+      "rssBytes": 2639396864,
+      "largestBytes": 1611919360
+    },
+    {
+      "atS": 21.1,
+      "cores": 0.98,
+      "rssBytes": 2640158720,
+      "largestBytes": 1612681216
+    },
+    {
+      "atS": 22.1,
+      "cores": 0.33,
+      "rssBytes": 2640310272,
+      "largestBytes": 1612832768
+    },
+    {
+      "atS": 23.1,
+      "cores": 0.01,
+      "rssBytes": 2640474112,
+      "largestBytes": 1612996608
+    },
+    {
+      "atS": 24.2,
+      "cores": 0,
+      "rssBytes": 2640474112,
+      "largestBytes": 1612996608
+    },
+    {
+      "atS": 25.2,
+      "cores": 0,
+      "rssBytes": 2640474112,
+      "largestBytes": 1612996608
+    },
+    {
+      "atS": 26.2,
+      "cores": 0.83,
+      "rssBytes": 2640965632,
+      "largestBytes": 1613488128
+    },
+    {
+      "atS": 27.2,
+      "cores": 1.02,
+      "rssBytes": 2635243520,
+      "largestBytes": 1613828096
+    },
+    {
+      "atS": 28.2,
+      "cores": 0.32,
+      "rssBytes": 2635407360,
+      "largestBytes": 1613991936
+    },
+    {
+      "atS": 29.2,
+      "cores": 0.75,
+      "rssBytes": 2635890688,
+      "largestBytes": 1614475264
+    },
+    {
+      "atS": 30.2,
+      "cores": 0,
+      "rssBytes": 2636054528,
+      "largestBytes": 1614639104
+    },
+    {
+      "atS": 31.2,
+      "cores": 0,
+      "rssBytes": 2636382208,
+      "largestBytes": 1614966784
+    },
+    {
+      "atS": 32.2,
+      "cores": 0.44,
+      "rssBytes": 2636771328,
+      "largestBytes": 1615355904
+    },
+    {
+      "atS": 33.2,
+      "cores": 0.77,
+      "rssBytes": 1973764096,
+      "largestBytes": 952348672
+    },
+    {
+      "atS": 34.2,
+      "cores": 0.03,
+      "rssBytes": 1971544064,
+      "largestBytes": 951980032
+    },
+    {
+      "atS": 35.2,
+      "cores": 0.01,
+      "rssBytes": 1971544064,
+      "largestBytes": 951980032
+    },
+    {
+      "atS": 36.2,
+      "cores": 0.01,
+      "rssBytes": 1972035584,
+      "largestBytes": 952143872
+    },
+    {
+      "atS": 37.2,
+      "cores": 0.71,
+      "rssBytes": 1972707328,
+      "largestBytes": 952815616
+    },
+    {
+      "atS": 38.2,
+      "cores": 1.01,
+      "rssBytes": 1794162688,
+      "largestBytes": 774635520
+    }
+  ],
+  "finals": [
+    {
+      "atMs": 6541,
+      "endMs": 4250,
+      "wordEndsMs": [
+        570,
+        970,
+        1130,
+        1290,
+        1450,
+        1850,
+        2010,
+        2490,
+        3050,
+        3210,
+        3530,
+        3690,
+        4010,
+        4250
+      ]
+    },
+    {
+      "atMs": 10235,
+      "endMs": 8170,
+      "wordEndsMs": [
+        5050,
+        5290,
+        5610,
+        5930,
+        6410,
+        6650,
+        6810,
+        7290,
+        7450,
+        7610,
+        7850,
+        8170
+      ]
+    },
+    {
+      "atMs": 16470,
+      "endMs": 14670,
+      "wordEndsMs": [
+        12430,
+        12590,
+        12830,
+        13070,
+        13390,
+        13790,
+        14270,
+        14670
+      ]
+    },
+    {
+      "atMs": 22204,
+      "endMs": 19790,
+      "wordEndsMs": [
+        16830,
+        17150,
+        17710,
+        17950,
+        18270,
+        18670,
+        18830,
+        19150,
+        19310,
+        19550,
+        19630,
+        19790
+      ]
+    },
+    {
+      "atMs": 23896,
+      "endMs": 22350,
+      "wordEndsMs": [
+        20990,
+        21390,
+        21470,
+        21630,
+        22350
+      ]
+    },
+    {
+      "atMs": 27973,
+      "endMs": 26210,
+      "wordEndsMs": [
+        24370,
+        24770,
+        25010,
+        25410,
+        25570,
+        25730,
+        26210
+      ]
+    },
+    {
+      "atMs": 33182,
+      "endMs": 31130,
+      "wordEndsMs": [
+        28170,
+        28730,
+        29370,
+        30010,
+        30090,
+        30570,
+        30730,
+        31130
+      ]
+    }
+  ],
+  "visible": [
+    {
+      "atMs": 6541,
+      "words": 14
+    },
+    {
+      "atMs": 10235,
+      "words": 26
+    },
+    {
+      "atMs": 16470,
+      "words": 34
+    },
+    {
+      "atMs": 22204,
+      "words": 46
+    },
+    {
+      "atMs": 23896,
+      "words": 51
+    },
+    {
+      "atMs": 27973,
+      "words": 58
+    },
+    {
+      "atMs": 33182,
+      "words": 66
+    }
+  ],
+  "revision": {
+    "revisionId": "r1",
+    "provider": "browser-local",
+    "model": "parakeet-tdt-0.6b-v2-int8",
+    "createdAtMs": 1791979794388,
+    "source": "live",
+    "segments": [
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:0",
+        "kind": "final",
+        "startMs": 360,
+        "endMs": 4250,
+        "text": "He hoped there would be stew for dinner, turnips and carrots and bruised chicken.",
+        "words": [
+          {
+            "text": "He",
+            "startMs": 360,
+            "endMs": 570
+          },
+          {
+            "text": "hoped",
+            "startMs": 570,
+            "endMs": 970
+          },
+          {
+            "text": "there",
+            "startMs": 970,
+            "endMs": 1130
+          },
+          {
+            "text": "would",
+            "startMs": 1130,
+            "endMs": 1290
+          },
+          {
+            "text": "be",
+            "startMs": 1290,
+            "endMs": 1450
+          },
+          {
+            "text": "stew",
+            "startMs": 1450,
+            "endMs": 1850
+          },
+          {
+            "text": "for",
+            "startMs": 1850,
+            "endMs": 2010
+          },
+          {
+            "text": "dinner,",
+            "startMs": 2010,
+            "endMs": 2490
+          },
+          {
+            "text": "turnips",
+            "startMs": 2490,
+            "endMs": 3050
+          },
+          {
+            "text": "and",
+            "startMs": 3050,
+            "endMs": 3210
+          },
+          {
+            "text": "carrots",
+            "startMs": 3210,
+            "endMs": 3530
+          },
+          {
+            "text": "and",
+            "startMs": 3610,
+            "endMs": 3690
+          },
+          {
+            "text": "bruised",
+            "startMs": 3690,
+            "endMs": 4010
+          },
+          {
+            "text": "chicken.",
+            "startMs": 4010,
+            "endMs": 4250
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:1",
+        "kind": "final",
+        "startMs": 4570,
+        "endMs": 8170,
+        "text": "Potatoes and fat mutton pieces to be ladled out in thick pets.",
+        "words": [
+          {
+            "text": "Potatoes",
+            "startMs": 4570,
+            "endMs": 5050
+          },
+          {
+            "text": "and",
+            "startMs": 5050,
+            "endMs": 5290
+          },
+          {
+            "text": "fat",
+            "startMs": 5290,
+            "endMs": 5610
+          },
+          {
+            "text": "mutton",
+            "startMs": 5610,
+            "endMs": 5930
+          },
+          {
+            "text": "pieces",
+            "startMs": 6090,
+            "endMs": 6410
+          },
+          {
+            "text": "to",
+            "startMs": 6490,
+            "endMs": 6650
+          },
+          {
+            "text": "be",
+            "startMs": 6650,
+            "endMs": 6810
+          },
+          {
+            "text": "ladled",
+            "startMs": 6810,
+            "endMs": 7290
+          },
+          {
+            "text": "out",
+            "startMs": 7290,
+            "endMs": 7450
+          },
+          {
+            "text": "in",
+            "startMs": 7450,
+            "endMs": 7610
+          },
+          {
+            "text": "thick",
+            "startMs": 7610,
+            "endMs": 7850
+          },
+          {
+            "text": "pets.",
+            "startMs": 7930,
+            "endMs": 8170
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:3",
+        "kind": "final",
+        "startMs": 12030,
+        "endMs": 14670,
+        "text": "Stuff it into you, his belly counselled him.",
+        "words": [
+          {
+            "text": "Stuff",
+            "startMs": 12030,
+            "endMs": 12430
+          },
+          {
+            "text": "it",
+            "startMs": 12430,
+            "endMs": 12590
+          },
+          {
+            "text": "into",
+            "startMs": 12590,
+            "endMs": 12830
+          },
+          {
+            "text": "you,",
+            "startMs": 12830,
+            "endMs": 13070
+          },
+          {
+            "text": "his",
+            "startMs": 13230,
+            "endMs": 13390
+          },
+          {
+            "text": "belly",
+            "startMs": 13390,
+            "endMs": 13790
+          },
+          {
+            "text": "counselled",
+            "startMs": 13790,
+            "endMs": 14270
+          },
+          {
+            "text": "him.",
+            "startMs": 14270,
+            "endMs": 14670
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:4",
+        "kind": "final",
+        "startMs": 16510,
+        "endMs": 19790,
+        "text": "After early nightfall the yellow lamps would light up here and there",
+        "words": [
+          {
+            "text": "After",
+            "startMs": 16510,
+            "endMs": 16830
+          },
+          {
+            "text": "early",
+            "startMs": 16830,
+            "endMs": 17150
+          },
+          {
+            "text": "nightfall",
+            "startMs": 17150,
+            "endMs": 17710
+          },
+          {
+            "text": "the",
+            "startMs": 17790,
+            "endMs": 17950
+          },
+          {
+            "text": "yellow",
+            "startMs": 17950,
+            "endMs": 18270
+          },
+          {
+            "text": "lamps",
+            "startMs": 18270,
+            "endMs": 18670
+          },
+          {
+            "text": "would",
+            "startMs": 18670,
+            "endMs": 18830
+          },
+          {
+            "text": "light",
+            "startMs": 18830,
+            "endMs": 19150
+          },
+          {
+            "text": "up",
+            "startMs": 19150,
+            "endMs": 19310
+          },
+          {
+            "text": "here",
+            "startMs": 19390,
+            "endMs": 19550
+          },
+          {
+            "text": "and",
+            "startMs": 19550,
+            "endMs": 19630
+          },
+          {
+            "text": "there",
+            "startMs": 19630,
+            "endMs": 19790
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:5",
+        "kind": "final",
+        "startMs": 20510,
+        "endMs": 22350,
+        "text": "squalid quarter of the brothels.",
+        "words": [
+          {
+            "text": "squalid",
+            "startMs": 20510,
+            "endMs": 20990
+          },
+          {
+            "text": "quarter",
+            "startMs": 20990,
+            "endMs": 21390
+          },
+          {
+            "text": "of",
+            "startMs": 21390,
+            "endMs": 21470
+          },
+          {
+            "text": "the",
+            "startMs": 21470,
+            "endMs": 21630
+          },
+          {
+            "text": "brothels.",
+            "startMs": 21630,
+            "endMs": 22350
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:6",
+        "kind": "final",
+        "startMs": 24050,
+        "endMs": 26210,
+        "text": "Hello, Bertie any good in your mind?",
+        "words": [
+          {
+            "text": "Hello,",
+            "startMs": 24050,
+            "endMs": 24370
+          },
+          {
+            "text": "Bertie",
+            "startMs": 24370,
+            "endMs": 24770
+          },
+          {
+            "text": "any",
+            "startMs": 24930,
+            "endMs": 25010
+          },
+          {
+            "text": "good",
+            "startMs": 25170,
+            "endMs": 25410
+          },
+          {
+            "text": "in",
+            "startMs": 25410,
+            "endMs": 25570
+          },
+          {
+            "text": "your",
+            "startMs": 25570,
+            "endMs": 25730
+          },
+          {
+            "text": "mind?",
+            "startMs": 25730,
+            "endMs": 26210
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      },
+      {
+        "provider": "browser-local",
+        "model": "parakeet-tdt-0.6b-v2-int8",
+        "connectionId": "live-r1",
+        "segmentKey": "live-r1:7",
+        "kind": "final",
+        "startMs": 27850,
+        "endMs": 31130,
+        "text": "Number ten Fresh Nelly is waiting on you.",
+        "words": [
+          {
+            "text": "Number",
+            "startMs": 27850,
+            "endMs": 28170
+          },
+          {
+            "text": "ten",
+            "startMs": 28330,
+            "endMs": 28730
+          },
+          {
+            "text": "Fresh",
+            "startMs": 29130,
+            "endMs": 29370
+          },
+          {
+            "text": "Nelly",
+            "startMs": 29530,
+            "endMs": 30010
+          },
+          {
+            "text": "is",
+            "startMs": 30010,
+            "endMs": 30090
+          },
+          {
+            "text": "waiting",
+            "startMs": 30250,
+            "endMs": 30570
+          },
+          {
+            "text": "on",
+            "startMs": 30570,
+            "endMs": 30730
+          },
+          {
+            "text": "you.",
+            "startMs": 30730,
+            "endMs": 31130
+          }
+        ],
+        "endOfUtterance": true,
+        "timing": "approximate"
+      }
+    ],
+    "gaps": [],
+    "timing": {
+      "quality": "approximate",
+      "method": "tdt-token-times",
+      "correctionMs": -30
+    }
+  }
+}

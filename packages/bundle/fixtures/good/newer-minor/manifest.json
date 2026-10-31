@@ -1,0 +1,85 @@
+{
+  "format": "narwal.bundle",
+  "schemaVersion": "1.2",
+  "recordingId": "rec_fixture_minimal",
+  "title": "Sign-in link check",
+  "createdAt": "2026-10-13T20:00:00.000Z",
+  "producer": {
+    "name": "narwal-fixture-builder",
+    "version": "1.0.0"
+  },
+  "environment": {
+    "browser": "Chrome",
+    "browserVersion": "155.0.7600.0",
+    "platform": "linux"
+  },
+  "clock": {
+    "originEpochMs": 1791921600000.25
+  },
+  "durationMs": 5000,
+  "state": "complete",
+  "privacy": {
+    "inputValues": "masked",
+    "excludedRegions": 0,
+    "urlPolicy": "redact-query-values",
+    "audio": "not-redacted"
+  },
+  "derivation": {
+    "pointerDwellMinMs": 300
+  },
+  "audio": null,
+  "transcript": {
+    "activeRevision": null
+  },
+  "recordingSource": "toolbar",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 3238,
+      "sha256": "2c0027c3f71977afa2c9d9072e191e717b266bc6d08f2e6e817562877ceda387",
+      "mediaType": "text/markdown"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3238,
+      "sha256": "2c0027c3f71977afa2c9d9072e191e717b266bc6d08f2e6e817562877ceda387",
+      "mediaType": "text/markdown"
+    },
+    {
+      "path": "agent/walkthrough.json",
+      "bytes": 3621,
+      "sha256": "99f0aa3de775e7f5b7ec62fa0a8fc74510633842a9c2c316d8a82a6e692efe0c",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "agent/walkthrough.md",
+      "bytes": 1519,
+      "sha256": "7d42609c40a1926ae470086045d878858ce94aaba398146790110c9e2c1ed35f",
+      "mediaType": "text/markdown"
+    },
+    {
+      "path": "documents.json",
+      "bytes": 507,
+      "sha256": "028472051ba7f3a85f83a4e706c70032a9c589fde0af1dc00e18a2b2c0b7dafb",
+      "mediaType": "application/json"
+    },
+    {
+      "path": "gaps.jsonl",
+      "bytes": 195,
+      "sha256": "0dff363fd0d1299a0fca49876acc53ac6dd368d9b4e22ab6ed140c9ee5751a71",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "observations.jsonl",
+      "bytes": 662,
+      "sha256": "5908b9ddf008f824402132897a7e18cde28f8e407dbf73823520466e9dad6cf9",
+      "mediaType": "application/x-ndjson"
+    },
+    {
+      "path": "rrweb/d1.jsonl",
+      "bytes": 387,
+      "sha256": "b343f7e3f67702e1b746085869de0662c4b45b7f22fe2b3143896f57a1f7396c",
+      "mediaType": "application/x-ndjson"
+    }
+  ]
+}

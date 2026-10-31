@@ -1,0 +1,599 @@
+{
+  "_note": "Recorded from the live API on 2026-10-13 by scripts/openai-smoke.ts --save-response (board #16547): whisper-1, verbose_json, word and segment timestamps, one upload. Audio: packages/offline-transcription/fixtures/speech-en-31s.flac (LibriSpeech test-clean, CC BY 4.0, https://www.openslr.org/12; 31.5 s).",
+  "task": "transcribe",
+  "language": "english",
+  "duration": 31.5,
+  "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes, and fat mutton pieces to be ladled out in thick, peppered, flour-fattened sauce. \"'Stuff it into you,' his belly counselled him. After early nightfall the yellow lamps would light up here and there the squalid quarter of the brothels. \"'Hullo, Bertie! Any good in your mind?' \"'Number ten! Fresh Nelly is waiting on you!'",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 5.739999771118164,
+      "text": " He hoped there would be stew for dinner, turnips and carrots and bruised potatoes, and fat",
+      "tokens": [
+        50364,
+        634,
+        19737,
+        456,
+        576,
+        312,
+        22654,
+        337,
+        6148,
+        11,
+        1261,
+        2600,
+        293,
+        21005,
+        293,
+        25267,
+        2640,
+        11811,
+        11,
+        293,
+        4046,
+        50642
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 5.739999771118164,
+      "end": 10.079999923706055,
+      "text": " mutton pieces to be ladled out in thick, peppered, flour-fattened sauce.",
+      "tokens": [
+        50642,
+        5839,
+        1756,
+        3755,
+        281,
+        312,
+        6632,
+        1493,
+        484,
+        294,
+        5060,
+        11,
+        8532,
+        292,
+        11,
+        7693,
+        12,
+        35293,
+        1147,
+        292,
+        4880,
+        13,
+        50914
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 11.960000038146973,
+      "end": 14.600000381469727,
+      "text": " \"'Stuff it into you,' his belly counselled him.",
+      "tokens": [
+        50914,
+        24543,
+        4520,
+        1245,
+        309,
+        666,
+        291,
+        12529,
+        702,
+        11696,
+        3465,
+        405,
+        5929,
+        796,
+        13,
+        51202
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 16.5,
+      "end": 21.34000015258789,
+      "text": " After early nightfall the yellow lamps would light up here and there the squalid quarter",
+      "tokens": [
+        51202,
+        2381,
+        2440,
+        1818,
+        6691,
+        264,
+        5566,
+        34887,
+        576,
+        1442,
+        493,
+        510,
+        293,
+        456,
+        264,
+        2339,
+        31509,
+        6555,
+        51426
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 21.34000015258789,
+      "end": 22.200000762939453,
+      "text": " of the brothels.",
+      "tokens": [
+        51426,
+        295,
+        264,
+        18872,
+        1625,
+        13,
+        51514
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.799999237060547,
+      "end": 24.860000610351562,
+      "text": " \"'Hullo, Bertie!",
+      "tokens": [
+        51514,
+        24543,
+        39,
+        858,
+        78,
+        11,
+        29594,
+        414,
+        0,
+        51616
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 24.899999618530273,
+      "end": 27.020000457763672,
+      "text": " Any good in your mind?'",
+      "tokens": [
+        51616,
+        2639,
+        665,
+        294,
+        428,
+        1575,
+        8569,
+        51724
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.30841338634490967,
+      "compression_ratio": 1.51054847240448,
+      "no_speech_prob": 0.0007672353531233966
+    },
+    {
+      "id": 7,
+      "seek": 2702,
+      "start": 27.81999969482422,
+      "end": 28.799999237060547,
+      "text": " \"'Number ten!",
+      "tokens": [
+        50404,
+        24543,
+        45,
+        4182,
+        2064,
+        0,
+        50484
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.6435486674308777,
+      "compression_ratio": 0.849056601524353,
+      "no_speech_prob": 0.0377592071890831
+    },
+    {
+      "id": 8,
+      "seek": 2702,
+      "start": 29.1200008392334,
+      "end": 31.040000915527344,
+      "text": " Fresh Nelly is waiting on you!'",
+      "tokens": [
+        50484,
+        22843,
+        426,
+        7442,
+        307,
+        3806,
+        322,
+        291,
+        13840,
+        50570
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.6435486674308777,
+      "compression_ratio": 0.849056601524353,
+      "no_speech_prob": 0.0377592071890831
+    }
+  ],
+  "words": [
+    {
+      "word": "He",
+      "start": 0,
+      "end": 0.6399999856948853
+    },
+    {
+      "word": "hoped",
+      "start": 0.6399999856948853,
+      "end": 0.9399999976158142
+    },
+    {
+      "word": "there",
+      "start": 0.9399999976158142,
+      "end": 1.1399999856948853
+    },
+    {
+      "word": "would",
+      "start": 1.1399999856948853,
+      "end": 1.340000033378601
+    },
+    {
+      "word": "be",
+      "start": 1.340000033378601,
+      "end": 1.7799999713897705
+    },
+    {
+      "word": "stew",
+      "start": 1.7799999713897705,
+      "end": 1.7999999523162842
+    },
+    {
+      "word": "for",
+      "start": 1.7999999523162842,
+      "end": 2.0799999237060547
+    },
+    {
+      "word": "dinner",
+      "start": 2.0799999237060547,
+      "end": 2.2799999713897705
+    },
+    {
+      "word": "turnips",
+      "start": 2.819999933242798,
+      "end": 3
+    },
+    {
+      "word": "and",
+      "start": 3,
+      "end": 3.319999933242798
+    },
+    {
+      "word": "carrots",
+      "start": 3.319999933242798,
+      "end": 3.680000066757202
+    },
+    {
+      "word": "and",
+      "start": 3.680000066757202,
+      "end": 4.039999961853027
+    },
+    {
+      "word": "bruised",
+      "start": 4.039999961853027,
+      "end": 4.380000114440918
+    },
+    {
+      "word": "potatoes",
+      "start": 4.380000114440918,
+      "end": 4.860000133514404
+    },
+    {
+      "word": "and",
+      "start": 5.119999885559082,
+      "end": 5.400000095367432
+    },
+    {
+      "word": "fat",
+      "start": 5.400000095367432,
+      "end": 5.739999771118164
+    },
+    {
+      "word": "mutton",
+      "start": 5.739999771118164,
+      "end": 6
+    },
+    {
+      "word": "pieces",
+      "start": 6,
+      "end": 6.440000057220459
+    },
+    {
+      "word": "to",
+      "start": 6.440000057220459,
+      "end": 6.679999828338623
+    },
+    {
+      "word": "be",
+      "start": 6.679999828338623,
+      "end": 6.940000057220459
+    },
+    {
+      "word": "ladled",
+      "start": 6.940000057220459,
+      "end": 7.159999847412109
+    },
+    {
+      "word": "out",
+      "start": 7.159999847412109,
+      "end": 7.559999942779541
+    },
+    {
+      "word": "in",
+      "start": 7.559999942779541,
+      "end": 7.860000133514404
+    },
+    {
+      "word": "thick",
+      "start": 7.860000133514404,
+      "end": 8.220000267028809
+    },
+    {
+      "word": "peppered",
+      "start": 8.539999961853027,
+      "end": 8.800000190734863
+    },
+    {
+      "word": "flour",
+      "start": 9.380000114440918,
+      "end": 9.380000114440918
+    },
+    {
+      "word": "fattened",
+      "start": 9.380000114440918,
+      "end": 9.680000305175781
+    },
+    {
+      "word": "sauce",
+      "start": 9.680000305175781,
+      "end": 10.079999923706055
+    },
+    {
+      "word": "Stuff",
+      "start": 11.960000038146973,
+      "end": 12.399999618530273
+    },
+    {
+      "word": "it",
+      "start": 12.399999618530273,
+      "end": 12.579999923706055
+    },
+    {
+      "word": "into",
+      "start": 12.579999923706055,
+      "end": 12.800000190734863
+    },
+    {
+      "word": "you",
+      "start": 12.800000190734863,
+      "end": 13.119999885559082
+    },
+    {
+      "word": "his",
+      "start": 13.119999885559082,
+      "end": 13.5600004196167
+    },
+    {
+      "word": "belly",
+      "start": 13.5600004196167,
+      "end": 13.739999771118164
+    },
+    {
+      "word": "counselled",
+      "start": 13.739999771118164,
+      "end": 14.239999771118164
+    },
+    {
+      "word": "him",
+      "start": 14.239999771118164,
+      "end": 14.600000381469727
+    },
+    {
+      "word": "After",
+      "start": 16.5,
+      "end": 16.81999969482422
+    },
+    {
+      "word": "early",
+      "start": 16.81999969482422,
+      "end": 17.239999771118164
+    },
+    {
+      "word": "nightfall",
+      "start": 17.239999771118164,
+      "end": 17.81999969482422
+    },
+    {
+      "word": "the",
+      "start": 17.81999969482422,
+      "end": 18.059999465942383
+    },
+    {
+      "word": "yellow",
+      "start": 18.059999465942383,
+      "end": 18.34000015258789
+    },
+    {
+      "word": "lamps",
+      "start": 18.34000015258789,
+      "end": 18.639999389648438
+    },
+    {
+      "word": "would",
+      "start": 18.639999389648438,
+      "end": 18.920000076293945
+    },
+    {
+      "word": "light",
+      "start": 18.920000076293945,
+      "end": 19.1200008392334
+    },
+    {
+      "word": "up",
+      "start": 19.1200008392334,
+      "end": 19.440000534057617
+    },
+    {
+      "word": "here",
+      "start": 19.440000534057617,
+      "end": 19.65999984741211
+    },
+    {
+      "word": "and",
+      "start": 19.65999984741211,
+      "end": 19.81999969482422
+    },
+    {
+      "word": "there",
+      "start": 19.81999969482422,
+      "end": 20.139999389648438
+    },
+    {
+      "word": "the",
+      "start": 20.139999389648438,
+      "end": 20.479999542236328
+    },
+    {
+      "word": "squalid",
+      "start": 20.479999542236328,
+      "end": 20.84000015258789
+    },
+    {
+      "word": "quarter",
+      "start": 20.84000015258789,
+      "end": 21.34000015258789
+    },
+    {
+      "word": "of",
+      "start": 21.34000015258789,
+      "end": 21.559999465942383
+    },
+    {
+      "word": "the",
+      "start": 21.559999465942383,
+      "end": 21.760000228881836
+    },
+    {
+      "word": "brothels",
+      "start": 21.760000228881836,
+      "end": 22.200000762939453
+    },
+    {
+      "word": "Hullo",
+      "start": 23.799999237060547,
+      "end": 24.440000534057617
+    },
+    {
+      "word": "Bertie",
+      "start": 24.639999389648438,
+      "end": 24.860000610351562
+    },
+    {
+      "word": "Any",
+      "start": 24.899999618530273,
+      "end": 25.239999771118164
+    },
+    {
+      "word": "good",
+      "start": 25.239999771118164,
+      "end": 25.459999084472656
+    },
+    {
+      "word": "in",
+      "start": 25.459999084472656,
+      "end": 25.559999465942383
+    },
+    {
+      "word": "your",
+      "start": 25.559999465942383,
+      "end": 25.719999313354492
+    },
+    {
+      "word": "mind",
+      "start": 25.719999313354492,
+      "end": 27.020000457763672
+    },
+    {
+      "word": "Number",
+      "start": 27.81999969482422,
+      "end": 28.219999313354492
+    },
+    {
+      "word": "ten",
+      "start": 28.219999313354492,
+      "end": 28.799999237060547
+    },
+    {
+      "word": "Fresh",
+      "start": 29.1200008392334,
+      "end": 29.639999389648438
+    },
+    {
+      "word": "Nelly",
+      "start": 29.639999389648438,
+      "end": 29.920000076293945
+    },
+    {
+      "word": "is",
+      "start": 29.920000076293945,
+      "end": 30.18000030517578
+    },
+    {
+      "word": "waiting",
+      "start": 30.18000030517578,
+      "end": 30.479999542236328
+    },
+    {
+      "word": "on",
+      "start": 30.479999542236328,
+      "end": 30.780000686645508
+    },
+    {
+      "word": "you",
+      "start": 30.780000686645508,
+      "end": 31.040000915527344
+    }
+  ],
+  "usage": {
+    "type": "duration",
+    "seconds": 32
+  }
+}

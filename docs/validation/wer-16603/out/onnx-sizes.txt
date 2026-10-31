@@ -1,0 +1,172 @@
+== parakeet-ctc-0.6b-ONNX
+      0.9 MB  onnx/model.onnx
+   2435.0 MB  onnx/model.onnx_data
+      0.9 MB  onnx/model_bnb4.onnx
+    609.3 MB  onnx/model_bnb4.onnx_data
+      0.9 MB  onnx/model_fp16.onnx
+   1217.5 MB  onnx/model_fp16.onnx_data
+      1.3 MB  onnx/model_int8.onnx
+    611.0 MB  onnx/model_int8.onnx_data
+      0.9 MB  onnx/model_q4.onnx
+    642.5 MB  onnx/model_q4.onnx_data
+      0.9 MB  onnx/model_q4f16.onnx
+    454.0 MB  onnx/model_q4f16.onnx_data
+      1.3 MB  onnx/model_quantized.onnx
+    611.0 MB  onnx/model_quantized.onnx_data
+      1.3 MB  onnx/model_uint8.onnx
+    611.0 MB  onnx/model_uint8.onnx_data
+sha 7df2cab7aed886b8b7f80d68a8214007e4847601 library transformers tags ['onnx']
+model_type parakeet_ctc
+== parakeet-tdt-0.6b-v2-ONNX
+     35.8 MB  onnx/decoder.onnx
+      0.7 MB  onnx/encoder.onnx
+   2476.4 MB  onnx/encoder.onnx_data
+sha 880229804d73bb700be355a7e4f7b294a4df3d2b library None tags ['onnx']
+model_type None
+== cohere-transcribe-03-2026-ONNX
+      0.2 MB  onnx/decoder_model_merged.onnx
+    676.0 MB  onnx/decoder_model_merged.onnx_data
+      0.2 MB  onnx/decoder_model_merged_fp16.onnx
+    338.0 MB  onnx/decoder_model_merged_fp16.onnx_data
+      0.2 MB  onnx/decoder_model_merged_q4.onnx
+    108.9 MB  onnx/decoder_model_merged_q4.onnx_data
+      0.2 MB  onnx/decoder_model_merged_q4f16.onnx
+     98.0 MB  onnx/decoder_model_merged_q4f16.onnx_data
+      0.2 MB  onnx/decoder_model_merged_quantized.onnx
+    195.9 MB  onnx/decoder_model_merged_quantized.onnx_data
+      1.2 MB  onnx/encoder_model.onnx
+   2095.1 MB  onnx/encoder_model.onnx_data
+   2093.2 MB  onnx/encoder_model.onnx_data_1
+   2080.2 MB  onnx/encoder_model.onnx_data_2
+   1317.6 MB  onnx/encoder_model.onnx_data_3
+      1.2 MB  onnx/encoder_model_fp16.onnx
+   2094.2 MB  onnx/encoder_model_fp16.onnx_data
+   1698.9 MB  onnx/encoder_model_fp16.onnx_data_1
+      1.4 MB  onnx/encoder_model_q4.onnx
+   2016.1 MB  onnx/encoder_model_q4.onnx_data
+      1.4 MB  onnx/encoder_model_q4f16.onnx
+   1435.5 MB  onnx/encoder_model_q4f16.onnx_data
+      1.4 MB  onnx/encoder_model_quantized.onnx
+   2096.6 MB  onnx/encoder_model_quantized.onnx_data
+    774.4 MB  onnx/encoder_model_quantized.onnx_data_1
+sha 31b1c6211c9000d76b077ddd23b74c9090badeba library transformers.js tags ['transformers.js', 'onnx']
+model_type cohere_asr
+== moonshine-base-ONNX
+    165.8 MB  onnx/decoder_model.onnx
+     70.6 MB  onnx/decoder_model_bnb4.onnx
+     83.1 MB  onnx/decoder_model_fp16.onnx
+     41.9 MB  onnx/decoder_model_int8.onnx
+    166.2 MB  onnx/decoder_model_merged.onnx
+     71.1 MB  onnx/decoder_model_merged_bnb4.onnx
+    160.7 MB  onnx/decoder_model_merged_fp16.onnx
+     42.4 MB  onnx/decoder_model_merged_int8.onnx
+     72.8 MB  onnx/decoder_model_merged_q4.onnx
+     85.1 MB  onnx/decoder_model_merged_q4f16.onnx
+     42.5 MB  onnx/decoder_model_merged_quantized.onnx
+     42.4 MB  onnx/decoder_model_merged_uint8.onnx
+     72.3 MB  onnx/decoder_model_q4.onnx
+     43.3 MB  onnx/decoder_model_q4f16.onnx
+     41.9 MB  onnx/decoder_model_quantized.onnx
+     41.9 MB  onnx/decoder_model_uint8.onnx
+    154.6 MB  onnx/decoder_with_past_model.onnx
+     69.0 MB  onnx/decoder_with_past_model_bnb4.onnx
+     77.5 MB  onnx/decoder_with_past_model_fp16.onnx
+     39.1 MB  onnx/decoder_with_past_model_int8.onnx
+     70.5 MB  onnx/decoder_with_past_model_q4.onnx
+     41.6 MB  onnx/decoder_with_past_model_q4f16.onnx
+     39.1 MB  onnx/decoder_with_past_model_quantized.onnx
+     39.1 MB  onnx/decoder_with_past_model_uint8.onnx
+     80.8 MB  onnx/encoder_model.onnx
+     23.7 MB  onnx/encoder_model_bnb4.onnx
+     40.5 MB  onnx/encoder_model_fp16.onnx
+     20.5 MB  onnx/encoder_model_int8.onnx
+     24.8 MB  onnx/encoder_model_q4.onnx
+     16.6 MB  onnx/encoder_model_q4f16.onnx
+     20.5 MB  onnx/encoder_model_quantized.onnx
+     20.5 MB  onnx/encoder_model_uint8.onnx
+sha b1e9b6aae3c3c7298f10c3798393fdf38e8fbbad library transformers.js tags ['transformers.js', 'onnx']
+model_type moonshine
+== whisper-base.en_timestamped
+    208.3 MB  onnx/decoder_model.onnx
+    121.8 MB  onnx/decoder_model_bnb4.onnx
+    104.4 MB  onnx/decoder_model_fp16.onnx
+     53.4 MB  onnx/decoder_model_int8.onnx
+    208.7 MB  onnx/decoder_model_merged.onnx
+    122.2 MB  onnx/decoder_model_merged_bnb4.onnx
+    104.7 MB  onnx/decoder_model_merged_fp16.onnx
+     53.7 MB  onnx/decoder_model_merged_int8.onnx
+    123.7 MB  onnx/decoder_model_merged_q4.onnx
+     68.5 MB  onnx/decoder_model_merged_q4f16.onnx
+     53.7 MB  onnx/decoder_model_merged_quantized.onnx
+     53.7 MB  onnx/decoder_model_merged_uint8.onnx
+    123.4 MB  onnx/decoder_model_q4.onnx
+     53.4 MB  onnx/decoder_model_quantized.onnx
+     53.4 MB  onnx/decoder_model_uint8.onnx
+    195.7 MB  onnx/decoder_with_past_model.onnx
+    120.0 MB  onnx/decoder_with_past_model_bnb4.onnx
+     98.1 MB  onnx/decoder_with_past_model_fp16.onnx
+     50.1 MB  onnx/decoder_with_past_model_int8.onnx
+    121.4 MB  onnx/decoder_with_past_model_q4.onnx
+     50.1 MB  onnx/decoder_with_past_model_quantized.onnx
+     50.1 MB  onnx/decoder_with_past_model_uint8.onnx
+     82.5 MB  onnx/encoder_model.onnx
+     17.6 MB  onnx/encoder_model_bnb4.onnx
+     41.3 MB  onnx/encoder_model_fp16.onnx
+     23.2 MB  onnx/encoder_model_int8.onnx
+     18.8 MB  onnx/encoder_model_q4.onnx
+     23.2 MB  onnx/encoder_model_quantized.onnx
+     23.2 MB  onnx/encoder_model_uint8.onnx
+sha fa239a41836c3305f6beec180e5940f3823ff5b8 library transformers.js tags ['transformers.js', 'onnx']
+model_type whisper
+== whisper-small.en_timestamped
+    614.9 MB  onnx/decoder_model.onnx
+    225.7 MB  onnx/decoder_model_bnb4.onnx
+    308.0 MB  onnx/decoder_model_fp16.onnx
+    156.1 MB  onnx/decoder_model_int8.onnx
+    615.7 MB  onnx/decoder_model_merged.onnx
+    226.3 MB  onnx/decoder_model_merged_bnb4.onnx
+    308.5 MB  onnx/decoder_model_merged_fp16.onnx
+    156.8 MB  onnx/decoder_model_merged_int8.onnx
+    233.4 MB  onnx/decoder_model_merged_q4.onnx
+    145.8 MB  onnx/decoder_model_merged_q4f16.onnx
+    156.8 MB  onnx/decoder_model_merged_quantized.onnx
+    156.8 MB  onnx/decoder_model_merged_uint8.onnx
+    232.8 MB  onnx/decoder_model_q4.onnx
+    156.1 MB  onnx/decoder_model_quantized.onnx
+    156.1 MB  onnx/decoder_model_uint8.onnx
+    558.2 MB  onnx/decoder_with_past_model.onnx
+    217.6 MB  onnx/decoder_with_past_model_bnb4.onnx
+    279.6 MB  onnx/decoder_with_past_model_fp16.onnx
+    141.8 MB  onnx/decoder_with_past_model_int8.onnx
+    223.8 MB  onnx/decoder_with_past_model_q4.onnx
+    141.8 MB  onnx/decoder_with_past_model_quantized.onnx
+    141.8 MB  onnx/decoder_with_past_model_uint8.onnx
+    352.8 MB  onnx/encoder_model.onnx
+     60.9 MB  onnx/encoder_model_bnb4.onnx
+    176.5 MB  onnx/encoder_model_fp16.onnx
+     92.2 MB  onnx/encoder_model_int8.onnx
+     66.2 MB  onnx/encoder_model_q4.onnx
+     92.2 MB  onnx/encoder_model_quantized.onnx
+     92.2 MB  onnx/encoder_model_uint8.onnx
+sha 8085393831131554ad978a4e438295a734d3d2c0 library transformers.js tags ['transformers.js', 'onnx']
+model_type whisper
+== whisper-large-v3-turbo_timestamped
+    688.1 MB  onnx/decoder_model_merged.onnx
+    327.7 MB  onnx/decoder_model_merged_bnb4.onnx
+    344.3 MB  onnx/decoder_model_merged_fp16.onnx
+    440.0 MB  onnx/decoder_model_merged_int8.onnx
+    334.2 MB  onnx/decoder_model_merged_q4.onnx
+    193.6 MB  onnx/decoder_model_merged_q4f16.onnx
+    440.0 MB  onnx/decoder_model_merged_quantized.onnx
+    440.0 MB  onnx/decoder_model_merged_uint8.onnx
+      0.5 MB  onnx/encoder_model.onnx
+   2547.9 MB  onnx/encoder_model.onnx_data
+    385.7 MB  onnx/encoder_model_bnb4.onnx
+   1274.4 MB  onnx/encoder_model_fp16.onnx
+    644.9 MB  onnx/encoder_model_int8.onnx
+    425.0 MB  onnx/encoder_model_q4.onnx
+    370.0 MB  onnx/encoder_model_q4f16.onnx
+    644.9 MB  onnx/encoder_model_quantized.onnx
+    644.9 MB  onnx/encoder_model_uint8.onnx
+sha b3f77bf9a8c4d5ea3415827033d1ffea7955fd9a library transformers.js tags ['transformers.js', 'onnx']
+model_type whisper

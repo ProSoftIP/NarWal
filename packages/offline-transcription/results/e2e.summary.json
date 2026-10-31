@@ -1,0 +1,772 @@
+{
+  "ticket": 16544,
+  "ranAt": "2026-10-13T21:13:17.927Z",
+  "verdict": "PASS",
+  "modelSource": "pinned public hosts",
+  "machine": {
+    "cpuModel": "12th Gen Intel(R) Core(TM) i7-12700",
+    "logicalCpus": 20,
+    "cpusAllowed": "0-19",
+    "memoryGb": 62,
+    "platform": "linux",
+    "node": "v26.7.0",
+    "finalEngineThreadCap": null
+  },
+  "browser": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "crossOriginIsolated": true,
+    "hardwareConcurrency": 20,
+    "webgpu": true,
+    "storage": {
+      "usage": 843,
+      "quota": 253427348299,
+      "persisted": false
+    },
+    "context": "/setup.html"
+  },
+  "storage": {
+    "usage": 120753995,
+    "quota": 253258035019,
+    "persisted": false
+  },
+  "limits": {
+    "liveWer": 0.2,
+    "finalWer": 0.12,
+    "liveStartP90Ms": 300,
+    "finalStartP90Ms": 400,
+    "visibleLatencyP50Ms": 1000,
+    "visibleLatencyP90Ms": 2500,
+    "maxSendMs": 50
+  },
+  "checks": {
+    "total": 79,
+    "failed": 0,
+    "list": [
+      {
+        "phase": "A-online-model-missing",
+        "name": "page is cross-origin isolated (WebAssembly threads available)",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "both models report missing",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "live start without the model reports model-missing",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "capture kept every sample",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "the audio is recorded as one gap for a later retry",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "bundle export keeps the schema reason and the local detail",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "status for the recorder: disconnected, model-missing",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "final pass without the model fails with model-missing, no revision",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "engines tried no outside request",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "nothing was downloaded",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "NetLog recorded",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "extension made no network request",
+        "pass": true
+      },
+      {
+        "phase": "A-online-model-missing",
+        "name": "no request to any other host from anywhere in the browser",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "both models installed",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "download progress was reported",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "every pinned file was downloaded once",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "downloads went only to the declared hosts",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "status for the recorder: ready",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "integrity check passes for both models",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "NetLog recorded",
+        "pass": true
+      },
+      {
+        "phase": "B-online-install",
+        "name": "NetLog: the extension contacted only the declared model hosts",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "network is disabled (an allowed request fails)",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "models ready after restart, offline",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "offscreen document is cross-origin isolated",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: capture kept every sample",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: handing audio over never blocked capture",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: provisional text follows the spoken word (p50 ≤ 1000 ms, p90 ≤ 2500 ms)",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: word error rate ≤ 0.2",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: word starts p90 ≤ 300 ms",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: words ordered and inside their segment",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: no errors, no gaps",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live at real time in the offscreen document: revision marked aligned, provider browser-local",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "live session stayed live, never behind",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "final pass cancelled after 2 spans: no revision, checkpoint kept",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "engines tried no outside request",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "engines tried no outside request",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "nothing was downloaded",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "NetLog recorded",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "extension made no network request",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "the negative-control request is in the NetLog (the log does see extension requests)",
+        "pass": true
+      },
+      {
+        "phase": "C-offline-live",
+        "name": "no request to any other host from anywhere in the browser",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "network is disabled (an allowed request fails)",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "final pass resumed from the checkpoint after a restart",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "final text: word error rate ≤ 0.12",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "final text: word starts p90 ≤ 400 ms",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "final text: words ordered and inside their segment",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "final revision marked approximate, with the correction applied",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "final revision has no gaps and names the live revision it supersedes",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "both revisions kept; the live one is unchanged",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "behind: capture kept every sample",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "behind: handing audio over never blocked capture",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "behind: reported to the caller",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "behind: skipped audio is a gap marked engine-behind, not lost",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "behind: the session went on and produced text after the skip",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "damaged final model: the final pass fails with model-corrupt, no revision added",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "damaged live model: model-corrupt reported, capture complete, audio is a gap",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "status for the recorder: failed, model-corrupt; the bad files are named",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "repair while offline fails visibly",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "still no transcript from anywhere else",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "engines tried no outside request",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "NetLog: only the probe and the refused repair request",
+        "pass": true
+      },
+      {
+        "phase": "D-offline-final-behind-corrupt",
+        "name": "no request to any other host from anywhere in the browser",
+        "pass": true
+      },
+      {
+        "phase": "E-online-repair",
+        "name": "final model repaired; only the damaged file was downloaded",
+        "pass": true
+      },
+      {
+        "phase": "E-online-repair",
+        "name": "live model repaired",
+        "pass": true
+      },
+      {
+        "phase": "E-online-repair",
+        "name": "integrity check passes again",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "network is disabled (an allowed request fails)",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "retry of one time range from the captured audio",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "retried revision, whole recording: word error rate ≤ 0.12",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "retried revision, whole recording: word starts p90 ≤ 400 ms",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "retried revision, whole recording: words ordered and inside their segment",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "retried revision supersedes the final one and has no gaps",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "live works again after the repair (repaired model, extracted copy rebuilt)",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "three revisions kept, in order; the newest is active",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "engines tried no outside request",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "nothing was downloaded",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "NetLog recorded",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "extension made no network request",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "the negative-control request is in the NetLog (the log does see extension requests)",
+        "pass": true
+      },
+      {
+        "phase": "F-offline-retry",
+        "name": "no request to any other host from anywhere in the browser",
+        "pass": true
+      }
+    ]
+  },
+  "live": {
+    "context": "offscreen document",
+    "audioMs": 31500,
+    "engineStartMs": 1339,
+    "finishMs": 53,
+    "counts": {
+      "interim": 63,
+      "final": 5,
+      "gaps": 0,
+      "errors": 0,
+      "backlog": 0
+    },
+    "maxLagMs": 500,
+    "score": {
+      "referenceWords": 69,
+      "hypothesisWords": 70,
+      "wer": 0.13,
+      "substitutions": 8,
+      "deletions": 0,
+      "insertions": 1,
+      "matchedWords": 61,
+      "startBiasMs": 13,
+      "startAbsMedianMs": 18,
+      "startAbsP90Ms": 36,
+      "startsWithin250Ms": 1,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "visibleLatency": {
+        "words": 61,
+        "p50Ms": 303,
+        "p90Ms": 480,
+        "maxMs": 677
+      }
+    },
+    "firstInterims": [
+      {
+        "atMs": 1297,
+        "text": "he hoped",
+        "timing": "approximate"
+      },
+      {
+        "atMs": 1447,
+        "text": "he hoped there",
+        "timing": "approximate"
+      },
+      {
+        "atMs": 1683,
+        "text": "he hoped they would be",
+        "timing": "approximate"
+      },
+      {
+        "atMs": 2188,
+        "text": "he hoped they would be stupid",
+        "timing": "approximate"
+      },
+      {
+        "atMs": 2437,
+        "text": "he hoped they would be stew for",
+        "timing": "approximate"
+      }
+    ],
+    "text": "he hoped there would be stew for dinner turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out and thick peppered flower fat and sauce stuff it into you his belly counseled him after early nightfall the yellow lamps would light up here and there the squalid quarter of the brothels herbert he any good and your mind number ten fresh nellie is waiting on you"
+  },
+  "final": {
+    "audioMs": 31500,
+    "wallMs": 6625,
+    "stats": {
+      "spans": 5,
+      "resumedSpans": 2,
+      "engineCalls": 3,
+      "failedSpans": 0,
+      "audioMs": 24980
+    },
+    "engine": {
+      "threads": 4,
+      "loadMs": 1364
+    },
+    "timing": {
+      "quality": "approximate",
+      "method": "whisper-dtw",
+      "correctionMs": -150
+    },
+    "score": {
+      "referenceWords": 69,
+      "hypothesisWords": 68,
+      "wer": 0.072,
+      "substitutions": 4,
+      "deletions": 1,
+      "insertions": 0,
+      "matchedWords": 64,
+      "startBiasMs": -7,
+      "startAbsMedianMs": 60,
+      "startAbsP90Ms": 110,
+      "startsWithin250Ms": 0.984,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true
+    },
+    "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out in thick, peppered flower -fattern sauce. Stuff it into you, his belly counseled him. After early nightfall, the yellow lamps would light up here and there the squalid quarter of the brothels. Hello Bertie, any good in your mind? 10. Fresh Nelly is waiting on you."
+  },
+  "behind": {
+    "speed": 12,
+    "capture": {
+      "samples": 504000,
+      "expectedSamples": 504000,
+      "maxSendMs": 0.67,
+      "lateChunks": 0
+    },
+    "stats": {
+      "receivedSamples": 504000,
+      "processedSamples": 504000,
+      "lagMs": 0,
+      "maxLagMs": 9200,
+      "behind": false,
+      "skips": 4,
+      "restarts": 0,
+      "phase": "closed"
+    },
+    "backlogEvents": 26,
+    "gaps": [
+      {
+        "provider": "browser-local",
+        "startMs": 1700,
+        "endMs": 5800,
+        "reason": "engine-behind",
+        "detail": "live recognition skipped ahead; retry from the captured audio"
+      },
+      {
+        "provider": "browser-local",
+        "startMs": 7800,
+        "endMs": 11900,
+        "reason": "engine-behind",
+        "detail": "live recognition skipped ahead; retry from the captured audio"
+      },
+      {
+        "provider": "browser-local",
+        "startMs": 13900,
+        "endMs": 18000,
+        "reason": "engine-behind",
+        "detail": "live recognition skipped ahead; retry from the captured audio"
+      },
+      {
+        "provider": "browser-local",
+        "startMs": 21500,
+        "endMs": 25600,
+        "reason": "engine-behind",
+        "detail": "live recognition skipped ahead; retry from the captured audio"
+      }
+    ],
+    "uiStates": [
+      {
+        "atMs": -1,
+        "state": "connecting",
+        "reasonCode": ""
+      },
+      {
+        "atMs": -1,
+        "state": "live",
+        "reasonCode": ""
+      },
+      {
+        "atMs": 1800,
+        "state": "live",
+        "reasonCode": "catching-up"
+      },
+      {
+        "atMs": 38827,
+        "state": "live",
+        "reasonCode": ""
+      },
+      {
+        "atMs": 39961,
+        "state": "disconnected",
+        "reasonCode": "stopped"
+      }
+    ],
+    "finalSegments": 6
+  },
+  "retry": {
+    "wallMs": 9221,
+    "stats": {
+      "spans": 3,
+      "resumedSpans": 0,
+      "engineCalls": 3,
+      "failedSpans": 0,
+      "audioMs": 19000
+    },
+    "score": {
+      "referenceWords": 69,
+      "hypothesisWords": 68,
+      "wer": 0.072,
+      "substitutions": 4,
+      "deletions": 1,
+      "insertions": 0,
+      "matchedWords": 64,
+      "startBiasMs": -7,
+      "startAbsMedianMs": 60,
+      "startAbsP90Ms": 110,
+      "startsWithin250Ms": 0.984,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true
+    }
+  },
+  "network": {
+    "A-online-model-missing": {
+      "offline": false,
+      "wallMs": 3197,
+      "netLogAvailable": true,
+      "extensionRequests": 0,
+      "extensionHosts": [],
+      "browserOwnHosts": [
+        "clients2.google.com",
+        "accounts.google.com",
+        "www.google.com",
+        "update.googleapis.com",
+        "android.clients.google.com"
+      ],
+      "consoleErrors": []
+    },
+    "B-online-install": {
+      "offline": false,
+      "wallMs": 7915,
+      "netLogAvailable": true,
+      "extensionRequests": 15,
+      "extensionHosts": [
+        "ccoreilly.github.io",
+        "huggingface.co",
+        "us.aws.cdn.hf.co"
+      ],
+      "browserOwnHosts": [
+        "accounts.google.com",
+        "www.google.com",
+        "update.googleapis.com",
+        "android.clients.google.com"
+      ],
+      "consoleErrors": []
+    },
+    "C-offline-live": {
+      "offline": true,
+      "wallMs": 40462,
+      "netLogAvailable": true,
+      "extensionRequests": 1,
+      "extensionHosts": [
+        "huggingface.co"
+      ],
+      "browserOwnHosts": [
+        "accounts.google.com",
+        "update.googleapis.com",
+        "www.google.com",
+        "android.clients.google.com"
+      ],
+      "engineRequests": {
+        "requests": 12,
+        "localStore": 11,
+        "blocked": 0
+      },
+      "offscreenEngineRequests": {
+        "requests": 1,
+        "localStore": 1,
+        "blocked": 0
+      },
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+      ]
+    },
+    "D-offline-final-behind-corrupt": {
+      "offline": true,
+      "wallMs": 13929,
+      "netLogAvailable": true,
+      "extensionRequests": 2,
+      "extensionHosts": [
+        "huggingface.co"
+      ],
+      "browserOwnHosts": [
+        "accounts.google.com",
+        "www.google.com",
+        "update.googleapis.com",
+        "android.clients.google.com"
+      ],
+      "engineRequests": {
+        "requests": 0,
+        "localStore": 0,
+        "blocked": 0
+      },
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_INTERNET_DISCONNECTED",
+        "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+      ]
+    },
+    "E-online-repair": {
+      "offline": false,
+      "wallMs": 3998,
+      "netLogAvailable": true,
+      "extensionRequests": 3,
+      "extensionHosts": [
+        "huggingface.co",
+        "us.aws.cdn.hf.co",
+        "ccoreilly.github.io"
+      ],
+      "browserOwnHosts": [
+        "accounts.google.com",
+        "www.google.com",
+        "update.googleapis.com",
+        "android.clients.google.com"
+      ],
+      "consoleErrors": []
+    },
+    "F-offline-retry": {
+      "offline": true,
+      "wallMs": 22568,
+      "netLogAvailable": true,
+      "extensionRequests": 1,
+      "extensionHosts": [
+        "huggingface.co"
+      ],
+      "browserOwnHosts": [
+        "accounts.google.com",
+        "www.google.com",
+        "update.googleapis.com",
+        "android.clients.google.com"
+      ],
+      "engineRequests": {
+        "requests": 12,
+        "localStore": 11,
+        "blocked": 0
+      },
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+      ]
+    }
+  }
+}

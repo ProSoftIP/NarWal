@@ -1,0 +1,147 @@
+{
+  "generatedAt": "2026-10-14T08:39:28.623Z",
+  "machine": {
+    "cpuModel": "12th Gen Intel(R) Core(TM) i7-12700",
+    "logicalCpus": 20,
+    "memoryGb": 62,
+    "browser": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "crossOriginIsolated": true,
+    "hardwareConcurrency": 20
+  },
+  "modelSource": "pinned public hosts",
+  "threadCap": null,
+  "rows": [
+    {
+      "audio": "fixture-31s",
+      "model": "whisper-base.en-q8",
+      "audioS": 31.5,
+      "threads": 4,
+      "loadMs": 1487,
+      "transcribeMs": 6190,
+      "speed": 0.197,
+      "spans": 5,
+      "failedSpans": 0,
+      "wer": 0.072,
+      "startAbsMedianMs": 60,
+      "startAbsP90Ms": 110,
+      "startBiasMs": -7,
+      "startsWithin250Ms": 0.984,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "timing": {
+        "quality": "approximate",
+        "method": "whisper-dtw",
+        "correctionMs": -150
+      },
+      "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out in thick, peppered flower -fattern sauce. Stuff it into you, his belly counseled him. After early nightfall, the yellow lamps would light up here and there the squalid quarter of the brothels. Hello Bertie, any good in your mind? 10. Fresh Nelly is waiting on you."
+    },
+    {
+      "audio": "fixture-31s",
+      "model": "whisper-small.en-q8",
+      "audioS": 31.5,
+      "threads": 4,
+      "loadMs": 2384,
+      "transcribeMs": 16686,
+      "speed": 0.53,
+      "spans": 5,
+      "failedSpans": 0,
+      "wer": 0.072,
+      "startAbsMedianMs": 80,
+      "startAbsP90Ms": 198,
+      "startBiasMs": 80,
+      "startsWithin250Ms": 0.969,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "timing": {
+        "quality": "approximate",
+        "method": "whisper-dtw",
+        "correctionMs": -150
+      },
+      "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes, and fat mutton pieces to be ladled out in thick peppered flour -faten sauce. Stuffered into you, his belly counseled him. After early nightfall the yellow lamps would light up here and there the squalid quarter of the brothels. Hello Bertie, any good in your mind? Number 10. Fresh Nelly is waiting on you."
+    },
+    {
+      "audio": "fixture-31s",
+      "model": "moonshine-base-q8",
+      "audioS": 31.5,
+      "threads": 4,
+      "loadMs": 1319,
+      "transcribeMs": 1959,
+      "speed": 0.062,
+      "spans": 5,
+      "failedSpans": 0,
+      "wer": 0.058,
+      "startAbsMedianMs": 113,
+      "startAbsP90Ms": 381,
+      "startBiasMs": 75,
+      "startsWithin250Ms": 0.788,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "timing": {
+        "quality": "approximate",
+        "method": "span-interpolated",
+        "correctionMs": 0
+      },
+      "text": "He hoped there would be stew for dinner, turnips and carrots and bruised potatoes and fat mutton pieces to be ladled out in thick peppered flower-fat and sauce. Stuff it into you, his belly counseled him. After early nightfall, the yellow lamps would light up here and there the squalid quarter of the brothels. Hello, Bertie, any good in your mind? Number ten, fresh Nelly is waiting on you."
+    },
+    {
+      "audio": "passage-v1-narration.webm",
+      "model": "whisper-base.en-q8",
+      "audioS": 113.28,
+      "threads": 4,
+      "loadMs": 1128,
+      "transcribeMs": 15908,
+      "speed": 0.14,
+      "spans": 8,
+      "failedSpans": 0,
+      "wer": 0.318,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "timing": {
+        "quality": "approximate",
+        "method": "whisper-dtw",
+        "correctionMs": -150
+      },
+      "note": "Matt's 113 s reading passage (#16603); its text is not in the repository"
+    },
+    {
+      "audio": "passage-v1-narration.webm",
+      "model": "whisper-small.en-q8",
+      "audioS": 113.28,
+      "threads": 4,
+      "loadMs": 2272,
+      "transcribeMs": 39561,
+      "speed": 0.349,
+      "spans": 8,
+      "failedSpans": 0,
+      "wer": 0.225,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "timing": {
+        "quality": "approximate",
+        "method": "whisper-dtw",
+        "correctionMs": -150
+      },
+      "note": "Matt's 113 s reading passage (#16603); its text is not in the repository"
+    },
+    {
+      "audio": "passage-v1-narration.webm",
+      "model": "moonshine-base-q8",
+      "audioS": 113.28,
+      "threads": 4,
+      "loadMs": 1212,
+      "transcribeMs": 6496,
+      "speed": 0.057,
+      "spans": 8,
+      "failedSpans": 0,
+      "wer": 0.243,
+      "wordsMonotonic": true,
+      "wordsInsideSegments": true,
+      "timing": {
+        "quality": "approximate",
+        "method": "span-interpolated",
+        "correctionMs": 0
+      },
+      "note": "Matt's 113 s reading passage (#16603); its text is not in the repository"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{ "name": "wer16603", "private": true, "type": "module", "dependencies": { "@huggingface/transformers": "4.3.1" } }

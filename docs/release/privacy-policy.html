@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NarWal privacy policy · ProSoft IP</title>
+<meta name="description" content="What the NarWal browser extension stores and sends. Recordings stay on your computer; nothing is sent to ProSoft IP.">
+<!-- Published at https://prosoftip.com/narwal/privacy (board #16969). Keep the published page and this file in step. One self-contained file: no scripts, no external styles, no tracking. -->
+<style>
+  :root { color-scheme: light dark; --fg: #1c1f26; --muted: #4a5161; --bg: #ffffff; --rule: #d9dce3; --accent: #c90723; }
+  @media (prefers-color-scheme: dark) { :root { --fg: #e9ebf0; --muted: #a9afbd; --bg: #15171c; --rule: #2e323b; --accent: #ff6b5e; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 44rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.2rem; margin: 2.25rem 0 .5rem; }
+  p, li { margin: .5rem 0; }
+  .meta { color: var(--muted); margin-bottom: 2rem; }
+  a { color: var(--accent); }
+  table { border-collapse: collapse; width: 100%; margin: .75rem 0; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid var(--rule); }
+  th { font-weight: 600; }
+  code { font-size: .9em; }
+</style>
+</head>
+<body>
+<main>
+<h1>NarWal privacy policy</h1>
+<p class="meta">ProSoft IP · Last updated 17 October 2026 · Applies to NarWal 1.0.0 and later</p>
+
+<p>NarWal is a browser extension for Microsoft Edge and Google Chrome, made by ProSoft IP ("we"). It records a narrated walkthrough of one browser tab: what the page did and what you said. This policy says what NarWal stores, what it sends, and to whom.</p>
+
+<p><strong>In short:</strong> NarWal sends nothing to us. Your recordings stay in your browser on your computer. Your voice leaves your computer only if you choose OpenAI for the transcript, and then it goes to OpenAI with your own key.</p>
+
+<h2>What NarWal records</h2>
+<p>NarWal records only when you press Start, and only the tab where you pressed it, with the windows and popups that tab opens. It never records other tabs. While it records, it saves:</p>
+<ul>
+  <li>the page: its structure and text, the addresses of the pages you visit in that tab, your clicks, scrolling and the marks you make. What you type into fields is masked and never saved. Areas you hide before Start are not recorded.</li>
+  <li>your microphone audio, from Start to Stop;</li>
+  <li>a transcript of what you said;</li>
+  <li>the purpose you write for the recording, if you write one.</li>
+</ul>
+
+<h2>Where it is kept</h2>
+<p>Recordings are kept in your browser's storage (IndexedDB) on your computer, under the extension. Your settings, and your OpenAI API key if you enter one, are kept in the extension's own storage on your computer. A recording stays until you remove NarWal: <strong>removing NarWal deletes every recording it holds</strong>. Export the recordings you want to keep first. Clearing your browser's site data for extensions also deletes them.</p>
+<p>When you export a recording, NarWal writes one file (<code>.narwal.zip</code>) to your computer. What you do with that file is up to you. NarWal removes user names and passwords from page addresses in the file. Your API keys are never put in a recording or an export.</p>
+
+<h2>What NarWal sends, and to whom</h2>
+<table>
+  <thead><tr><th>What</th><th>To</th><th>When</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing</td><td>ProSoft IP</td><td>Never. NarWal has no account, no analytics, no tracking and no server of ours.</td></tr>
+    <tr><td>A request for a speech model file</td><td>Hugging Face (<code>huggingface.co</code> and its download servers, <code>*.hf.co</code>) or GitHub Pages (<code>ccoreilly.github.io</code>)</td><td>Only when you download a speech model. The request is an ordinary file download; no recording or audio is sent.</td></tr>
+    <tr><td>The narration audio of one recording, and your own OpenAI API key</td><td>OpenAI (<code>api.openai.com</code>)</td><td>Only if you choose OpenAI Whisper for the transcript, after you press Stop. OpenAI's privacy policy and terms apply to that audio.</td></tr>
+  </tbody>
+</table>
+<p>The page you record is never sent anywhere. The default transcript is made on your computer, and then your voice does not leave it. NarWal refuses network requests to any host not listed above. Replay never contacts the recorded website.</p>
+
+<h2>What we do not do</h2>
+<ul>
+  <li>We do not collect, receive, sell or share your data. We cannot see your recordings.</li>
+  <li>We do not use your data for advertising, for creditworthiness or lending, or for any purpose other than recording, replaying and exporting your walkthroughs.</li>
+  <li>NarWal does not change your transcript provider on its own.</li>
+</ul>
+
+<h2>Your choices</h2>
+<ul>
+  <li>Choose where your voice is turned into text: on this computer (the default) or OpenAI.</li>
+  <li>Remove NarWal to delete every recording it holds.</li>
+  <li>Remove your OpenAI key at any time: choose OpenAI Whisper in the NarWal popup and press Remove key.</li>
+  <li>Stop a recording at any time with the Stop button or Alt+Shift+S.</li>
+</ul>
+
+<h2>Other people in a recording</h2>
+<p>You are responsible for having the right to record what you record, including the consent of anyone whose voice or information is in the recording.</p>
+
+<h2>Children</h2>
+<p>NarWal is a work tool and is not directed at children under 13. We collect no data from anyone.</p>
+
+<h2>Changes to this policy</h2>
+<p>If a NarWal update changes what it stores or sends, we update this page and its date before that update is published.</p>
+
+<h2>Contact</h2>
+<p>ProSoft IP · <a href="mailto:hello@prosoftip.com">hello@prosoftip.com</a> · <a href="https://prosoftip.com/contact.php">prosoftip.com/contact.php</a></p>
+</main>
+</body>
+</html>

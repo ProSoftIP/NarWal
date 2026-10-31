@@ -1,0 +1,5 @@
+{"id":"g1","scope":"page","startMs":60000,"endMs":60400,"reason":"navigation-blind-window","doc":"d2"}
+{"id":"g2","scope":"frame","startMs":60600,"endMs":80000,"reason":"cross-origin-frame","doc":"d2","detail":"chart frame not stitched"}
+{"id":"g3","scope":"page","startMs":65000,"endMs":65200,"reason":"lost-messages","doc":"d2","detail":"seq 2"}
+{"id":"g4","scope":"audio","startMs":72000,"endMs":75400,"reason":"mic-track-ended","detail":"device unplugged"}
+{"id":"g5","scope":"page","startMs":76000,"endMs":77000,"reason":"tab-hidden"}
