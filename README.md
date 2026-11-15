@@ -142,12 +142,21 @@ offer Try again when a new upload can help.
 
 ## Install
 
-NarWal works in Microsoft Edge and Google Chrome, version 116 or later. It
-is on its way to the Chrome Web Store and Microsoft Edge Add-ons; once the
-listing is live, install it from there and it updates itself. Until then, or
-to run a build of your own, load it as an unpacked extension from a folder.
-The full guide, including updates, is
-[`docs/install-unpacked.md`](docs/install-unpacked.md).
+NarWal works in Microsoft Edge and Google Chrome, version 116 or later.
+
+**Chrome:** install NarWal from the
+[Chrome Web Store](https://chromewebstore.google.com/detail/narwal/pmjegneplabkbbdipjapnecnkpncdead)
+and it updates itself. Then go to [3. First use](#3-first-use).
+
+**Edge:** NarWal is in review at Microsoft Edge Add-ons. Until it is listed
+there, Edge can install it from the same
+[Chrome Web Store page](https://chromewebstore.google.com/detail/narwal/pmjegneplabkbbdipjapnecnkpncdead):
+press **Allow extensions from other stores** when Edge asks and confirm, then
+**Add to Chrome**.
+
+To run a build of your own, or a release zip, load NarWal as an unpacked
+extension from a folder with the steps below. The full guide, including
+updates, is [`docs/install-unpacked.md`](docs/install-unpacked.md).
 
 ### 1. Get the extension folder
 
