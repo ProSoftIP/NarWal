@@ -148,11 +148,9 @@ NarWal works in Microsoft Edge and Google Chrome, version 116 or later.
 [Chrome Web Store](https://chromewebstore.google.com/detail/narwal/pmjegneplabkbbdipjapnecnkpncdead)
 and it updates itself. Then go to [3. First use](#3-first-use).
 
-**Edge:** NarWal is in review at Microsoft Edge Add-ons. Until it is listed
-there, Edge can install it from the same
-[Chrome Web Store page](https://chromewebstore.google.com/detail/narwal/pmjegneplabkbbdipjapnecnkpncdead):
-press **Allow extensions from other stores** when Edge asks and confirm, then
-**Add to Chrome**.
+**Edge:** install NarWal from
+[Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fhhlgcffakgknbkfbmbaibipjjppmjal)
+and it updates itself. Then go to [3. First use](#3-first-use).
 
 To run a build of your own, or a release zip, load NarWal as an unpacked
 extension from a folder with the steps below. The full guide, including
@@ -295,9 +293,9 @@ Change the Alt+Shift keys at `edge://extensions/shortcuts` or
 - **Parts of a page from another website** (cross-origin frames, such as an
   embedded payment form) work the same in every window: each is saved as its
   own stream in the bundle, and replay does not show its content.
-- **Installed by hand until the store listings are live.** Updating an
-  unpacked install means loading a new folder (the guide explains how to
-  keep your recordings).
+- **An unpacked install does not update itself.** Updating it means loading
+  a new folder (the guide explains how to keep your recordings). Store
+  installs update on their own.
 - **The transcript made on this computer is the live one.** The more
   accurate pass after Stop is coming (see Transcription choices).
 - **Edge on a Mac is not yet checked on a real Mac.** The validation run
