@@ -41,7 +41,7 @@ const AFTER_FAILURE_TEXT = {
 // Plain words for why the transcript on this computer was not improved (offscreen/local-job.js).
 const LOCAL_FAILURE_TEXT = {
   model: 'the transcript model is not installed or is damaged; open the model page to install it',
-  engine: 'the transcript model stopped working',
+  engine: 'the transcript model stopped working; open the model page to pick or download another',
   interrupted: 'the browser stopped it before it finished',
 };
 

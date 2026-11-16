@@ -9,7 +9,7 @@ import { FinalPassStopped } from '../src/final-pass.ts';
 import type { FinalPassCheckpoint, FinalPassRequest, FinalPassResult } from '../src/final-pass.ts';
 import { ModelError } from '../src/model-store.ts';
 import { FINAL_MODEL_IDS, MODELS, TRANSFORMERS_MODEL_IDS, isSherpaModel, isTransformersModel, sherpaRuntime, transformersRuntime } from '../src/models.ts';
-import { FINAL_CHAIN, LIVE_CHAIN, LIVE_MODEL_ID, RETIRED_FINAL, chainWithRetired, detectFinalTier, modelsForTier, readyLiveModel, withoutReplaced } from '../src/tier.ts';
+import { FINAL_CHAIN, LIVE_CHAIN, RETIRED_FINAL, chainWithRetired, detectFinalTier, firstStartModel, readyLiveModel, withoutReplaced } from '../src/tier.ts';
 import { pcmSource } from '../src/vad.ts';
 
 const request: FinalPassRequest = { recordingId: 'rec', revisionId: 'rev', audio: pcmSource(new Float32Array(16000)) };
@@ -101,11 +101,19 @@ test('tier: a hardware WebGPU adapter with half-precision shaders runs turbo; an
   assert.equal(await detectFinalTier(gpu({ features: { has: () => false } })), needsF16 ? 'wasm' : 'webgpu');
 });
 
-test('tier: every chain model is pinned, and the offline option downloads Vosk, Parakeet, then its tier chain (#16617)', () => {
-  assert.deepEqual(modelsForTier('wasm'), [LIVE_MODEL_ID, 'parakeet-tdt-0.6b-v2-int8', 'whisper-small.en-q8', 'moonshine-base-q8']);
-  assert.deepEqual(modelsForTier('webgpu'), [LIVE_MODEL_ID, 'parakeet-tdt-0.6b-v2-int8', 'whisper-large-v3-turbo', 'whisper-small.en-q8']);
+test('tier: every chain model is pinned; a first start downloads one model, Parakeet, on every tier (#36101)', () => {
+  assert.deepEqual(FINAL_CHAIN.wasm, ['parakeet-tdt-0.6b-v2-int8', 'whisper-small.en-q8', 'moonshine-base-q8']);
+  assert.deepEqual(FINAL_CHAIN.webgpu, ['parakeet-tdt-0.6b-v2-int8', 'whisper-large-v3-turbo', 'whisper-small.en-q8']);
   for (const tier of ['webgpu', 'wasm'] as const) {
-    assert.deepEqual(modelsForTier(tier), [...new Set([LIVE_MODEL_ID, ...LIVE_CHAIN, ...FINAL_CHAIN[tier]])]);
+    const first = firstStartModel(tier);
+    assert.equal(first, 'parakeet-tdt-0.6b-v2-int8', tier);
+    assert.equal(first, FINAL_CHAIN[tier][0], `${tier}: the first-start model is the one the tier runs first after Stop`);
+    assert.ok(LIVE_CHAIN.includes(first), `${tier}: the first-start model also makes the live text, so Start works`);
+    assert.notEqual(MODELS[first].runtime?.device, 'webgpu', `${tier}: the first-start model runs on any computer`);
+    // The most accurate measured model this tier can run.
+    const runnable = FINAL_CHAIN[tier].filter((id) => tier === 'webgpu' || MODELS[id].runtime?.device !== 'webgpu');
+    const best = [...runnable].sort((a, b) => MODELS[a].measured!.werPassagePct - MODELS[b].measured!.werPassagePct)[0];
+    assert.equal(first, best, `${tier}: the first-start model has the lowest measured word error rate`);
     for (const id of FINAL_CHAIN[tier]) {
       assert.ok(MODELS[id].files.length > 0, id);
       for (const file of MODELS[id].files) assert.match(file.sha256, /^[0-9a-f]{64}$/, `${id} ${file.path}`);
@@ -129,7 +137,7 @@ test('base.en, retired for Moonshine, stays the last fallback only where Moonshi
   const wasm = chainWithRetired(FINAL_CHAIN.wasm);
   assert.deepEqual(wasm, ['parakeet-tdt-0.6b-v2-int8', 'whisper-small.en-q8', 'moonshine-base-q8', 'whisper-base.en-q8']);
   assert.deepEqual(chainWithRetired(FINAL_CHAIN.webgpu), FINAL_CHAIN.webgpu, 'no retired model joins a chain without its replacement');
-  assert.ok(!modelsForTier('wasm').includes('whisper-base.en-q8'), 'base.en is not downloaded any more');
+  assert.notEqual(firstStartModel('wasm'), 'whisper-base.en-q8', 'base.en is not the first-start download');
   const installed = (...ids: string[]) => withoutReplaced(wasm.filter((id) => ids.includes(id)));
   assert.deepEqual(installed('whisper-base.en-q8'), ['whisper-base.en-q8']);
   assert.deepEqual(installed('whisper-small.en-q8', 'whisper-base.en-q8'), ['whisper-small.en-q8', 'whisper-base.en-q8']);

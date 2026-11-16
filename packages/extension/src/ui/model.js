@@ -5,8 +5,10 @@
 //
 // Downloads run only on a click: a row's Download button, or the start
 // view's download button, which opens this page with ?download=1 to install
-// the live model and the picked one (board #16603: the tier chain when
-// nothing is picked, with Parakeet for the live text, #16617). Runs on a
+// the picked model, with a live model when it makes no live text itself. With
+// nothing picked that is one model, the first-start model of this computer
+// (#36101: Parakeet, which makes the live text and the text after Stop);
+// before #36101 it was the whole tier chain, about 1.5 GB. Runs on a
 // visible page so it continues after the popup closes, and reports its
 // progress in storage.session for the popup to show.
 //
@@ -17,7 +19,7 @@
 import { MODELS } from '../../../offline-transcription/src/models.ts';
 import { modelsToDownload, pickerRows, shownModel, usableChoice } from '../../../offline-transcription/src/picker.ts';
 import { uiOfflineModel } from '../../../offline-transcription/src/status.ts';
-import { FINAL_CHAIN, LIVE_CHAIN } from '../../../offline-transcription/src/tier.ts';
+import { LIVE_CHAIN } from '../../../offline-transcription/src/tier.ts';
 import { h, ratingBar } from '../../../recorder-ui/src/dom.js';
 import { formatDownloadSize } from '../../../recorder-ui/src/providers.js';
 import { DOWNLOAD_HEARTBEAT_MS, DOWNLOAD_KEY, modelStore, modelsForThisComputer, prefs, storedChoice, thisComputerTier } from './model-state.js';
@@ -117,7 +119,7 @@ function renderRow(row) {
       ? 'Used for the live text while you record when Parakeet is not downloaded. Picked alone, the live text is the transcript: nothing runs after Stop.'
       : [
           row.id === LIVE_CHAIN[0] ? 'Once downloaded, it also makes the live text while you record.' : '',
-          row.recommended ? 'This computer runs it first when no model is picked.' : '',
+          row.recommended ? 'With no model picked, this is the one model NarWal downloads, and it runs first after Stop.' : '',
         ]
           .filter(Boolean)
           .join(' ')
@@ -201,6 +203,9 @@ function render() {
   }
 }
 
+/** The models stored on this computer, as this page last read them. */
+const installedIds = () => [...statuses.values()].filter((status) => status.state === 'ready').map((status) => status.id);
+
 async function readAll() {
   for (const status of await modelStore().statusAll(rows.map((row) => row.id))) statuses.set(status.id, status);
 }
@@ -208,7 +213,7 @@ async function readAll() {
 async function pick(id) {
   pending = id;
   render();
-  show(uiOfflineModel(await modelStore().statusAll(modelsToDownload(pending, tier))));
+  show(uiOfflineModel(await modelStore().statusAll(modelsToDownload(pending, tier, installedIds()))));
 }
 
 async function leave() {
@@ -244,7 +249,7 @@ async function remove(id) {
   await report(ui);
 }
 
-/** Installs the given models, or the picked set (live + picked; nothing picked: the tier chain). */
+/** Installs the given models, or the picked set (`modelsToDownload`: nothing picked, Parakeet alone, #36101). */
 async function download(only = null) {
   if (running) return;
   running = true;
@@ -253,7 +258,7 @@ async function download(only = null) {
   const wanted = await modelsForThisComputer();
   const ids = only || wanted;
   // What the popup shows: the picked set, plus a row downloaded on its own.
-  // `final`: every model after Vosk (the first id), for the note the start
+  // `final`: every model after the live one (the first id), for the note the start
   // view shows once Start is possible (board #16603).
   const shown = [...new Set([...wanted, ...ids])];
   const current = () => {
@@ -296,10 +301,10 @@ async function main() {
   rows = pickerRows(tier);
   choice = usableChoice(await storedChoice(), tier);
   pending = choice;
-  $('machine').textContent =
-    tier === 'webgpu'
-      ? `This computer has WebGPU: every model can run here. With no model picked it runs ${rows.find((r) => r.recommended).name} first.`
-      : `This computer has no WebGPU, so a model that needs it cannot run here. With no model picked it runs ${rows.find((r) => r.recommended).name} first, then ${FINAL_CHAIN[tier].slice(1).map((id) => rows.find((r) => r.id === id).name).join(', ')}.`;
+  const first = rows.find((r) => r.recommended);
+  $('machine').textContent = `${
+    tier === 'webgpu' ? 'This computer has WebGPU: every model can run here.' : 'This computer has no WebGPU, so a model that needs it cannot run here.'
+  } With no model picked, NarWal downloads one model, ${first.name} (${formatDownloadSize(first.bytes)}): it makes the live text and the text after Stop. Every other model is downloaded only when you press its Download button.`;
   await readAll();
   render();
   show(uiOfflineModel(await modelStore().statusAll(await modelsForThisComputer())));

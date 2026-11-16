@@ -26,7 +26,9 @@ import { bundleRecordingId } from '../../src/export/bundle.js';
 import { toRecorderStatus } from '../../src/shared/ui-status.js';
 import { stripModel } from '../../../recorder-ui/src/strip-model.js';
 import { MODEL_CACHE_NAME } from '../../../offline-transcription/src/model-store.ts';
-import { MODELS, storageKey } from '../../../offline-transcription/src/models.ts';
+import { MODELS, modelBytes, storageKey } from '../../../offline-transcription/src/models.ts';
+import { firstStartModel } from '../../../offline-transcription/src/tier.ts';
+import { formatDownloadSize } from '../../../recorder-ui/src/providers.js';
 
 const APP = fileURLToPath(new URL('../../app', import.meta.url));
 const MIRROR = process.env.NARWAL_MODEL_MIRROR || '';
@@ -2683,6 +2685,84 @@ const scenarios = {
       await b.close();
     }
   },
+  // A first start on a clean profile downloads one model, the first-start
+  // model (#36101: Parakeet, about 660 MB), and nothing else. Every model
+  // file request is counted; only the first-start model's files are served
+  // (from NARWAL_MODEL_MIRROR when it holds them, else the pinned host), the
+  // rest are refused and counted. Runs only when named: it downloads 661 MB
+  // without a mirror.
+  async firstStartOneModel(fx) {
+    const c = new Checks('firstStartOneModel');
+    // Headless Chromium has no hardware WebGPU adapter; both tiers start with the same model.
+    const FIRST = firstStartModel('wasm');
+    const b = await launch();
+    try {
+      const byUrl = new Map(Object.values(MODELS).flatMap((m) => m.files.map((file) => [file.url, { id: m.id, path: file.path }])));
+      const fetched = [];
+      for (const [url, { id, path }] of byUrl) {
+        await b.context.route(url, (route) => {
+          fetched.push(id);
+          if (id !== FIRST) return route.abort('blockedbyclient');
+          const local = MIRROR ? join(MIRROR, id, path) : '';
+          if (local && existsSync(local)) return route.fulfill({ path: local, headers: { 'access-control-allow-origin': '*', 'content-type': 'application/octet-stream' } });
+          return route.continue();
+        });
+      }
+      const modelsFetched = () => [...new Set(fetched)];
+      // The check the twin below must fail: one model, the first-start one.
+      const oneModel = (ids) => ids.length === 1 && ids[0] === FIRST;
+
+      const page = await b.context.newPage();
+      await page.goto(`${fx.A}/index.html`);
+      const tabId = await tabIdOf(b, page);
+      const popup = await b.context.newPage();
+      await popup.goto(b.url(`popup.html?tab=${tabId}`));
+      const action = popup.locator('[data-key="check-transcript"]');
+      await action.waitFor({ timeout: 20000 });
+      // The first paint can come before the sizes are read; wait for one.
+      await popup.waitForFunction(() => /\(about /.test(document.querySelector('[data-key="check-transcript"]')?.textContent || ''), null, { timeout: 20000 }).catch(() => null);
+      const label = await action.textContent();
+      c.ok('the start view offers one download, the size of the first-start model', new RegExp(`^Download speech model \\(${formatDownloadSize(modelBytes(FIRST))}\\)$`).test(label), label);
+      c.ok('opening the popup downloads nothing', fetched.length === 0, modelsFetched());
+      const opened = b.context.waitForEvent('page', { timeout: 10000 });
+      await action.click();
+      const picker = await opened;
+      await picker.waitForLoadState();
+      // The page installs on load (?download=1); its main() resolves once the download ends.
+      await picker.waitForFunction((id) => document.querySelector(`[data-model="${id}"]`)?.dataset.state === 'ready', FIRST, { timeout: 30 * 60_000 });
+      await sleep(3000);
+      const downloaded = await picker.$$eval('.model', (els) => els.filter((el) => el.dataset.state === 'ready').map((el) => el.dataset.model));
+      c.ok('a first start downloads exactly one model, the first-start model', oneModel(modelsFetched()), modelsFetched());
+      c.ok('the Speech model page shows one Downloaded row', downloaded.length === 1 && downloaded[0] === FIRST, downloaded);
+      const machine = await picker.$eval('#machine', (el) => el.textContent);
+      c.ok('the page says one model is downloaded with no pick, and every other only on its Download button', /With no model picked, NarWal downloads one model, .+: it makes the live text and the text after Stop\. Every other model is downloaded only when you press its Download button\./.test(machine) && !/ first, then /.test(machine), machine);
+      const recommended = await picker.$$eval('.model', (els) => els.filter((el) => /\(recommended\)/.test(el.textContent)).map((el) => el.dataset.model));
+      c.ok('the recommended mark is on the first-start model alone', recommended.length === 1 && recommended[0] === FIRST, recommended);
+      await mkdir(RESULTS, { recursive: true });
+      await picker.screenshot({ path: join(RESULTS, 'first-start-one-model-light.png'), fullPage: true });
+
+      // The download click closed the popup (popup.js window.close): open it again.
+      const again = await b.context.newPage();
+      await again.goto(b.url(`popup.html?tab=${tabId}`));
+      const transcript = again.locator('[data-check="transcript"]');
+      // The first paint can come before the model status; wait for the ok state.
+      await again.waitForFunction(() => document.querySelector('[data-check="transcript"]')?.dataset.state === 'ok', null, { timeout: 20000 }).catch(() => null);
+      const shownState = await transcript.getAttribute('data-state');
+      const offered = await again.locator('[data-key="check-transcript"]').count();
+      c.ok('the start view is ready with the one model: no further download is offered', shownState === 'ok' && offered === 0, { state: shownState, text: await transcript.innerText() });
+      await again.close();
+
+      // The twin: a second model's file fetched with no click, the way a
+      // silent fallback would, makes the same check fail. It is refused; the
+      // request is what counts.
+      const voskUrl = MODELS['vosk-small-en-us'].files[0].url;
+      await picker.evaluate((url) => fetch(url).then(() => null, () => null), voskUrl);
+      c.ok('twin: a second model fetched without a click fails the one-model check', !oneModel(modelsFetched()) && modelsFetched().includes('vosk-small-en-us'), modelsFetched());
+      return { checks: c.list };
+    } finally {
+      await b.close();
+    }
+  },
   async transcriptionFailure(fx) {
     const c = new Checks('transcriptionFailure');
     const b = await launch();
@@ -3350,10 +3430,10 @@ const scenarios = {
 
 async function main() {
   const wanted = process.argv.slice(2);
-  // `transcript` downloads the 41 MB live model, `transcriptParakeet` 661 MB
-  // more, `exportWhileImproving` the 67 MB Moonshine base, and `soak` runs for
-  // 30 minutes: they run only when named.
-  const names = wanted.length ? wanted : Object.keys(scenarios).filter((name) => !['transcript', 'transcriptParakeet', 'exportWhileImproving', 'soak', 'realPopupBundle'].includes(name));
+  // `transcript` downloads the 41 MB live model, `transcriptParakeet` and
+  // `firstStartOneModel` 661 MB more, `exportWhileImproving` the 67 MB
+  // Moonshine base, and `soak` runs for 30 minutes: they run only when named.
+  const names = wanted.length ? wanted : Object.keys(scenarios).filter((name) => !['transcript', 'transcriptParakeet', 'firstStartOneModel', 'exportWhileImproving', 'soak', 'realPopupBundle'].includes(name));
   const fx = await startFixtures();
   const results = { ticket: names.includes('soak') ? 16552 : 16542, ranAt: new Date().toISOString(), node: process.version, headless: !process.env.HEADED, chromium: chromium.executablePath().match(/chromium[^/]*-(\d+)/)?.[1] || null, scenarios: {} };
   let failed = 0;

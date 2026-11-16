@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 
 import { MODELS, MODEL_IDS, modelBytes } from '../src/models.ts';
 import { accuracySteps, chainFor, installedChain, modelsToDownload, pickerRows, shownModel, speedSteps, usableChoice } from '../src/picker.ts';
-import { FINAL_CHAIN, LIVE_MODEL_ID, chainWithRetired, modelsForTier } from '../src/tier.ts';
+import { FINAL_CHAIN, LIVE_MODEL_ID, chainWithRetired, firstStartModel } from '../src/tier.ts';
 
 test('every model has measured numbers, so every model is a row', () => {
   for (const id of MODEL_IDS) assert.ok(MODELS[id].measured, `${id} has no measured block`);
@@ -27,7 +27,7 @@ test('rows are most accurate first, with the numbers that made the bars', () => 
   assert.equal(turbo?.accuracySteps, 4);
   assert.equal(turbo?.bytes, modelBytes('whisper-large-v3-turbo'));
   assert.equal(turbo?.needsWebGpu, true);
-  assert.equal(turbo?.recommended, true);
+  assert.equal(turbo?.recommended, false, 'Parakeet, not turbo, is recommended on WebGPU (#36101)');
   assert.match(turbo?.otherTake ?? '', /different take: .*120-second .*rec_49bbce68/, "turbo's numbers are from Matt's other take (#16621)");
   assert.deepEqual(rows.filter((row) => row.otherTake !== null).map((row) => row.id), ['whisper-large-v3-turbo']);
   const vosk = rows.find((row) => row.id === LIVE_MODEL_ID);
@@ -42,6 +42,8 @@ test('a model the machine cannot run is listed, greyed, with the reason', () => 
   assert.match(turbo?.reason ?? '', /WebGPU/);
   assert.equal(pickerRows('webgpu').find((row) => row.id === 'whisper-large-v3-turbo')?.runnable, true);
   assert.equal(pickerRows('wasm').find((row) => row.recommended)?.id, FINAL_CHAIN.wasm[0]);
+  assert.equal(pickerRows('webgpu').find((row) => row.recommended)?.id, firstStartModel('webgpu'), 'the recommended mark is the first-start download (#36101)');
+  assert.equal(pickerRows('webgpu').filter((row) => row.recommended).length, 1);
 });
 
 test('a choice is used only when it is known and this machine runs it', () => {
@@ -52,15 +54,31 @@ test('a choice is used only when it is known and this machine runs it', () => {
   assert.equal(usableChoice(null, 'wasm'), null);
   assert.equal(usableChoice(7, 'wasm'), null);
   assert.equal(shownModel(null, 'wasm'), FINAL_CHAIN.wasm[0]);
+  assert.equal(shownModel(null, 'webgpu'), firstStartModel('webgpu'));
   assert.equal(shownModel('whisper-large-v3-turbo', 'wasm'), FINAL_CHAIN.wasm[0]);
   assert.equal(shownModel('whisper-base.en-q8', 'webgpu'), 'whisper-base.en-q8');
 });
 
-test('the download is the live model and the chosen one; no choice is the tier chain as before', () => {
-  assert.deepEqual(modelsToDownload(null, 'wasm'), modelsForTier('wasm'));
+test('a first start downloads one model, Parakeet; any other model only once picked (#36101)', () => {
+  const parakeet = 'parakeet-tdt-0.6b-v2-int8';
+  for (const tier of ['wasm', 'webgpu'] as const) {
+    assert.deepEqual(modelsToDownload(null, tier), [parakeet], `${tier}: one model, not the tier chain`);
+    assert.deepEqual(modelsToDownload(null, tier, [parakeet]), [parakeet]);
+    assert.deepEqual(modelsToDownload(parakeet, tier), [parakeet], 'Parakeet picked: it makes the live text too, no Vosk');
+  }
+  assert.deepEqual(modelsToDownload('whisper-large-v3-turbo', 'wasm'), [parakeet], 'a WebGPU pick on a WebAssembly machine is no pick');
+  // An older computer that holds Vosk and the old chain keeps recording; the download adds Parakeet alone.
+  assert.deepEqual(modelsToDownload(null, 'wasm', [LIVE_MODEL_ID, 'whisper-small.en-q8', 'moonshine-base-q8']), [LIVE_MODEL_ID, parakeet]);
+  // A pick that makes no live text comes with a live model: the one installed, else Vosk.
+  assert.deepEqual(modelsToDownload('whisper-small.en-q8', 'wasm'), [LIVE_MODEL_ID, 'whisper-small.en-q8']);
+  assert.deepEqual(modelsToDownload('whisper-small.en-q8', 'wasm', [parakeet]), [parakeet, 'whisper-small.en-q8'], 'Parakeet makes the live text: no Vosk');
+  assert.deepEqual(modelsToDownload('whisper-large-v3-turbo', 'webgpu', [parakeet, LIVE_MODEL_ID]), [parakeet, 'whisper-large-v3-turbo']);
   assert.deepEqual(modelsToDownload('whisper-base.en-q8', 'wasm'), [LIVE_MODEL_ID, 'whisper-base.en-q8']);
-  assert.deepEqual(modelsToDownload(LIVE_MODEL_ID, 'wasm'), [LIVE_MODEL_ID]);
-  assert.deepEqual(modelsToDownload('whisper-large-v3-turbo', 'wasm'), modelsForTier('wasm'));
+  assert.deepEqual(modelsToDownload(LIVE_MODEL_ID, 'wasm', [parakeet]), [LIVE_MODEL_ID], 'Vosk picked: Vosk alone');
+  // People who already hold every model keep them all; the set only names what the start view checks.
+  const all = ['vosk-small-en-us', parakeet, 'whisper-large-v3-turbo', 'whisper-small.en-q8'];
+  assert.deepEqual(modelsToDownload(null, 'webgpu', all), [parakeet]);
+  assert.deepEqual(installedChain(null, chainFor(null, 'webgpu').filter((id) => all.includes(id))), [parakeet, 'whisper-large-v3-turbo', 'whisper-small.en-q8'], 'their other models stay fallbacks after Stop');
 });
 
 test('every on-this-computer model is a row, Parakeet included, with the tier it needs', () => {

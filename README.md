@@ -123,7 +123,7 @@ This is the walkthrough of the 17-second recording in the pictures above:
 
 | Choice | When the text appears | What leaves your computer |
 | --- | --- | --- |
-| **On this computer** | While you talk. The strip shows each phrase a few seconds after you say it. | Nothing. The speech models are downloaded once (about 1 to 1.5 GB) and then work with no internet. |
+| **On this computer** | While you talk. The strip shows each phrase a few seconds after you say it. | Nothing. One speech model, Parakeet, is downloaded once (about 660 MB) and then works with no internet. Other models are downloaded only when you pick one on the Speech model page. |
 | **OpenAI Whisper** | After Stop. The narration audio is sent to OpenAI and the transcript comes back a few minutes later. | Your voice, to OpenAI, using your own OpenAI API key. OpenAI charges your account for each transcript, and again for each **Try again**. |
 
 On this computer uses Parakeet, an English speech model, for the live text.
@@ -192,8 +192,9 @@ If Edge offers to turn off extensions in developer mode, decline.
    opens. On a Mac, allow the browser in System Settings → Privacy &
    Security → Microphone as well if asked.
 3. **Transcript**: for **On this computer**, press **Download speech
-   model**. A tab downloads the models once (about 1 to 1.5 GB) and tells you when
-   they are on this computer. For **OpenAI Whisper**, press **Add key** and
+   model**. A tab downloads one model, Parakeet, once (about 660 MB) and tells
+   you when it is on this computer. Other models are downloaded only when you
+   press their Download button on that page. For **OpenAI Whisper**, press **Add key** and
    paste your OpenAI API key.
 4. **Check the microphone**: under **Start recording** the
    popup shows the microphone, a level bar and **Test**. Press **Test** and
