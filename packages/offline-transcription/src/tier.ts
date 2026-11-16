@@ -2,10 +2,11 @@
 // (board #16617).
 //
 // The final pass after Stop uses the most accurate model the machine can run
-// in time. A machine with a real WebGPU adapter runs Whisper large-v3-turbo on
-// the GPU; any other machine runs Parakeet TDT on WebAssembly. Each tier is
-// a chain: when a model cannot load, is not installed, or would not finish in
-// time, the next one runs. This file is the one place that names the models;
+// in time: Parakeet TDT on WebAssembly, on every machine (#36101; before it a
+// machine with a real WebGPU adapter ran Whisper large-v3-turbo first). Each
+// tier is a chain of the models the person has downloaded: when a model
+// cannot load, is not installed, or would not finish in time, the next
+// installed one runs. A chain never downloads anything (#36101). This file is the one place that names the models;
 // a different model is a change to FINAL_CHAIN (and its pinned files in
 // models.ts), nothing else.
 
@@ -28,9 +29,14 @@ export type FinalTier = 'webgpu' | 'wasm';
  * Chromium WebAssembly on that passage Moonshine took 0.06 x audio length at
  * 4 threads and 0.11 at 1 thread, against 0.14 and 0.26 for base.en, which it
  * replaced (e2e/bench-final.mjs). Its word times are interpolated.
+ * With WebGPU, Parakeet runs first too (#36101): it is the most accurate model
+ * measured (5.6% in the extension, 5.1% natively, against 9.4% and 6.0% for
+ * turbo), it runs on any computer, and it also makes the live text, so one
+ * download serves both. Turbo, then small.en, run when installed and
+ * Parakeet is not, or cannot run.
  */
 export const FINAL_CHAIN: Record<FinalTier, FinalModelId[]> = {
-  webgpu: ['whisper-large-v3-turbo', 'whisper-small.en-q8'],
+  webgpu: ['parakeet-tdt-0.6b-v2-int8', 'whisper-large-v3-turbo', 'whisper-small.en-q8'],
   wasm: ['parakeet-tdt-0.6b-v2-int8', 'whisper-small.en-q8', 'moonshine-base-q8'],
 };
 
@@ -47,7 +53,7 @@ export const LIVE_CHAIN: ModelId[] = ['parakeet-tdt-0.6b-v2-int8', LIVE_MODEL_ID
  * Models taken out of a chain, each with the one that replaced it. A computer
  * set up before the change may hold the old model and not the new one; there
  * the old one stays the last fallback, so it keeps its final pass. It is not
- * downloaded any more (`modelsForTier`).
+ * the first-start download any more (`firstStartModel`).
  */
 export const RETIRED_FINAL: Partial<Record<FinalModelId, FinalModelId>> = {
   'whisper-base.en-q8': 'moonshine-base-q8', // #16609
@@ -68,12 +74,14 @@ export function withoutReplaced(installed: readonly string[]): string[] {
 }
 
 /**
- * The models the offline option downloads on a machine of this tier, in
- * order: Vosk first (41 MB, so Start works soon), then Parakeet for the live
- * text, then the final chain. Each model once.
+ * The one model a first start downloads on a machine of this tier (#36101):
+ * the first model of the tier's final chain that also makes the live text,
+ * so the one download lets Start work and improves the text after Stop. On
+ * both tiers that is Parakeet, the chain's first. Every other model is
+ * downloaded only when the person presses its Download button in the picker.
  */
-export function modelsForTier(tier: FinalTier): ModelId[] {
-  return [...new Set<ModelId>([LIVE_MODEL_ID, ...LIVE_CHAIN, ...FINAL_CHAIN[tier]])];
+export function firstStartModel(tier: FinalTier): ModelId {
+  return FINAL_CHAIN[tier].find((id) => LIVE_CHAIN.includes(id)) ?? LIVE_CHAIN[0];
 }
 
 /** The best stored live model's status, if one is stored: Start needs only one (#16617). */

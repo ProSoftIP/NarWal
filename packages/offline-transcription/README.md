@@ -15,8 +15,8 @@ in `demo-extension/`.
 | Use | Model | Runtime | Download |
 |---|---|---|---|
 | Live text while recording, when Parakeet is not installed or does not load | Vosk small English 0.15 (`vosk-small-en-us`) | vosk-browser 0.0.8, WebAssembly | 41.2 MB |
-| Live text while recording (#16617); final text after Stop, other computers | Parakeet TDT 0.6B v2, 8-bit (`parakeet-tdt-0.6b-v2-int8`) | sherpa-onnx 1.13.8 (ASR-only build, `vendor/sherpa-onnx/`), WebAssembly | 661.2 MB |
-| Final text after Stop, WebGPU computers | Whisper large-v3-turbo, 4-bit weights with half-precision activations (`whisper-large-v3-turbo`) | transformers.js 4.3.1 on ONNX Runtime Web, WebGPU | 566.4 MB |
+| Live text while recording (#16617); final text after Stop on every computer (#36101); the one model a first start downloads | Parakeet TDT 0.6B v2, 8-bit (`parakeet-tdt-0.6b-v2-int8`) | sherpa-onnx 1.13.8 (ASR-only build, `vendor/sherpa-onnx/`), WebAssembly | 661.2 MB |
+| Final text after Stop, WebGPU computers, when picked or when Parakeet is not installed | Whisper large-v3-turbo, 4-bit weights with half-precision activations (`whisper-large-v3-turbo`) | transformers.js 4.3.1 on ONNX Runtime Web, WebGPU | 566.4 MB |
 | Final text after Stop, WebGPU fallback; other computers when Parakeet cannot run | Whisper small.en, 8-bit (`whisper-small.en-q8`) | transformers.js 4.3.1, WebAssembly | 251.7 MB |
 | Final text after Stop, slow computers | Moonshine base, 8-bit (`moonshine-base-q8`) | transformers.js 4.3.1, WebAssembly | 66.9 MB |
 | Proof extension and default of `runFinalPass` only; no tier runs it since #16609 | Whisper base.en, 8-bit (`whisper-base.en-q8`) | transformers.js 4.3.1, WebAssembly | 79.6 MB |
@@ -33,13 +33,18 @@ them. `detectFinalTier` picks `webgpu` for a hardware WebGPU adapter with
 `shader-f16`; anything else (no adapter, SwiftShader, no half-precision
 shaders) is `wasm`.
 
-| Tier | Chain, best first | Offline download in total |
+| Tier | Chain, best first | Every chain and live model, if all are downloaded |
 |---|---|---|
-| `webgpu` | turbo, then small.en | 1520.5 MB |
+| `webgpu` | Parakeet, then turbo, then small.en | 1520.5 MB |
 | `wasm` | Parakeet, then small.en, then Moonshine base | 1021.0 MB |
 
-The totals include both live models, Vosk and Parakeet (`LIVE_CHAIN`); on
-`webgpu` Parakeet is downloaded for the live text only.
+The totals include both live models, Vosk and Parakeet (`LIVE_CHAIN`). A
+first start downloads one model only, `firstStartModel(tier)`: the chain's
+first model that also makes the live text, Parakeet on both tiers (661.2 MB,
+#36101). Before #36101 it downloaded the whole chain, about 1.5 GB on
+`webgpu`. Every other model is downloaded only when the person presses its
+Download button in the picker; a chain runs the installed models and never
+downloads one.
 
 base.en was the last `wasm` model before #16609 (`RETIRED_FINAL` in
 `src/tier.ts`). It is no longer downloaded, but a computer that holds it and
@@ -158,9 +163,12 @@ models to try after Stop: none chosen, the tier chain; the live model,
 nothing (the live text is the transcript); a final model, that one and then
 the tier chain. A choice this computer cannot run counts as none.
 `installedChain(choice, installed)` keeps the installed ones, the pick first
-(even a retired one). `modelsToDownload` gives what the download button
-installs: Vosk and the chosen one, or the tier chain with Parakeet for the
-live text. Start needs one live model; the picker never blocks it. Live uses
+(even a retired one). `modelsToDownload(choice, tier, installed)` gives what the
+download button installs, and never more than one model a person did not pick
+(#36101): none chosen, `firstStartModel(tier)` (Parakeet) alone; Parakeet or
+Vosk chosen, that one; another model chosen, that one and a live model so
+Start works (the installed one, or Vosk). `downloadTarget` names the model
+the button is for. Start needs one live model; the picker never blocks it. Live uses
 Parakeet whenever it is installed, whatever the pick.
 
 ## Use

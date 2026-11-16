@@ -9,10 +9,14 @@
 // `offlineModel`). No choice means the machine's tier chain (tier.ts), as
 // before the picker. Choosing the live model (Vosk) keeps the live text: no
 // pass runs after Stop.
+//
+// The start view's download fetches one model with no choice (#36101): the
+// tier's first-start model. Any other model is fetched only by its own
+// Download button here, or by the start view once the person picked it.
 
 import { MODELS, MODEL_IDS, modelBytes, needsWebGpu } from './models.ts';
 import type { FinalModelId, ModelId, ModelMeasured } from './models.ts';
-import { FINAL_CHAIN, LIVE_MODEL_ID, chainWithRetired, modelsForTier, withoutReplaced } from './tier.ts';
+import { FINAL_CHAIN, LIVE_CHAIN, LIVE_MODEL_ID, chainWithRetired, firstStartModel, withoutReplaced } from './tier.ts';
 import type { FinalTier } from './tier.ts';
 
 /** Short names for the picker; a model with none here shows its manifest label. */
@@ -70,7 +74,7 @@ export interface PickerRow {
   /** False when this machine cannot run it; `reason` says why. */
   runnable: boolean;
   reason?: string;
-  /** The model the tier runs first: what no choice means. */
+  /** The model the tier runs first and a first start downloads: what no choice means. */
   recommended: boolean;
 }
 
@@ -85,7 +89,7 @@ export function runsOn(id: ModelId, tier: FinalTier): boolean {
 
 /** Every measured model, most accurate first. */
 export function pickerRows(tier: FinalTier): PickerRow[] {
-  const recommended = FINAL_CHAIN[tier][0];
+  const recommended = firstStartModel(tier);
   return MODEL_IDS.filter((id) => MODELS[id].measured)
     .map((id): PickerRow => {
       const measured = MODELS[id].measured as ModelMeasured;
@@ -124,16 +128,32 @@ export function usableChoice(choice: unknown, tier: FinalTier): ModelId | null {
   return MODELS[id].measured && runsOn(id, tier) ? id : null;
 }
 
-/** The model the start view names: the choice, or the tier's first model. */
+/** The model the start view names: the choice, or the tier's first-start model. */
 export function shownModel(choice: unknown, tier: FinalTier): ModelId {
-  return usableChoice(choice, tier) ?? FINAL_CHAIN[tier][0];
+  return downloadTarget(choice, tier);
 }
 
-/** The models the download button installs: the live model and the chosen one (no choice: the whole tier chain). */
-export function modelsToDownload(choice: unknown, tier: FinalTier): ModelId[] {
-  const id = usableChoice(choice, tier);
-  if (!id) return modelsForTier(tier);
-  return id === LIVE_MODEL_ID ? [LIVE_MODEL_ID] : [LIVE_MODEL_ID, id];
+/** The model the start view downloads and checks: the usable choice, or with none the tier's first-start model. */
+export function downloadTarget(choice: unknown, tier: FinalTier): ModelId {
+  return usableChoice(choice, tier) ?? firstStartModel(tier);
+}
+
+/**
+ * The models the start view checks, live model first, and its download
+ * button installs where missing (#36101): the target alone when it also makes
+ * the live text, or the live model and the target. The live model is the best
+ * one already installed (`installed`: the ids stored on this computer), else
+ * Vosk (41 MB), so a pick never fetches a second live model. Where the target
+ * makes the live text but is not installed yet and an installed live model
+ * already lets Start work, that one comes first: Start works now, and the
+ * download fetches the target alone.
+ */
+export function modelsToDownload(choice: unknown, tier: FinalTier, installed: readonly string[] = []): ModelId[] {
+  const target = downloadTarget(choice, tier);
+  if (target === LIVE_MODEL_ID) return [target];
+  const live = LIVE_CHAIN.find((id) => installed.includes(id));
+  if (LIVE_CHAIN.includes(target)) return live && live !== target && !installed.includes(target) ? [live, target] : [target];
+  return [live ?? LIVE_MODEL_ID, target];
 }
 
 /**
