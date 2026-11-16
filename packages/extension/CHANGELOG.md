@@ -5,6 +5,10 @@ The NarWal extension's releases. The version is the one in
 with no section here (board #16955). The maintainers' release job adds a section
 with each version it bumps after a merge to main (board #17005).
 
+## 1.0.9
+
+- fix(extension): a first start downloads one speech model, Parakeet
+
 ## 1.0.8
 
 - docs(extension): drop an internal tool name from a comment before publishing
