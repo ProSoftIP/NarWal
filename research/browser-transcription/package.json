@@ -8,5 +8,8 @@
     "@transcribe/shout": "1.0.7",
     "@transcribe/transcriber": "3.0.1",
     "vosk-browser": "0.0.8"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
   }
 }
