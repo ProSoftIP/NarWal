@@ -2,7 +2,7 @@
   "name": "@narwal/extension",
   "private": true,
   "license": "MIT",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "NarWal browser extension: records one tab's page evidence and the microphone into durable local chunks",
   "type": "module",
   "engines": { "node": ">=20" },

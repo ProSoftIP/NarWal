@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "NarWal",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Record a narrated walkthrough of one tab: page evidence and your microphone, saved on this computer.",
   "minimum_chrome_version": "116",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmv18GrmcF366ThOORqlH8N0+AGgktjv6hMlxzEJSOEqIiRtZ6gqdK3T+WVLEeC8UfPmQiekQtPPy18/wIZZST8j0uD+HZRX6IneAi++rU+yL8Jhml1/7RMUU9l65EBvWuiwpqFRSjBEFQ8+M6uzGbafwpY7EBXnhpffhDl1HPsmX3xku4r4MyhVuTXWxIDCS6lnOZyc92jiff+lcx7XAuF19fN9c7SvePM1U5kGR7Ta91VhEMt1wDLAsnfiTr7KNgjnQ/9/OJqhaKzGyOk+s3R6+Of0dSUJR6/DdSRYaZ3pRGHcUcCj6QSYlNClIN9Qyd7dfdSvy1bkERtX7MRIRIQIDAQAB",

@@ -5,6 +5,10 @@ The NarWal extension's releases. The version is the one in
 with no section here (board #16955). The maintainers' release job adds a section
 with each version it bumps after a merge to main (board #17005).
 
+## 1.0.10
+
+- fix(deps): override uuid to 11.1.1 under vosk-browser (Dependabot alerts 1 and 2)
+
 ## 1.0.9
 
 - fix(extension): a first start downloads one speech model, Parakeet
